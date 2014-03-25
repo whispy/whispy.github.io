@@ -1,0 +1,26 @@
+#soon {
+	  margin-top:50%;
+}
+
+h2 {
+	font-size:20px;
+	line-height:24px;
+	margin-left:60px;
+	margin-right:60px;
+}
+
+h3 {
+	font-size:16px;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+p {
+	font-family:"agendalight", Arial, Helvetica, sans-serif;
+	color:#DEDEDD;
+	font-size:14px;
+	text-align:center;
+	margin-right:20px;
+	margin-left:20px;
+}
+

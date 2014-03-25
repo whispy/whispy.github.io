@@ -1,0 +1,72 @@
+body {
+
+}
+
+header {
+	
+}
+
+#logoMobile {
+	position:relative;
+	float:right;
+	max-width:100px;
+	margin-right:10%;
+	display:block;
+	margin-top:30px;
+	margin-bottom:20px;
+}
+
+#logo {
+	display:none;
+}
+
+#offCanvasMenu {
+	display:inline-block;
+	height:40px;
+	margin-top:50px;
+	margin-right: auto;
+	position:relative;
+	padding-left:10%;
+	max-width:160px;
+}
+
+div ul li{
+	font-family:"Agenda", Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size:36px;
+	line-height:50px;
+	color:#DEDEDD;
+}
+
+#about {
+	width:80%;
+	height:100vh;
+	margin-right:10%;
+	background-color:#222;
+}
+
+#work {
+	width:80%;
+	height:100%;
+	margin-right:10%;
+	background-color:#222;
+}
+
+#contact {
+	width:80%;
+	height:100vh;
+	margin-right:10%;
+	background-color:#222;
+}
+
+
+.content {
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:10%;
+}
+
+footer {
+	text-align:center;
+	left:0px;
+}

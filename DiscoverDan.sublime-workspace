@@ -1,0 +1,568 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pdd",
+				"padding-top"
+			],
+			[
+				"backgr",
+				"background-attachment"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"con",
+				"contact_a"
+			],
+			[
+				"work",
+				"work_a"
+			],
+			[
+				"abou",
+				"about_a"
+			],
+			[
+				"agenda",
+				"agendalight"
+			],
+			[
+				"div",
+				"DIV"
+			],
+			[
+				"border",
+				"border-right"
+			],
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"background-c",
+				"background-clip"
+			],
+			[
+				"background",
+				"background-attachment"
+			],
+			[
+				"backgroud",
+				"background-color"
+			],
+			[
+				"wind",
+				"windowHeight"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"col",
+				"background-color"
+			],
+			[
+				"first-o",
+				":first-of-type"
+			],
+			[
+				"first",
+				":first-child"
+			],
+			[
+				"aria",
+				"Arial, Helvetica, sans-serif"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"list",
+				"list-style-position"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"hea",
+				"header"
+			],
+			[
+				"sc",
+				"src"
+			],
+			[
+				"h",
+				"h2"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "work.html",
+			"settings":
+			{
+				"buffer_size": 2450,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/IRCbot/awyeahbot/cloudbot.py",
+			"settings":
+			{
+				"buffer_size": 2105,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#!/bin/bash\n# This is a simple post deploy hook executed after your application\n# is deployed and started. This script gets executed directly, so\n# it could be python, php, ruby, etc.\n\npython ${OPENSHIFT_REPO_DIR}/cloudbot.py 2>&1 ${OPENSHIFT_DATA_DIR}/cloudbot.log &",
+			"file": "/D/IRCbot/awyeahbot/.openshift/action_hooks/post_deploy",
+			"file_size": 232,
+			"file_write_time": 130399052896513365,
+			"settings":
+			{
+				"buffer_size": 267,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"paca",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"packages",
+				"Package Control: List Packages"
+			],
+			[
+				"pack li",
+				"Package Control: List Packages"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"packg in",
+				"Package Control: Install Package"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packaged",
+				"Package Control: Discover Packages"
+			],
+			[
+				"package",
+				"Package Control: Add Channel"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/js/custom.js",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/css/mobile.css",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/css/tablet.css",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/css/style.css",
+		"/C/Users/HP_Administrator/.ssh/id_rsa.pub",
+		"/D/IRCbot/awyeahbot/.openshift/action_hooks/README.md",
+		"/D/IRCbot/awyeahbot/.openshift/action_hooks/post_deploy",
+		"/D/IRCbot/awyeahbot/.git/hooks/post-update.sample",
+		"/D/IRCbot/awyeahbot/.editorconfig",
+		"/D/IRCbot/awyeahbot/.gitattributes",
+		"/D/IRCbot/awyeahbot/requirements.txt",
+		"/D/IRCbot/awyeahbot/.gitignore",
+		"/D/helloflask/CloudBot/README.md",
+		"/D/helloflask/CloudBot/core/main.py",
+		"/D/helloflask/CloudBot/.gitignore",
+		"/D/helloflask/CloudBot/core/db.py",
+		"/C/Program Files/PostgreSQL/9.3/data/postmaster.pid",
+		"/C/Program Files/PostgreSQL/9.3/data/pg_hba.conf",
+		"/D/helloflask/CloudBot/config",
+		"/D/helloflask/CloudBot/core/reload.py",
+		"/D/helloflask/CloudBot/core/irc.py",
+		"/D/helloflask/CloudBot/core/config.py",
+		"/D/helloflask/CloudBot/persist/Freenode.db",
+		"/D/helloflask/CloudBot/cloudbot.py",
+		"/D/helloflask/CloudBot/plugins/data/name_files/dwarves.json",
+		"/D/helloflask/CloudBot/plugins/factoids.py",
+		"/D/helloflask/CloudBot/Procfile",
+		"/D/helloflask/CloudBot/requirements.txt",
+		"/D/Desktop/CloudBot-develop/CloudBot/requirements.txt",
+		"/D/Desktop/CloudBot-develop/CloudBot-develop/config",
+		"/D/Desktop/awesomius-master/awesomius-master/docs/bots",
+		"/D/Desktop/awesomius-master/awesomius-master/core/config.py",
+		"/D/Desktop/awesomius-master/awesomius-master/core/reload.py",
+		"/D/Desktop/awesomius-master/awesomius-master/core/main.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/tell.py",
+		"/D/Desktop/awesomius-master/awesomius-master/core/irc.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/urls.py",
+		"/D/Desktop/awesomius-master/awesomius-master/core/decorators.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/udefine.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/decorators.py",
+		"/D/Desktop/BeautifulSoup-3.2.1.tar/dist/BeautifulSoup-3.2.1/BeautifulSoup-3.2.1/BeautifulSoup.py",
+		"/D/Desktop/udefine.py",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/MPCHC_v2/remote.lua",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/contact.html",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/MPCHC_v2/layout.xml",
+		"/C/ProgramData/Unified Remote/Remotes/Bundled/Main/Scroll Wheel/remote.lua",
+		"/C/ProgramData/Unified Remote/Remotes/Bundled/Main/Scroll Wheel/layout.xml",
+		"/D/Desktop/awesomius-master/awesomius-master/docs/interface",
+		"/D/Desktop/awesomius-master/awesomius-master/docs/plugins",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/seen.py",
+		"/D/Desktop/awesomius-master/awesomius-master/config",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/wikipedia.py",
+		"/D/Desktop/awesomius-master/awesomius-master/bot.py",
+		"/D/Desktop/awesomius-master/awesomius-master/core/db.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/util/__init__.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/util/hook.pyc",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/log.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/util/timesince.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/pycparser/yacctab.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/pycparser/cdecl.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/pycparser/lextab.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/pycparser/__init__.py",
+		"/D/Desktop/awesomius-master/awesomius-master/plugins/pycparser/__init__.pyc",
+		"/D/Desktop/awesomius-master/awesomius-master/core/config",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/SGD/layout.xml",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/SGD/meta.prop",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/SGD/remote.lua",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/Magnifier_v2/layout.xml",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/MPC-HC_v2/layout.xml",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/MPC-HC_v2/meta.prop",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/Magnifier_v2/meta.prop",
+		"/D/Dropbox Main/Dropbox/phone2chrome/pages",
+		"/C/ProgramData/Unified Remote/Remotes/Custom/MPC-HC_v2/remote.lua",
+		"/C/ProgramData/Unified Remote/Remotes/Bundled/Main/MPC-HC/remote.lua",
+		"/C/ProgramData/Unified Remote/Remotes/Bundled/Main/MPC-HC/layout.xml",
+		"/C/ProgramData/Unified Remote/Remotes/Bundled/Main/iTunes/remote_win.lua",
+		"/C/ProgramData/Unified Remote/Remotes/Bundled/Main/iTunes/layout_win.xml",
+		"/C/Users/HP_Administrator/AppData/Roaming/Unified Remote/RemoteServerWin.config",
+		"/C/Users/HP_Administrator/AppData/Roaming/Unified Remote/Settings.xml",
+		"/C/ProgramData/Unified Remote/Remotes/Bundled/Main/MPC-HC/meta.prop",
+		"/C/Users/HP_Administrator/AppData/Roaming/licecap.ini",
+		"/C/Users/HP_Administrator/AppData/Roaming/Popcorn Time/app/js/frontend/app.js",
+		"/C/Users/HP_Administrator/AppData/Roaming/Popcorn Time/app/js/frontend/views/movie.js",
+		"/C/Users/HP_Administrator/AppData/Roaming/Popcorn Time/app/package.json",
+		"/C/Users/HP_Administrator/AppData/Roaming/Popcorn Time/app/css/app.css",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/04 - Interlude.flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/03 - The Outernationalist.flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/01 - Heaven's Gonna Burn Your Eyes.flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/06 - All That We Perceive.flac",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/about.html",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/13 - The State Of The Union.flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/02 - Facing East.flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/05 - Omid (Hope).flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/09 - Exilio (Exile).flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/12 - Liberation Front.flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/08 - Meu Destino (My Destiny).flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/07 - Un Simple Histoire (A Simple Story).flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/14 - Until The Morning.flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/11 - The Richest Man In Babylon.flac",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/10 - From Creation.flac",
+		"/D/Desktop/LG_IPS234_Driver/IPS234.inf",
+		"/C/Users/HP_Administrator/AppData/Roaming/Popcorn Time/app/node_modules/grunt-contrib-watch/test/fixtures/livereload/sass/one.scss",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/index.html",
+		"/D/Downloads/Thievery Corporation - The Richest Man in Babylon (2002) FLAC/15 - Resolution.flac",
+		"/D/Downloads/web.config",
+		"/D/Dropbox Main/Dropbox/Camera Uploads/2014-02-17.jpg",
+		"/D/XAMPP/apache/conf/httpd.conf",
+		"/D/Desktop/pyrocms-pyrocms-v2.2.3-0-g08759da/pyrocms-pyrocms-08759da/README.md",
+		"/D/Desktop/Site/index.html",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/work.html",
+		"/D/Desktop/Site/about.html",
+		"/C/Windows/System32/Drivers/etc/hosts",
+		"/D/Dropbox Main/Dropbox/2013_Spring/ICC 565 In Class/starbucks 4/css/style.css",
+		"/D/Dropbox Main/Dropbox/Public/DiscoverDan/index.html",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/css/style2.css",
+		"/D/Dropbox Main/Dropbox/2014_Spring/MPD 478/01_DiscoverDan/Website/DiscoverDan/webfontkit-20140203-103153/stylesheet.css",
+		"/D/Dropbox Main/Dropbox/2013_Spring/ICC 565 In Class/jquery_2/Site/index.html",
+		"/D/Desktop/DiscoverDan/css/style.css",
+		"/D/Dropbox Main/Dropbox/2013_Spring/ICC 565 In Class/starbucks 4/latte.html",
+		"/D/Dropbox Main/Dropbox/2013_Spring/ICC 565 In Class/starbucks 4/index.html",
+		"/D/Desktop/DiscoverDan/index.html",
+		"/D/Dropbox Main/Dropbox/2013_Spring/ICC 565 In Class/FinalBlock/Site/index.html",
+		"/C/Dropbox Main/Spring 2013/ICC 565 In Class/FinalBlock/Site/index.html",
+		"/C/Dropbox Main/Spring 2013/GRA 447/01_Malaria Project/06_Infographic_Animation/Infographic_v1.html",
+		"/C/Dropbox Main/Spring 2013/ICC 565 In Class/php/header.php",
+		"/C/Dropbox Main/Spring 2013/ICC 565 In Class/FinalBlock/NVP_Color_Mock.sublime-project",
+		"/C/Dropbox Main/Spring 2013/ICC 565 In Class/NVP_Color_Mock/Site/index.html",
+		"/C/Dropbox Main/Spring 2013/ICC 565 In Class/NVP_Color_Mock/Site/css/style.css"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"remember",
+			"seen",
+			"v2",
+			"450px",
+			"pink",
+			"200px",
+			");\n",
+			";\n",
+			"dataset",
+			"cheerio",
+			"80px",
+			"480px",
+			"768px",
+			"100px",
+			"443px",
+			"442px",
+			"h3",
+			"	\n",
+			".\n",
+			";\n",
+			"ctrl+space",
+			"<",
+			"remember",
+			"	<p>Where to start? Something for everyone. Pix / Bar Vivant makes good drinking accessible by offering a large selection of quality (and in many cases hard to find) adult beverages at all price points. Champagne is a major focus, with 150+ different bottles available, including older vintages, larger formats and Coteaux Champenois (still wine from the Champagne region.) The list is heavily focused on Grower / Producers but also includes a selection of respectable négociants. Disgorgement dates are listed on the menu when available. In addition to Champagne you will also find another 60 sparklers from France, Spain, Italy, Hungary, New Zealand, Austria, Tasmania, Germany, Portugal, Argentina and the US. Pix pours 7 sparkling wines, including 3 Champagnes, by the glass. Other still wines on the list focus on France, Spain and the Pacific Northwest. All Txakoli is poured high from an escanciador and you can ask for any bottle on the list served in a Spanish porron for a really fun time!\n	Next up is Sherry. An underappreciated beverage but once understood, opens a whole new world for Bon Vivants. The menu runs the gamut from Fino En Rama (very limited unfiltered sherry bottled straight from the barrel) to nutty complex 30 yr Palo Cortado and finishing with luscious sweet PX and floral Moscatel. Pix / Bar Vivant has 36 sherries available including 11 glass pours and a flight offering tastes of multiple styles. Bottling dates are listed on the menu for finos.",
+			"Where to start? Something for everyone. Pix / Bar Vivant makes good drinking accessible by offering a large selection of quality (and in many cases hard to find) adult beverages at all price points. Champagne is a major focus, with 150+ different bottles available, including older vintages, larger formats and Coteaux Champenois (still wine from the Champagne region.) The list is heavily focused on Grower / Producers but also includes a selection of respectable négociants. Disgorgement dates are listed on the menu when available. In addition to Champagne you will also find another 60 sparklers from France, Spain, Italy, Hungary, New Zealand, Austria, Tasmania, Germany, Portugal, Argentina and the US. Pix pours 7 sparkling wines, including 3 Champagnes, by the glass. Other still wines on the list focus on France, Spain and the Pacific Northwest. All Txakoli is poured high from an escanciador and you can ask for any bottle on the list served in a Spanish porron for a really fun time!\n	Next up is Sherry. An underappreciated beverage but once understood, opens a whole new world for Bon Vivants. The menu runs the gamut from Fino En Rama (very limited unfiltered sherry bottled straight from the barrel) to nutty complex 30 yr Palo Cortado and finishing with luscious sweet PX and floral Moscatel. Pix / Bar Vivant has 36 sherries available including 11 glass pours and a flight offering tastes of multiple styles. Bottling dates are listed on the menu for finos.",
+			"The",
+			"h3The",
+			"The",
+			"	Jamón Serrano (sliced to order)\n	Oysters on the half shell\n	Tortilla Española\n	Ham Croquettes\n	Bacalao Croquettes\n	Champis\n	Foie a la plancha\n	Pimientos de Padrón\n	Patatas Brava\n	Gilda (Pepper, Olive, Anchovy)\n	Spicy Gilda\n	Idiazábal Cheese\n	Jamón Wrapped Quail Egg\n	Salmon Rillettes with Cucumber Carpaccio\n	Boquerones\n	Bacon Wrapped Dates\n	Mushroom Vol-o-vents\n	White Asparagus with mayo\n	Chorizo in Red Wine\n	Piquillos Stuffed with Tuna\n	Piquillos stuffed with Bacalao\n	Bocadillo de Tortilla\n	Radish and French Butter Montaditos\n	Goat Cheese Onion Tarts\n	Empanadas\n	Ham & Eggs\n	Ajo Blanco\n	Gambas al Ajillo\n	Caramelized Foie Puffs\n	Spiced Chickpeas\n	Marcona Almonds\n	Assorted Olives\n	Turning Japanese (Edamame spread with lemon confit)\n	Churros con Chocolate\n	Bocadillo de Parisian (Ham & Brie)\n	Smoked Salmon on Brioche\n	Cucumber Dill Montaditos\n	Manchego Quince\n	Mini Quiche\n	Gougères\n	Melon soup and Jamón Serrano \n	Pulpo\n	Charcuterie from Olympic Provisions"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"dataSet",
+			"dataset"
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "work.html",
+					"settings":
+					{
+						"buffer_size": 2450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1698,
+								1698
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 64.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/IRCbot/awyeahbot/cloudbot.py",
+					"settings":
+					{
+						"buffer_size": 2105,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1341,
+								1341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/IRCbot/awyeahbot/.openshift/action_hooks/post_deploy",
+					"settings":
+					{
+						"buffer_size": 267,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								267,
+								267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Dropbox Main/ICC 565 In Class/starbucks/starbucks.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 50.0,
+	"status_bar_visible": true
+}
