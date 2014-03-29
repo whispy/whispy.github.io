@@ -1,6 +1,46 @@
 // Figure out how to do dynamic insertion of elements so the code becomes less of a repetitious mess.
 
+var fancyDan = (function() {
+ 
+var init = function(selector) {
+var menuItems = $(selector);
+ 
+bindListeners(menuItems);
+ 
+},
+ 
+bindListeners = function(menuItems) {
+ 
+menuItems.each(function(key) {
+var id = $(menuItems[key]).children().attr('id');
+ 
+// bind all menu item click events
+$('#' + id).on('click', function(e) {
+menuItems.children().removeClass('on'); // remove the 'on' class for everything
+$(e.target).addClass('on'); // add the class 'on' to the thing we just clicked on
+$('#header').animate({"margin-left":"-450px"}); // animate the header shifting to the left
+ 
+});
+ 
+});
+ 
+}
+ 
+return {
+init: init
+}
+ 
+})();
+ 
 jQuery(document).ready(function() {
+ 
+var navSelector = '#menu li';
+ 
+fancyDan.init(navSelector);
+ 
+});
+
+/*jQuery(document).ready(function() {
 	var aboutA = jQuery("#about_a");
 	var workA = jQuery("#work_a");
 	var contactA = jQuery("#contact_a");
@@ -167,6 +207,8 @@ $(window).resize(function() {
   checkSize();
 });
 //Get window size end
+*/
+/*
 
 
 //Animations for mobile navigation
@@ -183,7 +225,7 @@ $(window).resize(function() {
 	 	}); //animate method end
 	 		/*jQuery(".container").animate({
 	 		"margin-left":"75px"
-	 	}) // animate method end*/
+	 	}) // animate method end
 
 	 } //if end
 	 else {
@@ -191,7 +233,7 @@ $(window).resize(function() {
 		container.removeClass('mobileNav');
 		/*jQuery(".container").animate({
 	 		"margin-left":""
-	 	}) // animate method end */
+	 	}) // animate method end
 	 		jQuery(".header").animate({
 	 		"margin-left":"6%",
 	 	}); //animate method end
