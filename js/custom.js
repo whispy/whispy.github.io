@@ -18,7 +18,14 @@ var id = $(menuItems[key]).children().attr('id');
 $('#' + id).on('click', function(e) {
 menuItems.children().removeClass('on'); // remove the 'on' class for everything
 $(e.target).addClass('on'); // add the class 'on' to the thing we just clicked on
-$('#header').animate({"margin-left":"-450px"}); // animate the header shifting to the left
+$('#header').animate({"margin-left":"6%"}); // animate the header shifting to the left
+
+function loadContent() {	// Inline loading of content
+	       	 jQuery('#about').load(toLoad)
+	       	 jQuery('#about').show();
+	    	}	
+	    	loadContent();
+	    	return false;	// Inline loading of content end
  
 });
  
