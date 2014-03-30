@@ -1,3 +1,53 @@
+// Figure out how to do dynamic insertion of elements so the code becomes less of a repetitious mess.
+
+var fancyDan = (function() { // define the globally scoped variable 'fancyDan' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+ 
+function init(selector) { // define the function 'init' that takes a single argument
+ 
+var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
+
+bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
+ 
+} // init
+
+function loadContent() { // Inline loading of content
+var toLoad = jQuery(this).attr('href')+' .content';
+//window.location.hash = $(this).attr('href').substr(0,$(this).attr('href').length-5); //append url
+$('#about').load(toLoad); // select the element with id 'about' and load it with data returned from the function 'toLoad' (currently the 'toLoad' function doesn't exist in this context)
+$('#about').show(); // display/show the element with id 'about'
+}
+
+ 
+function bindListeners(menuItems) { // define the function 'bindListeners' that takes a single argument
+ 
+	menuItems.each(function(key) { // for each of the elements in the variable 'menuItems' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
+	var id = $(menuItems[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
+
+		$('#' + id).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
+			menuItems.children().removeClass('on'); // remove the 'on' class for all elements inside all menuItems
+			$(e.target).addClass('on'); // add the class 'on' to the element we just clicked on
+			$('#header').animate({"margin-left":"6%"}); // animate the header shifting to the left
+			loadContent(); // call the function 'loadContent' (currently the 'loadContent' function doesn't exist in this context)
+ 			return false;	// Inline loading of content end
+		}); // #+id click event handler
+	}); // menuItems.each
+} // bindListeners
+ 
+return {
+	init: init // exposes the function 'init' to anything that wants to use 'fancyDan' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
+};
+ 
+})(); // fancyDan
+ 
+ 
+$(document).ready(function() { // when the DOM is fully loaded, execute the contents of this anonymous function
+ 	var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
+ 	fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
+}); // $(document).ready
+
+
+
+/*
 jQuery(document).ready(function() {
 	var aboutA = jQuery("#about_a");
 	var workA = jQuery("#work_a");
@@ -165,6 +215,8 @@ $(window).resize(function() {
   checkSize();
 });
 //Get window size end
+*/
+/*
 
 
 //Animations for mobile navigation
@@ -181,7 +233,7 @@ $(window).resize(function() {
 	 	}); //animate method end
 	 		/*jQuery(".container").animate({
 	 		"margin-left":"75px"
-	 	}) // animate method end*/
+	 	}) // animate method end
 
 	 } //if end
 	 else {
@@ -189,7 +241,7 @@ $(window).resize(function() {
 		container.removeClass('mobileNav');
 		/*jQuery(".container").animate({
 	 		"margin-left":""
-	 	}) // animate method end */
+	 	}) // animate method end
 	 		jQuery(".header").animate({
 	 		"margin-left":"6%",
 	 	}); //animate method end
