@@ -4,9 +4,17 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
  
 function init(selector) { // define the function 'init' that takes a single argument
  
+<<<<<<< HEAD
 var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
 
 bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
+=======
+// bind all menu item click events
+$('#' + id).on('click', function(e) {
+menuItems.children().removeClass('on'); // remove the 'on' class for everything
+$(e.target).addClass('on'); // add the class 'on' to the thing we just clicked on
+$('#header').animate({"margin-left":"-450px"}); // animate the header shifting to the left
+>>>>>>> parent of ee98db5... Added inline loading test 1
  
 } // init
 
