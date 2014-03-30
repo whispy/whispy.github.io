@@ -53,7 +53,7 @@ $(document).ready(function() { // when the DOM is fully loaded, execute the cont
  	fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
 
  	var hash = window.location.hash.substr(1);
-	var href = $(menuItems).each(function(){
+	var href = $('#menu ul li a').each(function(){
     var href = $(this).attr('href');
     if(hash==href.substr(0,href.length-5)){
         var toLoad = hash+'.html .content';
