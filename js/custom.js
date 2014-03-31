@@ -96,21 +96,19 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
    // if ("onhashchange" in window) {
    // alert("The browser supports the hashchange event!");
 //}
-	function locationHashChanged() {
+/*function locationHashChanged() {
     		if (location.hash === "#work") {
     		 alert("taco");
         	 var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
         	 fancyWork.initThumbs(workThumbs);
     		}
 	};
-
+*/
 
 
 }); // $(document).ready
 
 
-
-/*
 
 //Get window size
 function checkSize() {
@@ -128,7 +126,7 @@ function checkSize() {
 checkSize();
 $(window).resize(function() {
   checkSize();
-}); */
+}); 
 //Get window size end
 /*
 //Animations for mobile navigation
