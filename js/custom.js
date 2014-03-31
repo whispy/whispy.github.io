@@ -48,7 +48,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
              var workThumbs = $(selectorThumbs); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
             bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
         } // initThumbs
- 	   console.log('hi');
+ 	   console.log('fancywork');
         function loadContent() { // Inline loading of content
             var toLoad = jQuery(this).attr('href') + ' .content';
             window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
@@ -64,6 +64,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 		$('#' + idThumbs).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
 		 	//menuItems.children().removeClass('on'); // remove the 'on' class for all elements inside all menuItems
 			//$(e.target).addClass('on'); // add the class 'on' to the element we just clicked on
+			console.log('fancywork2');
 			$('#workThumbBG').animate({
 				"margin-left":"12%",
 				"width":"10%",
