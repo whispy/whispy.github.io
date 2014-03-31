@@ -95,7 +95,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     }
 
     function loadWork() {
-    	return $.load("work.html");
+    	return $.get("work.html");
     }
 
     function hashChange() {
