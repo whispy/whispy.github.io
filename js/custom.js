@@ -83,7 +83,7 @@ return {
  
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
-    var workThumbs = '#workThumbBG div img'
+    var workThumbs = '#workThumbBG div img'  //this is nonexistent on page load
     var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
     fancyWork.initThumbs(workThumbs);
