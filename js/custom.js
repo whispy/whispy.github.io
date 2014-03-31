@@ -99,10 +99,9 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 //}
 
 }); // $(document).ready
-alert("taco");
 $(window).hashchange(function() {
     if (location.hash === "#work") {
-    	
+    	alert("taco");
         var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
         fancyWork.initThumbs(workThumbs);
     } // if end
