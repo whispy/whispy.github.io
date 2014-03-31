@@ -93,14 +93,14 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
        } // if end
     }; //onhashchange end
     
-       var hash = window.location.hash.substr(1);
+      /* var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
             var href = $(this).attr('href');
             if (hash === href.substr(0, href.length - 5)) {
                 var toLoad = hash + '.html .content';
                 $('.content').load(toLoad);
             }
-	});
+	});*/
 
 }); // $(document).ready
 
