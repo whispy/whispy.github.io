@@ -85,6 +85,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     
     window.onhashchange = hashChange;
     function hashChange() {
+    	       console.log(window.location.hash);
     if (window.location.hash === "#work") {
     	       console.log(window.location.hash);
     	/* var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
