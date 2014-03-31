@@ -97,6 +97,18 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 });
 }); // $(document).ready
 
+if ("onhashchange" in window) {
+    alert("The browser supports the hashchange event!");
+}
+
+function locationHashChanged() {
+    if (location.hash === "#somecoolfeature") {
+        somecoolfeature();
+    }
+}
+
+window.onhashchange = locationHashChanged;
+
 //Get window size
 function checkSize() {
  var width = $(window).width();
