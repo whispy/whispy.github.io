@@ -9,7 +9,7 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
         function loadContent() { // Inline loading of content
             var toLoad = jQuery(this).attr('href') + ' .content';
             window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
-            $('.panel').hide();
+            //$('.panel').hide();
             //$('.panel').load(toLoad); // select the element with class 'panel' and load it with data returned from the function 'toLoad'
             $('.panel').fadeIn(); // display the element with class 'panel'
        } // Inline loading of content end
@@ -24,7 +24,7 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
 			$(e.target).addClass('on'); // add the class 'on' to the element we just clicked on
 			$('#header').animate({"margin-left":"6%"}); // animate the header shifting to the left
 			loadContent.call(this); // call the function 'loadContent'
- 			return false;	// Inline loading of content end
+ 			//return false;	// Inline loading of content end
 		}); // #+id click event handler
 		//Clicking on Home or logo
 	 $("#logo").click(function() {
