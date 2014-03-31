@@ -51,7 +51,6 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
         } // initThumbs
 
         function loadContent() { // Inline loading of content
-        	alert('hi');
             var toLoad = jQuery(this).attr('href') + ' .content';
             window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
             $('.workDisplay').hide();
@@ -62,9 +61,9 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
    function bindListenersThumbs(workThumbs) { // define the function 'bindListenersThumbs' that takes a single argument
  
  	workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
-	var id = $(workThumbs[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
+	var idThumbs = $(workThumbs[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 
-		$('#' + id).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
+		$('#' + idThumbs).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
 			//menuItems.children().removeClass('on'); // remove the 'on' class for all elements inside all menuItems
 			//$(e.target).addClass('on'); // add the class 'on' to the element we just clicked on
 			$('#workThumbBG').animate({
