@@ -86,13 +86,13 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     
     window.onhashchange = hashChange;
     
-    hashchange({
+    function hashChange() {
     if (location.hash === "#work") {
     	alert("taco");
         var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
         fancyWork.initThumbs(workThumbs);
        } // if end
-    }); //onhashchange end
+    }; //onhashchange end
     
        var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
