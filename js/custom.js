@@ -9,26 +9,6 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
         function loadContent() { // Inline loading of content
             var toLoad = jQuery(this).attr('href') + ' .content';
             window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
-            window.onhashchange = hashChange;
-    
-    function appendWork(data) {
-    	// find the content you need from the "full html"
-    	var work = $("<div>").append(data).find("#workThumbBG .content").contents()
-    	$(".content").html(work);
-    	fancyWork.initThumbs(work.find("div img"));
-    	return work;
-    }
-
-    function loadWork() {
-    	return $.get("work.html");
-    }
-
-    function hashChange() {
-	if (window.location.hash === "#work") {
-		console.log(window.location.hash);
-        	loadWork().then(appendWork);
-	}; //if end
-    } //hashChange end
             //$('.panel').hide();
             //$('.panel').load(toLoad); // select the element with class 'panel' and load it with data returned from the function 'toLoad'
             $('.panel').fadeIn(); // display the element with class 'panel'
@@ -104,7 +84,26 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
     
+    window.onhashchange = hashChange;
     
+    function appendWork(data) {
+    	// find the content you need from the "full html"
+    	var work = $("<div>").append(data).find("#workThumbBG .content").contents()
+    	$(".content").html(work);
+    	fancyWork.initThumbs(work.find("div img"));
+    	return work;
+    }
+
+    function loadWork() {
+    	return $.get("work.html");
+    }
+
+    function hashChange() {
+	if (window.location.hash === "#work") {
+		console.log(window.location.hash);
+        	loadWork().then(appendWork);
+	}; //if end
+    } //hashChange end
 
       /* var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
