@@ -96,7 +96,6 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 
     function loadWork() {
     	return $.get("work.html");
-    	 window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
     }
 
     function hashChange() {
