@@ -88,11 +88,10 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     function hashChange() {
     if (window.location.hash === "#work") {
     	 console.log(window.location.hash);
-    	 $.get("work.html")
-    	 .done(function({
+    	 $.get("work.html").done(function({
     	 	var workThumbs = '#workThumbBG div img';
-    	 	fancyWork.initThumbs(workThumbs)
-    	 }
+    	 	fancyWork.initThumbs(workThumbs);
+    	 })
        } // if end
     }; //onhashchange end
     
