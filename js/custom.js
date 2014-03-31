@@ -43,7 +43,7 @@ return {
  
 })(); // fancyDan
 
-
+/*
 var fancyWork = (function() { // define the globally scoped variable 'fancyWork' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
         function init(selector) { // define the function 'init' that takes a single argument
              var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
@@ -79,7 +79,7 @@ return {
 	init: init // exposes the function 'init' to anything that wants to use 'fancyWork' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
 };
 })(); // fancyWork
- 
+ */
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
     var workThumbs = '#workThumbBG img'
