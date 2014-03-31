@@ -87,9 +87,9 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     window.onhashchange = hashChange;
     function hashChange() {
     if (location.hash === "#work") {
-    	//alert("taco");
-        var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
+    	var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
         fancyWork.initThumbs(workThumbs);
+        alert("taco");
        } // if end
     }; //onhashchange end
     
