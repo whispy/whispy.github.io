@@ -44,6 +44,7 @@ return {
 })(); // fancyDan
 
 var fancyWork = (function() { // define the globally scoped variable 'fancyWork' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+        alert('hi');
         function initThumbs(selectorThumbs) { // define the function 'initThumbs' that takes a single argument
              var workThumbs = $(selectorThumbs); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
             bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
@@ -60,7 +61,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
    function bindListenersThumbs(workThumbs) { // define the function 'bindListenersThumbs' that takes a single argument
  	workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 	var idThumbs = $(workThumbs[key]).attr('img'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
-	alert('hi');
+	
 		$('#' + idThumbs).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
 		 
 			//menuItems.children().removeClass('on'); // remove the 'on' class for all elements inside all menuItems
@@ -89,7 +90,6 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     if (location.hash === "#work") {
     	var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
         fancyWork.initThumbs(workThumbs);
-        alert("taco");
        } // if end
     }; //onhashchange end
     
