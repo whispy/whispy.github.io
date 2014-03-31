@@ -107,7 +107,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 */
 
 
-}); // $(document).ready
+})(); // $(document).ready
 
 
 
