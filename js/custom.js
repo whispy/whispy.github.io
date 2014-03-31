@@ -98,6 +98,9 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	}
 
 
+}); // $(document).ready
+
+
     /*var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
             var href = $(this).attr('href');
@@ -105,9 +108,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
                 var toLoad = hash + '.html .content';
                 $('.content').load(toLoad);
             }*/
-}); // $(document).ready
-
-
+/*
 
 //Get window size
 function checkSize() {
@@ -125,7 +126,7 @@ function checkSize() {
 checkSize();
 $(window).resize(function() {
   checkSize();
-});
+}); */
 //Get window size end
 /*
 //Animations for mobile navigation
