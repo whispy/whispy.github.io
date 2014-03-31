@@ -67,7 +67,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 			//menuItems.children().removeClass('on'); // remove the 'on' class for all elements inside all menuItems
 			//$(e.target).addClass('on'); // add the class 'on' to the element we just clicked on
 			$('#workThumbBG').animate({
-				"margin-left":"12%"
+				"margin-left":"12%",
 				"width":"10%"
 				}); // animate the header shifting to the left
 			loadContent.call(this); // call the function 'loadContent'
