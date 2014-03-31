@@ -89,15 +89,16 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
    // alert("The browser supports the hashchange event!");
 //}
 
-function locationHashChanged() {
-    if (location.hash === "#work") {
-    	alert("taco")
-         var workThumbs = '#workThumbBG div img'  //this is nonexistent on page load
-             fancyWork.initThumbs(workThumbs);
-    }
-}
-
 var window.onhashchange = locationHashChanged;
+
+	function locationHashChanged() {
+    		if (location.hash === "#work") {
+    		alert("taco")
+        	 var workThumbs = '#workThumbBG div img'  //this is nonexistent on page load
+        	 fancyWork.initThumbs(workThumbs);
+    		}
+	}
+
 
     /*var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
