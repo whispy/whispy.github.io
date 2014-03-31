@@ -89,11 +89,11 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     if (window.location.hash === "#work") {
     	 console.log(window.location.hash);
     	 $.get("work.html")
-    	  .done(function({
+    	  .done(function(){
     	 	var workThumbs = '#workThumbBG div img';
     	 	fancyWork.initThumbs(workThumbs);
-    	 )};
-    	 )
+    	 });
+        };
        } // if end
     }; //onhashchange end
     
