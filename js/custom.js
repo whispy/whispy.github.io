@@ -89,7 +89,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     function appendWork(data) {
     	// find the content you need from the "full html"
     	var workThumbs = $("<div>").append(data).find("#workThumbBG .content img")
-    	$(".content").html(workThumbs;
+    	$(".content").html(workThumbs);
     	fancyWork.initThumbs(workThumbs);
     	return workThumbs;
     }
