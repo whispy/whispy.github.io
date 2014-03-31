@@ -85,16 +85,25 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
     
     window.onhashchange = hashChange;
+    
+    function appendWork(data) {
+    	// find the content you need from the "full html"
+    	var work = $("<div>").append(data).find("#workThumbBG")
+    	$(".panel").html(work);
+    	fancyWork.initThumbs(work.find("div img"));
+    	return work;
+    }
+
+    function loadWork() {
+    	return $.get("work.html");
+    }
+
     function hashChange() {
-    if (window.location.hash === "#work") {
-    	 console.log(window.location.hash);
-    	 $.get("work.html").done(function(data) {
-    	 	$('.panel').append(data);
-    	 	var workThumbs = '#workThumbBG div img';
-    	 	fancyWork.initThumbs(workThumbs);
-    	 });
-        }; // if end
-       } // hashChange end
+	if (window.location.hash === "#work") {
+		console.log(window.location.hash);
+        loadWork().then(appendWork);
+	}; //if end
+    } //hashChange end
 
       /* var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
