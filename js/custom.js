@@ -23,7 +23,7 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
 			menuItems.children().removeClass('on'); // remove the 'on' class for all elements inside all menuItems
 			$(e.target).addClass('on'); // add the class 'on' to the element we just clicked on
 			$('#header').animate({"margin-left":"6%"}); // animate the header shifting to the left
-			//loadContent.call(this); // call the function 'loadContent'
+			loadContent.call(this); // call the function 'loadContent'
  			return false;	// Inline loading of content end
 		}); // #+id click event handler
 		//Clicking on Home or logo
