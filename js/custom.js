@@ -95,7 +95,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     	 });
         };
        } // if end
-    }; //onhashchange end
+    }); //onhashchange end
     
       /* var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
