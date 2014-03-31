@@ -93,10 +93,9 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     	 	var workThumbs = '#workThumbBG div img';
     	 	fancyWork.initThumbs(workThumbs);
     	 });
-        };
-       } // if end
-    }); //onhashchange end
-    
+        }; // if end
+       } // hashChange end
+
       /* var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
             var href = $(this).attr('href');
