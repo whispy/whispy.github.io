@@ -93,7 +93,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
                 var toLoad = hash + '.html .content';
                 $('.content').load(toLoad);
             }
-	};
+	});
    // if ("onhashchange" in window) {
    // alert("The browser supports the hashchange event!");
 //}
@@ -107,7 +107,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 */
 
 
-})(); // $(document).ready
+}); // $(document).ready
 
 
 
