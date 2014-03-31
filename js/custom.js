@@ -43,6 +43,31 @@ return {
  
 })(); // fancyDan
 
+
+ 
+$(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
+    var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
+    fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
+    
+    window.onhashchange = hashChange;
+    function hashChange() {
+    if (location.hash === "#work") {
+    	var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
+        fancyWork.initThumbs(workThumbs);
+       } // if end
+    }; //onhashchange end
+    
+       var hash = window.location.hash.substr(1);
+	var href = $('#menu ul li a').each(function () {
+            var href = $(this).attr('href');
+            if (hash === href.substr(0, href.length - 5)) {
+                var toLoad = hash + '.html .content';
+                $('.content').load(toLoad);
+            }
+	});
+
+}); // $(document).ready
+
 var fancyWork = (function() { // define the globally scoped variable 'fancyWork' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
         alert('hi');
         function initThumbs(selectorThumbs) { // define the function 'initThumbs' that takes a single argument
@@ -80,31 +105,6 @@ return {
 };
 })(); // fancyWork
  
- 
-$(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
-    var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
-    fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
-    
-    window.onhashchange = hashChange;
-    function hashChange() {
-    if (location.hash === "#work") {
-    	var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
-        fancyWork.initThumbs(workThumbs);
-       } // if end
-    }; //onhashchange end
-    
-       var hash = window.location.hash.substr(1);
-	var href = $('#menu ul li a').each(function () {
-            var href = $(this).attr('href');
-            if (hash === href.substr(0, href.length - 5)) {
-                var toLoad = hash + '.html .content';
-                $('.content').load(toLoad);
-            }
-	});
-
-}); // $(document).ready
-
-
 
 //Get window size
 function checkSize() {
