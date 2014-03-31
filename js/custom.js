@@ -46,7 +46,7 @@ return {
 
 var fancyWork = (function() { // define the globally scoped variable 'fancyWork' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
         function initThumbs(selectorThumbs) { // define the function 'initThumbs' that takes a single argument
-             var workThumbs = '#workThumbBG div img'  //this is nonexistent on page load
+            // var workThumbs = '#workThumbBG div img'  //this is nonexistent on page load
              var workThumbs = $(selectorThumbs); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
             bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
         } // initThumbs
@@ -84,7 +84,7 @@ return {
  
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
-    //var workThumbs = '#workThumbBG div img'  //this is nonexistent on page load
+    var workThumbs = '#workThumbBG div img'  //this is nonexistent on page load
     var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
     fancyWork.initThumbs(workThumbs);
