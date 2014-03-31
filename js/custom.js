@@ -84,7 +84,9 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
     
-    jQuery(window).onhashchange(function() {
+    window.onhashchange = hashChange;
+    
+    hashchange({
     if (location.hash === "#work") {
     	alert("taco");
         var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
@@ -100,9 +102,6 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
                 $('.content').load(toLoad);
             }
 	});
-   if ("onhashchange" in window) {
-   alert("The browser supports the hashchange event!");
-}
 
 }); // $(document).ready
 
