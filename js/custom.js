@@ -91,7 +91,6 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     	var work = $("<div>").append(data).find("#workThumbBG .content").contents()
     	$(".content").html(work);
     	fancyWork.initThumbs(work.find("div img"));
-    	$('.panel').fadeIn();
     	return work;
     }
 
