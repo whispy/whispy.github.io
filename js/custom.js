@@ -99,10 +99,10 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     }
 
     function hashChange() {
-	if (window.location.hash === "#work") {
+	//if (window.location.hash === "#work") {
 		console.log(window.location.hash);
         	loadWork().then(appendWork);
-	}; //if end
+	//}; //if end
     } //hashChange end
 
       /* var hash = window.location.hash.substr(1);
