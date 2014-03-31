@@ -91,7 +91,8 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     	 $.get("work.html").done(function({
     	 	var workThumbs = '#workThumbBG div img';
     	 	fancyWork.initThumbs(workThumbs);
-    	 )})
+    	 )};
+    	 )
        } // if end
     }; //onhashchange end
     
