@@ -85,11 +85,11 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     
     window.onhashchange = hashChange;
     function hashChange() {
-    /* if (window.location.hash === "#work") {
-    	var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
-        fancyWork.initThumbs(workThumbs);
-       } // if end */
-       console.log(window.location.hash);
+    if (window.location.hash === "#work") {
+    	       console.log(window.location.hash);
+    	/* var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
+        fancyWork.initThumbs(workThumbs);*/
+       } // if end
     }; //onhashchange end
     
       /* var hash = window.location.hash.substr(1);
