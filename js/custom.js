@@ -89,7 +89,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     function appendWork(data) {
     	// find the content you need from the "full html"
     	var work = $("<div>").append(data).find("#workThumbBG")
-    	$(".panel").html(work);
+    	$(".content").html(work);
     	fancyWork.initThumbs(work.find("div img"));
     	return work;
     }
@@ -101,7 +101,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     function hashChange() {
 	if (window.location.hash === "#work") {
 		console.log(window.location.hash);
-        loadWork().then(appendWork);
+        	loadWork().then(appendWork);
 	}; //if end
     } //hashChange end
 
