@@ -86,7 +86,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
     
     $(window).onhashchange({
-    if (location.hash === "#work";) {
+    if (location.hash === "#work") {
     	alert("taco");
         var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
         fancyWork.initThumbs(workThumbs);
@@ -101,9 +101,9 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
                 $('.content').load(toLoad);
             }
 	});
-   // if ("onhashchange" in window) {
-   // alert("The browser supports the hashchange event!");
-//}
+   if ("onhashchange" in window) {
+   alert("The browser supports the hashchange event!");
+}
 
 }); // $(document).ready
 
