@@ -10,7 +10,7 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
             var toLoad = jQuery(this).attr('href') + ' .content';
             window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
             $('.panel').hide();
-            $('.panel').load(toLoad); // select the element with class 'panel' and load it with data returned from the function 'toLoad'
+            //$('.panel').load(toLoad); // select the element with class 'panel' and load it with data returned from the function 'toLoad'
             $('.panel').fadeIn(); // display the element with class 'panel'
        } // Inline loading of content end
  
