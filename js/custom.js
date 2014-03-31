@@ -1,13 +1,9 @@
 // Figure out how to do dynamic insertion of elements so the code becomes less of a repetitious mess.
 
 var fancyDan = (function() { // define the globally scoped variable 'fancyDan' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
- 
         function init(selector) { // define the function 'init' that takes a single argument
- 
-            var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
-
+             var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
             bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
- 
         } // init
 
         function loadContent() { // Inline loading of content
@@ -18,9 +14,9 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
             $('.panel').fadeIn(); // display the element with class 'panel'
        } // Inline loading of content end
  
-function bindListeners(menuItems) { // define the function 'bindListeners' that takes a single argument
+   function bindListeners(menuItems) { // define the function 'bindListeners' that takes a single argument
  
-	menuItems.each(function(key) { // for each of the elements in the variable 'menuItems' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
+ 	menuItems.each(function(key) { // for each of the elements in the variable 'menuItems' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 	var id = $(menuItems[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 
 		$('#' + id).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
@@ -49,9 +45,10 @@ return {
  
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
+    var workThumbs = '#workThumbBG img'
     var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
-
+    fancyWork.init(workThumbs);
     var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
             var href = $(this).attr('href');
