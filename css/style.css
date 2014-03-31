@@ -173,6 +173,19 @@ a:hover {
 	background-color:#222;
 }
 
+#workDisplay {
+	display:none;
+	float:right;
+}
+
+#WorkDisplay {
+	width:60%;
+	height:auto;
+	min-height: 100% !important;
+	margin-right:10%;
+	background-color:#222;
+}
+
 .workThumbs {
 	width:100%;
 	background-color: white;
