@@ -105,7 +105,6 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
                 var toLoad = hash + '.html .content';
                 $('.content').load(toLoad);
             }*/
-});
 }); // $(document).ready
 
 
