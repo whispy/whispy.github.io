@@ -42,6 +42,43 @@ return {
 };
  
 })(); // fancyDan
+
+
+var fancyWork = (function() { // define the globally scoped variable 'fancyWork' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+        function init(selector) { // define the function 'init' that takes a single argument
+             var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
+            bindListeners(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
+        } // init
+
+        function loadContent() { // Inline loading of content
+            var toLoad = jQuery(this).attr('href') + ' .content';
+            window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
+            $('.workDisplay').hide();
+            $('.workDisplay').load(toLoad); // select the element with class 'workDisplay' and load it with data returned from the function 'toLoad'
+            $('.workDisplay').fadeIn(); // display the element with class 'workDisplay'
+       } // Inline loading of content end
+ 
+   function bindListeners(workThumbs) { // define the function 'bindListeners' that takes a single argument
+ 
+ 	workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
+	var id = $(workThumbs[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
+
+		$('#' + id).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
+			//menuItems.children().removeClass('on'); // remove the 'on' class for all elements inside all menuItems
+			//$(e.target).addClass('on'); // add the class 'on' to the element we just clicked on
+			$('#workThumbBG').animate({
+				"margin-left":"12%"
+				"width":"10%"
+				}); // animate the header shifting to the left
+			loadContent.call(this); // call the function 'loadContent'
+ 			return false;	// Inline loading of content end
+		}); // #+id click event handler
+		}); // workThumbs.each
+} // bindListeners
+return {
+	init: init // exposes the function 'init' to anything that wants to use 'fancyWork' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
+};
+})(); // fancyWork
  
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
@@ -49,6 +86,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
     fancyWork.init(workThumbs);
+    
     var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
             var href = $(this).attr('href');
