@@ -96,13 +96,14 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 
     function loadWork() {
     	return $.get("work.html");
+    	 window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
     }
 
     function hashChange() {
-	//if (window.location.hash === "#work") {
+	if (window.location.hash === "#work") {
 		console.log(window.location.hash);
         	loadWork().then(appendWork);
-	//}; //if end
+	}; //if end
     } //hashChange end
 
       /* var hash = window.location.hash.substr(1);
