@@ -173,12 +173,12 @@ a:hover {
 	background-color:#222;
 }
 
-#workDisplay {
+.workDisplay {
 	display:none;
 	float:right;
 }
 
-#WorkDisplay {
+.WorkDisplay {
 	width:60%;
 	height:auto;
 	min-height: 100% !important;
