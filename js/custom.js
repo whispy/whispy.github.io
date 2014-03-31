@@ -86,6 +86,14 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
     var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
     
+    $(window).hashchange(function() {
+    if (location.hash === "#work") {
+    	alert("taco");
+        var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
+        fancyWork.initThumbs(workThumbs);
+       } // if end
+    }); //onhashchange end
+    
        var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
             var href = $(this).attr('href');
@@ -99,13 +107,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 //}
 
 }); // $(document).ready
-$(window).hashchange(function() {
-    if (location.hash === "#work") {
-    	alert("taco");
-        var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
-        fancyWork.initThumbs(workThumbs);
-    } // if end
-}); //onhashchange end
+
 
 
 //Get window size
