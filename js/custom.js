@@ -97,18 +97,16 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
    // if ("onhashchange" in window) {
    // alert("The browser supports the hashchange event!");
 //}
-$(window).onhashchange(function (){
-    		if (location.hash === "#work") {
-    		 alert("taco");
-        	 var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
-        	 fancyWork.initThumbs(workThumbs);
-    		}
-	});
-
-
 
 }); // $(document).ready
 
+$(window).onhashchange(function (){
+    if (location.hash === "#work") {
+    	alert("taco");
+        var workThumbs = '#workThumbBG div img';  //this is nonexistent on page load
+        fancyWork.initThumbs(workThumbs);
+    } // if end
+}); //onhashchange end
 
 
 //Get window size
