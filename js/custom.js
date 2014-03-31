@@ -43,12 +43,12 @@ return {
  
 })(); // fancyDan
 
-/*
+
 var fancyWork = (function() { // define the globally scoped variable 'fancyWork' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
-        function init(selector) { // define the function 'init' that takes a single argument
+        function initThumbs(selector) { // define the function 'initThumbs' that takes a single argument
              var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
-            bindListeners(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
-        } // init
+            bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
+        } // initThumbs
 
         function loadContent() { // Inline loading of content
             var toLoad = jQuery(this).attr('href') + ' .content';
@@ -58,7 +58,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
             $('.workDisplay').fadeIn(); // display the element with class 'workDisplay'
        } // Inline loading of content end
  
-   function bindListeners(workThumbs) { // define the function 'bindListeners' that takes a single argument
+   function bindListenersThumbs(workThumbs) { // define the function 'bindListenersThumbs' that takes a single argument
  
  	workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 	var id = $(workThumbs[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
@@ -74,18 +74,18 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
  			return false;	// Inline loading of content end
 		}); // #+id click event handler
 		}); // workThumbs.each
-} // bindListeners
+} // bindListenersThumbs
 return {
-	init: init // exposes the function 'init' to anything that wants to use 'fancyWork' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
+	initThumbs: initThumbs // exposes the function 'init' to anything that wants to use 'fancyWork' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
 };
 })(); // fancyWork
- */
+ 
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
     var workThumbs = '#workThumbBG img'
     var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
     fancyDan.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
-    fancyWork.init(workThumbs);
+    fancyWork.initThumbs(workThumbs);
     
     var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
