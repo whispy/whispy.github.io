@@ -60,7 +60,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
        } // Inline loading of content end
  
    function bindListenersThumbs(workThumbs) { // define the function 'bindListenersThumbs' that takes a single argument
-
+var workThumbs = '#workThumbBG div img'  //this is nonexistent on page load
  	workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 	var idThumbs = $(workThumbs[key]).attr('img'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 	alert('hi');
