@@ -9,7 +9,7 @@ var fancyNav = (function() { // define the globally scoped variable 'fancyNav' a
 			"width":"",
 			"margin-right":"",
 		});
-		$("#workDisplay").css({
+		$("#workDisplay").hide().css({
 			"min-height":"",
 			"height":"",
 		});
@@ -58,11 +58,10 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 	} // initThumbs
 
 	function loadPieces() { // Inline loading of content
-		var toLoad = jQuery('.imgDiv a').attr('href') + ' #workDisplay .work ';
+		var toLoad = jQuery('.imgDiv a').attr('href') + ' #workDisplay .work '; //this doesn't go by each 'a'
 		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
 		//$('#workDisplay').hide();
 		$('#workDisplay').load(toLoad);
-
 		workDisplaySize();
 	} // Inline loading of content end
 
@@ -86,10 +85,11 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 		workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 			var idThumbs = $(workThumbs[key]).attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 			$('#' + idThumbs).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
-				$('#workDisplay').fadeOut(150, "easeInOutQuad");
+				$('#workDisplay').fadeOut(50, "easeInOutQuad");
+				loadPieces();
 				$('.content').animate({
 					"margin-top":"",
-				}, 300 , "easeInOutQuart", loadPieces() );
+				}, 300 , "easeInOutQuart");
 				$('.panel').animate({
 					"width":"100px",
 					"margin-right":"0px",
