@@ -186,11 +186,15 @@ a:hover {
 	background-color:#222;
 }
 
+.imgDiv {
+	overflow:hidden;
+	margin-top:20px;
+}
+
 .workThumbs {
-	width:100%;
+	width:616px;
 	background-color: white;
 	height:150px;
-	margin-top:20px;
 }
 
 .content {
