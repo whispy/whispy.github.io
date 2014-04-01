@@ -30,6 +30,18 @@ header {
 	max-width:160px;
 }
 
+#offCanvasMenu ul li a {
+	font-family:"agendamedium", Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size:36px;
+	line-height:50px;
+	color:#DEDEDD;
+	transition: padding .16s ease-in-out;
+    -moz-transition: padding .16s ease-in-out;
+    -webkit-transition: padding .16s ease-in-out;
+    display:block;
+}
+
 div ul li{
 	font-family:"Agenda", Arial, Helvetica, sans-serif;
 	text-decoration: none;

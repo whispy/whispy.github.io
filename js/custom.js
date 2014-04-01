@@ -27,20 +27,21 @@ var fancyNav = (function() { // define the globally scoped variable 'fancyNav' a
 		menuItems.each(function(key) { // for each of the elements in the variable 'menuItems' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 			var id = $(menuItems[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 			$('#' + id).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
-				menuItems.children().removeClass('on');
-				$(e.target).addClass('on');
-				$('#header').animate({"margin-left":"6%"});
+				//menuItems.children().removeClass('on');
+				//$(e.target).addClass('on');
+				$('#header').animate({
+					"margin-left":"6%"
+				}, "easeInOutQuart" );
 				loadContent.call(this); // call the function 'loadContent'
 				return false; // Inline loading of content end
 			}); // #+id click event handler
 		
 			$("#logo").click(function() {
 				resetDivs();
-				menuItems.children().removeClass('on');
+				//menuItems.children().removeClass('on');
 				$(".header").animate({
 					"margin-left":"37.5%",
-				}); //animate method end
-				$(".panel").fadeOut(150);
+				}, "easeInOutQuart"); //animate method end
 			}); // click method end
 		}); // menuItems.each
 	} // bindListeners
@@ -56,7 +57,6 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 		bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 	} // initThumbs
 	function loadContent() { // Inline loading of content
-		console.log('fancywork3');
 		var toLoad = jQuery(this).attr('href') + ' .content';
 		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
 		//$('.workDisplay').hide();
@@ -66,35 +66,36 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 	function workDisplaySize() {
 		//loadContent.call(this); // call the function 'loadContent'
 		//return false;	// Inline loading of content end
-		$('#workDisplay').hide().css({
+		$('#workDisplay').css({
 			"min-height":"100%",
 			"height":"auto",
-		}, 500, "easeInOutQuint", workDisplayFadeIn() );
+		}, workDisplayFadeIn() );
 	};
 
 	function workDisplayFadeIn() {
 		$('#workDisplay').animate({
 			"opacity":"1"
 		});
-		$('#workDisplay').fadeIn();
+		$('#workDisplay').fadeIn(150, "easeInOutQuad");
 	};
  
 	function bindListenersThumbs(workThumbs) { // define the function 'bindListenersThumbs' that takes a single argument
 		workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 			var idThumbs = $(workThumbs[key]).attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 			$('#' + idThumbs).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
+				$('#workDisplay').fadeOut(150, "easeInOutQuad");
 				$('.content').animate({
 					"margin-top":"",
-				}, 300 , "easeInOutQuint");
+				}, 300 , "easeInOutQuart", workDisplaySize() );
 				$('.panel').animate({
 					"width":"100px",
 					"margin-right":"0px",
-				}, 300 , "easeInOutQuint");
+				}, 300 , "easeInOutQuart");
 				$('.imgDiv').animate({
 					"width":"80px",
 					"height":"80px",
-					"margin-top":"10px",
-				}, 300 , "easeInOutQuint", workDisplaySize() );
+					"margin-top":"10px"
+				}, 300 , "easeInOutQuart" );
 			}); // #+id click event handler
 		}); // workThumbs.each
 	} // bindListenersThumbs
