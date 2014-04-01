@@ -173,16 +173,18 @@ a:hover {
 	background-color:#222;
 }
 
-.workDisplay {
-	display:none;
+#workDisplay {
+	opacity: 0;
+	display:block;
 	float:right;
 }
 
-.WorkDisplay {
+#workDisplay {
+	min-height:0%;
+	height:0%;
 	width:60%;
 	height:auto;
-	min-height: 100% !important;
-	margin-right:10%;
+	margin-right:33px;
 	background-color:#222;
 }
 

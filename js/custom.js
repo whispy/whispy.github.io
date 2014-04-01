@@ -6,14 +6,23 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
 		bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 	} // init
 
+	var resetDivs = function() {
+		$('.panel').hide().css({
+			"width":"",
+			"margin-right":"",
+		});
+		$("#workDisplay").css({
+			"min-height":"",
+			"height":"",
+		});
+	};
+
 	function loadContent() { // Inline loading of content
 		var toLoad = $(this).attr('href') + ' .content ';
 		window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
-		$('.panel').hide().css({
-			"width":"",
-		});
-		$('.panel').load(toLoad); // select the element with class 'panel' and load it with data returned from the function 'toLoad'
-		$('.panel').fadeIn(); // display the element with class 'panel'
+		resetDivs();
+		$('.panel').load(toLoad);
+		$('.panel').fadeIn();
 	} // Inline loading of content end
  
 	function bindListeners(menuItems) { // define the function 'bindListeners' that takes a single argument
@@ -29,6 +38,7 @@ var fancyDan = (function() { // define the globally scoped variable 'fancyDan' a
 			}); // #+id click event handler
 		
 			$("#logo").click(function() { //Clicking on Home or logo
+				resetDivs();
 				menuItems.children().removeClass('on');
 				$(".header").animate({
 					"margin-left":"37.5%",
@@ -51,30 +61,40 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 	function loadContent() { // Inline loading of content
 		console.log('fancywork3');
 		var toLoad = jQuery(this).attr('href') + ' .content';
-		window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
-		$('.workDisplay').hide();
-		$('.workDisplay').load(toLoad); // select the element with class 'workDisplay' and load it with data returned from the function 'toLoad'
-		$('.workDisplay').fadeIn(); // display the element with class 'workDisplay'
+		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
+		//$('.workDisplay').hide();
+		//$('.workDisplay').load(toLoad); // select the element with class 'workDisplay' and load it with data returned from the function 'toLoad'
 	} // Inline loading of content end
+
+	function workDisplaySize() {
+		//loadContent.call(this); // call the function 'loadContent'
+		//return false;	// Inline loading of content end
+		$('#workDisplay').hide().css({
+			"min-height":"100%",
+			"height":"auto",
+		}, 500, "easeInOutQuint", workDisplayFadeIn() );
+	};
+
+	function workDisplayFadeIn() {
+		$('#workDisplay').animate({
+			"opacity":"1"
+		});
+		$('#workDisplay').fadeIn();
+	};
  
 	function bindListenersThumbs(workThumbs) { // define the function 'bindListenersThumbs' that takes a single argument
-			console.log('fancywork4');
 		workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 			var idThumbs = $(workThumbs[key]).attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 			$('#' + idThumbs).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
-				//menuItems.children().removeClass('on'); // remove the 'on' class for all elements inside all menuItems
-				//$(e.target).addClass('on'); // add the class 'on' to the element we just clicked on
-				console.log('fancywork2');
 				$('.panel').animate({
 					"width":"100px",
-				}, 500 , "easeInOutQuint"); // animate the header shifting to the left
+					"margin-right":"0px",
+				}, 300 , "easeInOutQuint"); // animate the header shifting to the left
 				$('.imgDiv').animate({
 					"width":"80px",
 					"height":"80px",
 					"margin-top":"10px",
-				}, 500 , "easeInOutQuint");
-				//loadContent.call(this); // call the function 'loadContent'
-				return false;	// Inline loading of content end
+				}, 300 , "easeInOutQuint", workDisplaySize() );
 			}); // #+id click event handler
 		}); // workThumbs.each
 	} // bindListenersThumbs
@@ -90,13 +110,11 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	window.onhashchange = hashChange;
     
 	function setWorkThumbs(data) {
-		// find the content you need from the "full html"
 		//var workThumbs = $("<div>").append(data).find("#workThumbBG .content img")
 		//$(".content").html(workThumbs);
-		//fancyWork.initThumbs(workThumbs);
-		//return workThumbs;
 		var workThumbs = '.content div'
 		fancyWork.initThumbs(workThumbs);
+		return workThumbs;
 	}
 
 	function loadWork() {
