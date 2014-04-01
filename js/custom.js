@@ -58,11 +58,11 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 	} // initThumbs
 
 	function loadPieces() { // Inline loading of content
-		var toLoad = jQuery(this).attr('href') + ' .work ';
+		var toLoad = jQuery('.imgDiv a').attr('href') + ' #workDisplay .work ';
 		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
 		//$('#workDisplay').hide();
 		$('#workDisplay').load(toLoad);
-		return false;
+
 		workDisplaySize();
 	} // Inline loading of content end
 
@@ -99,6 +99,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 					"height":"80px",
 					"margin-top":"10px"
 				}, 300 , "easeInOutQuart" );
+				return false;
 			}); // #+id click event handler
 		}); // workThumbs.each
 	} // bindListenersThumbs
