@@ -56,6 +56,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 		var workThumbs = $(selectorThumbs); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
 		bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 	} // initThumbs
+
 	function loadWork() { // Inline loading of content
 		var toLoad = jQuery(this).attr('href') + ' .work ';
 		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
@@ -88,7 +89,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 				$('#workDisplay').fadeOut(150, "easeInOutQuad");
 				$('.content').animate({
 					"margin-top":"",
-				}, 300 , "easeInOutQuart", loadWork() );
+				}, 300 , "easeInOutQuart", workDisplaySize() );
 				$('.panel').animate({
 					"width":"100px",
 					"margin-right":"0px",
