@@ -121,7 +121,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	}
 
 	function getWork() {
-		return $.get("twork.html");
+		return $.get("work.html");
 	}
 
 	window.onhashchange = hashChange;
