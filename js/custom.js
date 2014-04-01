@@ -57,7 +57,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 		bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 	} // initThumbs
 
-	function loadWork() { // Inline loading of content
+	function loadPieces() { // Inline loading of content
 		var toLoad = jQuery(this).attr('href') + ' .work ';
 		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
 		//$('#workDisplay').hide();
@@ -89,7 +89,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 				$('#workDisplay').fadeOut(150, "easeInOutQuad");
 				$('.content').animate({
 					"margin-top":"",
-				}, 300 , "easeInOutQuart", workDisplaySize() );
+				}, 300 , "easeInOutQuart", loadPieces() );
 				$('.panel').animate({
 					"width":"100px",
 					"margin-right":"0px",
@@ -114,19 +114,19 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	function setWorkThumbs(data) {
 		//var workThumbs = $("<div>").append(data).find("#workThumbBG .content img")
 		//$(".content").html(workThumbs);
-		var workThumbs = '.content div'
+		var workThumbs = '.imgDiv a'
 		fancyWork.initThumbs(workThumbs);
 		return workThumbs;
 	}
 
-	function loadWork() {
+	function getWork() {
 		return $.get("work.html");
 	}
 
 	window.onhashchange = hashChange;
 	function hashChange() {
 		if (window.location.hash === "#work") {
-			loadWork().then(setWorkThumbs);
+			getWork().then(setWorkThumbs);
 		}; //if end
 	} //hashChange end
 
