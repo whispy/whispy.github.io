@@ -56,7 +56,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 		var workThumbs = $(selectorThumbs); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
 		bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 	} // initThumbs
-	function loadContent() { // Inline loading of content
+	function loadWork() { // Inline loading of content
 		var toLoad = jQuery(this).attr('href') + ' .content';
 		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
 		//$('.workDisplay').hide();
