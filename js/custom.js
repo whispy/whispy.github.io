@@ -1,10 +1,11 @@
-var fancyNav = (function() { // define the globally scoped variable 'fancyNav' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
-	function init(selector) { // define the function 'init' that takes a single argument
+function fancyNav(selector) {
+//var fancyNav = (function() { // define the globally scoped variable 'fancyNav' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+	//function init(selector) { // define the function 'init' that takes a single argument
 		var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
 		bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
-	} // init
+	//} // init
 
-	var resetDivs = function() {
+	function resetDivs() {
 		$('.panel').hide().css({
 			"width":"",
 			"margin-right":"",
@@ -46,10 +47,10 @@ var fancyNav = (function() { // define the globally scoped variable 'fancyNav' a
 		}); // menuItems.each
 	} // bindListeners
 
-	return {
-		init: init // exposes the function 'init' to anything that wants to use 'fancyDan' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
-	};
-	})(); // fancyNav
+	//return {
+		//init: init // exposes the function 'init' to anything that wants to use 'fancyDan' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
+	//};
+	}; // fancyNav
 
 var fancyWork = (function() { // define the globally scoped variable 'fancyWork' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 	function initThumbs(selectorThumbs) { // define the function 'initThumbs' that takes a single argument
@@ -110,7 +111,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
 	var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
-	fancyNav.init(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
+	fancyNav(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
      
 	function setWorkThumbs(data) {
 		//var workThumbs = $("<div>").append(data).find("#workThumbBG .content img")
@@ -124,18 +125,21 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 		return $.get("work.html");
 	}
 
-	switch(window.location.hash) {
-		case 'about': xx(); break;
-		case 'work': getWork().then(setWorkThumbs); break;
-		case 'contact': yy(); break;
-	}
 
-	/*window.onhashchange = hashChange;
+	window.onhashchange = hashChange;
 	function hashChange() {
 		if (window.location.hash === "#work") {
 			getWork().then(setWorkThumbs);
 		}; //if end
-	} //hashChange end*/
+		if (window.location.hash === "#about") {
+			console.log('hi');
+		}; //if end
+		if (window.location.hash === "#contact") {
+			console.log('hi');
+		}; //if end
+	} //hashChange end
+
+	hashChange();
 
 	/* var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
