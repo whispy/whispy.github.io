@@ -58,7 +58,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 	} // initThumbs
 
 	function loadPieces() { // Inline loading of content
-		var toLoad = jQuery('.imgDiv a').attr('href') + ' #workDisplay .work '; //this doesn't go by each 'a'
+		var toLoad = jQuery(this).attr('href') + ' #workDisplay .work '; //this doesn't go by each 'a'
 		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
 		//$('#workDisplay').hide();
 		$('#workDisplay').load(toLoad);
@@ -86,7 +86,6 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 			var idThumbs = $(workThumbs[key]).attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 			$('#' + idThumbs).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
 				$('#workDisplay').fadeOut(50, "easeInOutQuad");
-				loadPieces();
 				$('.content').animate({
 					"margin-top":"",
 				}, 300 , "easeInOutQuart");
@@ -94,6 +93,7 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 					"width":"100px",
 					"margin-right":"0px",
 				}, 300 , "easeInOutQuart");
+				loadPieces.call(this);
 				$('.imgDiv').animate({
 					"width":"80px",
 					"height":"80px",
