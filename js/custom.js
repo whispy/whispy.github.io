@@ -1,9 +1,6 @@
 function fancyNav(selector) {
-//var fancyNav = (function() { // define the globally scoped variable 'fancyNav' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
-	//function init(selector) { // define the function 'init' that takes a single argument
-		var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
-		bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
-	//} // init
+	var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
+	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function resetDivs() {
 		$('.panel').hide().css({
@@ -14,86 +11,48 @@ function fancyNav(selector) {
 			"min-height":"",
 			"height":"",
 		});
-	};
+	}; // resetDivs end
 
-	/*function loadContent() { // Inline loading of content
-		var toLoad = $(this).attr('href') + ' .content ';
-		window.location.hash = $(this).attr('href').replace('.html', '') //append url
-		resetDivs();
-		$('.panel').load(toLoad);
-		$('.panel').fadeIn();
-	} // Inline loading of content end*/
 	function loadContent(toLoad) { // Inline loading of content
     	var toFetch = toLoad + '.html' + ' .content ';
     	window.location.hash = toLoad
     	resetDivs();
-    	$('.panel').load(toLoad);
+    	$('.panel').load(toFetch);
     	$('.panel').fadeIn();
-	} // Inline loading of content end
- 
-	/*function bindListeners(menuItems) { // define the function 'bindListeners' that takes a single argument
-		menuItems.each(function(key) { // for each of the elements in the variable 'menuItems' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
-			var id = $(menuItems[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
-			$('#' + id).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
-				//menuItems.children().removeClass('on');
-				//$(e.target).addClass('on');
-				$('#header').animate({
-					"margin-left":"6%"
-				}, "easeInOutQuart" );
-				loadContent.call(this); // call the function 'loadContent'
-				return false; // Inline loading of content end
-			}); // #+id click event handler
-		
-			
-		}); // menuItems.each
-	} // bindListeners*/
+	} // loadContent end
 
 	function bindListeners() {
-    $('.navigation').on('click', 'a', function() {
-        var toLoad = $(this).attr('href').replace('.html', '');
-        
-        //menuItems.children().removeClass('on');
-        //$(e.target).addClass('on');
-        $('#header').animate({
-            "margin-left":"6%"
-        }, "easeInOutQuart" );
-        
-        
-        loadContent(toLoad); // call the function 'loadContent'
-        return false; // Inline loading of content end
-    });
-}
+    	$('.navigation').on('click', 'a', function() {
+        	var toLoad = $(this).attr('href').replace('.html', '');
+			$('#header').animate({
+				"margin-left":"6%"
+			}, "easeInOutQuart" );        
+        	loadContent(toLoad); // call the function 'loadContent'
+        	return false; // Inline loading of content end
+    	});
+	} //bindListeners end
 
-$("#logo").click(function() {
-				resetDivs();
-				//menuItems.children().removeClass('on');
-				$(".header").animate({
-					"margin-left":"37.5%",
-				}, "easeInOutQuart"); //animate method end
-			}); // click method end
+	$("#logo").click(function() {
+		resetDivs();
+		$(".header").animate({
+			"margin-left":"37.5%",
+		}, "easeInOutQuart"); //animate method end
+	}); // click method end
 
-	//return {
-		//init: init // exposes the function 'init' to anything that wants to use 'fancyDan' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
-	//};
-	}; // fancyNav
+}; // fancyNav
 
-var fancyWork = (function() { // define the globally scoped variable 'fancyWork' and set it equal to this immediately invoked anonymous function expression (http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
-	function initThumbs(selectorThumbs) { // define the function 'initThumbs' that takes a single argument
-		var workThumbs = $(selectorThumbs); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
-		bindListenersThumbs(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
-	} // initThumbs
+function fancyWork(selector) {
+	var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
+	bindListeners(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 
-	function loadPieces() { // Inline loading of content
-		var toLoad = jQuery(this).attr('href') + ' #workDisplay .work '; //this doesn't go by each 'a'
-		//window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
-		//$('#workDisplay').hide();
-		$('#workDisplay').load(toLoad);
+	function loadPieces(toLoad) { // Inline loading of content
+		var toFetch = toLoad + '.html' + ' .work ';
+		window.location.hash = toLoad
+		$('#workDisplay').load(toFetch);
 		workDisplaySize();
 	} // Inline loading of content end
 
 	function workDisplaySize() {
-		//loadContent.call(this); // call the function 'loadContent'
-		//return false;	// Inline loading of content end
 		$('#workDisplay').css({
 			"min-height":"100%",
 			"height":"auto",
@@ -106,32 +65,29 @@ var fancyWork = (function() { // define the globally scoped variable 'fancyWork'
 		});
 		$('#workDisplay').fadeIn(150, "easeInOutQuad");
 	};
- 
-	function bindListenersThumbs(workThumbs) { // define the function 'bindListenersThumbs' that takes a single argument
-		workThumbs.each(function(key) { // for each of the elements in the variable 'workThumbs' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
-			var idThumbs = $(workThumbs[key]).attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
-			$('#' + idThumbs).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
-				$('#workDisplay').fadeOut(50, "easeInOutQuad");
-				$('.content').animate({
-					"margin-top":"",
-				}, 300 , "easeInOutQuart");
-				$('.panel').animate({
-					"width":"100px",
-					"margin-right":"0px",
-				}, 300 , "easeInOutQuart");
-				loadPieces.call(this);
-				$('.imgDiv').animate({
-					"width":"80px",
-					"height":"80px",
-					"margin-top":"10px"
-				}, 300 , "easeInOutQuart" );
-				return false;
-			}); // #+id click event handler
-		}); // workThumbs.each
-	} // bindListenersThumbs
-	return {
-		initThumbs: initThumbs // exposes the function 'init' to anything that wants to use 'fancyWork' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
-	};})(); // fancyWork
+
+	function bindListeners() {
+    	$('.imgDiv').on('click', 'a', function() {
+    		var toLoad = $(this).attr('href').replace('.html', '');
+			$('#workDisplay').fadeOut(50, "easeInOutQuad");
+			$('.content').animate({
+				"margin-top":"",
+			}, 300 , "easeInOutQuart");
+			$('.panel').animate({
+				"width":"100px",
+				"margin-right":"0px",
+			}, 300 , "easeInOutQuart");
+			$('.imgDiv').animate({
+				"width":"80px",
+				"height":"80px",
+				"margin-top":"10px"
+			}, 300 , "easeInOutQuart" );
+			loadPieces(toLoad);
+			return false;
+    	}); //click function end
+    }; //bindListeners end
+
+}; // fancyWork
  
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
@@ -139,10 +95,8 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	fancyNav(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
      
 	function setWorkThumbs(data) {
-		//var workThumbs = $("<div>").append(data).find("#workThumbBG .content img")
-		//$(".content").html(workThumbs);
 		var workThumbs = '.imgDiv a'
-		fancyWork.initThumbs(workThumbs);
+		fancyWork(workThumbs);
 		return workThumbs;
 	}
 
@@ -157,10 +111,10 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 			getWork().then(setWorkThumbs);
 		}; //if end
 		if (window.location.hash === "#about") {
-			console.log('hi');
+			console.log('#about');
 		}; //if end
 		if (window.location.hash === "#contact") {
-			console.log('hi');
+			console.log('#contact');
 		}; //if end
 	} //hashChange end
 
