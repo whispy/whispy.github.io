@@ -124,12 +124,18 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 		return $.get("work.html");
 	}
 
-	window.onhashchange = hashChange;
+	switch(window.location.hash) {
+		case 'about': xx(); break;
+		case 'work': getWork().then(setWorkThumbs); break;
+		case 'contact': yy(); break;
+	}
+
+	/*window.onhashchange = hashChange;
 	function hashChange() {
 		if (window.location.hash === "#work") {
 			getWork().then(setWorkThumbs);
 		}; //if end
-	} //hashChange end
+	} //hashChange end*/
 
 	/* var hash = window.location.hash.substr(1);
 	var href = $('#menu ul li a').each(function () {
