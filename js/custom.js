@@ -16,15 +16,22 @@ function fancyNav(selector) {
 		});
 	};
 
-	function loadContent() { // Inline loading of content
+	/*function loadContent() { // Inline loading of content
 		var toLoad = $(this).attr('href') + ' .content ';
-		window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5); //append url
+		window.location.hash = $(this).attr('href').replace('.html', '') //append url
 		resetDivs();
 		$('.panel').load(toLoad);
 		$('.panel').fadeIn();
+	} // Inline loading of content end*/
+	function loadContent(toLoad) { // Inline loading of content
+    	var toFetch = toLoad + '.html' + ' .content ';
+    	window.location.hash = toLoad
+    	resetDivs();
+    	$('.panel').load(toLoad);
+    	$('.panel').fadeIn();
 	} // Inline loading of content end
  
-	function bindListeners(menuItems) { // define the function 'bindListeners' that takes a single argument
+	/*function bindListeners(menuItems) { // define the function 'bindListeners' that takes a single argument
 		menuItems.each(function(key) { // for each of the elements in the variable 'menuItems' call the anonymous function (generally referred to as a callback) with a single argument that denotes the current index of the for loop (aka the variable 'key')
 			var id = $(menuItems[key]).children().attr('id'); // set the variable 'id' to the first id returned from the first child of all children elements within the current menuItem (which is selected/indexed by the variable 'key') using jQuery
 			$('#' + id).on('click', function(e) { // bind this jQuery click event handler to the element that has the variable 'id' as its identifier (when a click event occurs on an id that is being listened to)
@@ -37,15 +44,33 @@ function fancyNav(selector) {
 				return false; // Inline loading of content end
 			}); // #+id click event handler
 		
-			$("#logo").click(function() {
+			
+		}); // menuItems.each
+	} // bindListeners*/
+
+	function bindListeners() {
+    $('.navigation').on('click', 'a', function() {
+        var toLoad = $(this).attr('href').replace('.html', '');
+        
+        //menuItems.children().removeClass('on');
+        //$(e.target).addClass('on');
+        $('#header').animate({
+            "margin-left":"6%"
+        }, "easeInOutQuart" );
+        
+        
+        loadContent(toLoad); // call the function 'loadContent'
+        return false; // Inline loading of content end
+    });
+}
+
+$("#logo").click(function() {
 				resetDivs();
 				//menuItems.children().removeClass('on');
 				$(".header").animate({
 					"margin-left":"37.5%",
 				}, "easeInOutQuart"); //animate method end
 			}); // click method end
-		}); // menuItems.each
-	} // bindListeners
 
 	//return {
 		//init: init // exposes the function 'init' to anything that wants to use 'fancyDan' (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
