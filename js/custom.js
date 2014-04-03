@@ -7,7 +7,7 @@ function fancyNav(selector) {
 			"width":"",
 			"margin-right":"",
 		});
-		$("#workDisplay").hide().css({
+		$(".workDisplay").hide().css({
 			"min-height":"",
 			"height":"",
 		});
@@ -48,28 +48,28 @@ function fancyWork(selector) {
 	function loadPieces(toLoad) { // Inline loading of content
 		var toFetch = toLoad + '.html' + ' .work ';
 		window.location.hash = toLoad
-		$('#workDisplay').load(toFetch);
+		$('.workDisplay').load(toFetch);
 		workDisplaySize();
 	} // Inline loading of content end
 
 	function workDisplaySize() {
-		$('#workDisplay').css({
+		$('.workDisplay').css({
 			"min-height":"100%",
 			"height":"auto",
 		}, workDisplayFadeIn() );
 	};
 
 	function workDisplayFadeIn() {
-		$('#workDisplay').animate({
+		$('.workDisplay').animate({
 			"opacity":"1"
 		});
-		$('#workDisplay').fadeIn(150, "easeInOutQuad");
+		$('.workDisplay').fadeIn(150, "easeInOutQuad");
 	};
 
 	function bindListeners() {
     	$('.imgDiv').on('click', 'a', function() {
     		var toLoad = $(this).attr('href').replace('.html', '');
-			$('#workDisplay').fadeOut(50, "easeInOutQuad");
+			$('.workDisplay').fadeOut(50, "easeInOutQuad");
 			$('.content').animate({
 				"margin-top":"",
 			}, 300 , "easeInOutQuart");
@@ -150,9 +150,13 @@ $(window).resize(function() {
 }); 
 //Get window size end
 
-/*
+function mobileNavigation() {
+$('#menuMobile').on('click', 'a', function() {
+
+}) //click end
+}; //mobileNavigation end
 //Animations for mobile navigation
- jQuery("#menu_a").click(function() {
+/* jQuery("#menu_a").click(function() {
 
 		jQuery("#about, #work, #contact").fadeOut("fast");
 		allNavA.removeClass('on');

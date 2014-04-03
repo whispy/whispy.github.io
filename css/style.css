@@ -161,9 +161,13 @@ a:hover {
 }
 
 .panel {
-	display:none;
+	/*display:none;*/
 	float:right;
 	line-height:0;
+}
+
+#indexPanel {
+	display:none;
 }
 
 .panel {
@@ -174,19 +178,20 @@ a:hover {
 	background-color:#222;
 }
 
-#workDisplay {
-	opacity: 0;
+.workDisplay {
+	opacity: 1;
 	display:block;
 	float:right;
-}
-
-#workDisplay {
 	min-height:0%;
 	height:0%;
 	width:60%;
 	height:auto;
 	margin-right:33px;
 	background-color:#222;
+}
+
+#indexWorkDisplay {
+	opacity:0;
 }
 
 .imgDiv {
