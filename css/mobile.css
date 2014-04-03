@@ -35,7 +35,7 @@ header {
 }
 
 #offCanvasMenu ul li a {
-	font-family:"agendamedium", Arial, Helvetica, sans-serif;
+	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
 	text-decoration: none;
 	font-size:36px;
 	line-height:50px;
@@ -47,7 +47,7 @@ header {
 }
 
 div ul li{
-	font-family:"Agenda", Arial, Helvetica, sans-serif;
+	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
 	text-decoration: none;
 	font-size:36px;
 	line-height:50px;

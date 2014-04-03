@@ -121,7 +121,7 @@ nav {
 }
 
 nav ul li{
-	font-family:"Agenda", Arial, Helvetica, sans-serif;
+	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
 	text-decoration: none;
 	font-size:36px;
 	line-height:50px;
@@ -137,14 +137,6 @@ nav ul li:hover {
 }
 
 nav ul li a {
-	font-family:"agendamedium", Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	font-size:36px;
-	line-height:50px;
-	color:#DEDEDD;
-	transition: padding .16s ease-in-out;
-    -moz-transition: padding .16s ease-in-out;
-    -webkit-transition: padding .16s ease-in-out;
     display:block;
 }
 
