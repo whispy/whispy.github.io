@@ -13,7 +13,7 @@ function fancyNav(selector) {
 		});
 	}; // resetDivs end
 
-	function loadContent(toLoad) { // Inline loading of content
+	loadContent = function(toLoad) { // Inline loading of content
     	var toFetch = toLoad + '.html' + ' .content ';
     	window.location.hash = toLoad
     	resetDivs();
@@ -107,27 +107,23 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 
 	window.onhashchange = hashChange;
 	function hashChange() {
+		idToClick = window.location.hash
 		if (window.location.hash === "#work") {
+			$(idToClick).click();
 			getWork().then(setWorkThumbs);
 		}; //if end
+		if (window.location.hash === "#blog") {
+			$(idToClick).click();
+		}; //if end
 		if (window.location.hash === "#about") {
-			console.log('#about');
+			$(idToClick).click();
 		}; //if end
 		if (window.location.hash === "#contact") {
-			console.log('#contact');
+			$(idToClick).click();
 		}; //if end
 	} //hashChange end
 
 	hashChange();
-
-	/* var hash = window.location.hash.substr(1);
-	var href = $('#menu ul li a').each(function () {
-		var href = $(this).attr('href');
-		if (hash === href.substr(0, href.length - 5)) {
-			var toLoad = hash + '.html .content';
-			$('.content').load(toLoad);
-		}
-	});*/
 
 }); // $(document).ready
 
