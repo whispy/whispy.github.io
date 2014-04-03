@@ -47,7 +47,7 @@ function fancyWork(selector) {
 
 	function loadPieces(toLoad) { // Inline loading of content
 		var toFetch = toLoad + '.html' + ' .work ';
-		window.location.hash = toLoad
+		//window.location.hash = toLoad
 		$('.workDisplay').load(toFetch);
 		workDisplaySize();
 	} // Inline loading of content end
@@ -69,7 +69,7 @@ function fancyWork(selector) {
 	function bindListeners() {
     	$('.imgDiv').on('click', 'a', function() {
     		var toLoad = $(this).attr('href').replace('.html', '');
-			$('.workDisplay').fadeOut(50, "easeInOutQuad");
+			//$('.workDisplay').fadeOut(50, "easeInOutQuad");
 			$('.content').animate({
 				"margin-top":"",
 			}, 300 , "easeInOutQuart");
@@ -91,36 +91,45 @@ function fancyWork(selector) {
  
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
-	var navSelector = '#menu li'; // set the variable 'navSelector' to the all 'li' elements inside the element with id 'menu'
-	fancyNav(navSelector); // call the function 'init' on the module 'fancyDan' with navSelector as an argument to the function 'init'
-     
+
 	function setWorkThumbs(data) {
 		var workThumbs = '.imgDiv a'
 		fancyWork(workThumbs);
 		return workThumbs;
 	}
 
-	function getWork() {
+	function getWorkThumbs() {
 		return $.get("work.html");
 	}
 
+	window.onhashchange = workHashChange
+	function workHashChange() { // if the hash is not #work and changes to work, this fires
+		if (window.location.hash === '#work') {
+			getWorkThumbs().then(setWorkThumbs);
+		}
+	};
 
-	window.onhashchange = hashChange;
 	function hashChange() {
-		idToClick = window.location.hash
-		if (window.location.hash === "#work") {
-			$(idToClick).click();
-			getWork().then(setWorkThumbs);
-		}; //if end
-		if (window.location.hash === "#blog") {
-			$(idToClick).click();
-		}; //if end
-		if (window.location.hash === "#about") {
-			$(idToClick).click();
-		}; //if end
-		if (window.location.hash === "#contact") {
-			$(idToClick).click();
-		}; //if end
+		currHash = window.location.hash
+		var navSelector = '#menu li';
+		if (currHash === '') {
+			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
+		}
+
+		var $navClick = $('.navigation').find(currHash);
+		if ($navClick.length) {
+			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
+			$navClick.trigger('click');
+			if (currHash === '#work') {
+				getWorkThumbs().then(setWorkThumbs);
+			}
+		}
+
+		var $pieceClick = $('.imgDiv').find(currHash);
+		if ($pieceClick.length) {
+			getWorkThumbs().then(setWorkThumbs);
+			$pieceClick.trigger('click');
+		}
 	} //hashChange end
 
 	hashChange();
