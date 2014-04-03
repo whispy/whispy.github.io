@@ -69,21 +69,30 @@ function fancyWork(selector) {
 	function bindListeners() {
     	$('.imgDiv').on('click', 'a', function() {
     		var toLoad = $(this).attr('href').replace('.html', '');
+    		var width = $(window).width();
 			//$('.workDisplay').fadeOut(50, "easeInOutQuad");
-			$('.content').animate({
-				"margin-top":"",
-			}, 300 , "easeInOutQuart");
-			$('.panel').animate({
-				"width":"100px",
-				"margin-right":"0px",
-			}, 300 , "easeInOutQuart");
-			$('.imgDiv').animate({
-				"width":"80px",
-				"height":"80px",
-				"margin-top":"10px"
-			}, 300 , "easeInOutQuart" );
-			loadPieces(toLoad);
-			return false;
+			if(width<=777) {
+				$('.panel').fadeOut();
+				console.log('hi');
+				loadPieces(toLoad);
+				return false;
+			}
+			else {
+				$('.content').animate({
+					"margin-top":"",
+				}, 300 , "easeInOutQuart");
+				$('.panel').animate({
+					"width":"100px",
+					"margin-right":"0px",
+				}, 300 , "easeInOutQuart");
+				$('.imgDiv').animate({
+					"width":"80px",
+					"height":"80px",
+					"margin-top":"10px"
+				}, 300 , "easeInOutQuart" );
+				loadPieces(toLoad);
+				return false;
+			}
     	}); //click function end
     }; //bindListeners end
 
@@ -141,10 +150,12 @@ function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
 	if(width<=777) {
-		container.addClass('mobileNav');
+		var mobileMenu = '#offCanvasMenu li';
+		fancyMobileNav(mobileMenu);
+		//container.addClass('mobileNav');
 	} // if end
 	else {
-		container.removeClass('mobileNav');
+		//container.removeClass('mobileNav');
 		container.css('margin-left','');
 	} //else end
 }
@@ -155,11 +166,40 @@ $(window).resize(function() {
 }); 
 //Get window size end
 
-function mobileNavigation() {
-$('#menuMobile').on('click', 'a', function() {
+function fancyMobileNav(selector) {
+	var mobileMenu = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
+	bindListeners(mobileMenu); // call the function 'bindListeners' with the variable 'menuItems'
 
-}) //click end
-}; //mobileNavigation end
+	function bindListeners() {
+    	$('.menuButton').on('click', 'a', function() {
+    		console.log('tacobell');
+    		//jQuery('.container').addClass('mobileNav');
+    	});
+	} //bindListeners end
+}; // fancyMobileNav end
+
+	 /*	if (!container.is('.mobileNav')) {
+	 		jQuery("#about, #work, #contact").fadeOut("fast");
+			//container.addClass('mobileNav');
+	 		jQuery(".header").animate({
+	 		"margin-left":"61%",
+	 	}); //animate method end
+	 		jQuery(".container").animate({
+	 		"margin-left":"75px"
+	 	}) // animate method end
+
+	 } //if end
+	 else {
+	 	jQuery("#about, #work, #contact, #home_a").fadeOut("fast");
+		container.removeClass('mobileNav');
+		jQuery(".container").animate({
+	 		"margin-left":""
+	 	}) // animate method end
+	 		jQuery(".header").animate({
+	 		"margin-left":"6%",
+	 	}); //animate method end
+		} // else end*/
+
 //Animations for mobile navigation
 /* jQuery("#menu_a").click(function() {
 

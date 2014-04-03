@@ -50,8 +50,12 @@ div ul li{
 	color:#DEDEDD;
 }
 
-.panel {
+.panel, .workDisplay {
 	width:80%;
+}
+
+.workDisplay {
+	margin-right:10%;
 }
 
 
@@ -59,6 +63,14 @@ div ul li{
 	margin-left:10%;
 	margin-right:10%;
 	margin-top:10%;
+}
+
+.work {
+	margin-top: 10%;
+}
+
+#img1 {
+	margin-top:0px;
 }
 
 footer {
