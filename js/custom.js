@@ -142,6 +142,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	} //hashChange end
 
 	hashChange();
+	checkSize();
 
 }); // $(document).ready
 
@@ -160,7 +161,6 @@ function checkSize() {
 	} //else end
 }
 
-checkSize();
 $(window).resize(function() {
 	checkSize();
 }); 
