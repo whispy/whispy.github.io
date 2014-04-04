@@ -1,12 +1,13 @@
 function fancyNav(selector) {
 	var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
-	
-	var headerLeft = $('#headerWrapper').position().left;
+
+	var headerLeft = $('#headerWrapper').offset().left;
+	console.log(headerLeft);
 	$('#headerWrapper').css({
        "margin-left":headerLeft,
     })
-
+	
 	function resetDivs() {
 		$('.panel').hide().css({
 			"width":"",
@@ -103,6 +104,12 @@ function fancyWork(selector) {
     }; //bindListeners end
 
 }; // fancyWork
+
+
+$(window).load(function () { //gets it working in webkit (http://stackoverflow.com/questions/2173040/jquery-position-problem-with-chrome)
+
+
+}); //window.load end
  
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
@@ -151,6 +158,8 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	checkSize();
 
 }); // $(document).ready
+
+
 
 //Get window size
 function checkSize() {

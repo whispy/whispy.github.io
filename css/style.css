@@ -10,6 +10,33 @@ ul {
 list-style: none;
 }
 
+body:after { content: ''; background-image: url(http://pls.webtype.com/v.gif?ct=88125,88126,88123,88124&r=18710&p=17639&h=ncsn5xZ1zR9t5KXDd0AqiA%3d%3d); }
+
+@font-face {
+ font-family: "Agenda Medium";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/15028f46-0072-4465-9e17-4d4fd0022cdc") format("woff");
+ font-style: normal;
+ font-weight: normal;
+}
+@font-face {
+ font-family: "Agenda Medium";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/1b45bb3c-9d91-447a-9372-dc762dca3e6a") format("woff");
+ font-style: italic;
+ font-weight: normal;
+}
+@font-face {
+ font-family: "Apres RE";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/c61a5c12-2dc5-4e7c-88cb-d53b3b1ae530") format("woff");
+ font-style: normal;
+ font-weight: normal;
+}
+@font-face {
+ font-family: "Apres RE";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/edadba4a-1806-4f1d-8f28-a474fd358faa") format("woff");
+ font-style: italic;
+ font-weight: normal;
+}
+/*
 .agendamedium {
   font-family: "Agenda Medium";
   font-style: normal;
@@ -32,7 +59,7 @@ list-style: none;
   font-family: "Apres RE";
   font-style: italic;
   font-weight: normal;
-}
+}*/
 
 h2 {
 	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
