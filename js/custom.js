@@ -2,38 +2,52 @@ function fancyNav(selector) {
 	var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 
-	var headerLeft = $('#headerWrapper').offset().left;
-	console.log(headerLeft);
-	$('#headerWrapper').css({
-       "margin-left":headerLeft,
-    })
-	
 	function resetDivs() {
-		$('.panel').hide().css({
+		$('.panel').css({
+			"visibility":"hidden",
+			"opacity":"0.0",
 			"width":"",
 			"margin-right":"",
+			"margin-left":"",
 		});
-		$(".workDisplay").hide().css({
-			"min-height":"",
-			"height":"",
+		$(".workDisplay").css({
+			"visibility":"hidden",
+			"opacity":"0.0",
 		});
 	}; // resetDivs end
 
 	loadContent = function(toLoad) { // Inline loading of content
     	var toFetch = toLoad + '.html' + ' .content ';
     	window.location.hash = toLoad
-    	resetDivs();
+    	
     	$('.panel').load(toFetch);
-    	$('.panel').fadeIn();
+    	$('.panel').css({
+    		"opacity":"0.0",
+    		"visibility":"visible",
+    	}).animate({
+    		"opacity":"1.0",
+    	}, 200);
 	} // loadContent end
 
 	function bindListeners() {
     	$('.navigation').on('click', 'a', function() {
+    		resetDivs();
         	var toLoad = $(this).attr('href').replace('.html', '');
-        	console.log(headerLeft);
+        	var headerWrapperWidth = $('#headerWrapper').width();
+        	var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
+
+			if(width>=1400) {
+        	console.log($('#indexPanel').offset().left)
 			$('#headerWrapper').animate({
-				"margin-left":"6%"
-			}, "easeInOutQuart" );        
+       			"margin-left":panelLeft,
+   			 }, "easeInOutQuart" ) 
+			}
+			if(width<=1399) {
+        	var panelLeft1399 = panelLeft + 50;
+			$('#headerWrapper').animate({
+       			"margin-left":panelLeft1399,
+   			 }, "easeInOutQuart" ) 
+			}
         	loadContent(toLoad); // call the function 'loadContent'
         	return false; // Inline loading of content end
     	});
@@ -56,28 +70,21 @@ function fancyWork(selector) {
 		var toFetch = toLoad + '.html' + ' .work ';
 		//window.location.hash = toLoad
 		$('.workDisplay').load(toFetch);
-		workDisplaySize();
+		workDisplayFadeIn();
 	} // Inline loading of content end
 
-	function workDisplaySize() {
-		$('.workDisplay').css({
-			"min-height":"100%",
-			"height":"auto",
-		}, workDisplayFadeIn() );
-	};
-
 	function workDisplayFadeIn() {
-		$('.workDisplay').animate({
-			"opacity":"1"
-		});
-		$('.workDisplay').fadeIn(150, "easeInOutQuad");
+		$('.workDisplay').css({
+    		"opacity":"0.0",
+    		"visibility":"visible",
+    	}).animate({
+    		"opacity":"1.0",
+    	}, 200);
 	};
 
 	function bindListeners() {
     	$('.imgDiv').on('click', 'a', function() {
     		var toLoad = $(this).attr('href').replace('.html', '');
-    		var width = $(window).width();
-			//$('.workDisplay').fadeOut(50, "easeInOutQuad");
 			if(width<=777) {
 				$('.panel').fadeOut();
 				console.log('hi');
@@ -90,7 +97,7 @@ function fancyWork(selector) {
 				}, 300 , "easeInOutQuart");
 				$('.panel').animate({
 					"width":"100px",
-					"margin-right":"0px",
+					"margin-left":panelRight + 10,
 				}, 300 , "easeInOutQuart");
 				$('.imgDiv').animate({
 					"width":"80px",
@@ -105,14 +112,15 @@ function fancyWork(selector) {
 
 }; // fancyWork
 
-
-$(window).load(function () { //gets it working in webkit (http://stackoverflow.com/questions/2173040/jquery-position-problem-with-chrome)
-
-
-}); //window.load end
- 
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
+
+	width = $(window).width();
+	headerLeft = $('#headerWrapper').offset().left;
+	$('#headerWrapper').css({
+       "margin-left":headerLeft,
+    })
+	panelRight = width - $('#indexWorkDisplay').offset().left;
 
 	function setWorkThumbs(data) {
 		var workThumbs = '.imgDiv a'
@@ -158,6 +166,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	checkSize();
 
 }); // $(document).ready
+
 
 
 
