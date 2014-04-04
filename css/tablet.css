@@ -2,8 +2,30 @@ body {
 
 }
 
+#headerWrapper {
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
+	width:215px;
+}
+
 .header {
 	position: absolute;
+}
+
+#logo {
+	max-width:100px;
+}
+
+nav {
+	max-width:100px; /* same as logo width */
+	margin-top:10px;
+}
+
+nav ul li a {
+	font-size:26px;
+	line-height:40px;
 }
 
 .content {

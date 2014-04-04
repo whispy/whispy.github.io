@@ -145,19 +145,19 @@ header {
 #logo {
 	position:relative;
 	max-width:200px;
-	padding-right:10%;
+	margin-right:10%;
 	padding-top:200px;
-	padding-left:10%;
+	margin-left:10%;
 	display:block;
 }
 
 nav {
-	max-width:160px;
+	max-width:160px; 
 	width:100%;
 	margin-right: auto;
 	margin-top:20px;
 	position:relative;
-	padding-left:10%;
+	margin-left:10%;
 	height:192px;
 }
 
@@ -166,11 +166,6 @@ nav {
 }
 
 nav ul li{
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	font-size:36px;
-	line-height:50px;
-	color:#DEDEDD;
 	border-right:0px solid rgba(237,66,10,.9);
 	transition: border-right .13s ease-in;
     -moz-transition: border-right .13s ease-in;
