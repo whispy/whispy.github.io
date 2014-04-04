@@ -43,8 +43,8 @@ h2 {
 }
 
 div p {
-	font-size:16px;
-	line-height:24px;
+	font-size:17px;
+	line-height:27.5px;
 	margin-top:15px;
 	font-style:normal;
 }
@@ -80,17 +80,22 @@ body {
 
 .container {
 	width:100%;
-	margin: auto auto;
+	position:absolute;
+	top:0px
+	left:0px;
+	height:100%;
 }
 
 header {
-	width:100%;
-	position:fixed;
+	position:absolute;
 	height:100%;
 	max-width:260px;
 	min-width:200px;
 	margin-top:0px;
-	margin-left:37.5%;
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
 }
 
 #logoMobile {
@@ -158,18 +163,15 @@ a:hover {
 	display:none;
 }
 
-.panel {
-	/*display:none;*/
-	float:right;
-	line-height:0;
-	max-width:931px;
-}
-
 #indexPanel {
 	display:none;
 }
 
 .panel {
+	position:absolute;
+	right:0px;
+	line-height:0;
+	max-width:931px;
 	width:60%;
 	height:auto;
 	min-height: 100% !important;
@@ -179,13 +181,14 @@ a:hover {
 
 .workDisplay {
 	opacity: 1;
+	position:absolute;
 	display:block;
-	float:right;
+	right:0px;
 	min-height:0%;
 	height:0%;
 	width:60%;
-	height:auto;
-	margin-right:33px;
+	max-width:931px;
+	margin-right:10%;
 	background-color:#222;
 }
 

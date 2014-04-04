@@ -24,7 +24,8 @@ function fancyNav(selector) {
 	function bindListeners() {
     	$('.navigation').on('click', 'a', function() {
         	var toLoad = $(this).attr('href').replace('.html', '');
-			$('#header').animate({
+        	var header = $('#header').position();
+			$(header).animate({
 				"margin-left":"6%"
 			}, "easeInOutQuart" );        
         	loadContent(toLoad); // call the function 'loadContent'
