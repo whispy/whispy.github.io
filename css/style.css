@@ -80,6 +80,7 @@ p {
 	font-family:"Apres Re", Arial, Helvetica, sans-serif;
 	color: #DEDDDD;
 	font-size:12px;
+	line-height:16px;
 }
 
 /* -------------------------- */
@@ -303,9 +304,11 @@ a:hover {
 }
 
 footer {
+	display:none;
 	position:fixed;
 	bottom:10px;
 	width:100%;
 	text-align:left;
 	left:10px;
+	width:190px;
 }
