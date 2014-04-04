@@ -3,4 +3,4 @@
 
 **In progress**
 
-The personal website of Daniel Berkowitz..
+The personal website of Daniel Berkowitz.
