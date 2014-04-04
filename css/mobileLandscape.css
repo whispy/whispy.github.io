@@ -3,7 +3,7 @@ body {
 }
 
 header {
-	position: relative; /*for now*/
+	position: relative; /*this is not only why. it's because jquery is moving to panel's left offset which is off screen*/
 }
 
 #logoMobile {
