@@ -31,7 +31,7 @@ function fancyNav(selector) {
 
 	function bindListeners() {
     	$('.navigation').on('click', 'a', function() {
-    		resetDivs();
+    		resetDivs(); // fix flashing on this -> try to cache data somehow
         	var toLoad = $(this).attr('href').replace('.html', '');
         	var headerWrapperWidth = $('#headerWrapper').width();
         	var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
