@@ -52,7 +52,7 @@ div p {
 p {
 	font-family:"Apres Re", Arial, Helvetica, sans-serif;
 	color: #DEDDDD;
-	font-size:14px;
+	font-size:12px;
 }
 
 /* -------------------------- */
@@ -80,6 +80,7 @@ body {
 
 .container {
 	width:100%;
+	max-width:931px;
 	margin: auto auto;
 }
 
