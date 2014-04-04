@@ -24,8 +24,12 @@ function fancyNav(selector) {
 	function bindListeners() {
     	$('.navigation').on('click', 'a', function() {
         	var toLoad = $(this).attr('href').replace('.html', '');
-        	var header = $('#header').position();
-			$(header).animate({
+        	var headerLeft = $('#header').position().left;
+        	$('#header').css({
+        		"margin-left":"headerLeft",
+        	})
+        	console.log(headerLeft);
+			$('#header').animate({
 				"margin-left":"6%"
 			}, "easeInOutQuart" );        
         	loadContent(toLoad); // call the function 'loadContent'
@@ -35,8 +39,8 @@ function fancyNav(selector) {
 
 	$("#logo").click(function() {
 		resetDivs();
-		$(".header").animate({
-			"margin-left":"37.5%",
+		$("#header").animate({
+			"margin-left":"",
 		}, "easeInOutQuart"); //animate method end
 	}); // click method end
 
