@@ -1,6 +1,11 @@
 function fancyNav(selector) {
 	var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
+	
+	var headerLeft = $('#headerWrapper').position().left;
+	$('#headerWrapper').css({
+       "margin-left":headerLeft,
+    })
 
 	function resetDivs() {
 		$('.panel').hide().css({
@@ -24,12 +29,8 @@ function fancyNav(selector) {
 	function bindListeners() {
     	$('.navigation').on('click', 'a', function() {
         	var toLoad = $(this).attr('href').replace('.html', '');
-        	var headerLeft = $('#header').position().left;
-        	$('#header').css({
-        		"margin-left":"headerLeft",
-        	})
         	console.log(headerLeft);
-			$('#header').animate({
+			$('#headerWrapper').animate({
 				"margin-left":"6%"
 			}, "easeInOutQuart" );        
         	loadContent(toLoad); // call the function 'loadContent'
@@ -39,8 +40,8 @@ function fancyNav(selector) {
 
 	$("#logo").click(function() {
 		resetDivs();
-		$("#header").animate({
-			"margin-left":"",
+		$("#headerWrapper").animate({
+			"margin-left":headerLeft,
 		}, "easeInOutQuart"); //animate method end
 	}); // click method end
 
@@ -155,6 +156,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
+
 	if(width<=777) {
 		var mobileMenu = '#offCanvasMenu li';
 		fancyMobileNav(mobileMenu);

@@ -78,24 +78,37 @@ body {
 	height:100%;
 }
 
-.container {
+.outerContainer {
 	width:100%;
 	position:absolute;
-	top:0px
+	top:0px;
 	left:0px;
 	height:100%;
 }
 
-header {
+.container {
+	width:100%;
 	position:absolute;
-	height:100%;
-	max-width:260px;
-	min-width:200px;
-	margin-top:0px;
 	margin-left:auto;
 	margin-right:auto;
 	left:0;
 	right:0;
+	height:100%;
+}
+
+#headerWrapper {
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
+	max-width:260px;
+	min-width:200px;
+}
+
+header {
+	position:fixed;
+	height:100%;
+	margin-top:0px;
 }
 
 #logoMobile {
@@ -175,7 +188,10 @@ a:hover {
 	width:60%;
 	height:auto;
 	min-height: 100% !important;
-	margin-right:10%;
+	margin-right:auto;
+	margin-left:auto;
+	left:0;
+	right:0;
 	background-color:#222;
 }
 
@@ -188,7 +204,10 @@ a:hover {
 	height:0%;
 	width:60%;
 	max-width:931px;
-	margin-right:10%;
+	margin-right:auto;
+	margin-left:auto;
+	left:0;
+	right:0;
 	background-color:#222;
 }
 
