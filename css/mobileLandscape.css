@@ -39,6 +39,17 @@ nav ul li {
 	width:15%;
 }
 
+nav ul li{
+	border-right:0px solid rgba(237,66,10,.9);
+	transition: border-right .13s ease-in;
+    -moz-transition: border-right .13s ease-in;
+    -webkit-transition: border-right .13s ease-in;
+}
+
+nav ul li:hover {
+	border-right: 0px solid rgba(237,66,10,.9);
+}
+
 #offCanvasMenu {
 	display:block;
 	top:0px;
