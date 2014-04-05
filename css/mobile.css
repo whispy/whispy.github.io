@@ -24,35 +24,7 @@ header {
 
 }
 
-#offCanvasMenu {
-	display:inline-block;
-	height:40px;
-	margin-top:50px;
-	margin-right: auto;
-	position:relative;
-	padding-left:10%;
-	max-width:160px;
-}
 
-#offCanvasMenu ul li a {
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	font-size:36px;
-	line-height:50px;
-	color:#DEDEDD;
-	transition: padding .16s ease-in-out;
-    -moz-transition: padding .16s ease-in-out;
-    -webkit-transition: padding .16s ease-in-out;
-    display:block;
-}
-
-div ul li{
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	font-size:36px;
-	line-height:50px;
-	color:#DEDEDD;
-}
 
 .panel, .workDisplay {
 	width:100%;

@@ -41,12 +41,20 @@ function fancyNav(selector) {
        			"margin-left":panelLeft,
    			 }, "easeInOutQuart" ) 
 			}
-			if(width<=1399) {
+
+			if(width<=1399 && width>=778) {
         	var panelLeft1399 = panelLeft + 50;
 			$('#headerWrapper').animate({
        			"margin-left":panelLeft1399,
    			 }, "easeInOutQuart" ) 
 			}
+
+			if(width<=777) {
+			$('#headerWrapper').animate({
+       			"margin-left":"0%",
+   			 }, "easeInOutQuart" ) 
+			}
+
         	loadContent(toLoad); // call the function 'loadContent'
         	return false; // Inline loading of content end
     	});
@@ -158,6 +166,10 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
 		}
 
+		if (currHash === '#menu') {
+			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
+		}
+
 		var navClick = $('.navigation').find(currHash);
 		if (navClick.length) {
 			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
@@ -212,8 +224,10 @@ function fancyMobileNav(selector) {
 	bindListeners(mobileMenu); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function bindListeners() {
-    	$('.menuButton').on('click', 'a', function() {
-    		console.log('tacobell');
+    	$('#offCanvasMenu').on('click', 'a', function() {
+    		$('#headerWrapper').animate({
+    			"margin-left":"0%"
+    		})
     		//jQuery('.container').addClass('mobileNav');
     	});
 	} //bindListeners end
