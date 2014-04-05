@@ -3,14 +3,14 @@ function fancyNav(selector) {
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function resetDivs() {
-		$('.panel').css({
+		panel.css({
 			"visibility":"hidden",
 			"opacity":"0.0",
 			"width":"",
 			"margin-right":"",
-			"margin-left":"",
+			"left":"",
 		});
-		$(".workDisplay").css({
+		workDisplay.css({
 			"visibility":"hidden",
 			"opacity":"0.0",
 		});
@@ -20,13 +20,13 @@ function fancyNav(selector) {
     	var toFetch = toLoad + '.html' + ' .content ';
     	window.location.hash = toLoad
     	
-    	$('.panel').load(toFetch);
-    	$('.panel').css({
+    	panel.load(toFetch);
+    	panel.css({
     		"opacity":"0.0",
     		"visibility":"visible",
     	}).animate({
     		"opacity":"1.0",
-    	}, 200);
+    	}, 500, "easeInOutCubic");
 	} // loadContent end
 
 	function bindListeners() {
@@ -37,7 +37,6 @@ function fancyNav(selector) {
         	var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
 
 			if(width>=1400) {
-        	console.log($('#indexPanel').offset().left)
 			$('#headerWrapper').animate({
        			"margin-left":panelLeft,
    			 }, "easeInOutQuart" ) 
@@ -68,42 +67,51 @@ function fancyWork(selector) {
 
 	function loadPieces(toLoad) { // Inline loading of content
 		var toFetch = toLoad + '.html' + ' .work ';
-		//window.location.hash = toLoad
-		$('.workDisplay').load(toFetch);
+		window.location.hash = toLoad
+		workDisplay.load(toFetch);
 		workDisplayFadeIn();
 	} // Inline loading of content end
 
 	function workDisplayFadeIn() {
-		$('.workDisplay').css({
+		workDisplay.css({
     		"opacity":"0.0",
     		"visibility":"visible",
     	}).animate({
     		"opacity":"1.0",
-    	}, 200);
+    	}, 300);
 	};
 
 	function bindListeners() {
     	$('.imgDiv').on('click', 'a', function() {
     		var toLoad = $(this).attr('href').replace('.html', '');
 			if(width<=777) {
-				$('.panel').fadeOut();
+				panel.fadeOut();
 				console.log('hi');
 				loadPieces(toLoad);
 				return false;
 			}
 			else {
-				$('.content').animate({
-					"margin-top":"",
-				}, 300 , "easeInOutQuart");
-				$('.panel').animate({
-					"width":"100px",
-					"margin-left":panelRight + 10,
-				}, 300 , "easeInOutQuart");
-				$('.imgDiv').animate({
-					"width":"80px",
-					"height":"80px",
-					"margin-top":"10px"
-				}, 300 , "easeInOutQuart" );
+
+				if (panel.width()>=101) {
+					$('.content').animate({
+						"margin-top":"0",
+					}, 300 , "easeOutQuart");
+
+					panel.css({
+						"width":"100px",
+						"left":(0 - panelRight) + 100
+					}).animate({
+						"left":panelRight + 110 // scrollbar width 17. problems if going from scrollbar -> no scrollbar (doesn't take into account scrollbar width)
+					}, 300 , "easeOutQuart");
+					
+					$('.imgDiv').css({
+						"margin-top":"10px"
+					}).animate({
+						"width":"80px",
+						"height":"80px",
+					}, 300 , "easeOutQuart");
+				}
+
 				loadPieces(toLoad);
 				return false;
 			}
@@ -120,7 +128,11 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	$('#headerWrapper').css({
        "margin-left":headerLeft,
     })
-	panelRight = width - $('#indexWorkDisplay').offset().left;
+	panelRight = $('#indexWorkDisplay').width();
+
+	panel = $('.panel');
+	workDisplay = $('.workDisplay');
+
 
 	function setWorkThumbs(data) {
 		var workThumbs = '.imgDiv a'
@@ -146,19 +158,23 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
 		}
 
-		var $navClick = $('.navigation').find(currHash);
-		if ($navClick.length) {
+		var navClick = $('.navigation').find(currHash);
+		if (navClick.length) {
 			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
-			$navClick.trigger('click');
+			navClick.trigger('click');
 			if (currHash === '#work') {
 				getWorkThumbs().then(setWorkThumbs);
 			}
 		}
 
-		var $pieceClick = $('.imgDiv').find(currHash);
-		if ($pieceClick.length) {
+		var pieceClick = $('.imgDiv').find(currHash);
+		if (pieceClick.length) { // if hash is 'piece#' (# = number value)
+			var pieceHash = window.location.hash;
+			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
+			$('.navigation').find('#work').trigger('click');
+			window.location.hash = pieceHash;
 			getWorkThumbs().then(setWorkThumbs);
-			$pieceClick.trigger('click');
+			pieceClick.trigger('click'); // only works when running through step by step in debugger...
 		}
 	} //hashChange end
 
