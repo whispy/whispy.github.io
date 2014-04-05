@@ -93,7 +93,10 @@ function fancyWork(selector) {
     	$('.imgDiv').on('click', 'a', function() {
     		var toLoad = $(this).attr('href').replace('.html', '');
 			if(width<=777) {
-				panel.fadeOut();
+				panel.css({
+    				"opacity":"0.0",
+    				"visibility":"visible",
+    			});
 				console.log('hi');
 				loadPieces(toLoad);
 				return false;

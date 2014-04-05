@@ -7,17 +7,10 @@ header {
 }
 
 #logoMobile {
-	position:relative;
-	float:right;
-	max-width:100px;
-	margin-right:10%;
-	display:block;
-	margin-top:30px;
-	margin-bottom:20px;
 }
 
 #logo {
-	display:none;
+
 }
 
 .container {
@@ -27,23 +20,20 @@ header {
 
 
 .panel, .workDisplay {
-	width:100%;
-	margin-right:0%;
+
 }
 
 
 .content {
-	margin-left:7%;
-	margin-right:7%;
-	margin-top:10%;
+
 }
 
 .work {
-	margin-top: 10%;
+
 }
 
 #img1 {
-	margin-top:0px;
+
 }
 
 div p {
@@ -52,6 +42,6 @@ div p {
 }
 
 footer {
-	display:none;
+
 }
 

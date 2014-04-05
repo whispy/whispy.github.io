@@ -2,22 +2,38 @@ body {
 
 }
 
-header {
-	position: relative; /*this is not only why. it's because jquery is moving to panel's left offset which is off screen*/
-}
-
-#logoMobile {
+#offCanvasMenu {
+	width:100%;
 	position:relative;
-	float:right;
-	max-width:100px;
-	margin-right:10%;
+	top:0px;
+	left:0px;
 	display:block;
+	height:60px;
 	margin-top:30px;
 	margin-bottom:20px;
 }
 
-#logo {
+#offCanvasMenu ul li a {
+	text-decoration: none;
+	color:#DEDEDD;
+	transition: padding .16s ease-in-out;
+    -moz-transition: padding .16s ease-in-out;
+    -webkit-transition: padding .16s ease-in-out;
+    display:block;
+}
+
+.menuButton {
 	display:none;
+}
+
+#logoMobile {
+	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
+	max-width:100px;
+	display:block;
 }
 
 .container {
@@ -26,7 +42,19 @@ header {
 
 #headerWrapper {
 	width:auto;
+	margin-bottom:10px;
 }
+
+
+header {
+	position: relative; /*this is not only why. it's because jquery is moving to panel's left offset which is off screen*/
+}
+
+
+#logo {
+	display:none;
+}
+
 
 #menu {
 	width:auto;
@@ -36,7 +64,7 @@ header {
 
 nav ul li {
 	display:inline-block;
-	width:15%;
+	width:100px;
 }
 
 nav ul li{
@@ -47,27 +75,7 @@ nav ul li{
 }
 
 nav ul li:hover {
-	border-right: 0px solid rgba(237,66,10,.9);
-}
-
-#offCanvasMenu {
-	display:block;
-	top:0px;
-	left:0px;
-	height:auto;
-	margin-top:50px;
-	margin-right: auto;
-	position:relative;
-	margin-left:10%;
-}
-
-#offCanvasMenu ul li a {
-	text-decoration: none;
-	color:#DEDEDD;
-	transition: padding .16s ease-in-out;
-    -moz-transition: padding .16s ease-in-out;
-    -webkit-transition: padding .16s ease-in-out;
-    display:block;
+	border-right: 0px solid rgba(237,66,10,.9); /* 10px*/
 }
 
 div ul li{
