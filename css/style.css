@@ -25,8 +25,9 @@ body:after { content: ''; background-image: url(http://pls.webtype.com/v.gif?ct=
  font-weight: normal;
 }
 @font-face {
- font-family: "Apres RE";
- src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/c61a5c12-2dc5-4e7c-88cb-d53b3b1ae530") format("woff");
+ font-family: "Alegreya Sans";
+ src: url("http://themes.googleusercontent.com/static/fonts/alegreyasans/v1/KYNzioYhDai7mTMnx_gDgtUFqmyT-Ih543PWa_C0ig4.woff") format("woff");
+ /*http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/c61a5c12-2dc5-4e7c-88cb-d53b3b1ae530*/
  font-style: normal;
  font-weight: normal;
 }
@@ -61,7 +62,7 @@ body:after { content: ''; background-image: url(http://pls.webtype.com/v.gif?ct=
   font-weight: normal;
 }*/
 
-h2 {
+h1 {
 	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
 	font-style:normal;
 	color:#ED420A;
@@ -69,16 +70,24 @@ h2 {
 	line-height:1;
 }
 
+h2 {
+	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	color:#ED420A;
+	font-size:20px;
+	line-height:36px;
+}
+
 div p {
-	font-size:17px;
+	font-size:20px;
 	line-height:27.5px;
 	margin-top:15px;
 	font-style:normal;
 }
 
 p {
-	font-family:"Apres Re", Arial, Helvetica, sans-serif;
-	color: #DEDDDD;
+	font-family:"Alegreya Sans", Arial, Helvetica, sans-serif;
+	color: #323232 ;
 	font-size:12px;
 	line-height:16px;
 }
@@ -89,7 +98,7 @@ p {
 	Orangered: #EA4423;
 	Dark grey: #323232 or #222;
 	Middle grey: #CCCCCB;
-	Light grey: #DEDDDD; */
+	Light grey: #DEDDDD; rgba(243, 240, 240, 1)*/
 
 html{
 	height:100%;
@@ -209,12 +218,12 @@ a:hover {
 	min-height: 100% !important;
 	height:auto;
 	width:60%;
-	max-width:931px;
+	max-width:780px;
 	margin-right:auto;
 	margin-left:auto;
 	left:0;
 	right:0;
-	background-color:#222;
+	background-color:rgba(243, 240, 240, 1);
 }
 
 .workDisplay {
@@ -229,7 +238,7 @@ a:hover {
 	margin-left:auto;
 	left:0;
 	right:0;
-	background-color:#222;
+	background-color:rgba(243, 240, 240, 1);
 }
 
 #indexWorkDisplay {
