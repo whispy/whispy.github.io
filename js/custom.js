@@ -205,6 +205,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
+	currHash = window.location.hash
 
         var headerWrapperWidth = $('#headerWrapper').width();
         var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
