@@ -206,6 +206,26 @@ function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
 
+        var headerWrapperWidth = $('#headerWrapper').width();
+        var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
+		var navClick = $('.navigation').find(currHash);
+		if (navClick.length)  {
+			headerLeft = $('#headerWrapper').offset().left;
+							console.log('hi');
+			if(width>=1400) {
+				$('#headerWrapper').css({
+      				 "margin-left":panelLeft,
+   				})
+			}
+
+			if(width<=1399 && width>=778) {
+				var panelLeft1399 = panelLeft + 50;
+				$('#headerWrapper').css({
+      				 "margin-left":panelLeft1399,
+   				})
+			}
+		}
+
 	if(width<=777) {
 		var mobileMenu = '#offCanvasMenu li';
 		fancyMobileNav(mobileMenu);
@@ -218,6 +238,7 @@ function checkSize() {
 }
 
 $(window).resize(function() {
+		
 	checkSize();
 }); 
 //Get window size end
