@@ -60,7 +60,7 @@ function fancyNav(selector) {
     	});
 	} //bindListeners end
 
-	$("#logo").click(function() {
+	$("#selfieDiv").click(function() {
 		resetDivs();
 		$("#headerWrapper").animate({
 			"margin-left":headerLeft,
@@ -115,7 +115,7 @@ function fancyWork(selector) {
 						"left":panelRight + 110 // scrollbar width 17. problems if going from scrollbar -> no scrollbar (doesn't take into account scrollbar width)
 					}, 300 , "easeOutQuart");
 					
-					$('.imgDiv').css({
+					$('.content .imgDiv').css({
 						"margin-top":"10px"
 					}).animate({
 						"width":"80px",
@@ -211,8 +211,6 @@ function checkSize() {
         var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
 		var navClick = $('.navigation').find(currHash);
 		if (navClick.length)  {
-			headerLeft = $('#headerWrapper').offset().left;
-							console.log('hi');
 			if(width>=1400) {
 				$('#headerWrapper').css({
       				 "margin-left":panelLeft,
@@ -220,7 +218,7 @@ function checkSize() {
 			}
 
 			if(width<=1399 && width>=778) {
-				var panelLeft1399 = panelLeft + 50;
+				var panelLeft1399 = panelLeft + 40;
 				$('#headerWrapper').css({
       				 "margin-left":panelLeft1399,
    				})

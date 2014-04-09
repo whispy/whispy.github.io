@@ -51,7 +51,11 @@ header {
 }
 
 
-#logo {
+#selfieDiv {
+	display:none;
+}
+
+hr {
 	display:none;
 }
 
@@ -106,8 +110,6 @@ div ul li{
 }
 
 div p {
-	font-size:18px;
-	line-height:28px;
 }
 
 footer {

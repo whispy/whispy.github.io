@@ -17,6 +17,19 @@ body {
 	max-width:100px;
 }
 
+#selfieDiv {
+	width:100px;
+	height:100px;
+}
+
+#selfieImage {
+		background-image: url('../images/placeholder_selfie_med.jpg');
+}
+
+hr {
+	width:100px;
+}
+
 nav {
 	max-width:100px; /* same as logo width */
 	margin-top:10px;
