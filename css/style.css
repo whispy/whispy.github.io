@@ -218,10 +218,24 @@ header {
 	display:none;
 }
 
-hr {
-	border-width:2px 0 0 0;
+#hrTop {
+	border-color: #DEDDDD;
+	margin-top:1em;
+	border-width:1px 0 0 0;
 	margin-left:10%;
 	width:175px;
+}
+
+#hrBottom {
+	border-color:#CCCCCB;
+	margin-top:-8px;
+	border-width:1px 0 0 0;
+	margin-left:10%;
+	width:175px;
+	font-size:0px;
+	line-height:0px;
+	height:0px;
+	display:block;
 }
 
 nav {

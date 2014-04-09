@@ -55,8 +55,9 @@ header {
 	display:none;
 }
 
-hr {
-	display:none;
+
+#hrTop, #hrBottom {
+	width:80%;
 }
 
 

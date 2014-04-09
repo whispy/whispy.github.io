@@ -26,9 +26,10 @@ body {
 		background-image: url('../images/placeholder_selfie_med.jpg');
 }
 
-hr {
+#hrTop, #hrBottom {
 	width:100px;
 }
+
 
 nav {
 	max-width:100px; /* same as logo width */
