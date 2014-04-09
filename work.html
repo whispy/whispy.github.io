@@ -11,23 +11,52 @@
 		
 		<!-- enable responsive web design -->
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+
+		<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 		
 		<!-- stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link media="only screen and (max-width: 1207px)" href="css/tablet.css" type="text/css" rel="stylesheet"/>
-		<link media="only screen and (max-width: 700px)" href="css/mobile.css" type="text/css" rel="stylesheet"/>
+		<link media="only screen and (max-width: 1013px)" href="css/tabletPortrait.css" type="text/css" rel="stylesheet"/>
+		<link media="only screen and (max-width: 777px)" href="css/mobileLandscape.css" type="text/css" rel="stylesheet"/>
+		<link media="only screen and (max-width: 520px)" href="css/mobile.css" type="text/css" rel="stylesheet"/>
 		
 		<!-- jQuery -->
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
-
-		<!-- Webfonts -->
-		<!-- <link href="//cloud.webtype.com/css/0a2f2a9a-c9a1-4b27-b61b-41ab241e565a.css" rel="stylesheet" type="text/css" /> -->
 	</head>
 
 	<body>
+		<div class="outerContainer">
+			<div id="offCanvasMenu">
+				<img id="logoMobile" src="./images/DD_Logomark_med.png" alt="Discover Dan Logo" />
+				<ul class="menuButton">
+					<li><a id="menuMobile" href="#menu">Menu</a></li>
+				</ul>
+			</div>
+			<div class="container">
+				<div id="headerWrapper">
+					<header class="header" id="header">
+						<a href="#">
+							<div id="selfieDiv" class="imgDiv"><div id="selfieImage"></div></div>
+							<!-- <img id="logo" src="./images/DD_Logomark_med.png" alt="Discover Dan Logo" />-->
+						</a>
+						<hr id="hrTop"></hr>
+						<hr id="hrBottom"></hr>
+						<nav id="menu">
+							<ul class="navigation">
+								<li><a id="blog" href="blog.html">Blog</a></li>
+								<li><a id="work" href="work.html">Work</a></li>
+								<li><a id="about" href="about.html">About</a></li>
+								<li><a id="contact" href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+					</header>
+				</div>
+			</div> <!--container end-->
+		</div> <!-- outerContainer end -->	
 		<!-- Portfolio -->
 		<div id="workThumbBG" class="panel">
 		    <div class="content">
