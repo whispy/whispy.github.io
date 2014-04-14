@@ -140,7 +140,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	headerLeft = $('#headerWrapper').offset().left;
 	$('.panelLeft').css({
        "margin-left":headerLeft,
-    })
+    	})
 	panelRight = $('#indexWorkDisplay').width();
 
 	panel = $('.panel');
@@ -214,14 +214,14 @@ function checkSize() {
 		var navClick = $('.navigation').find(currHash);
 		if (navClick.length)  {
 			if(width>=1400) {
-				$('#headerWrapper').css({
+				$('.panelLeft').css({
       				 "margin-left":panelLeft,
    				})
 			}
 
 			if(width<=1399 && width>=778) {
 				var panelLeft1399 = panelLeft + 40;
-				$('#headerWrapper').css({
+				$('.panelLeft').css({
       				 "margin-left":panelLeft1399,
    				})
 			}
