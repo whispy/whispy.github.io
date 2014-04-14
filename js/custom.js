@@ -108,7 +108,7 @@ function fancyWork(selector) {
 						"left":panelRight + 110 // scrollbar width 17. problems if going from scrollbar -> no scrollbar (doesn't take into account scrollbar width)
 					});
 					
-					panel.addClass(".panelSidebar");
+					panel.addClass("panelSidebar");
 
 				/*	panel.css({
 						"left":(0 - panelRight) + 100
