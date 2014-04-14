@@ -165,6 +165,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 		currHash = window.location.hash
 		var navSelector = '#menu li';
 		if (currHash === '') {
+			resetDivs();
 			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
 		}
 
