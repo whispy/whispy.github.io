@@ -292,6 +292,7 @@ nav {
 }
 
 .panel {
+	visibility: hidden;
 	position:absolute;
 	right:0px;
 	line-height:0;
