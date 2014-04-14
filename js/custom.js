@@ -165,14 +165,6 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 		currHash = window.location.hash
 		var navSelector = '#menu li';
 		if (currHash === '') {
-					panel.removeClass("showDiv")
-		panel.addClass("resetDiv");
-		panel.css({
-			"width":"",
-			"margin-right":"", // figure out how to do this stuff with classes, if possible
-			"left":"",
-		});
-		workDisplay.addClass(".resetDiv");
 			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
 		}
 
