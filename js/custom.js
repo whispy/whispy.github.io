@@ -232,6 +232,13 @@ function checkSize() {
 		fancyMobileNav(mobileMenu);
 		//container.addClass('mobileNav');
 	} // if end
+	
+	if(currHash === '') {
+		headerLeft = $('#headerWrapper').offset().left;
+		$('.panelLeft').css({
+       		"margin-left":headerLeft,
+    		})
+	}
 	else {
 		//container.removeClass('mobileNav');
 		container.css('margin-left','');
