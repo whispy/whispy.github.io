@@ -23,7 +23,8 @@ function fancyNav(selector) {
     		window.location.hash = toLoad
     		
     		panel.load(toFetch);
-    		resetDivs().then(showDivs);
+    		resetDivs();
+    		showDivs());
 	} // loadContent end
 
 	function bindListeners() {
