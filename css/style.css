@@ -266,8 +266,8 @@ nav {
 }
 
 .resetDiv {
-	visibility:hidden;
-	opacity:0.0;
+	visibility:hidden !important;
+	opacity:0.0 !important;
 }
 
 
