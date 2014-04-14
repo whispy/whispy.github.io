@@ -7,20 +7,23 @@ function fancyNav(selector) {
 		panel.addClass("resetDiv");
 		panel.css({
 			"width":"",
-			"margin-right":"",
+			"margin-right":"", // figure out how to do this stuff with classes, if possible
 			"left":"",
 		});
 		workDisplay.addClass(".resetDiv");
 	}; // resetDivs end
+	
+	function showDivs() {
+		panel.removeClass("resetDiv");
+    		panel.addClass("showDiv")
+	}; //showDivs end
 
 	loadContent = function(toLoad) { // Inline loading of content
-    	var toFetch = toLoad + '.html' + ' .content ';
-    	window.location.hash = toLoad
-    	
-    	panel.load(toFetch);
-    	resetDivs();
-    	panel.removeClass("resetDiv");
-    	panel.addClass("showDiv")
+    		var toFetch = toLoad + '.html' + ' .content ';
+    		window.location.hash = toLoad
+    		
+    		panel.load(toFetch);
+    		resetDivs().then(showDivs);
 	} // loadContent end
 
 	function bindListeners() {
@@ -31,23 +34,24 @@ function fancyNav(selector) {
         	var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
 
 			if(width>=1400) {
-			$('#headerWrapper').animate({
+			$('.panelLeft').css({
        			"margin-left":panelLeft,
-   			 }, "easeInOutQuart" ) 
+   			 }) 
 			}
 
 			if(width<=1399 && width>=778) {
-        	var panelLeft1399 = panelLeft + 50;
-			$('#headerWrapper').animate({
+        		var panelLeft1399 = panelLeft + 50;
+			$('.panelLeft').css({
        			"margin-left":panelLeft1399,
-   			 }, "easeInOutQuart" ) 
+   			 }) 
 			}
 
 			if(width<=777) {
-			$('#headerWrapper').animate({
+			$('.panelLeft').css({
        			"margin-left":"0%",
-   			 }, "easeInOutQuart" ) 
+   			 }) 
 			}
+		$('#headerWrapper').addClass('panelLeft');
 
         	loadContent(toLoad); // call the function 'loadContent'
         	return false; // Inline loading of content end
@@ -56,9 +60,10 @@ function fancyNav(selector) {
 
 	$("#selfieDiv").click(function() {
 		resetDivs();
-		$("#headerWrapper").animate({
+		$(".panelLeft").css({
 			"margin-left":headerLeft,
-		}, "easeInOutQuart"); //animate method end
+		});
+		$('#headerWrapper').addClass('panelLeft');
 	}); // click method end
 
 }; // fancyNav
