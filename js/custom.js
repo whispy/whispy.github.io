@@ -3,17 +3,13 @@ function fancyNav(selector) {
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function resetDivs() {
+		panel.addClass(".resetDiv");
 		panel.css({
-			"visibility":"hidden",
-			"opacity":"0.0",
 			"width":"",
 			"margin-right":"",
 			"left":"",
 		});
-		workDisplay.css({
-			"visibility":"hidden",
-			"opacity":"0.0",
-		});
+		workDisplay.addClass(".resetDiv");
 	}; // resetDivs end
 
 	loadContent = function(toLoad) { // Inline loading of content
