@@ -17,12 +17,8 @@ function fancyNav(selector) {
     	window.location.hash = toLoad
     	
     	panel.load(toFetch);
-    	panel.css({
-    		"opacity":"0.0",
-    		"visibility":"visible",
-    	}).animate({
-    		"opacity":"0.5",
-    	}, 500, "easeInOutCubic");
+    	resetDivs();
+    	panel.removeClass(".resetDiv");
 	} // loadContent end
 
 	function bindListeners() {
