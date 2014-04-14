@@ -21,7 +21,7 @@ function fancyNav(selector) {
     		"opacity":"0.0",
     		"visibility":"visible",
     	}).animate({
-    		"opacity":"1.0",
+    		"opacity":"0.5",
     	}, 500, "easeInOutCubic");
 	} // loadContent end
 
