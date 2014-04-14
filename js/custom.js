@@ -104,13 +104,16 @@ function fancyWork(selector) {
 					$('.content').animate({
 						"margin-top":"0",
 					}, 300 , "easeOutQuart");
-
-					panel.css({
-						"width":"100px",
-						"left":(0 - panelRight) + 100
-					}).animate({
+					(".panelSidebar").css({
 						"left":panelRight + 110 // scrollbar width 17. problems if going from scrollbar -> no scrollbar (doesn't take into account scrollbar width)
-					}, 300 , "easeOutQuart");
+					});
+					
+					panel.addClass(".panelSidebar");
+
+				/*	panel.css({
+						"left":(0 - panelRight) + 100
+					})*/
+
 					
 					$('.content .imgDiv').css({
 						"margin-top":"10px"
