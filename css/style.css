@@ -270,6 +270,13 @@ nav {
 	opacity:0.0 !important;
 }
 
+.showDiv {
+	visibility:visible !important;
+	opacity:1.0 !important;
+	-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  	transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1); 
+}
+
 
 
 #indexPanel {
