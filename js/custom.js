@@ -3,8 +3,8 @@ function fancyNav(selector) {
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function resetDivs() {
-		panel.removeClass(".showDiv")
-		panel.addClass(".resetDiv");
+		panel.removeClass("showDiv")
+		panel.addClass("resetDiv");
 		panel.css({
 			"width":"",
 			"margin-right":"",
@@ -19,8 +19,8 @@ function fancyNav(selector) {
     	
     	panel.load(toFetch);
     	resetDivs();
-    	panel.removeClass(".resetDiv");
-    	panel.addClass(".showDiv")
+    	panel.removeClass("resetDiv");
+    	panel.addClass("showDiv")
 	} // loadContent end
 
 	function bindListeners() {
