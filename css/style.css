@@ -265,6 +265,11 @@ nav {
 	height:100%;
 }
 
+.resetDiv {
+	visibility:hidden;
+	opacity:0.0;
+}
+
 
 
 #indexPanel {
