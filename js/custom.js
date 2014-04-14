@@ -24,7 +24,7 @@ function fancyNav(selector) {
     		
     		panel.load(toFetch);
     		resetDivs();
-    		showDivs());
+    		showDivs();
 	} // loadContent end
 
 	function bindListeners() {
