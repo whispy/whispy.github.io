@@ -10,7 +10,7 @@ function fancyNav(selector) {
 			"margin-right":"", // figure out how to do this stuff with classes, if possible
 			"left":"",
 		});
-		workDisplay.addClass(".resetDiv");
+		workDisplay.addClass("resetDiv");
 	}; // resetDivs end
 	
 	function showDivs() {
@@ -52,7 +52,7 @@ function fancyNav(selector) {
        			"margin-left":"0%",
    			 }) 
 			}
-		$('#headerWrapper').addClass('panelLeft');
+		$('#headerWrapper').addClass('panelLeft'); // use YUI instead?
 
         	loadContent(toLoad); // call the function 'loadContent'
         	return false; // Inline loading of content end
@@ -81,12 +81,9 @@ function fancyWork(selector) {
 	} // Inline loading of content end
 
 	function workDisplayFadeIn() {
-		workDisplay.css({
-    		"opacity":"0.0",
-    		"visibility":"visible",
-    	}).animate({
-    		"opacity":"1.0",
-    	}, 300);
+		workDisplay.addClass("resetDiv");
+		workDisplay.addClass("showDiv");
+
 	};
 
 	function bindListeners() {
