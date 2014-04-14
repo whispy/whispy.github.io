@@ -136,7 +136,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 
 	width = $(window).width();
 	headerLeft = $('#headerWrapper').offset().left;
-	$('#headerWrapper').css({
+	$('.panelLeft').css({
        "margin-left":headerLeft,
     })
 	panelRight = $('#indexWorkDisplay').width();
