@@ -266,13 +266,15 @@ nav {
 }
 
 .resetDiv {
-	visibility:hidden !important;
-	opacity:0.0 !important;
+	visibility:hidden;
+	opacity:0.0;
+	-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  	transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1); 
 }
 
 .showDiv {
-	visibility:visible !important;
-	opacity:1.0 !important;
+	visibility:visible;
+	opacity:1.0;
 	-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
   	transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1); 
 }
