@@ -10,6 +10,7 @@ function fancyNav(selector) {
 			"margin-right":"", // figure out how to do this stuff with classes, if possible
 			"left":"",
 		});
+		workDisplay.removeClass("showDiv")
 		workDisplay.addClass("resetDiv");
 	}; // resetDivs end
 	
