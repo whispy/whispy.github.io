@@ -236,7 +236,7 @@ function checkSize() {
 	if(currHash === '') {
 		headerLeft = $('#headerWrapper').offset().left;
 		$('.panelLeft').css({
-       		"margin-left":headerLeft,
+       		"margin-left":""
     		})
 	}
 	else {
