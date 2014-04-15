@@ -220,15 +220,15 @@ function checkSize() {
 		var navClick = $('.navigation').find(currHash);
 		if (navClick.length)  {
 			if(width>=1400) {
-				$('.panelLeft').css({
-      				 "margin-left":panelLeft,
+				$.stylesheet('#headerWrapper.panelLeft').css({
+      				 "margin-left":panelLeft + 'px',
    				})
 			}
 
 			if(width<=1399 && width>=778) {
 				var panelLeft1399 = panelLeft + 40;
-				$('.panelLeft').css({
-      				 "margin-left":panelLeft1399,
+				$.stylesheet('#headerWrapper.panelLeft').css({
+      				 "margin-left":panelLeft1399 + 'px',
    				})
 			}
 		}
@@ -240,8 +240,7 @@ function checkSize() {
 	} // if end
 	
 	if(currHash === '') {
-		headerLeft = $('#headerWrapper').offset().left;
-		$('.panelLeft').css({
+		$.stylesheet('#headerWrapper.panelLeft').css({
        		"margin-left":""
     		})
 	}
