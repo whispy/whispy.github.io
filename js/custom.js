@@ -38,7 +38,7 @@ function fancyNav(selector) {
 
 			if(width>=1400) {
 			$.stylesheet('#headerWrapper.panelLeft').css({
-       			"margin-left":panelLeft,
+       			"margin-left":"10px",
    			 }) 
 			}
 
