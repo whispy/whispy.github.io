@@ -38,14 +38,14 @@ function fancyNav(selector) {
 
 			if(width>=1400) {
 			$.stylesheet('#headerWrapper.panelLeft').css({
-       			"margin-left":"10px",
+       			"margin-left":panelLeft + 'px',
    			 }) 
 			}
 
 			if(width<=1399 && width>=778) {
         		var panelLeft1399 = panelLeft + 50;
 			$.stylesheet('#headerWrapper.panelLeft').css({
-       			"margin-left":panelLeft1399,
+       			"margin-left":panelLeft1399 + 'px',
    			 }) 
 			}
 
@@ -64,7 +64,7 @@ function fancyNav(selector) {
 	$("#selfieDiv").click(function() {
 		resetDivs();
 		$.stylesheet('#headerWrapper.panelLeft').css({
-			"margin-left":"auto",
+			"margin-left":panelLeft + 'px',
 		});
 		$('#headerWrapper').removeClass('panelLeft');
 	}); // click method end
