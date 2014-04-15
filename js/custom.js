@@ -54,7 +54,7 @@ function fancyNav(selector) {
        			"margin-left":"0%",
    			 }) 
 			}
-		//$('#headerWrapper').addClass('panelLeft'); // use YUI instead?
+		$('#headerWrapper').addClass('panelLeft'); // use YUI instead?
 
         	loadContent(toLoad); // call the function 'loadContent'
         	return false; // Inline loading of content end
@@ -66,7 +66,7 @@ function fancyNav(selector) {
 		$.stylesheet('#headerWrapper.panelLeft').css({
 			"margin-left":headerLeft,
 		});
-		//$('#headerWrapper').addClass('panelLeft');
+		$('#headerWrapper').addClass('panelLeft');
 	}); // click method end
 
 }; // fancyNav
