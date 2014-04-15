@@ -241,7 +241,7 @@ function checkSize() {
 	
 	//if(currHash === '') {
 	//	$.stylesheet('#headerWrapper.panelLeft').css({
-       		"margin-left":""
+//       		"margin-left":""
     	//	})
 //	}
 	else {
