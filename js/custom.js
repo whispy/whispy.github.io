@@ -146,7 +146,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	
 	$("#headerWrapper").addClass("panelLeft");
 	console.log(headerLeft);
-	$.stylesheet('#headerWrapper.panelLeft', 'margin-left', 'headerLeft');
+	$.stylesheet('#headerWrapper.panelLeft', 'margin-left', 'panelRight');
 	
 	//.css({
 	//	"margin-left":headerLeft,
