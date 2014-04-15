@@ -144,7 +144,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	panelRight = $('#indexWorkDisplay').width();
 
 	
-	
+	$("#headerWrapper").addClass("panelLeft");
 	$.stylesheet('#headerWrapper.panelLeft').css({
 		"margin-left":"200px",
     	})
