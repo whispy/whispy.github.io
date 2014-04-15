@@ -64,7 +64,7 @@ function fancyNav(selector) {
 	$("#selfieDiv").click(function() {
 		resetDivs();
 		$.stylesheet('#headerWrapper.panelLeft').css({
-			"margin-left":'auto',
+			"margin-left":headerLeft + 'px',
 		});
 		$('#headerWrapper').addClass('panelLeft');
 	}); // click method end
