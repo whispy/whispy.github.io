@@ -66,7 +66,7 @@ function fancyNav(selector) {
 		$.stylesheet('#headerWrapper.panelLeft').css({
 			"margin-left":"auto",
 		});
-		$('#headerWrapper').addClass('panelLeft');
+		$('#headerWrapper').removeClass('panelLeft');
 	}); // click method end
 
 }; // fancyNav
