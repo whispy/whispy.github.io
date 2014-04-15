@@ -135,7 +135,7 @@ function fancyWork(selector) {
 
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
-
+ console.log($.stylesheet('body').rules());
 	//Defining global variables
 	width = $(window).width();
 	panel = $('.panel');
