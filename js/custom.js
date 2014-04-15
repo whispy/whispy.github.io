@@ -136,16 +136,19 @@ function fancyWork(selector) {
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
 
-console.log(document.styleSheets);
+	//Defining global variables
 	width = $(window).width();
-	headerLeft = $('#headerWrapper').offset().left;
-	$('.panelLeft').css({
-       "margin-left":headerLeft,
-    	})
-	panelRight = $('#indexWorkDisplay').width();
-
 	panel = $('.panel');
 	workDisplay = $('.workDisplay');
+	headerLeft = $('#headerWrapper').offset().left;
+	panelRight = $('#indexWorkDisplay').width();
+
+	
+	
+	$.stylesheet('.panelLeft').css({
+		"margin-left":headerLeft,
+    	})
+
 
 
 	function setWorkThumbs(data) {
