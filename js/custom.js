@@ -239,11 +239,11 @@ function checkSize() {
 		//container.addClass('mobileNav');
 	} // if end
 	
-	if(currHash === '') {
-		$.stylesheet('#headerWrapper.panelLeft').css({
+	//if(currHash === '') {
+	//	$.stylesheet('#headerWrapper.panelLeft').css({
        		"margin-left":""
-    		})
-	}
+    	//	})
+//	}
 	else {
 		//container.removeClass('mobileNav');
 		container.css('margin-left','');
