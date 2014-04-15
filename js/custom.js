@@ -144,11 +144,13 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	panelRight = $('#indexWorkDisplay').width();
 
 	
-	//$("#headerWrapper").addClass("panelLeft");
+	$("#headerWrapper").addClass("panelLeft");
 	console.log(headerLeft);
-	//$.stylesheet('#headerWrapper.panelLeft').css({
+	$.stylesheet('#headerWrapper.panelLeft', 'margin-left', 'headerLeft');
+	
+	//.css({
 	//	"margin-left":headerLeft,
-    //	})
+    	//})
     	console.log($.stylesheet('#headerWrapper.panelLeft').rules());
 
 
