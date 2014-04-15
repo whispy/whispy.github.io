@@ -221,7 +221,7 @@ function checkSize() {
 		if (navClick.length)  {
 			if(width>=1400) {
 				$.stylesheet('#headerWrapper.panelLeft').css({
-      				 "margin-left":headerLeft + 'px',
+      				 "margin-left":panelLeft + 'px',
    				})
 			}
 
