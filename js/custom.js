@@ -35,6 +35,7 @@ function fancyNav(selector) {
         	var toLoad = $(this).attr('href').replace('.html', '');
         	var headerWrapperWidth = $('#headerWrapper').width();
         	var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
+        	$('.panel').addClass('resetDiv');
 
 			if(width>=1400) {
 			$.stylesheet('#headerWrapper.panelLeft').css({
