@@ -145,7 +145,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 
 	
 	
-	$.stylesheet('.panelLeft').css({
+	$.stylesheet('#headerWrapper.panelLeft').css({
 		"margin-left":headerLeft,
     	})
 
