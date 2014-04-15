@@ -35,7 +35,6 @@ function fancyNav(selector) {
         	var toLoad = $(this).attr('href').replace('.html', '');
         	var headerWrapperWidth = $('#headerWrapper').width();
         	var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
-        	$('.panel').addClass('resetDiv');
 
 			if(width>=1400) {
 			$.stylesheet('#headerWrapper.panelLeft').css({
@@ -146,6 +145,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 
 	
 	$("#headerWrapper").addClass("panelLeft");
+	panel.addClass("resetDiv");
 	console.log(headerLeft);
 	$.stylesheet('#headerWrapper.panelLeft').css({
 		"margin-left":headerLeft + 'px',
