@@ -37,20 +37,20 @@ function fancyNav(selector) {
         	var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
 
 			if(width>=1400) {
-			$.stylesheet('.panelLeft').css({
+			$.stylesheet('#headerWrapper.panelLeft').css({
        			"margin-left":panelLeft,
    			 }) 
 			}
 
 			if(width<=1399 && width>=778) {
         		var panelLeft1399 = panelLeft + 50;
-			$.stylesheet('.panelLeft').css({
+			$.stylesheet('#headerWrapper.panelLeft').css({
        			"margin-left":panelLeft1399,
    			 }) 
 			}
 
 			if(width<=777) {
-			$.stylesheet('.panelLeft').css({
+			$.stylesheet('#headerWrapper.panelLeft').css({
        			"margin-left":"0%",
    			 }) 
 			}
@@ -63,7 +63,7 @@ function fancyNav(selector) {
 
 	$("#selfieDiv").click(function() {
 		resetDivs();
-		$.stylesheet('.panelLeft').css({
+		$.stylesheet('#headerWrapper.panelLeft').css({
 			"margin-left":headerLeft,
 		});
 		//$('#headerWrapper').addClass('panelLeft');
