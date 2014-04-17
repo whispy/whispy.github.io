@@ -10,6 +10,24 @@ ul {
 list-style: none;
 }
 
+noscript div {
+	width:100%;
+	height:auto;
+	background-color:rgba(234,68,35, 1);
+}
+
+noscript div p {
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:10px;
+	padding-bottom:10px;
+	width:700px;
+	line-height:1.25;
+	color:rgba(243, 240, 240, 1);
+	text-align: center;
+}
+
 /*body:after { content: ''; background-image: url(http://pls.webtype.com/v.gif?ct=88125,88126,88123,88124&r=18710&p=17639&h=ncsn5xZ1zR9t5KXDd0AqiA%3d%3d); }*/
 
 @font-face {
