@@ -131,6 +131,38 @@ function fancyWork(selector) {
 
 }; // fancyWork
 
+function fancyBlog(selector) {
+	var blogPosts = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
+	bindListeners(blogPosts); // call the function 'bindListeners' with the variable 'menuItems'
+
+	function loadPieces() { // Inline loading of content
+		var toFetch = toLoad + '.html' + ' .work ';
+		window.location.hash = toLoad
+		panel.load('./articles/article1.html');
+		//workDisplayFadeIn();
+	} // Inline loading of content end
+
+	function workDisplayFadeIn() {
+		workDisplay.css({
+    		"opacity":"0.0",
+    		"visibility":"visible",
+    	}).animate({
+    		"opacity":"1.0",
+    	}, 300);
+	};
+	
+	function bindListeners() {
+    	$('.content a').on('click', 'a', function() {
+    		//var toLoad = $(this).attr('href').replace('.html', '');
+				loadPieces();
+				return false;
+			
+    	}); //click function end
+    }; //bindListeners end
+
+}; // fancyBlog
+
+
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
 
@@ -173,6 +205,13 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
 		}
 
+		/*if (currHash === '#blog') {
+			console.log('hi');
+			//panel.load('./articles/article1.html');
+			console.log('bye');
+			return false;
+		}*/
+
 		var navClick = $('.navigation').find(currHash);
 		if (navClick.length) {
 			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
@@ -180,7 +219,11 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 			if (currHash === '#work') {
 				getWorkThumbs().then(setWorkThumbs);
 			}
+			if (currHash === '#blog') {
+				fancyBlog();
+			}
 		}
+
 
 		var pieceClick = $('.imgDiv').find(currHash);
 		if (pieceClick.length) { // if hash is 'piece#' (# = number value)
