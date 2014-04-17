@@ -3,30 +3,30 @@ function fancyNav(selector) {
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function resetDivs() {
-		panel.css({
-			"visibility":"hidden",
-			"opacity":"0.0",
+		panel.removeClass("showDiv");
+		panel.removeClass("panelSidebar");
+		panel.addClass("resetDiv");
+		/*panel.css({
 			"width":"",
-			"margin-right":"",
+			"margin-right":"", // figure out how to do this stuff with classes, if possible
 			"left":"",
-		});
-		workDisplay.css({
-			"visibility":"hidden",
-			"opacity":"0.0",
-		});
+		});*/
+		workDisplay.removeClass("showDiv")
+		workDisplay.addClass("resetDiv");
 	}; // resetDivs end
+	
+	function showDivs() {
+		panel.removeClass("resetDiv");
+    		panel.addClass("showDiv")
+	}; //showDivs end
 
 	loadContent = function(toLoad) { // Inline loading of content
-    	var toFetch = toLoad + '.html' + ' .content ';
-    	window.location.hash = toLoad
-    	
-    	panel.load(toFetch);
-    	panel.css({
-    		"opacity":"0.0",
-    		"visibility":"visible",
-    	}).animate({
-    		"opacity":"1.0",
-    	}, 500, "easeInOutCubic");
+    		var toFetch = toLoad + '.html' + ' .content ';
+    		window.location.hash = toLoad
+    		
+    		panel.load(toFetch);
+    		resetDivs();
+    		showDivs();
 	} // loadContent end
 
 	function bindListeners() {
@@ -37,23 +37,24 @@ function fancyNav(selector) {
         	var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
 
 			if(width>=1400) {
-			$('#headerWrapper').animate({
-       			"margin-left":panelLeft,
-   			 }, "easeInOutQuart" ) 
+			$.stylesheet('#headerWrapper.panelLeft').css({
+       			"margin-left":panelLeft + 'px',
+   			 }) 
 			}
 
 			if(width<=1399 && width>=778) {
-        	var panelLeft1399 = panelLeft + 50;
-			$('#headerWrapper').animate({
-       			"margin-left":panelLeft1399,
-   			 }, "easeInOutQuart" ) 
+        		var panelLeft1399 = panelLeft + 50;
+			$.stylesheet('#headerWrapper.panelLeft').css({
+       			"margin-left":panelLeft1399 + 'px',
+   			 }) 
 			}
 
 			if(width<=777) {
-			$('#headerWrapper').animate({
+			$.stylesheet('#headerWrapper.panelLeft').css({
        			"margin-left":"0%",
-   			 }, "easeInOutQuart" ) 
+   			 }) 
 			}
+		$('#headerWrapper').addClass('panelLeft'); // use YUI instead?
 
         	loadContent(toLoad); // call the function 'loadContent'
         	return false; // Inline loading of content end
@@ -62,9 +63,10 @@ function fancyNav(selector) {
 
 	$("#selfieDiv").click(function() {
 		resetDivs();
-		$("#headerWrapper").animate({
-			"margin-left":headerLeft,
-		}, "easeInOutQuart"); //animate method end
+		$.stylesheet('#headerWrapper.panelLeft').css({
+			"margin-left":headerLeft + 'px',
+		});
+		$('#headerWrapper').addClass('panelLeft');
 	}); // click method end
 
 }; // fancyNav
@@ -81,12 +83,9 @@ function fancyWork(selector) {
 	} // Inline loading of content end
 
 	function workDisplayFadeIn() {
-		workDisplay.css({
-    		"opacity":"0.0",
-    		"visibility":"visible",
-    	}).animate({
-    		"opacity":"1.0",
-    	}, 300);
+		workDisplay.addClass("resetDiv");
+		workDisplay.addClass("showDiv");
+
 	};
 
 	function bindListeners() {
@@ -107,13 +106,16 @@ function fancyWork(selector) {
 					$('.content').animate({
 						"margin-top":"0",
 					}, 300 , "easeOutQuart");
-
-					panel.css({
-						"width":"100px",
-						"left":(0 - panelRight) + 100
-					}).animate({
+					$(".panelSidebar").css({
 						"left":panelRight + 110 // scrollbar width 17. problems if going from scrollbar -> no scrollbar (doesn't take into account scrollbar width)
-					}, 300 , "easeOutQuart");
+					});
+					
+					panel.addClass("panelSidebar");
+
+				/*	panel.css({
+						"left":(0 - panelRight) + 100
+					})*/
+
 					
 					$('.content .imgDiv').css({
 						"margin-top":"10px"
@@ -165,16 +167,23 @@ function fancyBlog(selector) {
 
  
 $(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
-
+ console.log($.stylesheet('body').rules());
+	//Defining global variables
 	width = $(window).width();
-	headerLeft = $('#headerWrapper').offset().left;
-	$('#headerWrapper').css({
-       "margin-left":headerLeft,
-    })
-	panelRight = $('#indexWorkDisplay').width();
-
 	panel = $('.panel');
 	workDisplay = $('.workDisplay');
+	headerLeft = $('#headerWrapper').offset().left;
+	panelRight = $('#indexWorkDisplay').width();
+
+	
+	$("#headerWrapper").addClass("panelLeft");
+	panel.addClass("resetDiv");
+	console.log(headerLeft);
+	$.stylesheet('#headerWrapper.panelLeft').css({
+		"margin-left":headerLeft + 'px',
+    	})
+    	console.log($.stylesheet('#headerWrapper.panelLeft').rules());
+
 
 
 	function setWorkThumbs(data) {
@@ -255,15 +264,15 @@ function checkSize() {
 		var navClick = $('.navigation').find(currHash);
 		if (navClick.length)  {
 			if(width>=1400) {
-				$('#headerWrapper').css({
-      				 "margin-left":panelLeft,
+				$.stylesheet('#headerWrapper.panelLeft').css({
+      				 "margin-left":panelLeft + 'px',
    				})
 			}
 
 			if(width<=1399 && width>=778) {
 				var panelLeft1399 = panelLeft + 40;
-				$('#headerWrapper').css({
-      				 "margin-left":panelLeft1399,
+				$.stylesheet('#headerWrapper.panelLeft').css({
+      				 "margin-left":panelLeft1399 + 'px',
    				})
 			}
 		}
@@ -273,6 +282,12 @@ function checkSize() {
 		fancyMobileNav(mobileMenu);
 		//container.addClass('mobileNav');
 	} // if end
+	
+	//if(currHash === '') {
+	//	$.stylesheet('#headerWrapper.panelLeft').css({
+//       		"margin-left":""
+    	//	})
+//	}
 	else {
 		//container.removeClass('mobileNav');
 		container.css('margin-left','');
