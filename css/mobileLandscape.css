@@ -41,12 +41,17 @@ body {
 }
 
 #headerWrapper {
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
 	width:auto;
 	margin-bottom:10px;
 }
 
 
 header {
+	float:none;
 	position: relative; /*this is not only why. it's because jquery is moving to panel's left offset which is off screen*/
 }
 

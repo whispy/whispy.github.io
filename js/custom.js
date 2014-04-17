@@ -8,11 +8,6 @@ function fancyNav(selector) {
 		panel.removeClass("showDiv");
 		panel.removeClass("panelSidebar");
 		panel.addClass("resetDiv");
-		/*panel.css({
-			"width":"",
-			"margin-right":"", // figure out how to do this stuff with classes, if possible
-			"left":"",
-		});*/
 		workDisplay.removeClass("showDiv")
 		workDisplay.addClass("resetDiv");
 	}; // resetDivs end
@@ -33,30 +28,24 @@ function fancyNav(selector) {
 
 	function bindListeners() {
     	$('.navigation').on('click', 'a', function() {
+    		headerWrapper.removeClass("headerCenter");
     		resetDivs(); // fix flashing on this -> try to cache data somehow
         	var toLoad = $(this).attr('href').replace('.html', '');
-			var headerWrapperWidth = $('#headerWrapper').width();
-    		var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
 
-			if(width>=1400) {
-			$.stylesheet('#headerWrapper.panelLeft').css({
-       			"margin-left":panelLeft + 'px',
-   			 }) 
-			}
+    		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
+    		if(width>=1400) {
+				$.stylesheet('#headerWrapper.headerLeft').css({
+					"width":workDisplayLeft - 30 + 'px'
+				})
+			} // if end
 
 			if(width<=1399 && width>=778) {
-        		var panelLeft1399 = panelLeft + 50;
-			$.stylesheet('#headerWrapper.panelLeft').css({
-       			"margin-left":panelLeft1399 + 'px',
-   			 }) 
-			}
+				$.stylesheet('#headerWrapper.headerLeft').css({
+					"width":workDisplayLeft - 20 + 'px'
+				})
+			} // if end
 
-			if(width<=777) {
-			$.stylesheet('#headerWrapper.panelLeft').css({
-       			"margin-left":"0%",
-   			 }) 
-			}
-		$('#headerWrapper').addClass('panelLeft'); // use YUI instead?
+    		$('#headerWrapper').addClass('headerLeft');
 
         	loadContent(toLoad); // call the function 'loadContent'
         	return false; // Inline loading of content end
@@ -64,11 +53,25 @@ function fancyNav(selector) {
 	} //bindListeners end
 
 	$("#selfieDiv").click(function() {
+		var	width = $(window).width();
+		var	headerCenterLarge = (width / 2) + 87.5;
+		var	headerCenterSmall = (width / 2) + 50;
 		resetDivs();
-		$.stylesheet('#headerWrapper.panelLeft').css({
-			"margin-left":headerCenter + 'px',
-		});
-		$('#headerWrapper').addClass('panelLeft');
+		$('#headerWrapper').removeClass('headerLeft');
+
+		if(width>=1208) {
+			$.stylesheet('#headerWrapper.headerCenter').css({
+				"width":headerCenterLarge + 'px'
+    		})
+		} // if end
+	
+		if(width<=1207) {
+			$.stylesheet('#headerWrapper.headerCenter').css({
+				"width":headerCenterSmall + 'px'
+    		})
+		} // if end
+
+		$('#headerWrapper').addClass('headerCenter');
 	}); // click method end
 
 }; // fancyNav
@@ -87,7 +90,6 @@ function fancyWork(selector) {
 	function workDisplayFadeIn() {
 		workDisplay.addClass("resetDiv");
 		workDisplay.addClass("showDiv");
-
 	};
 
 	function bindListeners() {
@@ -105,23 +107,19 @@ function fancyWork(selector) {
 			else {
 
 				if (panel.width()>=101) {
-					$('.content').animate({
-						"margin-top":"0",
-					}, 300 , "easeOutQuart");
-
 					$.stylesheet("#indexPanel.panelSidebar").css({
-						"left":panelRight + 110 + 'px' // scrollbar width 17. problems if going from scrollbar -> no scrollbar (doesn't take into account scrollbar width)
+						"left":panelRight + 110 + 'px'
 					});
 		
 					panel.addClass("panelSidebar");
+					$('#indexContent').addClass("marginTop0");
 
 					
 					$('.content .imgDiv').css({
-						"margin-top":"10px"
-					}).animate({
+						"margin-top":"10px",
 						"width":"80px",
-						"height":"80px",
-					}, 300 , "easeOutQuart");
+						"height":"80px"
+					});
 				}
 
 				loadPieces(toLoad);
@@ -153,7 +151,6 @@ function fancyBlog(selector) {
     		
 			loadArticles(toLoad);
 			return false;
-			
     	}); //click function end
     }; //bindListeners end
 
@@ -161,25 +158,43 @@ function fancyBlog(selector) {
 
 
  
-$(document).ready(function () { // when the DOM is fully loaded, execute the contents of this anonymous function
- //console.log($.stylesheet('body').rules());
+$(document).ready(function () {
+
 	//Defining global variables
 	width = $(window).width();
 	panel = $('.panel');
 	workDisplay = $('.workDisplay');
+	headerWrapper = $('#headerWrapper');
+
 	headerLeft = $('#headerWrapper').offset().left;
-	headerCenter = (width / 2) - 109.5;
+	headerCenterLarge = (width / 2) + 87.5;
+	headerCenterSmall = (width / 2) + 50;
 	panelRight = $('#indexWorkDisplay').width();
 
-	
-	$("#headerWrapper").addClass("panelLeft");
 	panel.addClass("resetDiv");
-	//console.log(headerLeft);
-	$.stylesheet('#headerWrapper.panelLeft').css({
-		"margin-left":headerCenter + 'px',
-    })
-    	//console.log($.stylesheet('#headerWrapper.panelLeft').rules());
 
+    if(width>=1208) {
+    	$('#headerWrapper').css({
+			"width":headerCenterLarge + 'px'
+    	})
+		$.stylesheet('#headerWrapper.headerCenter').css({
+			"width":headerCenterLarge + 'px'
+    	})
+	}
+
+	if(width<=1207) {
+		$('#headerWrapper').css({
+			"width":headerCenterSmall + 'px'
+    	})
+		$.stylesheet('#headerWrapper.headerCenter').css({
+			"width":headerCenterSmall + 'px'
+    	})
+	}
+    
+    headerWrapper.addClass("headerCenter");
+	$('#headerWrapper').css({
+		"width":''
+	})
 
 
 	function setWorkThumbs(data) {
@@ -251,7 +266,7 @@ $(document).ready(function () { // when the DOM is fully loaded, execute the con
 	} //hashChange end
 
 	hashChange();
-	checkSize();
+	//checkSize();
 
 }); // $(document).ready
 
@@ -264,47 +279,62 @@ function checkSize() {
 	var container = jQuery(".container");
 	currHash = window.location.hash
 
+	if(panel.hasClass("panelSidebar")) {
+		var	panelRight = $('#indexWorkDisplay').width();
+		$.stylesheet("#indexPanel.panelSidebar").css({
+			"left":panelRight + 110 + 'px' // scrollbar width 17. problems if going from scrollbar -> no scrollbar (doesn't take into account scrollbar width)
+		});
+	} // if end
+
+	if(!headerWrapper.hasClass("headerLeft")) {
+		if(width>=1400) {
+			var headerCenter3 = ((width / 2) + 87.5);
+	   		$.stylesheet('#headerWrapper.headerCenter').css({
+				"width":headerCenter3 + 'px'
+    		})
+		} // if end
+
+		if(width<=1399 && width>=778) {
+			var headerCenter4 = ((width / 2) + 50);
+	   		$.stylesheet('#headerWrapper.headerCenter').css({
+				"width":headerCenter4 + 'px'
+    		})
+	   	} // if end
+
+		if(width<=777) {
+	   		$.stylesheet('#headerWrapper.headerCenter').css({
+				"width":"auto"
+    		})
+			var mobileMenu = '#offCanvasMenu li';
+			fancyMobileNav(mobileMenu);
+		} // if end
+	} // if !headerWrapper has class headerLeft end
+
+	if(headerWrapper.hasClass("headerLeft")) {
 		var navClick = $('.navigation').find(currHash);
+		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
 		if (navClick.length)  {
 			if(width>=1400) {
-				var headerWrapperWidth = $('#headerWrapper').width();
-       			var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
-				console.log(panelLeft);
-				$.stylesheet('#headerWrapper.panelLeft').css({
-      				"margin-left":panelLeft + 'px',
-   				})
-			}
+				$.stylesheet('#headerWrapper.headerLeft').css({
+					"width":workDisplayLeft - 30 + 'px'
+				})
+			} // if end
 
 			if(width<=1399 && width>=778) {
-				var headerWrapperWidth = $('#headerWrapper').width();
-       			var panelLeft = $('#indexPanel').offset().left - headerWrapperWidth;
-				var panelLeft1399 = panelLeft + 40;
-				console.log(panelLeft1399);
-				$.stylesheet('#headerWrapper.panelLeft').css({
-      				"margin-left":panelLeft1399 + 'px',
-   				})
+				$.stylesheet('#headerWrapper.headerLeft').css({
+					"width":workDisplayLeft - 20 + 'px'
+				})
+			} // if end
+
+			if(width<=777) {
+				$.stylesheet('#headerWrapper.headerLeft').css({
+					"width":"auto"
+				})
 			}
-		}
+		} // if navClick.length end
+	} // if headerWrapper has class headerLeft end
 
-	if(width<=777) {
-		var mobileMenu = '#offCanvasMenu li';
-		fancyMobileNav(mobileMenu);
-		//container.addClass('mobileNav');
-	} // if end
-	
-	//if(currHash === '') {
-	//	$.stylesheet('#headerWrapper.panelLeft').css({
-//       		"margin-left":""
-    	//	})
-//	}
-	if(currHash === '') {
-		var headerCenter = (width / 2) - 109.5;
-				$.stylesheet('#headerWrapper.panelLeft').css({
-      				"margin-left":headerCenter + 'px',
-   				})
-	} //else end
-
-}
+} // checksize() end
 
 $(window).resize(function() {
 	$('#headerWrapper').addClass("transitionReset");
