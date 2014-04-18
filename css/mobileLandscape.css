@@ -100,6 +100,11 @@ div ul li{
 	margin-right:0%;
 }
 
+.showDiv {
+	-webkit-transition: none;
+  	transition:         none; 
+}
+
 
 .content {
 	margin-left:7%;

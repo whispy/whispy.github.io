@@ -136,12 +136,8 @@ function fancyBlog(selector) {
 
 	function loadArticles(toLoad) { // Inline loading of content
 		var toFetch = toLoad + '.html' + ' .content ';
-		window.location.hash = toLoad
-				console.log('pippy');
-				panel.load(toFetch);
-				console.log(toFetch);
-		console.log('trippy');
-
+		window.location.hash = toLoad.replace('articles/', '');
+		panel.load(toFetch);
 	} // Inline loading of content end
 
 	
@@ -320,7 +316,7 @@ function checkSize() {
 				})
 			} // if end
 
-			if(width<=1399 && width>=777) {
+			if(width<=1399 && width>=778) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
 					"width":workDisplayLeft - 20 + 'px'
 				})
