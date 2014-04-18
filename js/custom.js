@@ -13,6 +13,7 @@ function fancyNav(selector) {
 	}; // resetDivs end
 	
 	function showDivs() {
+		headerWrapper.removeClass("headerCenter");
 		panel.removeClass("resetDiv");
     	panel.addClass("showDiv")
 	}; //showDivs end
@@ -28,8 +29,7 @@ function fancyNav(selector) {
 
 	function bindListeners() {
     	$('.navigation').on('click', 'a', function() {
-    		headerWrapper.removeClass("headerCenter");
-    		resetDivs(); // fix flashing on this -> try to cache data somehow
+			resetDivs();
         	var toLoad = $(this).attr('href').replace('.html', '');
 
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
@@ -82,7 +82,7 @@ function fancyWork(selector) {
 
 	function loadPieces(toLoad) { // Inline loading of content
 		var toFetch = toLoad + '.html' + ' .work ';
-		window.location.hash = toLoad
+		window.location.hash = toLoad.replace('./pieces/', '');
 		workDisplay.load(toFetch);
 		workDisplayFadeIn();
 	} // Inline loading of content end
@@ -313,14 +313,14 @@ function checkSize() {
 	if(headerWrapper.hasClass("headerLeft")) {
 		var navClick = $('.navigation').find(currHash);
 		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
-		if (navClick.length)  {
+		if (currHash != '')  {
 			if(width>=1400) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
 					"width":workDisplayLeft - 30 + 'px'
 				})
 			} // if end
 
-			if(width<=1399 && width>=778) {
+			if(width<=1399 && width>=777) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
 					"width":workDisplayLeft - 20 + 'px'
 				})
