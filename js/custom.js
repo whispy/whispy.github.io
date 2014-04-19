@@ -62,6 +62,7 @@ function fancyNav(selector) {
 		var	headerCenterLarge = (width / 2) + 87.5;
 		var	headerCenterSmall = (width / 2) + 50;
 		resetDivs();
+		$('nav ul li').removeClass();
 		$('#headerWrapper').removeClass('headerLeft');
 
 		if(width>=1208) {
