@@ -197,6 +197,9 @@ $(document).ready(function () {
 		"width":''
 	})
 
+	var navSelector = '#menu li';
+	fancyNav(navSelector);
+
 
 	function setWorkThumbs(data) {
 		var workThumbs = '.imgDiv a'
