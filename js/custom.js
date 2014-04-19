@@ -24,7 +24,7 @@ function fancyNav(selector) {
     	panel.addClass("showDiv");
 	}; //showDivs end
 
-	loadContent = function(toLoad) { // Inline loading of content
+	loadContent = function() { // Inline loading of content
     		/*var toFetch = toLoad + '.html' + ' .content ';
     		window.location.hash = toLoad
     		
@@ -52,7 +52,7 @@ function fancyNav(selector) {
 
     		$('#headerWrapper').addClass('headerLeft');
 
-        	loadContent(toLoad); // call the function 'loadContent'
+        	loadContent(); // call the function 'loadContent(toLoad)''
         	//return false; // Inline loading of content end
     	};
 	} //bindListeners end
