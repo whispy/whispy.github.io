@@ -112,7 +112,7 @@
 			// Start Fade Out
 			// Animating to opacity to 0 still keeps the element's height intact
 			// Which prevents that annoying pop bang issue when loading in new content
-			$content.animate({opacity:0},800);
+			//$content.animate({opacity:0},800);
 			
 			// Ajax Request the Traditional Page
 			$.ajax({
@@ -141,12 +141,12 @@
 					// Update the menu
 					$menuChildren = $menu.find(menuChildrenSelector);
 					$menuChildren.filter(activeSelector).removeClass(activeClass);
-					$menuChildren = $menuChildren.has('a[href^="'+relativeUrl+'"],a[href^="/'+relativeUrl+'"],a[href^="'+url+'"]');
+					$menuChildren = $menuChildren.has('a[href^="'+relativeUrl+'"],a[href^="/'+relativeUrl+'"],a[href^="'+url+'"]'); // modify this to get stuff to happen on page load
 					if ( $menuChildren.length === 1 ) { $menuChildren.addClass(activeClass); }
 
 					// Update the content
 					$content.stop(true,true);
-					$content.html(contentHtml).ajaxify().animate({'opacity':'1'}, 300);
+					$content.html(contentHtml).ajaxify();
 
 					// Update the title
 					document.title = $data.find('.document-title:first').text();
