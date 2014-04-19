@@ -5,6 +5,7 @@ function fancyNav(selector) {
 
 
 	function resetDivs() {
+		console.log('resetDivs');
 		indexPanel.css({
 			'height':'' // figure this out
 		})
@@ -16,6 +17,7 @@ function fancyNav(selector) {
 	}; // resetDivs end
 	
 	function showDivs() {
+		console.log('showDivs');
 		headerWrapper.removeClass("headerCenter");
 		panel.removeClass("resetDiv");
 		$('div#indexPanel').removeAttr('id');
@@ -32,6 +34,8 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
+		var bells = $(this).attr("class");
+		console.log(bells); 
     	 if($('a').hasClass('active')){//$('.navigation').on('click', 'a', function() {
 			resetDivs();
         	var toLoad = $(this).attr('href').replace('.html', '');
