@@ -300,7 +300,7 @@ nav {
   	transition:         all 300ms cubic-bezier(0.165, 0.84, 0.44, 1); 
 }
 
-#indexContent.marginTop0 {
+#indexArticle.marginTop0 {
 	margin-top:0;
 }
 
@@ -405,7 +405,7 @@ nav {
 
 
 
-.content {
+.article {
 	margin-left:10%;
 	margin-right:10%;
 	margin-top:222px;
