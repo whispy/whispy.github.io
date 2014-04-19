@@ -158,6 +158,7 @@ function fancyBlog(selector) {
 
 
 $(window).on('statechangecomplete', function(e, eventInfo){
+	console.log('jimmy');
 var navSelector = '#menu li';
 	fancyNav(navSelector);
 })
