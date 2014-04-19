@@ -32,7 +32,7 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-    	$('.navigation').on('click', 'a', function() {
+    	 if($('a').hasClass('active')){//$('.navigation').on('click', 'a', function() {
 			resetDivs();
         	var toLoad = $(this).attr('href').replace('.html', '');
 
