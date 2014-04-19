@@ -34,9 +34,9 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-		var bells = $('a').attr("class");
+		var bells = $('li').attr("class");
 		console.log(bells); 
-    	 if($('a').hasClass('active')){//$('.navigation').on('click', 'a', function() {
+    	 if($('li').hasClass('active')){//$('.navigation').on('click', 'a', function() {
 			resetDivs();
         	var toLoad = $(this).attr('href').replace('.html', '');
 
