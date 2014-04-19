@@ -34,12 +34,9 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-		var bells = $('li').attr("class");
-		console.log(bells); 
     	 if($('li').hasClass('active')){//$('.navigation').on('click', 'a', function() {
 			resetDivs();
-        	var toLoad = $(this).attr('href').replace('.html', '');
-
+        	//var toLoad = $(this).attr('href').replace('.html', '');
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
     		if(width>=1400) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
