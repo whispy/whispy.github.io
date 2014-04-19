@@ -115,10 +115,10 @@ function fancyWork(selector) {
 					});
 		
 					panel.addClass("panelSidebar");
-					$('#indexArticle').addClass("marginTop0");
+					$('#indexContent').addClass("marginTop0");
 
 					
-					$('.article .imgDiv').css({
+					$('.content .imgDiv').css({
 						"margin-top":"10px",
 						"width":"80px",
 						"height":"80px"
@@ -197,7 +197,7 @@ $(document).ready(function () {
 	})
 
 
-	/*function setWorkThumbs(data) {
+	function setWorkThumbs(data) {
 		var workThumbs = '.imgDiv a'
 		fancyWork(workThumbs);
 		return workThumbs;
@@ -219,7 +219,7 @@ $(document).ready(function () {
 	}
 
 	window.onhashchange = workHashChange
-	function workHashChange() { // if the hash is not #work and changes to work, this fires
+	/*function workHashChange() { // if the hash is not #work and changes to work, this fires
 		if (window.location.hash === '#work') {
 			getWorkThumbs().then(setWorkThumbs);
 		}
