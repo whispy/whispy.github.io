@@ -34,7 +34,7 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-		var bells = $(this).attr("class");
+		var bells = $('a').attr("class");
 		console.log(bells); 
     	 if($('a').hasClass('active')){//$('.navigation').on('click', 'a', function() {
 			resetDivs();
