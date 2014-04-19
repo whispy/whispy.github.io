@@ -157,6 +157,11 @@ function fancyBlog(selector) {
 }; // fancyBlog
 
 
+$(window).on('statechangecomplete', function(e, eventInfo){
+var navSelector = '#menu li';
+	fancyNav(navSelector);
+})
+
  
 $(document).ready(function () {
 
@@ -197,8 +202,7 @@ $(document).ready(function () {
 		"width":''
 	})
 
-	var navSelector = '#menu li';
-	fancyNav(navSelector);
+	
 
 
 	function setWorkThumbs(data) {
