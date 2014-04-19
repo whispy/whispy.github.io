@@ -53,7 +53,7 @@ function fancyNav(selector) {
 
         	loadContent(toLoad); // call the function 'loadContent'
         	//return false; // Inline loading of content end
-    	});
+    	};
 	} //bindListeners end
 
 	$("#selfieDiv").click(function() {
