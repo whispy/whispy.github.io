@@ -18,8 +18,8 @@ function fancyNav(selector) {
 	function showDivs() {
 		headerWrapper.removeClass("headerCenter");
 		panel.removeClass("resetDiv");
-		//$('div#indexPanel').removeAttr('id');
-    	panel.addClass("showDiv")
+		$('div#indexPanel').removeAttr('id');
+    	panel.addClass("showDiv");
 	}; //showDivs end
 
 	loadContent = function(toLoad) { // Inline loading of content
