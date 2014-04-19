@@ -219,8 +219,8 @@ $(document).ready(function () {
 		return $.get("blog.html");
 	}
 
-	window.onhashchange = workHashChange
-	/*function workHashChange() { // if the hash is not #work and changes to work, this fires
+	/*window.onhashchange = workHashChange
+	function workHashChange() { // if the hash is not #work and changes to work, this fires
 		if (window.location.hash === '#work') {
 			getWorkThumbs().then(setWorkThumbs);
 		}
