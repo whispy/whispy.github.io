@@ -24,7 +24,7 @@ function fancyNav(selector) {
     	panel.addClass("showDiv");
 	}; //showDivs end
 
-	loadContent = function() { // Inline loading of content
+	function loadContent() {		//loadContent = function() { // Inline loading of content
     		/*var toFetch = toLoad + '.html' + ' .content ';
     		window.location.hash = toLoad
     		
