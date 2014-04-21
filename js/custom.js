@@ -2,8 +2,6 @@ function fancyNav(selector) {
 	var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 
-
-
 	function resetDivs() {
 		console.log('resetDivs');
 		/*indexPanel.css({
@@ -21,7 +19,7 @@ function fancyNav(selector) {
 		headerWrapper.removeClass("headerCenter");
 		panel.removeClass("resetDiv");
 		$('div#indexPanel').removeAttr('id');
-    	panel.addClass("showDiv");
+    		panel.addClass("showDiv");
 	}; //showDivs end
 
 	function loadContent() {		//loadContent = function() { // Inline loading of content
@@ -160,8 +158,8 @@ function fancyBlog(selector) {
 
 $(window).on('pronto.request', function(e, eventInfo){
 	console.log('pronto.request');
-	var navSelector = '#menu li';
-	fancyNav(navSelector);
+	//var navSelector = '#menu li';
+	//fancyNav(navSelector);
 })
 
  
@@ -182,8 +180,8 @@ $(document).ready(function () {
 	panel.addClass("resetDiv");
 	
 		
-	//var navSelector = '#menu li';
-	//fancyNav(navSelector);
+	var navSelector = '#menu li';
+	fancyNav(navSelector);
 	
 	jQuery('#ajaxContent').ajaxify({
 		verbosity : 2,
