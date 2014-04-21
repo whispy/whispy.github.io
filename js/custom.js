@@ -161,6 +161,8 @@ function fancyBlog(selector) {
 $(window).on('pronto.request', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
+	var workThumbs = '.imgDiv a'
+	fancyWork(workThumbs);
 })
 
  
