@@ -165,7 +165,7 @@ $(window).on('pronto.request', function(e, eventInfo){
 
 $(window).on('pronto.render', function(e, eventInfo){
 	console.log(window.location.pathname)
-	if(window.location.pathname.indexOf("pieces") === -1) {
+	if(window.location.pathname.indexOf("pieces") != -1) {
 		imgDivPronto();
 	}
 })
