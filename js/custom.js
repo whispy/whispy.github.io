@@ -161,8 +161,9 @@ function fancyBlog(selector) {
 $(window).on('pronto.request', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
+	console.log(window.location.pathname)
 	if(window.location.pathname.indexOf("pieces")) {
-	imgDivPronto();
+		imgDivPronto();
 	}
 })
 
