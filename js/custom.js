@@ -29,7 +29,6 @@ function fancyNav(selector) {
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
-		if()
 		resetDivs();
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
     		if(width>=1400) {
