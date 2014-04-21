@@ -125,7 +125,7 @@ function fancyWork(selector) {
 				loadPieces();
 				//return false;
 			}
-    	}); //click function end
+    	//}); //click function end
     }; //bindListeners end
 
 }; // fancyWork
