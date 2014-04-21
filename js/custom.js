@@ -34,7 +34,7 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-    	 if($('li').hasClass('active')){//$('.navigation').on('click', 'a', function() {
+		//$('.navigation').on('click', 'a', function() {
 			resetDivs();
         	//var toLoad = $(this).attr('href').replace('.html', '');
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
@@ -54,7 +54,6 @@ function fancyNav(selector) {
 
         	loadContent(); // call the function 'loadContent(toLoad)''
         	//return false; // Inline loading of content end
-    	};
 	} //bindListeners end
 
 	$("#selfieDiv").click(function() {
