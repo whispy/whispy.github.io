@@ -21,7 +21,6 @@ function fancyNav(selector) {
 		$('div#indexPanel').removeAttr('id');
     		panel.addClass("showDiv");
     		if($('#selfieDiv').hasClass('on')) { //Class gets added but not removed if people click selfieDiv twice in a row
-    			console.log('hi');
 			panel.removeClass("showDiv");
 			panel.addClass("resetDiv");
 			headerWrapper.removeClass('headerLeft');
@@ -59,7 +58,6 @@ function fancyNav(selector) {
 
 	$("#selfieDiv").on('click', function() {
 		$('#selfieDiv').addClass('on');
-		console.log('selfie div on')
 		var	width = $(window).width();
 		var	headerCenterLarge = (width / 2) + 87.5;
 		var	headerCenterSmall = (width / 2) + 50;
