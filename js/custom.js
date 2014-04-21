@@ -167,7 +167,7 @@ function fancyBlog(selector) {
  
 $(document).ready(function () {
 	
-	jQuery('.content').ajaxify({
+	jQuery('#ajaxContent').ajaxify({
 		verbosity: 2
 	});
 /*
