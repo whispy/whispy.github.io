@@ -159,8 +159,8 @@ function fancyBlog(selector) {
 }; // fancyBlog
 
 
-$(window).on('pronto.render', function(e, eventInfo){
-	console.log('pronto.render');
+$(window).on('pronto.request', function(e, eventInfo){
+	console.log('pronto.request');
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
 })
