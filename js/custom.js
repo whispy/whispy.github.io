@@ -179,8 +179,9 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 	
-	console.log(window.location.href.indexOf("index"))
-	if(window.location.href.indexOf("index") = -1) {	
+	console.log(window.location.href.indexOf("index"));
+	if(window.location.href.indexOf("index") === -1) {
+		console.log('not index on load is running');
 		var navSelector = window.location.href
 		fancyNav(navSelector);
 	}
