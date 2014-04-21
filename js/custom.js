@@ -164,7 +164,8 @@ $(window).on('pronto.request', function(e, eventInfo){
 })
 
 $('.imgDiv a').on('pronto.request', function(e, eventInfo){
-		var workThumbs = '.imgDiv a'
+	console.log('imgdiva pronto')
+	var workThumbs = '.imgDiv a'
 	fancyWork(workThumbs);
 })
 
