@@ -30,7 +30,7 @@ function fancyNav(selector) {
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
 		
-		console.log(this)
+		console.log()
 		resetDivs();
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
     		if(width>=1400) {
@@ -52,6 +52,10 @@ function fancyNav(selector) {
 	} //bindListeners end
 
 	$("#selfieDiv").click(function() {
+		if(click = 1){
+			click = ''
+		}
+		click = 1;
 		var	width = $(window).width();
 		var	headerCenterLarge = (width / 2) + 87.5;
 		var	headerCenterSmall = (width / 2) + 50;
