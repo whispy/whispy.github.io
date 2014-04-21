@@ -95,6 +95,7 @@ function fancyWork(selector) {
 	};
 
 	function bindListeners() {
+		$('.imgDiv').on('click', 'a', function() {
 			if(width<=777) {
 				panel.css({
     				"opacity":"0.0",
@@ -125,7 +126,7 @@ function fancyWork(selector) {
 				loadPieces();
 				//return false;
 			}
-    	//}); //click function end
+    	}); //click function end
     }; //bindListeners end
 
 }; // fancyWork
