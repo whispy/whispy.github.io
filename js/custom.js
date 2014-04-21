@@ -186,7 +186,7 @@ $(document).ready(function () {
 		fancyNav(navSelector);
 	}
 	
-	jQuery('#ajaxContent','#ajaxWork').ajaxify({
+	jQuery('#ajaxContent , #ajaxWork').ajaxify({
 		verbosity : 2,
 		turbo : false
 	});
