@@ -161,7 +161,7 @@ function fancyBlog(selector) {
 $(window).on('pronto.request', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
-	console.log(this)
+	console.log(pronto.request)
 })
 
 $('.imgDiv a').on('pronto.request', function(e, eventInfo){
