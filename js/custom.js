@@ -31,7 +31,7 @@ function fancyNav(selector) {
 			panel.addClass("resetDiv");
 			headerWrapper.removeClass('headerLeft');
 			headerWrapper.addClass("headerCenter");
-			//$('header a div').removeClass('on');
+			$('#selfieDiv').removeClass('on');
 		}
 	} // loadContent end
 
