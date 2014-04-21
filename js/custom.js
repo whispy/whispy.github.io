@@ -159,7 +159,6 @@ function fancyBlog(selector) {
 
 
 $(window).on('pronto.request', function(e, eventInfo){
-	console.log('pronto.request');
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
 })
@@ -181,7 +180,6 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 	
-	console.log(window.location.href.indexOf("index"));
 	if(window.location.href.indexOf("index") === -1) {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').replace('/','')
