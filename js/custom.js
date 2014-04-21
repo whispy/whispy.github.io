@@ -75,7 +75,7 @@ function fancyNav(selector) {
 		} // if end
 
 		$('#headerWrapper').addClass('headerCenter');
-		$('#selfieDiv').addClass('on');
+		$('header a div').addClass('on');
 	}); // click method end
 
 }; // fancyNav
