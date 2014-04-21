@@ -86,9 +86,6 @@ function fancyWork(selector) {
 	bindListeners(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function loadPieces() { // Inline loading of content
-		//var toFetch = toLoad + '.html' + ' .work ';
-		//window.location.hash = toLoad.replace('./pieces/', '');
-		//workDisplay.load(toFetch);
 		workDisplayFadeIn();
 	} // Inline loading of content end
 
@@ -98,8 +95,6 @@ function fancyWork(selector) {
 	};
 
 	function bindListeners() {
-    	//$('.imgDiv').on('click', 'a', function() {
-    		//var toLoad = $(this).attr('href').replace('.html', '');
 			if(width<=777) {
 				panel.css({
     				"opacity":"0.0",
@@ -165,7 +160,7 @@ $(window).on('pronto.request', function(e, eventInfo){
 
 $(window).on('pronto.render', function(e, eventInfo){
 	console.log(window.location.pathname)
-	if(window.location.pathname.indexOf("pieces") != -1) {
+	if(window.location.pathname.indexOf("work") != -1) {
 		imgDivPronto();
 	}
 })
