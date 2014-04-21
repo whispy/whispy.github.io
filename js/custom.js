@@ -168,7 +168,8 @@ function fancyBlog(selector) {
 $(document).ready(function () {
 	
 	jQuery('#ajaxContent').ajaxify({
-		verbosity: 2
+		verbosity : 2,
+		turbo : false
 	});
 /*
 	//Defining global variables
