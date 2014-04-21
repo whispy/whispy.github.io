@@ -56,6 +56,7 @@ function fancyNav(selector) {
 	} //bindListeners end
 
 	$("#selfieDiv").on('click', function() {
+		$('header a div').addClass('on');
 		var	width = $(window).width();
 		var	headerCenterLarge = (width / 2) + 87.5;
 		var	headerCenterSmall = (width / 2) + 50;
@@ -75,7 +76,6 @@ function fancyNav(selector) {
 		} // if end
 
 		$('#headerWrapper').addClass('headerCenter');
-		$('header a div').addClass('on');
 	}); // click method end
 
 }; // fancyNav
