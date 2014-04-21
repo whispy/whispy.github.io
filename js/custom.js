@@ -179,9 +179,10 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 	
-		
-	//var navSelector = '#menu li';
-	//fancyNav(navSelector);
+	if(window.location.href.search("index") = -1)) {	
+		var navSelector = '#menu li';
+		fancyNav(navSelector);
+	}
 	
 	jQuery('#ajaxContent').ajaxify({
 		verbosity : 2,
@@ -208,7 +209,7 @@ $(document).ready(function () {
     	})
 	}
     
-    headerWrapper.addClass("headerCenter");
+    	headerWrapper.addClass("headerCenter");
 	$('#headerWrapper').css({
 		"width":''
 	})
