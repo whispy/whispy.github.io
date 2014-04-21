@@ -29,6 +29,11 @@ function fancyNav(selector) {
 		}
 	}; //showDivs end
 
+	function divInit() {
+    		resetDivs();
+    		showDivs();
+	} // loadContent end
+
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
 		resetDivs();
@@ -47,7 +52,7 @@ function fancyNav(selector) {
 
     		$('#headerWrapper').addClass('headerLeft');
 
-        	resetDivs().then(showDivs);
+        	divInit();
 	} //bindListeners end
 
 	$("#selfieDiv").on('click', function() {
