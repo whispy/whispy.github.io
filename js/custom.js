@@ -95,7 +95,6 @@ function fancyWork(selector) {
 	};
 
 	function bindListeners() {
-		$('.imgDiv').on('click', 'a', function() {
 			if(width<=777) {
 				panel.css({
     				"opacity":"0.0",
@@ -159,12 +158,15 @@ $(window).on('pronto.request', function(e, eventInfo){
 	fancyNav(navSelector);
 })
 
-$('.imgDiv a').on('pronto.render', function(e, eventInfo){ // request and render are targeted at the window. See if possible to target them more specifically.
-	console.log(window.location.pathname)
-	if(window.location.pathname.indexOf("work") != -1) {
-		imgDivPronto();
-	}
-})
+$('.imgDiv').on('click', 'a', function() {
+	$('.imgDiv a').on('pronto.render', function(e, eventInfo){ // request and render are targeted at the window. See if possible to target them more specifically.
+		console.log(window.location.pathname)
+		if(window.location.pathname.indexOf("work") != -1) {
+			imgDivPronto();
+		}
+	})
+}
+
 
 function imgDivPronto() {
 	console.log('imgdiva pronto')
