@@ -85,10 +85,10 @@ function fancyWork(selector) {
 	var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 
-	function loadPieces(toLoad) { // Inline loading of content
-		var toFetch = toLoad + '.html' + ' .work ';
-		window.location.hash = toLoad.replace('./pieces/', '');
-		workDisplay.load(toFetch);
+	function loadPieces() { // Inline loading of content
+		//var toFetch = toLoad + '.html' + ' .work ';
+		//window.location.hash = toLoad.replace('./pieces/', '');
+		//workDisplay.load(toFetch);
 		workDisplayFadeIn();
 	} // Inline loading of content end
 
@@ -98,8 +98,8 @@ function fancyWork(selector) {
 	};
 
 	function bindListeners() {
-    	$('.imgDiv').on('click', 'a', function() {
-    		var toLoad = $(this).attr('href').replace('.html', '');
+    	//$('.imgDiv').on('click', 'a', function() {
+    		//var toLoad = $(this).attr('href').replace('.html', '');
 			if(width<=777) {
 				panel.css({
     				"opacity":"0.0",
@@ -127,10 +127,10 @@ function fancyWork(selector) {
 					});
 				}
 
-				loadPieces(toLoad);
-				return false;
+				loadPieces();
+				//return false;
 			}
-    	}); //click function end
+    	//}); //click function end
     }; //bindListeners end
 
 }; // fancyWork
@@ -186,7 +186,7 @@ $(document).ready(function () {
 		fancyNav(navSelector);
 	}
 	
-	jQuery('#ajaxContent').ajaxify({
+	jQuery('#ajaxContent','#ajaxWork').ajaxify({
 		verbosity : 2,
 		turbo : false
 	});
