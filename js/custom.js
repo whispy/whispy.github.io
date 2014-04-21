@@ -158,8 +158,8 @@ function fancyBlog(selector) {
 
 $(window).on('pronto.request', function(e, eventInfo){
 	console.log('pronto.request');
-	//var navSelector = '#menu li';
-	//fancyNav(navSelector);
+	var navSelector = '#menu li';
+	fancyNav(navSelector);
 })
 
  
@@ -180,8 +180,8 @@ $(document).ready(function () {
 	panel.addClass("resetDiv");
 	
 		
-	var navSelector = '#menu li';
-	fancyNav(navSelector);
+	//var navSelector = '#menu li';
+	//fancyNav(navSelector);
 	
 	jQuery('#ajaxContent').ajaxify({
 		verbosity : 2,
