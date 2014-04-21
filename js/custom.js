@@ -166,6 +166,8 @@ $(window).on('statechangecomplete', function(e, eventInfo){
 
  
 $(document).ready(function () {
+	
+	jQuery('.content').ajaxify();
 
 	//Defining global variables
 	width = $(window).width();
