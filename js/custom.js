@@ -171,7 +171,7 @@ $(document).ready(function () {
 		verbosity : 2,
 		turbo : false
 	});
-/*
+
 	//Defining global variables
 	width = $(window).width();
 	panel = $('.panel');
@@ -233,7 +233,7 @@ $(document).ready(function () {
 
 	function getBlogArticles() {
 		return $.get("blog.html");
-	}*/
+	}
 
 	/*window.onhashchange = workHashChange
 	function workHashChange() { // if the hash is not #work and changes to work, this fires
