@@ -179,7 +179,7 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 	
-	if(window.location.href.indexOf("index") > -1) {	
+	if(window.location.href.indexOf("index") = -1) {	
 		var navSelector = window.location.href
 		fancyNav(navSelector);
 	}
