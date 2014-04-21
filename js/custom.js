@@ -20,11 +20,11 @@ function fancyNav(selector) {
 		panel.removeClass("resetDiv");
 		$('div#indexPanel').removeAttr('id');
     		panel.addClass("showDiv");
-    		if($('#selfieDiv').hasClass('on')) {
+    		if($('header a div').hasClass('on')) {
     			console.log('hi');
 			panel.removeClass("showDiv");
 			headerWrapper.addClass("headerCenter");
-			$('#selfieDiv').removeClass('on');
+			$('header a div').removeClass('on');
 		}
 	}; //showDivs end
 
