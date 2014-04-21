@@ -6,9 +6,9 @@ function fancyNav(selector) {
 
 	function resetDivs() {
 		console.log('resetDivs');
-		indexPanel.css({
+		/*indexPanel.css({
 			'height':'' // figure this out
-		})
+		})*/
 		panel.removeClass("showDiv");
 		panel.removeClass("panelSidebar");
 		panel.addClass("resetDiv");
