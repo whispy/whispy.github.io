@@ -161,15 +161,15 @@ function fancyBlog(selector) {
 $(window).on('pronto.request', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
+	if(window.location.pathname.indexOf("pieces")) {
 	imgDivPronto();
+	}
 })
 
 function imgDivPronto() {
-$('.imgDiv a').on('pronto.request', function(e, eventInfo){
 	console.log('imgdiva pronto')
 	var workThumbs = '.imgDiv a'
 	fancyWork(workThumbs);
-})
 }
 
  
