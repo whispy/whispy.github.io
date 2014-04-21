@@ -20,12 +20,7 @@ function fancyNav(selector) {
 		panel.removeClass("resetDiv");
 		$('div#indexPanel').removeAttr('id');
     		panel.addClass("showDiv");
-	}; //showDivs end
-
-	function loadContent() {
-    		resetDivs();
-    		showDivs();
-    		if($('#selfieDiv').hasClass('on')) {
+    		    		if($('#selfieDiv').hasClass('on')) {
     			console.log('hi');
 			panel.removeClass("showDiv");
 			panel.addClass("resetDiv");
@@ -33,6 +28,11 @@ function fancyNav(selector) {
 			headerWrapper.addClass("headerCenter");
 			$('#selfieDiv').removeClass('on');
 		}
+	}; //showDivs end
+
+	function loadContent() {
+    		resetDivs();
+    		showDivs();
 	} // loadContent end
 
 	function bindListeners() {
