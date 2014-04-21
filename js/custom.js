@@ -29,7 +29,7 @@ function fancyNav(selector) {
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
-		if(window.location.href.indexOf("index") ==== -1) {
+		if(window.location.href.indexOf("index") === -1) {
 			console.log('hi')
 		}
 		resetDivs();
