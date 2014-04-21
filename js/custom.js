@@ -28,6 +28,8 @@ function fancyNav(selector) {
     		if($('#selfieDiv').hasClass('on')) {
     			console.log('hi');
 			panel.removeClass("showDiv");
+			panel.addClass("resetDiv");
+			headerWrapper.removeClass('headerLeft');
 			headerWrapper.addClass("headerCenter");
 			//$('header a div').removeClass('on');
 		}
