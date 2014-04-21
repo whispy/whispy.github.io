@@ -160,7 +160,6 @@ function fancyBlog(selector) {
 
 
 $(window).on('statechangecomplete', function(e, eventInfo){
-	console.log('hi');
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
 })
@@ -181,6 +180,8 @@ $(document).ready(function () {
 	panelRight = $('#indexWorkDisplay').width();
 
 	panel.addClass("resetDiv");
+
+	// ADD some sort of window.location.href similar to window.location.hash stuff in order to fire function if user comes to a page directly
 
     if(width>=1208) {
     	$('#headerWrapper').css({
