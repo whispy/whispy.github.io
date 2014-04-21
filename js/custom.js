@@ -20,6 +20,11 @@ function fancyNav(selector) {
 		panel.removeClass("resetDiv");
 		$('div#indexPanel').removeAttr('id');
     		panel.addClass("showDiv");
+    		if($('#selfieDiv').hasClass('on')) {
+			panel.removeClass("showDiv");
+			headerWrapper.addClass("headerCenter");
+			$('#selfieDiv').removeClass('on');
+		}
 	}; //showDivs end
 
 	function loadContent() {
@@ -29,10 +34,6 @@ function fancyNav(selector) {
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
-		if($('#selfieDiv').hasClass('on')) {
-			console.log('hi')
-			$('#selfieDiv').removeClass('on');
-		}
 		resetDivs();
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
     		if(width>=1400) {
