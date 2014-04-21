@@ -165,7 +165,7 @@ $('.imgDiv').on('click', 'a', function() {
 			imgDivPronto();
 		}
 	})
-}
+})
 
 
 function imgDivPronto() {
