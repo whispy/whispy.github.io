@@ -182,7 +182,9 @@ $(document).ready(function () {
 	console.log(window.location.href.indexOf("index"));
 	if(window.location.href.indexOf("index") === -1) {
 		console.log('not index on load is running');
-		var navSelector = window.location.href.replace('(\w+)(?=\.html)','')
+		var URLnotIndex = window.location.href
+		var navSelector = URLnotIndex.replace('(\w+)(?=\.html)','')
+		console.log(navSelector);
 		fancyNav(navSelector);
 	}
 	
