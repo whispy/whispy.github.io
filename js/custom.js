@@ -21,6 +21,7 @@ function fancyNav(selector) {
 		$('div#indexPanel').removeAttr('id');
     		panel.addClass("showDiv");
     		if($('#selfieDiv').hasClass('on')) {
+    			console.log('hi');
 			panel.removeClass("showDiv");
 			headerWrapper.addClass("headerCenter");
 			$('#selfieDiv').removeClass('on');
