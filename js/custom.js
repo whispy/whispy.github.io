@@ -29,8 +29,7 @@ function fancyNav(selector) {
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
-		
-		console.log(click);
+		if()
 		resetDivs();
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
     		if(width>=1400) {
@@ -51,11 +50,7 @@ function fancyNav(selector) {
         	//return false; // Inline loading of content end
 	} //bindListeners end
 
-	$("#selfieDiv").click(function() {
-		if(click = 1){
-			click = ''
-		}
-		click = 1;
+	$("#selfieDiv").on('click', function() {
 		var	width = $(window).width();
 		var	headerCenterLarge = (width / 2) + 87.5;
 		var	headerCenterSmall = (width / 2) + 50;
