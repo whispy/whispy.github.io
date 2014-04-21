@@ -160,6 +160,7 @@ function fancyBlog(selector) {
 
 
 $(window).on('pronto.render', function(e, eventInfo){
+	console.log('pronto.render');
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
 })
