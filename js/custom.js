@@ -165,7 +165,7 @@ $(window).on('pronto.request', function(e, eventInfo){
 
 $(window).on('pronto.render', function(e, eventInfo){
 	console.log(window.location.pathname)
-	if(window.location.pathname.indexOf("pieces")) {
+	if(window.location.pathname.indexOf("pieces") === -1) {
 		imgDivPronto();
 	}
 })
@@ -193,7 +193,7 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 	
-	if(window.location.href.indexOf("index") === -1) {
+	if(window.location.href.indexOf("index") === -1) { // -1 means it does NOT include index
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').replace('/','')
 		fancyNav(navSelector);
