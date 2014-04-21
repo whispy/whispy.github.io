@@ -166,14 +166,6 @@ $(window).on('pronto.request', function(e, eventInfo){
 
  
 $(document).ready(function () {
-	
-	var navSelector = '#menu li';
-	fancyNav(navSelector);
-	
-	jQuery('#ajaxContent').ajaxify({
-		verbosity : 2,
-		turbo : false
-	});
 
 	//Defining global variables
 	width = $(window).width();
@@ -188,6 +180,15 @@ $(document).ready(function () {
 	panelRight = $('#indexWorkDisplay').width();
 
 	panel.addClass("resetDiv");
+	
+		
+	//var navSelector = '#menu li';
+	//fancyNav(navSelector);
+	
+	jQuery('#ajaxContent').ajaxify({
+		verbosity : 2,
+		turbo : false
+	});
 
 	// ADD some sort of window.location.href similar to window.location.hash stuff in order to fire function if user comes to a page directly
 
