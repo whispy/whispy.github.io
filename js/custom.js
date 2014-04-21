@@ -182,7 +182,7 @@ $(document).ready(function () {
 	console.log(window.location.href.indexOf("index"));
 	if(window.location.href.indexOf("index") === -1) {
 		console.log('not index on load is running');
-		var navSelector = window.location.href.replace('http://discoverdan.com/blog.html','blog')
+		var navSelector = window.location.href.replace('(\w+)(?=\.html)','')
 		fancyNav(navSelector);
 	}
 	
