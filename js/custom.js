@@ -20,7 +20,7 @@ function fancyNav(selector) {
 		panel.removeClass("resetDiv");
 		$('div#indexPanel').removeAttr('id');
     		panel.addClass("showDiv");
-    		    		if($('#selfieDiv').hasClass('on')) {
+    		if($('#selfieDiv').hasClass('on')) { //Class gets added but not removed if people click selfieDiv twice in a row
     			console.log('hi');
 			panel.removeClass("showDiv");
 			panel.addClass("resetDiv");
