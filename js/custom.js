@@ -19,8 +19,8 @@ function fancyNav(selector) {
 		headerWrapper.removeClass("headerCenter");
 		panel.removeClass("resetDiv");
 		$('div#indexPanel').removeAttr('id');
-    		panel.addClass("showDiv");
-    		if($('#selfieDiv').hasClass('on')) { //Class gets added but not removed if people click selfieDiv twice in a row
+    	panel.addClass("showDiv");
+    	if($('#selfieDiv').hasClass('on')) { //Class gets added but not removed if people click selfieDiv twice in a row
 			panel.removeClass("showDiv");
 			panel.addClass("resetDiv");
 			headerWrapper.removeClass('headerLeft');
@@ -28,11 +28,6 @@ function fancyNav(selector) {
 			$('#selfieDiv').removeClass('on');
 		}
 	}; //showDivs end
-
-	function loadContent() {
-    		resetDivs();
-    		showDivs();
-	} // loadContent end
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
@@ -52,8 +47,7 @@ function fancyNav(selector) {
 
     		$('#headerWrapper').addClass('headerLeft');
 
-        	loadContent(); // call the function 'loadContent(toLoad)''
-        	//return false; // Inline loading of content end
+        	resetDivs().then(showDivs);
 	} //bindListeners end
 
 	$("#selfieDiv").on('click', function() {
@@ -85,10 +79,6 @@ function fancyWork(selector) {
 	var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 
-	function loadPieces() { // Inline loading of content
-		workDisplayFadeIn();
-	} // Inline loading of content end
-
 	function workDisplayFadeIn() {
 		workDisplay.addClass("resetDiv");
 		workDisplay.addClass("showDiv");
@@ -100,7 +90,7 @@ function fancyWork(selector) {
     				"opacity":"0.0",
     				"visibility":"visible",
     			});
-				console.log('hi');
+				console.log('fancyWork if <777 is running');
 				loadPieces(toLoad);
 				return false;
 			}
@@ -120,12 +110,10 @@ function fancyWork(selector) {
 						"width":"80px",
 						"height":"80px"
 					});
-				}
+				} // if end
 
-				loadPieces();
-				//return false;
-			}
-    	//}); //click function end
+				workDisplayFadeIn();
+			} // else end
     }; //bindListeners end
 
 }; // fancyWork
@@ -166,8 +154,6 @@ $(window).on('pronto.request', function(e, eventInfo){
 		}
 	})
 
-
-
 function imgDivPronto() {
 	console.log('imgdiva pronto')
 	var workThumbs = '.imgDiv a'
@@ -191,7 +177,7 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 	
-	if(window.location.href.indexOf("index") === -1) { // -1 means it does NOT include index
+	if(window.location.href.indexOf("index") === -1) { // If the URL does NOT include 'index'
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').replace('/','')
 		fancyNav(navSelector);
@@ -199,7 +185,6 @@ $(document).ready(function () {
 	
 	jQuery('#ajaxContent , #ajaxWork').ajaxify({
 		verbosity : 2,
-		turbo : false
 	});
 
     if(width>=1208) {
@@ -220,100 +205,24 @@ $(document).ready(function () {
     	})
 	}
     
-    	headerWrapper.addClass("headerCenter");
+    headerWrapper.addClass("headerCenter");
 	$('#headerWrapper').css({
 		"width":''
 	})
 
-	
-
-
-	function setWorkThumbs(data) {
-		var workThumbs = '.imgDiv a'
-		fancyWork(workThumbs);
-		return workThumbs;
-	}
-
-	function getWorkThumbs() {
-		return $.get("work.html");
-	}
-
-
-	function setBlogArticles(data) {
-		var blogArticles = '.content p'
-		fancyBlog(blogArticles);
-		return blogArticles;
-	}
-
-	function getBlogArticles() {
-		return $.get("blog.html");
-	}
-
-	/*window.onhashchange = workHashChange
-	function workHashChange() { // if the hash is not #work and changes to work, this fires
-		if (window.location.hash === '#work') {
-			getWorkThumbs().then(setWorkThumbs);
-		}
-		if (window.location.hash === '#blog') {
-			getBlogArticles().then(setBlogArticles);
-		}
-	};
-
-	function hashChange() {
-		currHash = window.location.hash
-		var navSelector = '#menu li';
-		if (currHash === '') {
-			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
-		}
-
-		if (currHash === '#menu') {
-			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
-		}
-
-
-
-		var navClick = $('.navigation').find(currHash);
-		if (navClick.length) {
-			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
-			navClick.trigger('click');
-			if (currHash === '#work') {
-				getWorkThumbs().then(setWorkThumbs);
-			}
-			if (currHash === '#blog') {
-				getBlogArticles().then(setBlogArticles);
-			}
-		}
-
-
-		var pieceClick = $('.imgDiv').find(currHash);
-		if (pieceClick.length) { // if hash is 'piece#' (# = number value)
-			var pieceHash = window.location.hash;
-			fancyNav(navSelector); // call the function fancyNav with navSelector as an argument
-			$('.navigation').find('#work').trigger('click');
-			window.location.hash = pieceHash;
-			getWorkThumbs().then(setWorkThumbs);
-			pieceClick.trigger('click'); // only works when running through step by step in debugger...
-		}
-	} //hashChange end
-
-	hashChange();*/
 	//checkSize();
 
 }); // $(document).ready
-
-
-
 
 //Get window size
 function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
-	//currHash = window.location.hash
 
 	if(panel.hasClass("panelSidebar")) {
 		var	panelRight = $('#indexWorkDisplay').width();
 		$.stylesheet("#indexPanel.panelSidebar").css({
-			"left":panelRight + 110 + 'px' // scrollbar width 17. problems if going from scrollbar -> no scrollbar (doesn't take into account scrollbar width)
+			"left":panelRight + 110 + 'px'
 		});
 	} // if end
 
@@ -339,12 +248,10 @@ function checkSize() {
 			var mobileMenu = '#offCanvasMenu li';
 			fancyMobileNav(mobileMenu);
 		} // if end
-	} // if !headerWrapper has class headerLeft end
+	} // if headerWrapper does NOT have class headerLeft end
 
 	if(headerWrapper.hasClass("headerLeft")) {
-		//var navClick = $('.navigation').find(currHash);
 		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
-		//if (currHash != '')  {
 			if(width>=1400) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
 					"width":workDisplayLeft - 30 + 'px'
@@ -362,7 +269,6 @@ function checkSize() {
 					"width":"auto"
 				})
 			}
-		//} // if navClick.length end
 	} // if headerWrapper has class headerLeft end
 
 } // checksize() end
@@ -387,57 +293,3 @@ function fancyMobileNav(selector) {
     	});
 	} //bindListeners end
 }; // fancyMobileNav end
-
-	 /*	if (!container.is('.mobileNav')) {
-	 		jQuery("#about, #work, #contact").fadeOut("fast");
-			//container.addClass('mobileNav');
-	 		jQuery(".header").animate({
-	 		"margin-left":"61%",
-	 	}); //animate method end
-	 		jQuery(".container").animate({
-	 		"margin-left":"75px"
-	 	}) // animate method end
-
-	 } //if end
-	 else {
-	 	jQuery("#about, #work, #contact, #home_a").fadeOut("fast");
-		container.removeClass('mobileNav');
-		jQuery(".container").animate({
-	 		"margin-left":""
-	 	}) // animate method end
-	 		jQuery(".header").animate({
-	 		"margin-left":"6%",
-	 	}); //animate method end
-		} // else end*/
-
-//Animations for mobile navigation
-/* jQuery("#menu_a").click(function() {
-
-		jQuery("#about, #work, #contact").fadeOut("fast");
-		allNavA.removeClass('on');
-
-	 	if (!container.is('.mobileNav')) {
-	 		jQuery("#about, #work, #contact").fadeOut("fast");
-			//container.addClass('mobileNav');
-	 		jQuery(".header").animate({
-	 		"margin-left":"61%",
-	 	}); //animate method end
-	 		jQuery(".container").animate({
-	 		"margin-left":"75px"
-	 	}) // animate method end
-
-	 } //if end
-	 else {
-	 	jQuery("#about, #work, #contact, #home_a").fadeOut("fast");
-		container.removeClass('mobileNav');
-		jQuery(".container").animate({
-	 		"margin-left":""
-	 	}) // animate method end
-	 		jQuery(".header").animate({
-	 		"margin-left":"6%",
-	 	}); //animate method end
-		} // else end
-	}); // click method end
-//Animations for mobile navigation end
-
-*/
