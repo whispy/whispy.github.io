@@ -29,7 +29,7 @@ function fancyNav(selector) {
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
-		if(window.location.href.indexOf("index") != -1) {}
+		if(window.location.href.indexOf("index") === -1) {
 		resetDivs();
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
     		if(width>=1400) {
@@ -47,6 +47,7 @@ function fancyNav(selector) {
     		$('#headerWrapper').addClass('headerLeft');
 
         	loadContent(); // call the function 'loadContent(toLoad)''
+		}
         	//return false; // Inline loading of content end
 	} //bindListeners end
 
