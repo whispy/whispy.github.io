@@ -28,7 +28,9 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-		$('.navigation').on('click', 'a', function() {
+		//$('.navigation').on('click', 'a', function() {
+		var target = $(e.target);
+		console.log(target)
 		resetDivs();
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
     		if(width>=1400) {
@@ -47,7 +49,6 @@ function fancyNav(selector) {
 
         	loadContent(); // call the function 'loadContent(toLoad)''
         	//return false; // Inline loading of content end
-		})
 	} //bindListeners end
 
 	$("#selfieDiv").click(function() {
