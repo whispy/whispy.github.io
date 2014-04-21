@@ -22,19 +22,14 @@ function fancyNav(selector) {
     		panel.addClass("showDiv");
 	}; //showDivs end
 
-	function loadContent() {		//loadContent = function() { // Inline loading of content
-    		/*var toFetch = toLoad + '.html' + ' .content ';
-    		window.location.hash = toLoad
-    		
-    		panel.load(toFetch);*/
+	function loadContent() {
     		resetDivs();
     		showDivs();
 	} // loadContent end
 
 	function bindListeners() {
-		//$('.navigation').on('click', 'a', function() {
-			resetDivs();
-        	//var toLoad = $(this).attr('href').replace('.html', '');
+		$('.navigation').on('click', 'a', function() {
+		resetDivs();
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
     		if(width>=1400) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
@@ -52,6 +47,7 @@ function fancyNav(selector) {
 
         	loadContent(); // call the function 'loadContent(toLoad)''
         	//return false; // Inline loading of content end
+		})
 	} //bindListeners end
 
 	$("#selfieDiv").click(function() {
