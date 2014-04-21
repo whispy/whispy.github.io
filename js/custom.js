@@ -168,6 +168,9 @@ $(window).on('pronto.request', function(e, eventInfo){
  
 $(document).ready(function () {
 	
+	var navSelector = '#menu li';
+	fancyNav(navSelector);
+	
 	jQuery('#ajaxContent').ajaxify({
 		verbosity : 2,
 		turbo : false
