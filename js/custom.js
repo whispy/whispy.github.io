@@ -162,13 +162,16 @@ $(window).on('pronto.request', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
 	console.log(pronto.request)
+	imgDivPronto();
 })
 
+function imgDivPronto() {
 $('.imgDiv a').on('pronto.request', function(e, eventInfo){
 	console.log('imgdiva pronto')
 	var workThumbs = '.imgDiv a'
 	fancyWork(workThumbs);
 })
+}
 
  
 $(document).ready(function () {
