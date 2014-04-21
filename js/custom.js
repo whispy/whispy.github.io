@@ -59,7 +59,6 @@ function fancyNav(selector) {
 		var	headerCenterLarge = (width / 2) + 87.5;
 		var	headerCenterSmall = (width / 2) + 50;
 		resetDivs();
-		$('nav ul li').removeClass();
 		$('#headerWrapper').removeClass('headerLeft');
 
 		if(width>=1208) {
@@ -181,10 +180,8 @@ $(document).ready(function () {
 	
 	console.log(window.location.href.indexOf("index"));
 	if(window.location.href.indexOf("index") === -1) {
-		console.log('not index on load is running');
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').replace('/','')
-		console.log(navSelector);
 		fancyNav(navSelector);
 	}
 	
@@ -192,8 +189,6 @@ $(document).ready(function () {
 		verbosity : 2,
 		turbo : false
 	});
-
-	// ADD some sort of window.location.href similar to window.location.hash stuff in order to fire function if user comes to a page directly
 
     if(width>=1208) {
     	$('#headerWrapper').css({
