@@ -20,11 +20,11 @@ function fancyNav(selector) {
 		panel.removeClass("resetDiv");
 		$('div#indexPanel').removeAttr('id');
     		panel.addClass("showDiv");
-    		if($('header a div').hasClass('on')) {
+    		if($('#selfieDiv').hasClass('on')) {
     			console.log('hi');
 			panel.removeClass("showDiv");
 			headerWrapper.addClass("headerCenter");
-			$('header a div').removeClass('on');
+			//$('header a div').removeClass('on');
 		}
 	}; //showDivs end
 
@@ -56,7 +56,8 @@ function fancyNav(selector) {
 	} //bindListeners end
 
 	$("#selfieDiv").on('click', function() {
-		$('header a div').addClass('on');
+		$('#selfieDiv').addClass('on');
+		console.log('selfie div on')
 		var	width = $(window).width();
 		var	headerCenterLarge = (width / 2) + 87.5;
 		var	headerCenterSmall = (width / 2) + 50;
