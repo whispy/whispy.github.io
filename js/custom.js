@@ -24,7 +24,7 @@ function fancyNav(selector) {
     			console.log('hi');
 			panel.removeClass("showDiv");
 			headerWrapper.addClass("headerCenter");
-			$('#selfieDiv').removeClass('on');
+			//$('#selfieDiv').removeClass('on');
 		}
 	}; //showDivs end
 
