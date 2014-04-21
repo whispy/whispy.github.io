@@ -159,10 +159,10 @@ function fancyBlog(selector) {
 }; // fancyBlog
 
 
-$(window).on('statechangecomplete', function(e, eventInfo){
+/*$(window).on('statechangecomplete', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
-})
+}) */
 
  
 $(document).ready(function () {
@@ -170,7 +170,7 @@ $(document).ready(function () {
 	jQuery('.content').ajaxify({
 		verbosity: 2
 	});
-
+/*
 	//Defining global variables
 	width = $(window).width();
 	panel = $('.panel');
@@ -232,7 +232,7 @@ $(document).ready(function () {
 
 	function getBlogArticles() {
 		return $.get("blog.html");
-	}
+	}*/
 
 	/*window.onhashchange = workHashChange
 	function workHashChange() { // if the hash is not #work and changes to work, this fires
