@@ -29,8 +29,9 @@ function fancyNav(selector) {
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
-		if(window.location.href.indexOf("index") === -1) {
+		if($('#selfieDiv').hasClass('on')) {
 			console.log('hi')
+			$('#selfieDiv').removeClass('on');
 		}
 		resetDivs();
     		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
@@ -72,6 +73,7 @@ function fancyNav(selector) {
 		} // if end
 
 		$('#headerWrapper').addClass('headerCenter');
+		$('#selfieDiv').addClass('on');
 	}); // click method end
 
 }; // fancyNav
