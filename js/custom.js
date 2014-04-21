@@ -159,10 +159,10 @@ function fancyBlog(selector) {
 }; // fancyBlog
 
 
-/*$(window).on('statechangecomplete', function(e, eventInfo){
+$(window).on('pronto.render', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
-}) */
+})
 
  
 $(document).ready(function () {
