@@ -42,4 +42,9 @@ div p {
 footer {
 
 }
+ 
+ .articleLinks {
+ 	display:block;
+ 	font-size:1.25rem;
+ }
 

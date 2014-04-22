@@ -64,7 +64,7 @@ noscript div p {
 	Orangered: #EA4423 or rgba(234,68,35, 1);
 	Dark grey: #323232;
 	Medium Dark: rgba(123, 123, 123, 1);
-	Medium Light grey: #CCCCCB;
+	Medium Light: #CCCCCB;
 	Light grey: #DEDDDD or rgba(243, 240, 240, 1);
 
 	FONT SIZES
@@ -134,7 +134,7 @@ div p {
 
 p {
 	font-family:"Alegreya Sans", Arial, Helvetica, sans-serif;
-	color: #323232 ;
+	color: #323232;
 }
 
 /* Text Styling End */
@@ -192,7 +192,22 @@ a:hover {
     -o-transition: opacity 3s ease;  
     transition: opacity 3s ease; 
     opacity:0;
-}  
+}
+
+.articleLinks {
+	text-decoration: none;
+	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-style:normal;
+	color:rgba(123, 123, 123, 1);
+	font-size:1.75rem;
+	line-height:36px;
+	margin-bottom:10px;
+	display:block;
+}
+
+.articleLinks:hover {
+	color:#CCCCCB;
+}
 
 /* Link Styling End */
 
@@ -408,6 +423,10 @@ nav {
     margin-right: auto;
 }
 
+.articleDiv {
+	margin-bottom:10px;
+}
+
 .infoBox {
 	position:relative;
 	max-width:300px;
@@ -420,6 +439,10 @@ nav {
 	padding-bottom:10px;
 	padding-left:2px;
 	padding-right:2px;
+}
+
+.articleYears {
+	margin-left:0px;
 }
 
 .date {

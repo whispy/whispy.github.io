@@ -118,6 +118,14 @@ h3 {
 h4 {
 }
 
+.articleLinks {
+	margin-bottom:20px;
+}
+
+.articleYears {
+	margin-left:0px;
+}
+
 .infoBox {
 	width:100%;
 	max-width:100%;
