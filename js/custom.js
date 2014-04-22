@@ -147,8 +147,8 @@ function fancyBlog(selector) {
 
 // could create a fancyWorkLoad and fancyWorkClick?
 $(window).on('pronto.request', function(){
-	var navSelector = '#menu li';
-	fancyNav(navSelector);
+	//var navSelector = '#menu li';
+	fancyNav();
 })
 
 $(window).on('pronto.request', 'a', function(){
