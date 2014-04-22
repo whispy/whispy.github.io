@@ -250,7 +250,7 @@ function checkSize() {
 
 	if(panel.hasClass("panelSidebar")) {
 		var	panelRight = $('#indexWorkDisplay').width();
-		$.stylesheet("#indexPanel.panelSidebar").css({
+		$.stylesheet(".panel.panelSidebar").css({
 			"left":panelRight + 110 + 'px'
 		});
 	} // if end
