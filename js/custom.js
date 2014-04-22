@@ -178,18 +178,6 @@ function imgDivPronto() {
  
 $(document).ready(function () {
 
-	$('.navigation').on('click', 'a', function() {
-		console.log(".nav click running")
-		var navSelector = '#menu li';
-		fancyNav(navSelector);
-	})
-
-	$('.imgDiv').on('click', 'a', function() {
-		console.log(".imgDiv click running")
-		var workThumbs = '.imgDiv a'
-		fancyWork(workThumbs);
-	})
-
 	//Defining global variables
 	width = $(window).width();
 	panel = $('.panel');
@@ -204,39 +192,56 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 	
+	//run fancyNav on direct URL load
 	if(window.location.href.indexOf("index") === -1) { // If the URL does NOT include 'index'
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').replace('/','')
 		fancyNav(navSelector);
 	}
+
+	//run fancyNav on click of .navigation a
+	$('.navigation').on('click', 'a', function() {
+		console.log(".nav click running")
+		var navSelector = '#menu li';
+		fancyNav(navSelector);
+	})
+
+	//run fancyWork on
+	$('.imgDiv').on('click', 'a', function() {
+		console.log(".imgDiv click running")
+		var workThumbs = '.imgDiv a'
+		fancyWork(workThumbs);
+	})
 	
 	jQuery('#ajaxContent , #ajaxWork').ajaxify({
 		verbosity : 2,
 	});
 
-    if(width>=1208) {
-    	$('#headerWrapper').css({
-			"width":headerCenterLarge + 'px'
-    	})
-		$.stylesheet('#headerWrapper.headerCenter').css({
-			"width":headerCenterLarge + 'px'
-    	})
-	}
-
-	if(width<=1207) {
+	setHeaderWrapperWidth();
+	function setHeaderWrapperWidth() {
+		if(width>=1208) {
+				$('#headerWrapper').css({
+					"width":headerCenterLarge + 'px'
+				})
+				$.stylesheet('#headerWrapper.headerCenter').css({
+					"width":headerCenterLarge + 'px'
+				})
+			}
+	
+		if(width<=1207) {
+			$('#headerWrapper').css({
+				"width":headerCenterSmall + 'px'
+    		})
+			$.stylesheet('#headerWrapper.headerCenter').css({
+				"width":headerCenterSmall + 'px'
+    		})
+		}
+    	
+    	headerWrapper.addClass("headerCenter");
 		$('#headerWrapper').css({
-			"width":headerCenterSmall + 'px'
-    	})
-		$.stylesheet('#headerWrapper.headerCenter').css({
-			"width":headerCenterSmall + 'px'
-    	})
+			"width":''
+		})
 	}
-    
-    headerWrapper.addClass("headerCenter");
-	$('#headerWrapper').css({
-		"width":''
-	})
-
 	//checkSize();
 
 }); // $(document).ready
