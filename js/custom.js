@@ -151,7 +151,7 @@ $(window).on('pronto.request', function(){
 	fancyNav(navSelector);
 })
 
-$(window).on('pronto.request', '.imgDiv a', function(){
+$(window).on('pronto.request', 'a', function(){
 	console.log('.imgDiv a pronto running')
 	var workThumbs = '.imgDiv a'
 	fancyWork(workThumbs);
