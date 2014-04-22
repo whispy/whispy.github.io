@@ -102,12 +102,12 @@ function fancyWork(selector) {
 			else {
 
 				if (panel.width()>=101) {
-					$.stylesheet("#indexPanel.panelSidebar").css({
+					$.stylesheet(".panel.panelSidebar").css({
 						"left":panelRight + 110 + 'px'
 					});
 		
 					panel.addClass("panelSidebar");
-					$('#indexContent').addClass("marginTop0");
+					$('.content').addClass("marginTop0");
 
 					
 					$('.content .imgDiv').css({
