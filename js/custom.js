@@ -148,21 +148,25 @@ function fancyBlog(selector) {
 // could create a fancyWorkLoad and fancyWorkClick?
 $(window).on('pronto.request', function(){
 	console.log('pronto.request running')
+	navAClick();
 	//var navSelector = '#menu li';
 	//fancyNav(navSelector);
 })
 
 $(window).on('pronto.render', function(){
+	console.log('pronto.render running')
 	imgDivClick();
 })
 
-// request and render are targeted at the window. See if possible to target them more specifically.
-	/*$('.imgDiv a').on('pronto.render', function(e, eventInfo){ 
-		console.log(window.location.pathname)
-		if(window.location.pathname.indexOf("work") != -1) {
-			imgDivPronto();
-		}
-	})*/
+function navAClick() {
+	//run fancyNav on click of .navigation a
+	$('.navigation').on('click', 'a', function() {
+		console.log(".nav click running")
+		var navSelector = '#menu li';
+		fancyNav(navSelector);
+	})
+}
+
 
 function imgDivClick() {
 	//run fancyWork on click of .imgDiv a
@@ -197,12 +201,7 @@ $(document).ready(function () {
 		fancyNav(navSelector);
 	}
 
-	//run fancyNav on click of .navigation a
-	$('.navigation').on('click', 'a', function() {
-		console.log(".nav click running")
-		var navSelector = '#menu li';
-		fancyNav(navSelector);
-	})
+
 
 	//run imgDivClick on page load if URL includes 'work'
 	if(window.location.href.indexOf("work") != -1) {
