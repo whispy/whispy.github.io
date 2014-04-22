@@ -205,7 +205,8 @@ $(document).ready(function () {
 	})
 
 	//run imgDivClick on page load if URL includes 'work'
-	if(window.location.pathname.indexOf("work") === -1) {
+	if(!window.location.pathname.indexOf("work") === -1) {
+		console.log('work imgdivclick')
 		imgDivClick();
 	}
 
