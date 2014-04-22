@@ -191,7 +191,6 @@ $(document).ready(function () {
 	}
 	
 	jQuery('#ajaxContent').ajaxify({
-		selector: '#menu li',
 		verbosity : 2,
 	});
 
