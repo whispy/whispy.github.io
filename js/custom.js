@@ -143,8 +143,6 @@ function fancyBlog(selector) {
 $(window).on('pronto.request', function(){
 	console.log('pronto.request running')
 	navAClick();
-	//var navSelector = '#menu li';
-	//fancyNav(navSelector);
 })
 
 $(window).on('pronto.render', function(){
@@ -188,7 +186,7 @@ $(document).ready(function () {
 	panelRight = $('#indexWorkDisplay').width();
 
 	panel.addClass("resetDiv");
-	
+
 	//run fancyNav on direct URL load if URL does NOT include 'index'
 	if(window.location.href.indexOf("index") === -1) {
 		var URLnotIndex = window.location.pathname
