@@ -380,7 +380,7 @@ nav {
 }
 
 /* Image Styling */
-.workSmall { /*long work thumbnails on work page */
+.thumbSmall { /*long work thumbnails on work page */
 	width:616px;
 	background-color: white;
 	height:150px;
