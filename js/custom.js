@@ -14,7 +14,7 @@ function showDivs() {
 	panel.removeClass("resetDiv");
 	$('div#indexPanel').removeAttr('id');
    	panel.addClass("showDiv");
-   	if($('#selfieDiv').hasClass('on')) { //Class gets added but not removed if people click selfieDiv twice in a row
+   	if($('#selfieDiv').hasClass('on')) { //Centers navigation if it is clicked
 		panel.removeClass("showDiv");
 		panel.addClass("resetDiv");
 		headerWrapper.removeClass('headerLeft');
@@ -75,8 +75,7 @@ function fancyNav(selector) {
 
 		$('#headerWrapper').addClass('headerCenter');
 	}); // click method end
-
-}; // fancyNav
+}; // fancyNav end
 
 function fancyWork(selector) {
 	var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
@@ -108,10 +107,9 @@ function fancyWork(selector) {
 				workDisplayFadeIn();
 			} // else end
     }; //bindListeners end
+}; // fancyWork end
 
-}; // fancyWork
-
-function fancyBlog(selector) {
+function fancyBlog(selector) { // is not called. Need to set it up similar to fancyWork
 	var blogArticles = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(blogArticles); // call the function 'bindListeners' with the variable 'menuItems'
 
@@ -130,37 +128,29 @@ function fancyBlog(selector) {
 			return false;
     	}); //click function end
     }; //bindListeners end
-
-}; // fancyBlog
+}; // fancyBlog end
 
 $(window).on('pronto.request', function(){
-	console.log('pronto.request running')
 	navAClick();
 })
 
 $(window).on('pronto.render', function(){
-	console.log('pronto.render running')
 	imgDivClick();
 	if(window.location.pathname.indexOf("pieces") != -1){
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
 })
 
-function navAClick() {
-	//run fancyNav on click of .navigation anchors
+function navAClick() { //run fancyNav on click of .navigation anchors
 	$('.navigation').on('click', 'a', function() {
-		console.log(".nav click running")
 		var navSelector = '#menu li';
 		fancyNav(navSelector);
 	})
 }
 
 
-function imgDivClick() {
-	//run fancyWork on click of .imgDiv anchors
+function imgDivClick() { //run fancyWork on click of .imgDiv anchors
 	$('.imgDiv').on('click', 'a', function() {
-		console.log(".imgDiv click running")
-		//content.addClass("marginTop0");
 		var workThumbs = '.imgDiv a'
 		fancyWork(workThumbs);
 	})
@@ -188,15 +178,14 @@ $(document).ready(function () {
 	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1) {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-		console.log(navSelector)
 		fancyNav(navSelector);
 	}
 
+	//Enables users to come in on a piece and still have fancyNav execute when they click on a navigation link
 	navAClick();
 
 	//run imgDivClick on page load if URL includes 'work'
 	if(window.location.href.indexOf("work") != -1) {
-		console.log('work imgdivclick')
 		imgDivClick();
 	}
 
@@ -239,9 +228,8 @@ $(document).ready(function () {
 			"width":''
 		})
 	}
-	//checkSize();
 
-}); // $(document).ready
+}); // $(document).ready end
 
 //Get window size
 function checkSize() {
@@ -315,9 +303,6 @@ function fancyMobileNav(selector) {
 
 	function bindListeners() {
     	$('#offCanvasMenu').on('click', 'a', function() {
-    		$('#headerWrapper').animate({
-    			"margin-left":"0%"
-    		})
     		//jQuery('.container').addClass('mobileNav');
     	});
 	} //bindListeners end
