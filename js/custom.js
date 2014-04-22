@@ -153,12 +153,7 @@ $(window).on('pronto.request', function(){
 })
 
 $(window).on('pronto.render', function(){
-		//run fancyWork on click of .imgDiv a
-	$('.imgDiv').on('click', 'a', function() {
-		console.log(".imgDiv click running")
-		var workThumbs = '.imgDiv a'
-		fancyWork(workThumbs);
-	})
+	imgDivClick();
 })
 
 // request and render are targeted at the window. See if possible to target them more specifically.
@@ -169,10 +164,13 @@ $(window).on('pronto.render', function(){
 		}
 	})*/
 
-function imgDivPronto() {
-	console.log('imgdiva pronto')
-	var workThumbs = '.imgDiv a'
-	fancyWork(workThumbs);
+function imgDivClick() {
+	//run fancyWork on click of .imgDiv a
+	$('.imgDiv').on('click', 'a', function() {
+		console.log(".imgDiv click running")
+		var workThumbs = '.imgDiv a'
+		fancyWork(workThumbs);
+	})
 }
 
  
@@ -205,7 +203,7 @@ $(document).ready(function () {
 		var navSelector = '#menu li';
 		fancyNav(navSelector);
 	})
-
+	imgDivClick();
 
 	
 	jQuery('#ajaxContent , #ajaxWork').ajaxify({
