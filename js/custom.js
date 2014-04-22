@@ -201,7 +201,7 @@ $(document).ready(function () {
 		fancyNav(navSelector);
 	}
 
-
+	navAClick();
 
 	//run imgDivClick on page load if URL includes 'work'
 	if(window.location.href.indexOf("work") != -1) {
