@@ -184,6 +184,12 @@ $(document).ready(function () {
 		fancyNav(navSelector);
 	})
 
+	$('.imgDiv').on('click', 'a', function() {
+		console.log(".imgDiv click running")
+		var navSelector = '#menu li';
+		fancyNav(navSelector);
+	})
+
 	//Defining global variables
 	width = $(window).width();
 	panel = $('.panel');
