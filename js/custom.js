@@ -149,8 +149,7 @@ function fancyBlog(selector) {
 $(window).on('pronto.request', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
-	var workThumbs = '.imgDiv a'
-	fancyWork(workThumbs);
+
 })
 
 // request and render are targeted at the window. See if possible to target them more specifically.
@@ -195,7 +194,7 @@ $(document).ready(function () {
 	});
 
 	jQuery('#ajaxWork').ajaxify({
-		//selector: '.imgDiv a',
+		selector: '.imgDiv a',
 		verbosity : 2,
 	});
 
