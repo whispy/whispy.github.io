@@ -403,6 +403,10 @@ nav {
 	border: 1px dashed #CCCCCB;
 }
 
+img.workSmall {
+	width:49%;
+}
+
 .work img {
 	margin-bottom:20px;
 }

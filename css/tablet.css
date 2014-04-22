@@ -26,6 +26,10 @@ body {
 	width:100px;
 }
 
+.work img {
+	max-width:100%;
+}
+
 
 nav {
 	max-width:100px; /* same as logo width */
