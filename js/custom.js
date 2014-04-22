@@ -91,6 +91,8 @@ function fancyWork(selector) {
 			if(width<=777) {
 				console.log('fancyWork <777px');
 				panel.removeClass("showDiv");
+				panel.addClass("resetDivs");
+				workDisplayFadeIn();
 			}
 			else {
 
