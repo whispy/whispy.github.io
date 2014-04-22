@@ -4,14 +4,12 @@ function fancyNav(selector) {
 
 	function resetDivs() {
 		console.log('resetDivs');
-		/*indexPanel.css({
-			'height':'' // figure this out
-		})*/
 		panel.removeClass("showDiv");
 		panel.removeClass("panelSidebar");
 		panel.addClass("resetDiv");
 		workDisplay.removeClass("showDiv")
 		workDisplay.addClass("resetDiv");
+		content.removeClass("marginTop0");
 	}; // resetDivs end
 	
 	function showDivs() {
@@ -184,6 +182,7 @@ $(document).ready(function () {
 	width = $(window).width();
 	panel = $('.panel');
 	indexPanel = $('#indexPanel');
+	content = $('.content');
 	workDisplay = $('.workDisplay');
 	headerWrapper = $('#headerWrapper');
 
