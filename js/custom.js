@@ -89,13 +89,8 @@ function fancyWork(selector) {
 
 	function bindListeners() {
 			if(width<=777) {
-				panel.css({
-    				"opacity":"0.0",
-    				"visibility":"visible",
-    			});
-				console.log('fancyWork if <777 is running');
-				loadPieces(toLoad);
-				return false;
+				console.log('fancyWork <777px');
+				panel.removeClass("showDiv");
 			}
 			else {
 
