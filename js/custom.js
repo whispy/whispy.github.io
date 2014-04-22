@@ -146,18 +146,24 @@ function fancyBlog(selector) {
 }; // fancyBlog
 
 // could create a fancyWorkLoad and fancyWorkClick?
-$(window).on('pronto.request', function(e, eventInfo){
+$(window).on('pronto.request', function(){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
 })
 
+$(window).on('pronto.request', '.imgDiv a', function(){
+	var workThumbs = '.imgDiv a'
+	fancyWork(workThumbs);
+})
+
+
 // request and render are targeted at the window. See if possible to target them more specifically.
-	$('.imgDiv a').on('pronto.render', function(e, eventInfo){ 
+	/*$('.imgDiv a').on('pronto.render', function(e, eventInfo){ 
 		console.log(window.location.pathname)
 		if(window.location.pathname.indexOf("work") != -1) {
 			imgDivPronto();
 		}
-	})
+	})*/
 
 function imgDivPronto() {
 	console.log('imgdiva pronto')
