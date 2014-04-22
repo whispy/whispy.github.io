@@ -63,7 +63,8 @@ noscript div p {
 	Dark blue: #007D85;
 	Orangered: #EA4423 or rgba(234,68,35, 1);
 	Dark grey: #323232;
-	Middle grey: #CCCCCB;
+	Medium Dark: rgba(123, 123, 123, 1);
+	Medium Light grey: #CCCCCB;
 	Light grey: #DEDDDD or rgba(243, 240, 240, 1);
 
 	FONT SIZES
@@ -104,12 +105,30 @@ h2 {
 	color:#ED420A;
 	font-size:1.25rem;
 	line-height:36px;
+	margin-bottom:15px;
+}
+
+h3 {
+	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-style:normal;
+	color:rgba(123, 123, 123, 1);
+	font-size:1rem;
+	line-height:1;
+	margin-bottom:3px;
+}
+
+h4 {
+	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-style:normal;
+	color:rgba(123, 123, 123, 1);
+	font-size:1rem;
+	line-height:1;
 }
 
 div p {
 	font-size:1.25rem;
 	line-height:31px;
-	margin-top:15px;
+	margin-bottom:15px;
 	font-style:normal;
 }
 
@@ -387,6 +406,24 @@ nav {
 	max-width:616px;
 	margin-left: auto; 
     margin-right: auto;
+}
+
+.infoBox {
+	position:relative;
+	max-width:300px;
+	float:right;
+	margin-left:30px;
+	margin-top:12px;
+	border-top:4px solid rgba(123, 123, 123, .8);
+	border-bottom:4px solid rgba(123, 123, 123, .8);
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:2px;
+	padding-right:2px;
+}
+
+.date {
+	margin-bottom:10px;
 }
 
 /* Image Styling */

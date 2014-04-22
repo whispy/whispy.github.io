@@ -112,6 +112,20 @@ div ul li{
 	margin-top:10%;
 }
 
+h3 {
+}
+
+h4 {
+}
+
+.infoBox {
+	width:100%;
+	max-width:100%;
+	float:none;
+	margin-left:0px;
+	margin-bottom:12px;
+}
+
 .work {
 	margin-top: 10%;
 }
