@@ -186,8 +186,8 @@ $(document).ready(function () {
 
 	$('.imgDiv').on('click', 'a', function() {
 		console.log(".imgDiv click running")
-		var navSelector = '#menu li';
-		fancyNav(navSelector);
+		var workThumbs = '.imgDiv a'
+		fancyWork(workThumbs);
 	})
 
 	//Defining global variables
