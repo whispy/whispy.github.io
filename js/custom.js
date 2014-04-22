@@ -193,7 +193,7 @@ $(document).ready(function () {
 	});
 
 	jQuery('#ajaxWork').ajaxify({
-		selector: '.imgDiv a',
+		
 	});
 
     if(width>=1208) {
