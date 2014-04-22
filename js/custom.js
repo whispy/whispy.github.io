@@ -190,8 +190,8 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 	
-	//run fancyNav on direct URL load
-	if(window.location.href.indexOf("index") === -1) { // If the URL does NOT include 'index'
+	//run fancyNav on direct URL load if URL does NOT include 'index'
+	if(window.location.pathname.indexOf("index") === -1) {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').replace('/','')
 		fancyNav(navSelector);
@@ -203,7 +203,11 @@ $(document).ready(function () {
 		var navSelector = '#menu li';
 		fancyNav(navSelector);
 	})
-	imgDivClick();
+
+	//run imgDivClick on page load if URL includes 'work'
+	if(window.location.pathname.indexOf("work") === -1) {
+		imgDivClick();
+	}
 
 	
 	jQuery('#ajaxContent , #ajaxWork').ajaxify({
