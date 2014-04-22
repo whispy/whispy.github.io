@@ -195,7 +195,7 @@ $(document).ready(function () {
 	});
 
 	jQuery('#ajaxWork').ajaxify({
-		selector: '.imgDiv a',
+		//selector: '.imgDiv a',
 		verbosity : 2,
 	});
 
