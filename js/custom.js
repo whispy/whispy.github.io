@@ -1,31 +1,31 @@
+function resetDivs() {
+	console.log('resetDivs');
+	panel.removeClass("showDiv");
+	panel.removeClass("panelSidebar");
+	panel.addClass("resetDiv");
+	workDisplay.removeClass("showDiv")
+	workDisplay.addClass("resetDiv");
+	content.removeClass("marginTop0");
+}; // resetDivs end
+
+function showDivs() {
+	console.log('showDivs');
+	headerWrapper.removeClass("headerCenter");
+	panel.removeClass("resetDiv");
+	$('div#indexPanel').removeAttr('id');
+   	panel.addClass("showDiv");
+   	if($('#selfieDiv').hasClass('on')) { //Class gets added but not removed if people click selfieDiv twice in a row
+		panel.removeClass("showDiv");
+		panel.addClass("resetDiv");
+		headerWrapper.removeClass('headerLeft');
+		headerWrapper.addClass("headerCenter");
+		$('#selfieDiv').removeClass('on');
+	}
+}; //showDivs end
+
 function fancyNav(selector) {
 	var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
-
-	function resetDivs() {
-		console.log('resetDivs');
-		panel.removeClass("showDiv");
-		panel.removeClass("panelSidebar");
-		panel.addClass("resetDiv");
-		workDisplay.removeClass("showDiv")
-		workDisplay.addClass("resetDiv");
-		content.removeClass("marginTop0");
-	}; // resetDivs end
-	
-	function showDivs() {
-		console.log('showDivs');
-		headerWrapper.removeClass("headerCenter");
-		panel.removeClass("resetDiv");
-		$('div#indexPanel').removeAttr('id');
-    	panel.addClass("showDiv");
-    	if($('#selfieDiv').hasClass('on')) { //Class gets added but not removed if people click selfieDiv twice in a row
-			panel.removeClass("showDiv");
-			panel.addClass("resetDiv");
-			headerWrapper.removeClass('headerLeft');
-			headerWrapper.addClass("headerCenter");
-			$('#selfieDiv').removeClass('on');
-		}
-	}; //showDivs end
 
 	function divInit() {
     		resetDivs();
@@ -103,12 +103,6 @@ function fancyWork(selector) {
 					panel.addClass("panelSidebar");
 					$('.content').addClass("marginTop0");
 
-					
-					$('.content .imgDiv').css({
-						"margin-top":"10px",
-						"width":"80px",
-						"height":"80px"
-					});
 				} // if end
 
 				workDisplayFadeIn();
@@ -139,7 +133,6 @@ function fancyBlog(selector) {
 
 }; // fancyBlog
 
-// could create a fancyWorkLoad and fancyWorkClick?
 $(window).on('pronto.request', function(){
 	console.log('pronto.request running')
 	navAClick();
@@ -148,10 +141,13 @@ $(window).on('pronto.request', function(){
 $(window).on('pronto.render', function(){
 	console.log('pronto.render running')
 	imgDivClick();
+	if(window.location.pathname.indexOf("pieces") != -1){
+		$('.content .imgDiv').addClass("sidebarThumbs");
+	}
 })
 
 function navAClick() {
-	//run fancyNav on click of .navigation a
+	//run fancyNav on click of .navigation anchors
 	$('.navigation').on('click', 'a', function() {
 		console.log(".nav click running")
 		var navSelector = '#menu li';
@@ -161,9 +157,10 @@ function navAClick() {
 
 
 function imgDivClick() {
-	//run fancyWork on click of .imgDiv a
+	//run fancyWork on click of .imgDiv anchors
 	$('.imgDiv').on('click', 'a', function() {
 		console.log(".imgDiv click running")
+		//content.addClass("marginTop0");
 		var workThumbs = '.imgDiv a'
 		fancyWork(workThumbs);
 	})
@@ -187,10 +184,11 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 
-	//run fancyNav on direct URL load if URL does NOT include 'index'
-	if(window.location.href.indexOf("index") === -1) {
+	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include pieces
+	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1) {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		console.log(navSelector)
 		fancyNav(navSelector);
 	}
 
@@ -202,6 +200,15 @@ $(document).ready(function () {
 		imgDivClick();
 	}
 
+	//run fancyWork on page load if URL includes 'pieces'
+	if(window.location.pathname.indexOf("pieces") != -1) {
+		var URLnotIndex = window.location.pathname
+		var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		showDivs();
+		fancyNav(navSelector);
+		fancyWork(workThumbs);
+		$('.content .imgDiv').addClass("sidebarThumbs");
+	}
 	
 	jQuery('#ajaxContent , #ajaxWork').ajaxify({
 		verbosity : 2,
