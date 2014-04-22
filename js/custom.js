@@ -145,10 +145,12 @@ function fancyBlog(selector) {
 
 }; // fancyBlog
 
-
+// could create a fancyWorkLoad and fancyWorkClick?
 $(window).on('pronto.request', function(e, eventInfo){
 	var navSelector = '#menu li';
 	fancyNav(navSelector);
+	var workThumbs = '.imgDiv a'
+	fancyWork(workThumbs);
 })
 
 // request and render are targeted at the window. See if possible to target them more specifically.
@@ -188,7 +190,12 @@ $(document).ready(function () {
 		fancyNav(navSelector);
 	}
 	
-	jQuery('#ajaxContent , #ajaxWork').ajaxify({
+	jQuery('#ajaxContent').ajaxify({
+		verbosity : 2,
+	});
+
+	jQuery('#ajaxWork').ajaxify({
+		selector: '.imgDiv a'
 		verbosity : 2,
 	});
 
