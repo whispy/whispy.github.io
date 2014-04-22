@@ -191,7 +191,7 @@ $(document).ready(function () {
 	panel.addClass("resetDiv");
 	
 	//run fancyNav on direct URL load if URL does NOT include 'index'
-	if(window.location.pathname.indexOf("index") === -1) {
+	if(window.location.href.indexOf("index") === -1) {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').replace('/','')
 		fancyNav(navSelector);
@@ -205,7 +205,7 @@ $(document).ready(function () {
 	})
 
 	//run imgDivClick on page load if URL includes 'work'
-	if(!window.location.pathname.indexOf("work") === -1) {
+	if(window.location.href.indexOf("work") != -1) {
 		console.log('work imgdivclick')
 		imgDivClick();
 	}
