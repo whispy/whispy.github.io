@@ -147,8 +147,9 @@ function fancyBlog(selector) {
 
 // could create a fancyWorkLoad and fancyWorkClick?
 $(window).on('pronto.request', function(){
-	var navSelector = '#menu li';
-	fancyNav(navSelector);
+	console.log('pronto.request running')
+	//var navSelector = '#menu li';
+	//fancyNav(navSelector);
 })
 
 $(window).on('pronto.request', 'a', function(){
@@ -156,6 +157,8 @@ $(window).on('pronto.request', 'a', function(){
 	var workThumbs = '.imgDiv a'
 	fancyWork(workThumbs);
 })
+
+
 
 
 // request and render are targeted at the window. See if possible to target them more specifically.
@@ -174,6 +177,12 @@ function imgDivPronto() {
 
  
 $(document).ready(function () {
+
+	$('.navigation').on('click', 'a', function() {
+		console.log(".nav click running")
+		var navSelector = '#menu li';
+		fancyNav(navSelector);
+	})
 
 	//Defining global variables
 	width = $(window).width();
