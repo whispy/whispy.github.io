@@ -192,7 +192,7 @@ $(document).ready(function () {
 	//run fancyNav on direct URL load if URL does NOT include 'index'
 	if(window.location.href.indexOf("index") === -1) {
 		var URLnotIndex = window.location.pathname
-		var navSelector = URLnotIndex.replace('.html','').replace('/','')
+		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 		fancyNav(navSelector);
 	}
 
