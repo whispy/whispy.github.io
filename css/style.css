@@ -461,8 +461,15 @@ nav {
 }
 
 .heroImage img {
-	margin-top:-350px;
-	margin-left:-850px;
+	width:100%;
+}
+
+#lynx {
+	margin-top:-150px;
+}
+
+#jsep {
+	margin-top:-200px;
 }
 
 .thumbSmall { /*long work thumbnails on work page */
