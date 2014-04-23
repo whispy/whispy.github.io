@@ -184,14 +184,6 @@ list-style: none;
 		cursor: hand; 
 	}
 	
-	.thumbSmall:hover {  
-	 	opacity:.85;
-   -moz-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);  
--webkit-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);  
-	 -o-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);  
-	    transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1); 
-	}
-	
 	.articleLinks {
 		text-decoration: none;
 		font-family:"Alegreya Sans", sans-serif;
@@ -205,10 +197,10 @@ list-style: none;
 	
 	.articleLinks:hover {
 		color:#323232;
-   -moz-transition: all 500ms ease-out;  
--webkit-transition: all 500ms ease-out;  
-	 -o-transition: all 500ms ease-out;  
-	    transition: all 500ms ease-out; 
+    -moz-transition: all 500ms ease-out;  
+ -webkit-transition: all 500ms ease-out;  
+	  -o-transition: all 500ms ease-out;  
+	     transition: all 500ms ease-out; 
 	}
 
 /* Link Styling End */
@@ -485,8 +477,19 @@ list-style: none;
 		overflow:hidden;
 		height:200px;
 	}
+
+	.heroImage::before {
+		position:absolute;
+		content:'';
+		top:0;
+		left:0;
+		height:100%;
+		width:100%;
+		box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, .5);
+	}
 	
 	.heroImage img {
+		display:block;
 		width:100%;
 	}
 	
@@ -506,7 +509,15 @@ list-style: none;
 	    margin-left: auto; 
 	    margin-right: auto;
 	}
-	
+
+		.thumbSmall:hover {  
+	 	opacity:.85;
+    -moz-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);  
+ -webkit-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);  
+	  -o-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);  
+	     transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1); 
+	}
+
 	#page1 img {
 		border: 1px dashed #CCCCCB;
 	}
