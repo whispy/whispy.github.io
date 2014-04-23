@@ -6,6 +6,7 @@ function resetDivs() {
 	workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
 	content.removeClass("marginTop0");
+	$('.heroImage').removeClass('heroSidebar');
 }; // resetDivs end
 
 function showDivs() {
@@ -101,6 +102,7 @@ function fancyWork(selector) {
 		
 					panel.addClass("panelSidebar");
 					$('.content').addClass("marginTop0");
+					$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 
 				} // if end
 

@@ -92,7 +92,7 @@ body {
 /* Text Styling */
 
 h1 {
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-family:"Agenda Medium", sans-serif;
 	font-style:normal;
 	color:#ED420A;
 	font-size:2.25rem;
@@ -100,7 +100,7 @@ h1 {
 }
 
 h2 {
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-family:"Agenda Medium", sans-serif;
 	font-style:italic;
 	color:#ED420A;
 	font-size:1.25rem;
@@ -109,7 +109,7 @@ h2 {
 }
 
 h3 {
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-family:"Agenda Medium", sans-serif;
 	font-style:normal;
 	color:rgba(123, 123, 123, 1);
 	font-size:1rem;
@@ -118,7 +118,7 @@ h3 {
 }
 
 h4 {
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-family:"Agenda Medium", sans-serif;
 	font-style:normal;
 	color:rgba(123, 123, 123, 1);
 	font-size:1rem;
@@ -133,7 +133,7 @@ div p {
 }
 
 p {
-	font-family:"Alegreya Sans", Arial, Helvetica, sans-serif;
+	font-family:"Alegreya Sans", sans-serif;
 	color: #323232;
 }
 
@@ -153,7 +153,7 @@ nav ul li:hover {
 }
 
 nav ul li a {
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-family:"Agenda Medium", sans-serif;
 	text-decoration: none;
 	font-size:2.25rem;
 	line-height:50px;
@@ -196,7 +196,7 @@ a:hover {
 
 .articleLinks {
 	text-decoration: none;
-	font-family:"Agenda Medium", Arial, Helvetica, sans-serif;
+	font-family:"Alegreya Sans", sans-serif;
 	font-style:normal;
 	color:rgba(123, 123, 123, 1);
 	font-size:1.5rem;
@@ -347,6 +347,11 @@ nav {
 
 #ajaxContent.marginTop0 {
 	margin-top:0;
+}
+
+.heroImage.heroSidebar {
+	height:0px;
+	visibility:hidden;
 }
 
 .transitionReset {
