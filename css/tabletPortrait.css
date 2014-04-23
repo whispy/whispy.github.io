@@ -7,3 +7,7 @@ body {
 
 .content {
 }
+
+.infoBox {
+	max-width:100px;
+}

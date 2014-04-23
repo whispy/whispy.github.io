@@ -7,7 +7,7 @@ body {
 	position:relative;
 	top:0px;
 	left:0px;
-	display:block;
+	display:none;
 	height:60px;
 	margin-top:30px;
 	margin-bottom:20px;
@@ -19,7 +19,7 @@ body {
 	transition: padding .16s ease-in-out;
     -moz-transition: padding .16s ease-in-out;
     -webkit-transition: padding .16s ease-in-out;
-    display:block;
+    display:none;
 }
 
 .menuButton {
@@ -58,7 +58,9 @@ header {
 
 
 #selfieDiv {
-	display:none;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:20px;
 }
 
 
