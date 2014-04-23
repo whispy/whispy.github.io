@@ -452,6 +452,19 @@ nav {
 }
 
 /* Image Styling */
+
+.heroImage {
+	position:relative;
+	width:100%;
+	overflow:hidden;
+	height:200px;
+}
+
+.heroImage img {
+	margin-top:-350px;
+	margin-left:-850px;
+}
+
 .thumbSmall { /*long work thumbnails on work page */
 	width:616px;
 	background-color: white;
@@ -484,7 +497,7 @@ img.workSmall {
 .content {
 	margin-left:10%;
 	margin-right:10%;
-	margin-top:222px;
+	margin-top:30px;
 }
 
 .work {
@@ -494,7 +507,7 @@ img.workSmall {
 }
 
 #img1 {
-	margin-top:235px;
+	margin-top:0px;
 }
 
 footer {

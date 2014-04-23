@@ -199,7 +199,7 @@ $(document).ready(function () {
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
 	
-	jQuery('#ajaxContent , #ajaxWork').ajaxify({
+	jQuery('#ajaxContent , #ajaxWork , #ajaxHero').ajaxify({
 		verbosity : 2,
 	});
 
