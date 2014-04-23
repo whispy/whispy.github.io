@@ -1,45 +1,3 @@
-body {
-
-}
-
-#offCanvasMenu {
-	width:100%;
-	position:relative;
-	top:0px;
-	left:0px;
-	display:none;
-	height:60px;
-	margin-top:30px;
-	margin-bottom:20px;
-}
-
-#offCanvasMenu ul li a {
-	text-decoration: none;
-	color:#DEDEDD;
-	transition: padding .16s ease-in-out;
-    -moz-transition: padding .16s ease-in-out;
-    -webkit-transition: padding .16s ease-in-out;
-    display:none;
-}
-
-.menuButton {
-	display:none;
-}
-
-#logoMobile {
-	position:absolute;
-	margin-left:auto;
-	margin-right:auto;
-	left:0;
-	right:0;
-	max-width:100px;
-	display:block;
-}
-
-.container {
-
-}
-
 #headerWrapper {
 	margin-left:auto;
 	margin-right:auto;
@@ -115,12 +73,6 @@ div ul li{
 	margin-top:10%;
 }
 
-h3 {
-}
-
-h4 {
-}
-
 .articleLinks {
 	margin-bottom:20px;
 }
@@ -132,7 +84,6 @@ h4 {
 .articleDiv {
 	margin-left:0px;
 }
-
 
 .infoBox {
 	width:100%;
