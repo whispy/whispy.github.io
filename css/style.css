@@ -48,18 +48,18 @@ list-style: none;
 	 font-family: "Alegreya Sans";
 	 src: url("http://themes.googleusercontent.com/static/fonts/alegreyasans/v1/KYNzioYhDai7mTMnx_gDgtUFqmyT-Ih543PWa_C0ig4.woff") format("woff");
 	 font-style: normal;
-	 font-weight: 400;
+	 font-weight: normal;
 	}
 	@font-face {
 	 font-family: "Alegreya Sans";
 	 src: url("http://themes.googleusercontent.com/static/fonts/alegreyasans/v1/TKyx_-JJ6MdpQruNk-t-PM_0Gg_psQEhwRxPwkVXUB8.woff") format("woff");
 	 font-style: italic;
-	 font-weight: 400;
+	 font-weight: normal;
 	}
 	@font-face {
 	 font-family: "Alegreya Sans";
 	 src: url("http://themes.googleusercontent.com/static/fonts/alegreyasans/v1/11EDm-lum6tskJMBbdy9aeu_tG0Yx7qqITjSOZkMZIk.woff") format("woff");
-	 font-style: italic;
+	 font-style: 500;
 	 font-weight: 500;
 	}
 	
@@ -142,13 +142,13 @@ list-style: none;
 		font-size:1.25rem;
 		line-height:31px;
 		margin-bottom:15px;
-		font-style:normal;
-		font-weight:500;
 	}
 	
 	p {
 		font-family:"Alegreya Sans", sans-serif;
 		color: #323232;
+		font-style:normal;
+		font-weight:normal;
 	}
 	
 /* Text Styling End */
