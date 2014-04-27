@@ -62,6 +62,7 @@ div ul li{
 .panel, .workDisplay {
 	width:100%;
 	margin-right:0%;
+	box-shadow: 0px 0px 0px rgba(0, 94, 101, 0.8);
 }
 
 .showDiv {
@@ -120,8 +121,4 @@ footer {
 	.showDiv {
 		-webkit-transition: none !important;
 	  	transition:         none !important; 
-	}
-
-	.panel {
-		box-shadow: 0px 0px 0px rgba(0, 94, 101, 0.8);
 	}
