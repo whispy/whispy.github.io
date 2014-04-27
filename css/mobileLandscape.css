@@ -32,6 +32,8 @@ header {
 	max-width: 80%;
 	height:100%;
 	text-align:center;
+	margin-right:auto;
+	margin-left:auto;
 }
 
 nav ul li {
@@ -79,7 +81,8 @@ div ul li{
 }
 
 .articleYears {
-	margin-left:0px;
+	margin-left:-15px;
+	margin-top:20px;
 }
 
 .articleDiv {
@@ -109,3 +112,12 @@ footer {
 	display:none;
 }
 
+	.resetDiv {
+		-webkit-transition: none !important;
+	  	transition:         none !important; 
+	}
+	
+	.showDiv {
+		-webkit-transition: none !important;
+	  	transition:         none !important; 
+	}
