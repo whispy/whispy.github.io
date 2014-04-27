@@ -225,13 +225,10 @@ list-style: none;
 	}
 	
 	#selfieDiv {
-	
 		position:relative;
 		height:175px;
 		width:175px;
-		margin-right:10%;
 		margin-top:200px;
-		margin-left:10%;
 		display:block;
 	}
 	
@@ -266,7 +263,6 @@ list-style: none;
 	#hrTop {
 		margin-top:1em;
 		border-width:1px 0 0 0;
-		margin-left:10%;
 		width:175px;
 		border-top: 1px solid #DEDDDD;
 	    border-bottom: 1px solid #CCCCCB;
@@ -275,10 +271,8 @@ list-style: none;
 	nav {
 		max-width:175px; 
 		width:100%;
-		margin-right: auto;
 		margin-top:20px;
 		position:relative;
-		margin-left:10%;
 		height:192px;
 	}	
 
