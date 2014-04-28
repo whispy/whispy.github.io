@@ -137,7 +137,7 @@ $(window).on('pronto.request', function(){
 })
 
 $(window).on('pronto.render', function(){
-	 $('body').scrollTop(0);
+	 $('body').scrollTop(0); // make it scroll to elements instead?
 	imgDivClick();
 	if(window.location.pathname.indexOf("pieces") != -1){
 		$('.content .imgDiv').addClass("sidebarThumbs");
