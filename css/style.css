@@ -282,6 +282,7 @@ list-style: none;
 		height:30px;
 		border-radius:5px;
 		display:inline-block;
+		opacity:0;
 	}
 	
 	.soc:after {
