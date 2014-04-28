@@ -2,6 +2,7 @@ function resetDivs() {  // resets certain divs to their default states.
 	console.log('resetDivs');
 	panel.removeClass("showDiv");
 	panel.removeClass("panelSidebar");
+	panel.removeClass("blogSidebar");
 	panel.addClass("resetDiv");
 	workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
@@ -115,24 +116,25 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	var blogArticles = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(blogArticles); // call the function 'bindListeners' with the variable 'menuItems'
 
-	function loadArticles(toLoad) { // Inline loading of content
-		var toFetch = toLoad + '.html' + ' .content ';
-		window.location.hash = toLoad.replace('articles/', '');
-		panel.load(toFetch);
-	} // Inline loading of content end
+	function workDisplayFadeIn() {
+		workDisplay.addClass("resetDiv");
+		workDisplay.addClass("showDiv");
+
+	};
 
 	
 	function bindListeners() {
 		if (panel.width()>=101) {
-					$.stylesheet(".panel.panelSidebar").css({
-						"left":panelRight + 110 + 'px'
-					});
+			$.stylesheet(".panel.blogSidebar").css({
+				"left":panelRight + 310 + 'px'
+			});
 		
-					panel.addClass("panelSidebar");
-					$('.content').addClass("marginTop0");
-					$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+			panel.addClass("blogSidebar");
+			//$('.content').addClass("marginTop0");
+			$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 
-				} // if end
+		} // if end
+		workDisplayFadeIn();
     }; //bindListeners end
 }; // fancyBlog end
 
@@ -150,6 +152,7 @@ $(window).on('pronto.render', function(){
 	if(window.location.pathname.indexOf("pieces") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
+	blogClick();
 })
 
 function navAClick() { //run fancyNav on click of .navigation anchors
@@ -164,6 +167,13 @@ function imgDivClick() { //run fancyWork on click of .imgDiv anchors
 	$('.imgDiv').on('click', 'a', function() {
 		var workThumbs = '.imgDiv a'
 		fancyWork(workThumbs);
+	})
+}
+
+function blogClick() { //run fancyBlog on click of .articleDiv anchors
+	$('.articleDiv').on('click', 'a', function() {
+		var blogArticles = '.articleDiv a'
+		fancyBlog(blogArticles);
 	})
 }
 
@@ -185,8 +195,6 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 
-	$( "div" ).tooltip({ content: "Awesome title!" });
-
 	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include pieces
 	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1) {
 		var URLnotIndex = window.location.pathname
@@ -200,6 +208,21 @@ $(document).ready(function () {
 	//run imgDivClick on page load if URL includes 'work'
 	if(window.location.href.indexOf("work") != -1) {
 		imgDivClick();
+	}
+
+	//run blogClick on page load if URL includes 'blog'
+	if(window.location.href.indexOf("blog") != -1) {
+		blogClick();
+	}
+
+	//run fancyBlog on page load if URL includes 'articles'
+	if(window.location.pathname.indexOf("articles") != -1) {
+		var URLnotIndex = window.location.pathname
+		var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		showDivs();
+		fancyNav(navSelector);
+		fancyBlog(blogArticles);
+		//$('.content .imgDiv').addClass("sidebarThumbs");
 	}
 
 	//run fancyWork on page load if URL includes 'pieces'
@@ -250,12 +273,32 @@ function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
 
+	if(width <= 1397) { // hide blogSidebar if width <1397
+		$.stylesheet(".panel.blogSidebar").css({
+			"display":"none"
+		});
+	} // if end
+
+	if(width >= 1398) { // show blogSidebar if width > 1398
+		$.stylesheet(".panel.blogSidebar").css({
+			"display":"block"
+		});
+	} // if end
+
 	if(panel.hasClass("panelSidebar")) { // keeps sidebar X pixels away from workDisplay div on resize
 		var	panelRight = $('#indexWorkDisplay').width();
 		$.stylesheet(".panel.panelSidebar").css({
 			"left":panelRight + 110 + 'px'
 		});
 	} // if end
+
+	if(panel.hasClass("blogSidebar")) { // keeps sidebar X pixels away from workDisplay div on resize
+		var	panelRight = $('#indexWorkDisplay').width();
+		$.stylesheet(".panel.blogSidebar").css({
+			"left":panelRight + 310 + 'px'
+		});
+	} // if end
+
 
 	if(!headerWrapper.hasClass("headerLeft")) { //keeps navigaton centered on resize
 		if(width>=1400) {
