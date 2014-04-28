@@ -176,6 +176,12 @@ $(document).ready(function () {
 	panelRight = $('#indexWorkDisplay').width();
 
 	panel.addClass("resetDiv");
+	
+	$("a").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#indexPanel").offset().top
+    }, 2000);
+});
 
 	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include pieces
 	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1) {
