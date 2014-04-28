@@ -146,10 +146,12 @@ list-style: none;
 	
 	p {
 		font-family:"Alegreya Sans", sans-serif;
-		color: #323232;
+		color: rgba(87, 87, 87, 1);
 		font-style:normal;
 		font-weight:normal;
 	}
+	
+	/*try this font color rgba(87, 87, 87, 1) */
 	
 /* Text Styling End */
 
