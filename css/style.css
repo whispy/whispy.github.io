@@ -283,6 +283,11 @@ list-style: none;
 		border-radius:5px;
 		display:inline-block;
 	}
+	
+	.soc:after {
+		content:'';
+		width:100%;
+	}
 
 /* Menu Styling End */
 
