@@ -137,7 +137,7 @@ $(window).on('pronto.request', function(){
 })
 
 $(window).on('pronto.render', function(){
-	document.body.scrollTop = document.documentElement.scrollTop = 0;
+	 $('body').scrollTop(0);
 	imgDivClick();
 	if(window.location.pathname.indexOf("pieces") != -1){
 		$('.content .imgDiv').addClass("sidebarThumbs");
