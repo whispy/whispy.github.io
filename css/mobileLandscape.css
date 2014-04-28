@@ -93,6 +93,7 @@ div ul li{
 .infoBox {
 	width:100%;
 	max-width:100%;
+	min-width:100%;
 	float:none;
 	margin-left:0px;
 	margin-bottom:12px;

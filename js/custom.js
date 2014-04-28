@@ -136,6 +136,10 @@ $(window).on('pronto.request', function(){
 	navAClick();
 })
 
+$(window).on('pronto.load', function(){
+
+})
+
 $(window).on('pronto.render', function(){
 	imgDivClick();
 	if(window.location.pathname.indexOf("pieces") != -1){
@@ -175,6 +179,8 @@ $(document).ready(function () {
 	panelRight = $('#indexWorkDisplay').width();
 
 	panel.addClass("resetDiv");
+
+	$( "div" ).tooltip({ content: "Awesome title!" });
 
 	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include pieces
 	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1) {

@@ -137,11 +137,20 @@ list-style: none;
 		font-size:1rem;
 		line-height:1;
 	}
+
+	q {
+		
+	}
 	
 	div p {
 		font-size:1.25rem;
 		line-height:31px;
 		margin-bottom:15px;
+		text-indent: 1em;
+	}
+
+	div p:first-of-type {
+		text-indent: 0;
 	}
 	
 	p {
@@ -420,6 +429,7 @@ list-style: none;
 	.infoBox {
 		position:relative;
 		max-width:300px;
+		min-width:200px;
 		float:right;
 		margin-left:30px;
 		margin-top:12px;
@@ -443,14 +453,16 @@ list-style: none;
 		margin-left:10%;
 		margin-right:10%;
 		margin-top:50px;
+		margin-bottom:75px;
 	}
 	
 	.work {
 		margin-left:10%;
 		margin-right:10%;
 		margin-top:222px;
+		margin-bottom:75px;
 	}
-	
+
 	footer {
 		display:none;
 		position:fixed;
