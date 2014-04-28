@@ -155,10 +155,12 @@ list-style: none;
 	
 	p {
 		font-family:"Alegreya Sans", sans-serif;
-		color: #323232;
+		color: rgba(87, 87, 87, 1);
 		font-style:normal;
 		font-weight:normal;
 	}
+	
+	/*try this font color rgba(87, 87, 87, 1) */
 	
 /* Text Styling End */
 
@@ -283,7 +285,21 @@ list-style: none;
 		margin-top:20px;
 		position:relative;
 		height:192px;
-	}	
+	}
+	
+	.soc {
+		background-color:grey;
+		width:30px;
+		height:30px;
+		border-radius:5px;
+		display:inline-block;
+		opacity:0;
+	}
+	
+	.soc:after {
+		content:'';
+		width:100%;
+	}
 
 /* Menu Styling End */
 

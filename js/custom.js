@@ -1,4 +1,4 @@
-function resetDivs() {
+function resetDivs() {  // resets certain divs to their default states.
 	console.log('resetDivs');
 	panel.removeClass("showDiv");
 	panel.removeClass("panelSidebar");
@@ -9,7 +9,7 @@ function resetDivs() {
 	$('.heroImage').removeClass('heroSidebar');
 }; // resetDivs end
 
-function showDivs() {
+function showDivs() { // shows certain divs.
 	console.log('showDivs');
 	headerWrapper.removeClass("headerCenter");
 	panel.removeClass("resetDiv");
@@ -123,12 +123,16 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 	
 	function bindListeners() {
-    	$('.content p').on('click', 'a', function() {
-    		var toLoad = $(this).attr('href').replace('.html', '');
-    		
-			loadArticles(toLoad);
-			return false;
-    	}); //click function end
+		if (panel.width()>=101) {
+					$.stylesheet(".panel.panelSidebar").css({
+						"left":panelRight + 110 + 'px'
+					});
+		
+					panel.addClass("panelSidebar");
+					$('.content').addClass("marginTop0");
+					$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+
+				} // if end
     }; //bindListeners end
 }; // fancyBlog end
 
@@ -141,8 +145,9 @@ $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
+	 $('body').scrollTop(0); // make it scroll to elements instead?
 	imgDivClick();
-	if(window.location.pathname.indexOf("pieces") != -1){
+	if(window.location.pathname.indexOf("pieces") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
 })
@@ -207,12 +212,13 @@ $(document).ready(function () {
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
 	
+	//Enable Ajaxify.js on the listed elements
 	jQuery('#ajaxContent , #ajaxWork , #ajaxHero').ajaxify({
 		verbosity : 2,
 	});
 
 	setHeaderWrapperWidth();
-	function setHeaderWrapperWidth() {
+	function setHeaderWrapperWidth() { //centers navigation
 		if(width>=1208) {
 				$('#headerWrapper').css({
 					"width":headerCenterLarge + 'px'
@@ -231,11 +237,11 @@ $(document).ready(function () {
     		})
 		}
     	
-    	headerWrapper.addClass("headerCenter");
+    		headerWrapper.addClass("headerCenter");
 		$('#headerWrapper').css({
 			"width":''
 		})
-	}
+	} // headerWrapperWidth end
 
 }); // $(document).ready end
 
@@ -244,14 +250,14 @@ function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
 
-	if(panel.hasClass("panelSidebar")) {
+	if(panel.hasClass("panelSidebar")) { // keeps sidebar X pixels away from workDisplay div on resize
 		var	panelRight = $('#indexWorkDisplay').width();
 		$.stylesheet(".panel.panelSidebar").css({
 			"left":panelRight + 110 + 'px'
 		});
 	} // if end
 
-	if(!headerWrapper.hasClass("headerLeft")) {
+	if(!headerWrapper.hasClass("headerLeft")) { //keeps navigaton centered on resize
 		if(width>=1400) {
 			var headerCenter3 = ((width / 2) + 87.5);
 	   		$.stylesheet('#headerWrapper.headerCenter').css({
@@ -275,7 +281,7 @@ function checkSize() {
 		} // if end
 	} // if headerWrapper does NOT have class headerLeft end
 
-	if(headerWrapper.hasClass("headerLeft")) {
+	if(headerWrapper.hasClass("headerLeft")) { //keeps navigation left offset from div when resizing
 		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
 			if(width>=1400) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
@@ -299,7 +305,7 @@ function checkSize() {
 } // checksize() end
 
 $(window).resize(function() {
-	$('#headerWrapper').addClass("transitionReset");
+	$('#headerWrapper').addClass("transitionReset"); // removes transitions when resizing
 	checkSize();
 	$('#headerWrapper').removeClass("transitionReset");
 }); 
