@@ -123,11 +123,16 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 	
 	function bindListeners() {
-    	$('.content p').on('click', 'a', function() {
-    		var toLoad = $(this).attr('href').replace('.html', '');
-    		
-			loadArticles(toLoad);
-			return false;
+		if (panel.width()>=101) {
+					$.stylesheet(".panel.panelSidebar").css({
+						"left":panelRight + 110 + 'px'
+					});
+		
+					panel.addClass("panelSidebar");
+					$('.content').addClass("marginTop0");
+					$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+
+				} // if end
     	}); //click function end
     }; //bindListeners end
 }; // fancyBlog end
