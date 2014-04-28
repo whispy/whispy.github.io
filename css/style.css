@@ -357,6 +357,7 @@ list-style: none;
 		position:fixed;
 		width:300px;
 		left:0px;
+		/*overflow-y:scroll;*/
 	}
 	
 	.imgDiv.sidebarThumbs {
