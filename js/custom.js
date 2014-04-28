@@ -133,7 +133,6 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 					$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 
 				} // if end
-    	}); //click function end
     }; //bindListeners end
 }; // fancyBlog end
 
