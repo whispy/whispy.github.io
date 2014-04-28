@@ -266,6 +266,12 @@ $(document).ready(function () {
 		})
 	} // headerWrapperWidth end
 
+	if(width <= 1397) { // hide blogSidebar if width <1397
+		$.stylesheet(".panel.blogSidebar").css({
+			"right":"-9999" + 'px'
+		});
+	} // if end
+
 }); // $(document).ready end
 
 //Get window size
@@ -275,13 +281,13 @@ function checkSize() {
 
 	if(width <= 1397) { // hide blogSidebar if width <1397
 		$.stylesheet(".panel.blogSidebar").css({
-			"display":"none"
+			"right":"-9999" + 'px'
 		});
 	} // if end
 
 	if(width >= 1398) { // show blogSidebar if width > 1398
 		$.stylesheet(".panel.blogSidebar").css({
-			"display":"block"
+			"right":"0" + 'px'
 		});
 	} // if end
 
