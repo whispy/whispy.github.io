@@ -502,7 +502,7 @@ list-style: none;
 	}
 
 	footer {
-		display:none;
+		display:block;
 		position:fixed;
 		bottom:10px;
 		width:100%;
