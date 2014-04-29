@@ -502,14 +502,13 @@ list-style: none;
 	}
 
 	footer {
-		display:block;
+		display:none;
 		position:fixed;
 		bottom:10px;
 		width:100%;
 		text-align:left;
 		left:10px;
 		width:190px;
-		background-color:red;
 	}
 
 /* Content Containers end */
