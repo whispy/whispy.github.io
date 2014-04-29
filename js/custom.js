@@ -268,7 +268,7 @@ $(document).ready(function () {
 
 	if(width <= 1397) { // hide blogSidebar if width <1397
 		$.stylesheet(".panel.blogSidebar").css({
-			"right":"-9999" + 'px'
+			"right":"-9999" + 'px' // using this because showDiv already has !important on opacity. See if possible to fix...
 		});
 	} // if end
 
@@ -356,7 +356,7 @@ function checkSize() {
 $(window).resize(function() {
 	$('#headerWrapper').addClass("transitionReset"); // removes transitions when resizing
 	checkSize();
-	$('#headerWrapper').removeClass("transitionReset");
+	$('#headerWrapper').removeClass("transitionReset"); 
 }); 
 //Get window size end
 

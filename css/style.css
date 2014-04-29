@@ -530,6 +530,7 @@ list-style: none;
 		height:100%;
 		width:100%;
 		box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, .5);
+		pointer-events: none;
 	}
 	
 	.heroImage img {
