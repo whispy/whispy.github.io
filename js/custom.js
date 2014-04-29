@@ -236,7 +236,7 @@ $(document).ready(function () {
 	}
 	
 	//Enable Ajaxify.js on the listed elements
-	jQuery('#ajaxContent , #ajaxWork , #ajaxHero').ajaxify({
+	jQuery('#ajaxContent , #ajaxWork , #ajaxHero, #ajaxHeroWork').ajaxify({
 		verbosity : 2,
 	});
 

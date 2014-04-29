@@ -146,7 +146,7 @@ list-style: none;
 		font-size:1.25rem;
 		line-height:31px;
 		margin-bottom:15px;
-		text-indent: 1em;
+		/*text-indent: 1em;*/
 	}
 
 	div p:first-of-type {
@@ -497,7 +497,7 @@ list-style: none;
 	.work {
 		margin-left:10%;
 		margin-right:10%;
-		margin-top:222px;
+		margin-top:50px;
 		margin-bottom:75px;
 	}
 
@@ -515,7 +515,7 @@ list-style: none;
 
 /* Image Styling */
 
-	.heroImage {
+	.heroImage, .heroImageWork {
 		position:relative;
 		width:100%;
 		overflow:hidden;
@@ -532,8 +532,24 @@ list-style: none;
 		box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, .5);
 		pointer-events: none;
 	}
+
+	.heroImageWork::before {
+		position:absolute;
+		content:'';
+		top:0;
+		left:0;
+		height:100%;
+		width:100%;
+		box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, .5);
+		pointer-events: none;
+	}
 	
 	.heroImage img {
+		display:block;
+		width:100%;
+	}
+
+	.heroImageWork img {
 		display:block;
 		width:100%;
 	}
