@@ -526,6 +526,7 @@ list-style: none;
 /* Image Styling */
 
 	.heroImage, .heroImageWork {
+		opacity:0;
 		position:relative;
 		width:100%;
 		overflow:hidden;
@@ -556,7 +557,7 @@ list-style: none;
 	
 	.heroImage img {
 		display:block;
-		width:100%;
+		width:780px;
 	}
 
 	.heroImageWork img {
