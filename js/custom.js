@@ -147,7 +147,7 @@ $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
-	$('html, body').scrollTop(0);
+	$('html, body').scrollTop(0); // scroll to top whenever changing page
 	imgDivClick();
 	if(window.location.pathname.indexOf("pieces") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
 		$('.content .imgDiv').addClass("sidebarThumbs");
