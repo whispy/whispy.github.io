@@ -557,7 +557,6 @@ list-style: none;
 /* Image Styling */
 
 	.heroImage, .heroImageWork {
-		display:none;
 		position:relative;
 		width:100%;
 		overflow:hidden;
@@ -565,6 +564,7 @@ list-style: none;
 	}
 
 	.heroImage::before {
+		background-color:#DEDDDD;
 		position:absolute;
 		content:'';
 		top:0;
