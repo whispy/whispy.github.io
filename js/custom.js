@@ -37,7 +37,7 @@ function fancyNav(selector) {
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
 		resetDivs();
-    		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
+    		var workDisplayLeft = $('.workDisplay').offset().left;
     		if(width>=1400) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
 					"width":workDisplayLeft - 30 + 'px'
@@ -191,7 +191,7 @@ $(document).ready(function () {
 	headerLeft = $('#headerWrapper').offset().left;
 	headerCenterLarge = (width / 2) + 87.5;
 	headerCenterSmall = (width / 2) + 50;
-	panelRight = $('#indexWorkDisplay').width();
+	panelRight = $('.workDisplay').width();
 
 	panel.addClass("resetDiv");
 
@@ -292,14 +292,14 @@ function checkSize() {
 	} // if end
 
 	if(panel.hasClass("panelSidebar")) { // keeps sidebar X pixels away from workDisplay div on resize
-		var	panelRight = $('#indexWorkDisplay').width();
+		var	panelRight = $('.workDisplay').width();
 		$.stylesheet(".panel.panelSidebar").css({
 			"left":panelRight + 110 + 'px'
 		});
 	} // if end
 
 	if(panel.hasClass("blogSidebar")) { // keeps sidebar X pixels away from workDisplay div on resize
-		var	panelRight = $('#indexWorkDisplay').width();
+		var	panelRight = $('.workDisplay').width();
 		$.stylesheet(".panel.blogSidebar").css({
 			"left":panelRight + 310 + 'px'
 		});
@@ -331,7 +331,7 @@ function checkSize() {
 	} // if headerWrapper does NOT have class headerLeft end
 
 	if(headerWrapper.hasClass("headerLeft")) { //keeps navigation left offset from div when resizing
-		var workDisplayLeft = $('#indexWorkDisplay').offset().left;
+		var workDisplayLeft = $('.workDisplay').offset().left;
 			if(width>=1400) {
 				$.stylesheet('#headerWrapper.headerLeft').css({
 					"width":workDisplayLeft - 30 + 'px'
