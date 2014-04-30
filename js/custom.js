@@ -147,7 +147,7 @@ $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
-	 $('body').scrollTop(0); // make it scroll to elements instead?
+	$('html, body').scrollTop(0);
 	imgDivClick();
 	if(window.location.pathname.indexOf("pieces") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
 		$('.content .imgDiv').addClass("sidebarThumbs");
