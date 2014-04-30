@@ -136,6 +136,11 @@ list-style: none;
 		font-style:normal;
 		color:rgba(123, 123, 123, 1);
 		font-size:1rem;
+		line-height:1.4;
+		margin-bottom:15px;
+	}
+
+	.infoBox h3 {
 		line-height:1;
 		margin-bottom:3px;
 	}
@@ -146,6 +151,18 @@ list-style: none;
 		color:rgba(123, 123, 123, 1);
 		font-size:1rem;
 		line-height:1;
+	}
+
+	.epigraph {
+		display:none;
+	}
+
+	blockquote {
+		font-family:"Alegreya Sans", sans-serif;
+		color: rgba(87, 87, 87, 1);
+		font-style:normal;
+		font-weight:normal;
+		line-height:1.25em;
 	}
 
 	q {
@@ -493,7 +510,7 @@ list-style: none;
 		margin-left:0px;
 	}
 	
-	.date {
+	.date, .category {
 		margin-bottom:10px;
 	}
 	
