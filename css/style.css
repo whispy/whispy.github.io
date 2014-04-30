@@ -33,7 +33,7 @@ list-style: none;
 		left:50px;
 	}
 
-	html.ieOld .resetDiv {
+	body.ieOld .resetDiv {
 		visibility: visible;
 		opacity: 1;
 	}
