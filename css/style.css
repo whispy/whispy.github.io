@@ -33,6 +33,11 @@ list-style: none;
 		left:50px;
 	}
 
+	html.ieOld .resetDiv {
+		visibility: visible;
+		opacity: 1;
+	}
+
 /* Noscripts end */
 
 /* @font-face */
