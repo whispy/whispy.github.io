@@ -1,3 +1,7 @@
+html.no-js #headerWrapper {
+		left:0px;
+	}
+
 #headerWrapper {
 	margin-left:auto;
 	margin-right:auto;
