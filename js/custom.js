@@ -196,8 +196,8 @@ $(document).ready(function () {
 	panel.addClass("resetDiv");
 
 
-	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include pieces
-	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/' ) {
+	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include pieces AND there is a pathname
+	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 		fancyNav(navSelector);
