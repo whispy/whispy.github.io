@@ -127,3 +127,7 @@ footer {
 		-webkit-transition: none !important;
 	  	transition:         none !important; 
 	}
+
+.heroImage, .heroImageWork {
+		display:none;
+	}
