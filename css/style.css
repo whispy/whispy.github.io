@@ -104,6 +104,7 @@ list-style: none;
 		background-attachment: fixed;
 		background-color:rgba(46, 159, 177, 1);
 		background-image: url("../images/BG_riot.jpg") ;
+		font-size:16px;
 	}
 	
 	body {
@@ -511,10 +512,13 @@ list-style: none;
 	}
 	
 	.content {
-		margin-left:10%;
-		margin-right:10%;
+		-webkit-transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	  	transition:         all 600ms cubic-bezier(0.165, 0.84, 0.44, 1); 
 		margin-top:50px;
 		margin-bottom:75px;
+		margin-left:75px;
+		width:50%;
+		max-width:700px;
 	}
 
 	footer {
