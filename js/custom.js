@@ -1,5 +1,4 @@
 function resetDivs() {  // resets certain divs to their default states.
-	console.log('resetDivs');
 	panel.removeClass("showDiv");
 	panel.removeClass("panelSidebar");
 	panel.removeClass("blogSidebar");
@@ -11,7 +10,6 @@ function resetDivs() {  // resets certain divs to their default states.
 }; // resetDivs end
 
 function showDivs() { // shows certain divs.
-	console.log('showDivs');
 	headerWrapper.removeClass("headerCenter");
 	panel.removeClass("resetDiv");
 	$('div#indexPanel').removeAttr('id');
@@ -29,7 +27,6 @@ function fancyNav(selector) {
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
-		resetDivs();
 		$('#headerWrapper').addClass('headerLeft');
         divInit();
 	} //bindListeners end
