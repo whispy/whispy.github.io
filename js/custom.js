@@ -16,13 +16,6 @@ function showDivs() { // shows certain divs.
 	panel.removeClass("resetDiv");
 	$('div#indexPanel').removeAttr('id');
    	panel.addClass("showDiv");
-   	if($('#selfieDiv').hasClass('on')) { //Centers navigation if it is clicked
-		panel.removeClass("showDiv");
-		panel.addClass("resetDiv");
-		headerWrapper.removeClass('headerLeft');
-		headerWrapper.addClass("headerCenter");
-		$('#selfieDiv').removeClass('on');
-	}
 }; //showDivs end
 
 function fancyNav(selector) {
@@ -37,46 +30,13 @@ function fancyNav(selector) {
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
 		resetDivs();
-    		/*var workDisplayLeft = $('.workDisplay').offset().left;
-    		if(width>=1400) {
-				$.stylesheet('#headerWrapper.headerLeft').css({
-					"width":workDisplayLeft - 30 + 'px'
-				})
-			} // if end
-
-			if(width<=1399 && width>=778) {
-				$.stylesheet('#headerWrapper.headerLeft').css({
-					"width":workDisplayLeft - 20 + 'px'
-				})
-			} // if end*/
-
-    		$('#headerWrapper').addClass('headerLeft');
-
-        	divInit();
+		$('#headerWrapper').addClass('headerLeft');
+        divInit();
 	} //bindListeners end
 
 	$("#selfieDiv").on('click', function() {
-		$('#selfieDiv').addClass('on');
-		var	width = $(window).width();
-		var	headerCenterLarge = (width / 2) + 87.5;
-		var	headerCenterSmall = (width / 2) + 50;
 		resetDivs();
 		$('#headerWrapper').removeClass('headerLeft');
-
-		/*if(width>=1208) {
-			console.log(headerCenterLarge)
-			$.stylesheet('#headerWrapper.headerCenter').css({
-				"width":headerCenterLarge + 'px'
-    		})
-		} // if end
-	
-		if(width<=1207) {
-			$.stylesheet('#headerWrapper.headerCenter').css({
-				"width":headerCenterSmall + 'px'
-    		})
-		} // if end*/
-
-		$('#headerWrapper').addClass('headerCenter');
 	}); // click method end
 }; // fancyNav end
 
