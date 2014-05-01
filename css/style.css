@@ -454,34 +454,16 @@ list-style: none;
 	#indexPanel {
 		visibility: hidden;
 	}
-	
-	.panel {
+
+	.panel, .workDisplay {
 		position:absolute;
 		right:0px;
 		line-height:0;
 		min-height: 100% !important;
 		height:auto;
-		width:60%;
-		max-width:780px;
+		width:83%;
 		margin-right:auto;
 		margin-left:auto;
-		left:0;
-		right:0;
-		background-color:rgba(243, 240, 240, 1);
-		box-shadow: 0px 0px 10px rgba(0, 94, 101, .8);
-	}
-	
-	.workDisplay {
-		position:absolute;
-		right:0px;
-		line-height:0;
-		min-height: 100% !important;
-		height:auto;
-		width:60%;
-		max-width:780px;
-		margin-right:auto;
-		margin-left:auto;
-		left:0;
 		right:0;
 		background-color:rgba(243, 240, 240, 1);
 		box-shadow: 0px 0px 10px rgba(0, 94, 101, .8);
