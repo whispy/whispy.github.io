@@ -306,6 +306,19 @@ function checkSize() {
 		});
 	} // if end
 
+	/*if(window.location.pathname.indexOf("pieces") != -1 && width<=777){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
+		console.log('butter')
+		var	panelRight = $('.workDisplay').width();
+		if (panel.width()>=101) {
+			console.log('butter23')
+			$.stylesheet(".panel.panelSidebar").css({
+						"left":panelRight + 110 + 'px'
+			});
+			panel.addClass("panelSidebar");
+		}
+		$('.content .imgDiv').addClass("sidebarThumbs");
+	}*/
+
 
 	if(!headerWrapper.hasClass("headerLeft")) { //keeps navigaton centered on resize
 		if(width>=1400) {
