@@ -28,7 +28,11 @@ header {
 }
 
 .panel, .workDisplay {
-	position:relative;
+	right:0;
+	top:220px;
+	width:100%;
+	margin-right:0%;
+	box-shadow: 0px 0px 0px rgba(0, 94, 101, 0.8);
 }
 
 #selfieDiv {
@@ -75,11 +79,7 @@ div ul li{
 	color:#DEDEDD;
 }
 
-.panel, .workDisplay {
-	width:100%;
-	margin-right:0%;
-	box-shadow: 0px 0px 0px rgba(0, 94, 101, 0.8);
-}
+
 
 .content {
 	margin-left:5%;

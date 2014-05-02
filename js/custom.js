@@ -4,9 +4,11 @@ function resetDivs() {  // resets certain divs to their default states.
 	panel.addClass("resetDiv");
 	workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
-	$('.content').removeClass("contentSidebar");
 	content.removeClass("marginTop0");
+	$('.panel .content').removeClass("contentSidebar");
 	$('.heroImage').removeClass('heroSidebar');
+	$('.articleYears').removeClass('yearsSidebar');
+	$('.articleDiv').removeClass('articleSidebar');	
 }; // resetDivs end
 
 function showDivs() { // shows certain divs.
@@ -206,38 +208,6 @@ $(document).ready(function () {
 		verbosity : 2,
 	});
 
-	/*setHeaderWrapperWidth();
-	function setHeaderWrapperWidth() { //centers navigation
-		if(width>=1208) {
-				$('#headerWrapper').css({
-					"width":headerCenterLarge + 'px'
-				})
-				$.stylesheet('#headerWrapper.headerCenter').css({
-					"width":headerCenterLarge + 'px'
-				})
-			}
-	
-		if(width<=1207) {
-			$('#headerWrapper').css({
-				"width":headerCenterSmall + 'px'
-    		})
-			$.stylesheet('#headerWrapper.headerCenter').css({
-				"width":headerCenterSmall + 'px'
-    		})
-		}
-    	
-    		headerWrapper.addClass("headerCenter");
-		$('#headerWrapper').css({
-			"width":''
-		})
-	} // headerWrapperWidth end */
-
-	/*if(width <= 1397) { // hide blogSidebar if width <1397
-		$.stylesheet(".panel.blogSidebar").css({
-			"right":"-9999" + 'px' // using this because showDiv already has !important on opacity. See if possible to fix...
-		});
-	} // if end*/
-
 }); // $(document).ready end
 
 //Get window size
@@ -245,97 +215,25 @@ function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
 
-	if(width <= 1397) { // hide blogSidebar if width <1397
-		$.stylesheet(".panel.blogSidebar").css({
-			"right":"-9999" + 'px'
-		});
-	} // if end
-
-	if(width >= 1398) { // show blogSidebar if width > 1398
-		$.stylesheet(".panel.blogSidebar").css({
-			"right":"0" + 'px'
-		});
-	} // if end
-
-	if(panel.hasClass("panelSidebar")) { // keeps sidebar X pixels away from workDisplay div on resize
-		var	panelRight = $('.workDisplay').width();
-		$.stylesheet(".panel.panelSidebar").css({
-			"left":panelRight + 110 + 'px'
-		});
-	} // if end
-
-	if(panel.hasClass("blogSidebar")) { // keeps sidebar X pixels away from workDisplay div on resize
-		var	panelRight = $('.workDisplay').width();
-		$.stylesheet(".panel.blogSidebar").css({
-			"left":panelRight + 310 + 'px'
-		});
-	} // if end
-
-	/*if(window.location.pathname.indexOf("pieces") != -1 && width<=777){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
-		console.log('butter')
-		var	panelRight = $('.workDisplay').width();
-		if (panel.width()>=101) {
-			console.log('butter23')
-			$.stylesheet(".panel.panelSidebar").css({
-						"left":panelRight + 110 + 'px'
-			});
-			panel.addClass("panelSidebar");
-		}
-		$('.content .imgDiv').addClass("sidebarThumbs");
+	/*if(width <= 777){
+		panel.removeClass("panelSidebar");
+		$('.content').removeClass("contentSidebar");
+		content.removeClass("marginTop0");
+		$('.heroImage').removeClass('heroSidebar');
+	}
+	if(width >= 777){
+		panel.addClass("panelSidebar");
+		$('.content').addClass("contentSidebar");
+		content.addClass("marginTop0");
+		$('.heroImage').addClass('heroSidebar');
 	}*/
-
-
-	if(!headerWrapper.hasClass("headerLeft")) { //keeps navigaton centered on resize
-		if(width>=1400) {
-			var headerCenter3 = ((width / 2) + 87.5);
-	   		$.stylesheet('#headerWrapper.headerCenter').css({
-				"width":headerCenter3 + 'px'
-    		})
-		} // if end
-
-		if(width<=1399 && width>=778) {
-			var headerCenter4 = ((width / 2) + 50);
-	   		$.stylesheet('#headerWrapper.headerCenter').css({
-				"width":headerCenter4 + 'px'
-    		})
-	   	} // if end
-
-		if(width<=777) {
-	   		$.stylesheet('#headerWrapper.headerCenter').css({
-				"width":"auto"
-    		})
-			var mobileMenu = '#offCanvasMenu li';
-			fancyMobileNav(mobileMenu);
-		} // if end
-	} // if headerWrapper does NOT have class headerLeft end
-
-	if(headerWrapper.hasClass("headerLeft")) { //keeps navigation left offset from div when resizing
-		var workDisplayLeft = $('.workDisplay').offset().left;
-			if(width>=1400) {
-				$.stylesheet('#headerWrapper.headerLeft').css({
-					"width":workDisplayLeft - 30 + 'px'
-				})
-			} // if end
-
-			if(width<=1399 && width>=778) {
-				$.stylesheet('#headerWrapper.headerLeft').css({
-					"width":workDisplayLeft - 20 + 'px'
-				})
-			} // if end
-
-			if(width<=777) {
-				$.stylesheet('#headerWrapper.headerLeft').css({
-					"width":"auto"
-				})
-			}
-	} // if headerWrapper has class headerLeft end
 
 } // checksize() end
 
 $(window).resize(function() {
-	$('#headerWrapper').addClass("transitionReset"); // removes transitions when resizing
-	//checkSize();
-	$('#headerWrapper').removeClass("transitionReset"); 
+	workDisplay.addClass("transitionReset"); // removes transitions when resizing
+	checkSize();
+	workDisplay.removeClass("transitionReset"); 
 }); 
 //Get window size end
 

@@ -5,3 +5,7 @@
 .articleYears {
 	margin-left:0px;
 }
+
+.panel, .workDisplay {
+	top:250px;
+}
