@@ -6,18 +6,8 @@ module.exports = function(grunt) {
 				options: {
 				// Task-specific options go here.
       			},
-      			includesDir: {
-					src: 'butter*.html',
-					dest: 'butterincludes/',
-					expand: true,
-					cwd: 'butterincludes/',
-					options : {
-						//The base path where includes will be resolved
-						includesDir : 'butterincludes/'
-					}
-				},
       			files: [
-      				{src: ['*.html', 'articles/*.html', 'pieces/*.html'], dest: 'dist/'}
+      				{src: ['*.html', 'articles/*.html', 'pieces/*.html'], dest: './', expand: true, cwd: 'grunt-templates/'}
       			]
     		}
   		}
