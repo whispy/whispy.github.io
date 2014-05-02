@@ -25,7 +25,7 @@ header {
 }
 
 .panel.blogSidebar {
-	opacity:0;
+	right:-200px;
 }
 
 .panel, .workDisplay {
