@@ -29,8 +29,8 @@ list-style: none;
 		text-align: center;
 	}
 
-	html.no-js #headerWrapper {
-		left:50px;
+	html.no-js header {
+		width:20%;
 	}
 
 	body.ieOld .resetDiv {
