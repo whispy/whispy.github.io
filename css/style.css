@@ -79,7 +79,7 @@ list-style: none;
 /*	COLORS
 	Light blue: #00A9B4;
 	Dark blue: #007D85;
-	Orangered: #EA4423 or rgba(234,68,35, 1);
+	Orangeredblue: #41a6b7 or rgba(65, 166, 183, 1);
 	Dark grey: #323232;
 	Medium Dark: rgba(123, 123, 123, 1);
 	Medium Light: #CCCCCB;
@@ -119,7 +119,7 @@ list-style: none;
 	h1 {
 		font-family:"Agenda Medium", sans-serif;
 		font-style:normal;
-		color:#ED420A;
+		color:#41a6b7;
 		font-size:2.25rem;
 		line-height:36px;
 	}
@@ -127,7 +127,7 @@ list-style: none;
 	h2 {
 		font-family:"Agenda Medium", sans-serif;
 		font-style:italic;
-		color:#ED420A;
+		color:#41a6b7;
 		font-size:1.25rem;
 		line-height:1.2;
 		margin-bottom:25px;
@@ -196,10 +196,14 @@ list-style: none;
 	}
 
 	.articleDiv.articleSidebar a {
-		color:#CCCCCB;
+		color:rgba(123, 123, 123, 1);
 		font-size:1.25rem;
 		line-height:1.3;
 		margin-bottom:18px;
+	}
+
+	.articleSidebar a:hover {
+		color:red;
 	}
 
 	.articleDiv.articleSidebar {
@@ -207,7 +211,7 @@ list-style: none;
 	}
 
 	.yearsSidebar {
-		color:#DEDDDD;
+		color:rgba(123, 123, 123, 1);
 		margin-top:20px;
 	}
 	
@@ -224,7 +228,7 @@ list-style: none;
 	}
 	
 	nav ul li:hover {
-		border-right: 10px solid rgba(237,66,10,.9);
+		border-right: 10px solid rgba(242, 113, 62, .85);
 		box-shadow: 0px 0px 5px rgba(0, 94, 101, .15);
 
 	}
@@ -304,13 +308,13 @@ list-style: none;
 		width:100%;
 		border-radius: 50%;
 	    box-shadow:
-	        inset 0 0 0 0px rgba(234,68,35, 0.1);
+	        inset 0 0 0 0px rgba(65, 166, 183, 0.1);
 	    transition: all 0.2s ease-in-out;
 	}
 	
 	#selfieImage:hover {
 	    box-shadow:
-	        inset 0 0 0 10px rgba(234,68,35, 0.9);
+	        inset 0 0 0 10px rgba(65, 166, 183, 0.9);
 	    background-size:105% 105%;
 	}
 	
@@ -395,7 +399,7 @@ list-style: none;
 
 	.panel.blogSidebar {
 		box-shadow: 0px 0px 0px rgba(0, 94, 101, 0.0);
-		background-color:#323232;
+		background-color:#c9ced0;
 		position:fixed;
 		width:20%;
 		right:0px;
@@ -427,6 +431,7 @@ list-style: none;
 	.heroImage.heroSidebar {
 		height:0px;
 		visibility:hidden;
+
 	}
 	
 	.transitionReset {
