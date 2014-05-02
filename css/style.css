@@ -662,7 +662,7 @@ list-style: none;
 		width:49%;
 	}
 	
-	.content img {
+	.content img { /*get images at 700px*/
 		max-width:100%;
 		margin-bottom:20px;
 	}
