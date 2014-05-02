@@ -57,7 +57,10 @@ function fancyWork(selector) {
 				if (!panel.hasClass(".panelSidebar")) { //run if .panel does NOT have class .panelSidebar
 
 					panel.addClass("panelSidebar");
-					$('.panel .content').addClass("contentSidebar");
+
+					setTimeout(function(){
+						$('.panel .content').addClass("contentSidebar");
+					}, 200);
 
 					setTimeout(function(){
 						$('.content').addClass("marginTop0");
@@ -78,23 +81,25 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	function workDisplayFadeIn() {
 		workDisplay.removeClass("resetDiv");
 		workDisplay.addClass("showDiv");
-
 	};
 
 	
 	function bindListeners() {
 
 			panel.addClass("panelSidebar");
-			setTimeout(function(){
-						$('.articleYears').addClass('yearsSidebar');
-						//$('.articleDiv').addClass('articleSidebar');
-						$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
-					}, 500);
-			
-			$('.panel .content').addClass("contentSidebar");
 
-		//} // if end
+			setTimeout(function(){
+				$('.panel .content').addClass("contentSidebar");
+			}, 200);
+
+			setTimeout(function(){
+				$('.articleYears').addClass('yearsSidebar');
+				$('.articleDiv').addClass('articleSidebar');
+				$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+			}, 500);
+
 		workDisplayFadeIn();
+
     }; //bindListeners end
 }; // fancyBlog end
 
