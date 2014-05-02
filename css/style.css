@@ -1,3 +1,5 @@
+/* Keeping it simple but not stupid: All data, except where otherwise noted, is copyright (c) 2014 Daniel Berkowitz under the extremely permissive and friendly MIT License (http://opensource.org/licenses/MIT). If you hack away with any of it, please remember to attribute it. */
+
 h1, h2, h3, h4, h5, h6 {
 font-weight: normal;
 }
@@ -96,19 +98,13 @@ list-style: none;
 
 /* HTML & Body */
 
-	@media (-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi) { 
+	@media (-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi) { /*Display retina background image on retina screens */
     	html {
 			background-image: url("../images/BG_retina_riot.jpg");
     	}
 	}
 
-	@media (max-width:1400px) { 
-    	html {
-			background-image: url("../images/BG_narrow_riot.jpg");
-    	}
-	}
-
-	@media (min-width:1401px) { 
+	@media (min-width:1400px) { /*Display higher resolution background image on wide or multiple screen non-retina setups */
     	html {
 			background-image: url("../images/BG_wide_riot.jpg");
     	}
@@ -120,6 +116,7 @@ list-style: none;
 		background-size: cover;
 		background-repeat:no-repeat;
 		background-attachment: fixed;
+		background-image: url("../images/BG_narrow_riot.jpg");
 		background-color:rgba(46, 159, 177, 1);
 		font-size:16px;
 	}
