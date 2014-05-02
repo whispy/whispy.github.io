@@ -102,9 +102,15 @@ list-style: none;
     	}
 	}
 
-	@media (-webkit-min-device-pixel-ratio: 1.0), (max-resolution: 191dpi) { 
+	@media (max-width:1400px) { 
     	html {
-			background-image: url("../images/BG_riot.jpg");
+			background-image: url("../images/BG_narrow_riot.jpg");
+    	}
+	}
+
+	@media (min-width:1401px) { 
+    	html {
+			background-image: url("../images/BG_wide_riot.jpg");
     	}
 	}
 	
