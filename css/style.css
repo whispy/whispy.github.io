@@ -95,6 +95,12 @@ list-style: none;
 */
 
 /* HTML & Body */
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+    	html {
+			background-image: url("../images/BG_retina_riot.jpg");
+    	}
+	}
 	
 	html{
 		height:100%;
@@ -103,7 +109,7 @@ list-style: none;
 		background-repeat:no-repeat;
 		background-attachment: fixed;
 		background-color:rgba(46, 159, 177, 1);
-		background-image: url("../images/BG_riot.jpg") ;
+		background-image: url("../images/BG_riot.jpg");
 		font-size:16px;
 	}
 	
