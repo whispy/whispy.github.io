@@ -13,18 +13,17 @@ html.no-js #headerWrapper {
 }
 
 #headerWrapper.headerLeft {
-		width:100%;
-		-webkit-transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
-	  	transition:         all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+	width:100%;
+	-webkit-transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+	  transition:         all 600ms cubic-bezier(0.77, 0, 0.175, 1);
 	}
-
 
 header {
 	float:none;
 	position: relative; /*this is not only why. it's because jquery is moving to panel's left offset which is off screen*/
 }
 
-.panel.blogSidebar {
+.panel.panelSidebar {
 	right:-200px;
 }
 

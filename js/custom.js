@@ -1,7 +1,6 @@
 function resetDivs() {  // resets certain divs to their default states.
 	panel.removeClass("showDiv");
 	panel.removeClass("panelSidebar");
-	panel.removeClass("blogSidebar");
 	panel.addClass("resetDiv");
 	workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
@@ -83,12 +82,8 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 	
 	function bindListeners() {
-		/*if (panel.width()>=101) {
-			$.stylesheet(".panel.blogSidebar").css({
-				"left":panelRight + 310 + 'px'
-			});*/
-		
-			panel.addClass("blogSidebar");
+
+			panel.addClass("panelSidebar");
 			console.log('butter')
 			$('.articleYears').addClass('yearsSidebar');
 			$('.articleDiv').addClass('articleSidebar');
