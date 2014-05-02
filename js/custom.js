@@ -232,11 +232,11 @@ function checkSize() {
 } // checksize() end
 
 $(window).resize(function() {
-	workDisplay.addClass("transitionReset"); // removes transitions when resizing
-	panel.addClass("transitionReset"); // removes transitions when resizing
+	//workDisplay.addClass("transitionReset"); // removes transitions when resizing
+	//panel.addClass("transitionReset"); // removes transitions when resizing
 	checkSize();
-	workDisplay.removeClass("transitionReset"); 
-	panel.removeClass("transitionReset"); 
+	//workDisplay.removeClass("transitionReset"); 
+	//panel.removeClass("transitionReset"); 
 }); 
 //Get window size end
 
