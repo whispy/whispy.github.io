@@ -62,6 +62,7 @@ function fancyWork(selector) {
 
 					setTimeout(function(){
 						$('.panel .content').addClass("contentSidebar");
+						$('.panel .content').addClass("flex-container");
 					}, 200);
 
 					setTimeout(function(){

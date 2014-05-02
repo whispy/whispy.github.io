@@ -417,7 +417,7 @@ list-style: none;
 		right:0px;
 		opacity:1;
 		box-shadow: 0px 0px 0px rgba(0, 94, 101, 0.0);
-		border-left:1px solid rgb(219, 228, 231);
+		border-left:1px solid rgba(161, 173, 179, 1);
 		background-color:#c9ced0;
 		-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	  	transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1); 
