@@ -1,8 +1,8 @@
 {
-  "name": "Discover Dan Website",
+  "name": "discover-dan-website",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.2",
+    "grunt": "^0.4.4",
     "grunt-include-replace": "~1.2.0"
   }
 }
