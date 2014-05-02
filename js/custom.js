@@ -54,14 +54,15 @@ function fancyWork(selector) {
 			}
 			else {
 
-				if (panel.width()>=101) {
-					/*$.stylesheet(".panel.panelSidebar").css({
-						"left":panelRight + 110 + 'px'
-					});*/
-		
+				if (!panel.hasClass(".panelSidebar")) { //run if .panel does NOT have class .panelSidebar
+
 					panel.addClass("panelSidebar");
-					$('.content').addClass("marginTop0");
-					$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+					$('.panel .content').addClass("contentSidebar");
+
+					setTimeout(function(){
+						$('.content').addClass("marginTop0");
+						$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+					}, 500);
 
 				} // if end
 
@@ -84,11 +85,13 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	function bindListeners() {
 
 			panel.addClass("panelSidebar");
-			console.log('butter')
-			$('.articleYears').addClass('yearsSidebar');
-			$('.articleDiv').addClass('articleSidebar');
+			setTimeout(function(){
+						$('.articleYears').addClass('yearsSidebar');
+						//$('.articleDiv').addClass('articleSidebar');
+						$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+					}, 500);
+			
 			$('.panel .content').addClass("contentSidebar");
-			$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 
 		//} // if end
 		workDisplayFadeIn();
