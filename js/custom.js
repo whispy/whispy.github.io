@@ -76,7 +76,7 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	bindListeners(blogArticles); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function workDisplayFadeIn() {
-		workDisplay.addClass("resetDiv");
+		workDisplay.removeClass("resetDiv");
 		workDisplay.addClass("showDiv");
 
 	};
