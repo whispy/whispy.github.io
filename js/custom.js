@@ -232,8 +232,10 @@ function checkSize() {
 
 $(window).resize(function() {
 	workDisplay.addClass("transitionReset"); // removes transitions when resizing
+	panel.addClass("transitionReset"); // removes transitions when resizing
 	checkSize();
 	workDisplay.removeClass("transitionReset"); 
+	panel.removeClass("transitionReset"); 
 }); 
 //Get window size end
 
