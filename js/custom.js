@@ -43,7 +43,7 @@ function fancyWork(selector) {
 	bindListeners(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function workDisplayFadeIn() {
-		workDisplay.addClass("resetDiv");
+		workDisplay.removeClass("resetDiv");
 		workDisplay.addClass("showDiv");
 	};
 
@@ -56,9 +56,9 @@ function fancyWork(selector) {
 			else {
 
 				if (panel.width()>=101) {
-					$.stylesheet(".panel.panelSidebar").css({
+					/*$.stylesheet(".panel.panelSidebar").css({
 						"left":panelRight + 110 + 'px'
-					});
+					});*/
 		
 					panel.addClass("panelSidebar");
 					$('.content').addClass("marginTop0");
