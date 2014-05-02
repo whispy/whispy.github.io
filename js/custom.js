@@ -5,6 +5,7 @@ function resetDivs() {  // resets certain divs to their default states.
 	panel.addClass("resetDiv");
 	workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
+	$('.content').removeClass("contentSidebar");
 	content.removeClass("marginTop0");
 	$('.heroImage').removeClass('heroSidebar');
 }; // resetDivs end
@@ -82,16 +83,16 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 	
 	function bindListeners() {
-		if (panel.width()>=101) {
+		/*if (panel.width()>=101) {
 			$.stylesheet(".panel.blogSidebar").css({
 				"left":panelRight + 310 + 'px'
-			});
+			});*/
 		
 			panel.addClass("blogSidebar");
-			//$('.content').addClass("marginTop0");
+			$('.panel .content').addClass("contentSidebar");
 			$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 
-		} // if end
+		//} // if end
 		workDisplayFadeIn();
     }; //bindListeners end
 }; // fancyBlog end
@@ -225,11 +226,11 @@ $(document).ready(function () {
 		})
 	} // headerWrapperWidth end */
 
-	if(width <= 1397) { // hide blogSidebar if width <1397
+	/*if(width <= 1397) { // hide blogSidebar if width <1397
 		$.stylesheet(".panel.blogSidebar").css({
 			"right":"-9999" + 'px' // using this because showDiv already has !important on opacity. See if possible to fix...
 		});
-	} // if end
+	} // if end*/
 
 }); // $(document).ready end
 

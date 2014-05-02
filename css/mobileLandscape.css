@@ -24,6 +24,13 @@ header {
 	position: relative; /*this is not only why. it's because jquery is moving to panel's left offset which is off screen*/
 }
 
+.panel.blogSidebar {
+	display:none;
+}
+
+.panel, .workDisplay {
+	position:relative;
+}
 
 #selfieDiv {
 	margin-right:auto;
