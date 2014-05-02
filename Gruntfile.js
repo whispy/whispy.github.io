@@ -6,6 +6,16 @@ module.exports = function(grunt) {
 				options: {
 				// Task-specific options go here.
       			},
+      			includesDir: {
+					src: 'test.txt',
+					dest: 'includes/',
+					expand: true,
+					cwd: 'includes/',
+					options : {
+						//The base path where includes will be resolved
+						includesDir : 'includes/'
+					}
+				},
       			files: [
       				{src: ['*.html', 'articles/*.html', 'pieces/*.html'], dest: '/'}
       			]
