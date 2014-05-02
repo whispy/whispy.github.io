@@ -89,6 +89,9 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 			});*/
 		
 			panel.addClass("blogSidebar");
+			console.log('butter')
+			$('.articleYears').addClass('yearsSidebar');
+			$('.articleDiv').addClass('articleSidebar');
 			$('.panel .content').addClass("contentSidebar");
 			$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 
