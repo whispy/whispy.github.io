@@ -35,6 +35,10 @@ list-style: none;
 		width:20%;
 	}
 
+	html.no-js .panel {
+		width:80%;
+	}
+
 	body.ieOld .resetDiv {
 		visibility: visible;
 		opacity: 1;
@@ -496,7 +500,7 @@ list-style: none;
 		min-height: 100% !important;
 		height:auto;
 		max-width:1500px;
-		width:80%;
+		width:0%; /*80%*/
 		margin-right:auto;
 		margin-left:auto;
 		background-color:rgba(243, 240, 240, 1);
