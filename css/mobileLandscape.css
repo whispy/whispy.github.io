@@ -122,12 +122,12 @@ div ul li{
 }
 
 div p {
-	font-size:1rem;
-	line-height:27px;
+	font-size:1.1rem;
+	line-height:29px;
 }
 
 p cite.title {
-		font-size:1rem;	
+	font-size:1.1rem;	
 }
 
 footer {
