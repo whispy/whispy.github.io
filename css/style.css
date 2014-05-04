@@ -97,6 +97,12 @@ list-style: none;
 	 font-style: normal;
 	 font-weight: normal;
 	}
+	@font-face {
+	 font-family: "Aller Light";
+	 src: url("/Aller_Lt.ttf") format("TrueType");
+	 font-style: normal;
+	 font-weight: normal;
+	}
 	
 /* @font-face end */
 
@@ -185,6 +191,14 @@ list-style: none;
 		margin-bottom:15px;
 	}
 
+	h3 .intro {
+		font-family:"Aller Light", sans-serif;
+		font-style:normal;
+		color:rgba(123, 123, 123, 1);
+		font-size:1rem;
+		line-height:1.4;
+	}
+
 	.infoBox h3 {
 		line-height:1;
 		margin-bottom:3px;
@@ -210,27 +224,24 @@ list-style: none;
 		line-height:1.25rem;
 	}
 
-	q {
-		
+	p cite {
+		font-size:.9rem;
+		color:rgba(123, 123, 123, 1);
 	}
 	
 	p cite.title {
-		color:rgba(123, 123, 123, 1);
-		font-size:1.25rem;
+		font-size:1.1rem;	
 	}
 
 	div p {
-		font-size:1.25rem;
-		line-height:31px;
-		margin-bottom:15px;
-		/*text-indent: 1em;*/
-	}
-
-	.content p:nth-of-type(3) {
 		font-family:"Aller Regular";
 		color:rgba(129, 124, 124, 1);
-		font-size:1.18rem;
+		font-size:1.1rem;
 		line-height:29px;
+		margin-right:auto;
+		margin-left:auto;
+		margin-bottom:15px;
+		/*text-indent: 1em;*/
 	}
 	
 	p {
@@ -595,13 +606,13 @@ list-style: none;
 		margin-bottom:75px;
 		margin-left:75px;
 		width:50%;
-		max-width:700px;
+		max-width:600px;
 	}
 
 	.workDisplay .content {
 		margin-left:auto;
 		margin-right:auto;
-		width:80%;
+		width:60%;
 	}
 
 	footer {
