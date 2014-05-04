@@ -91,17 +91,40 @@ list-style: none;
 	 font-style: italic;
 	 font-weight: normal;
 	}
-	@font-face {
-	 font-family: "Aller Regular";
-	 src: url("/Aller_Rg.ttf") format("TrueType");
-	 font-style: normal;
-	 font-weight: normal;
+	@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=31363aac-037d-4e29-b9cd-f2b0f548ca9a");
+	@font-face{
+		font-family:"Aller Typo W01 Bold";
+		src:url("/fonts/4789119c-098a-4d9a-8c50-fe25c624ba23.eot?#iefix");
+		src:url("/fonts/4789119c-098a-4d9a-8c50-fe25c624ba23.eot?#iefix") format("eot"),url("/fonts/49bfe520-9304-4e57-afef-0a2bd6103cb3.woff") format("woff"),url("/fonts/e64334cb-354d-4163-95a0-b6ab9a7280fb.ttf") format("truetype"),url("/fonts/6a5f6a67-1f8d-4478-98ec-0e12dd8aba6b.svg#6a5f6a67-1f8d-4478-98ec-0e12dd8aba6b") format("svg");
 	}
-	@font-face {
-	 font-family: "Aller Light";
-	 src: url("/Aller_Lt.ttf") format("TrueType");
-	 font-style: normal;
-	 font-weight: normal;
+	@font-face{
+		font-family:"AllerTypoW01-LightItali";
+		src:url("/fonts/bbd23039-c434-4cbf-bf57-2ce7aa8e3160.eot?#iefix");
+		src:url("/fonts/bbd23039-c434-4cbf-bf57-2ce7aa8e3160.eot?#iefix") format("eot"),url("/fonts/ad8b9e83-9821-44b5-852a-3681da2246ab.woff") format("woff"),url("/fonts/913d58b0-ed89-4e86-8803-e6e19f823474.ttf") format("truetype"),url("/fonts/2ed5ae62-3383-45a2-8bfc-081b1d64d683.svg#2ed5ae62-3383-45a2-8bfc-081b1d64d683") format("svg");
+	}
+	@font-face{
+		font-family:"Aller Light";
+		src:url("/fonts/3172950c-b88e-44bb-ad88-1eb5de225e7e.eot?#iefix");
+		src:url("/fonts/3172950c-b88e-44bb-ad88-1eb5de225e7e.eot?#iefix") format("eot"),url("/fonts/a281549b-4ccc-4402-adb3-447861030a9b.woff") format("woff"),url("/fonts/4876aecc-945f-48b4-aa63-1f870bea2c8f.ttf") format("truetype"),url("/fonts/f996a2aa-1be9-4012-a929-b26788d088e1.svg#f996a2aa-1be9-4012-a929-b26788d088e1") format("svg");
+	}
+	@font-face{
+		font-family:"Aller Regular";
+		src:url("/fonts/bd5542ea-c0ff-4ec4-aa1b-db87ffbaee12.eot?#iefix");
+		src:url("/fonts/bd5542ea-c0ff-4ec4-aa1b-db87ffbaee12.eot?#iefix") format("eot"),url("/fonts/1cce00ec-4dc3-4b48-b022-7bf531e2e05d.woff") format("woff"),url("/fonts/c6e80a41-7c2f-46bc-97e3-f7512da7ae0e.ttf") format("truetype"),url("/fonts/f26dcabc-e7d5-4fc6-9e6c-667376217f50.svg#f26dcabc-e7d5-4fc6-9e6c-667376217f50") format("svg");
+		font-style:normal;
+		font-weight:normal;
+	}
+	@font-face{
+		font-family:"AllerTypoW01-BoldItalic";
+		src:url("/fonts/26d813e8-34fa-46b7-8f39-87dcf14d1d82.eot?#iefix");
+		src:url("/fonts/26d813e8-34fa-46b7-8f39-87dcf14d1d82.eot?#iefix") format("eot"),url("/fonts/2efcf961-dd02-4632-8bc0-ae4876fde740.woff") format("woff"),url("/fonts/313f4d8f-5263-41ad-8adc-3dfd6c25528c.ttf") format("truetype"),url("/fonts/4ea83b32-a15a-4e78-b467-f48d6b42961e.svg#4ea83b32-a15a-4e78-b467-f48d6b42961e") format("svg");
+	}
+	@font-face{
+		font-family:"Aller Regular";
+		src:url("/fonts/2cad5d72-8faa-4cdb-a007-3ac6e0803484.eot?#iefix");
+		src:url("/fonts/2cad5d72-8faa-4cdb-a007-3ac6e0803484.eot?#iefix") format("eot"),url("/fonts/3558dcd6-7e88-412e-a9d3-b424b07a89ea.woff") format("woff"),url("/fonts/fda4dc36-2c79-41df-a9e5-4c4ee2771136.ttf") format("truetype"),url("/fonts/220004de-3dda-4486-8a17-ca60687a6b72.svg#220004de-3dda-4486-8a17-ca60687a6b72") format("svg");
+		font-style:italic;
+		font-weight:normal;
 	}
 	
 /* @font-face end */
@@ -158,6 +181,7 @@ list-style: none;
 	body {
 		width:100%;
 		height:100%;
+
 	}
 	
 /* HTML & Body end */
@@ -234,7 +258,7 @@ list-style: none;
 	}
 
 	div p {
-		font-family:"Aller Regular";
+	
 		color:rgba(129, 124, 124, 1);
 		font-size:1.1rem;
 		line-height:29px;
@@ -245,7 +269,7 @@ list-style: none;
 	}
 	
 	p {
-		font-family:"Alegreya Sans", sans-serif;
+		font-family:"Aller Regular", sans-serif;
 		color: rgba(87, 87, 87, 1);
 		font-style:normal;
 		font-weight:normal;
