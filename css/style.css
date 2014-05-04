@@ -92,10 +92,10 @@ list-style: none;
 	 font-weight: normal;
 	}
 	@font-face {
-	 font-family: "Alegreya Sans";
-	 src: url("http://themes.googleusercontent.com/static/fonts/alegreyasans/v1/11EDm-lum6tskJMBbdy9aeu_tG0Yx7qqITjSOZkMZIk.woff") format("woff");
-	 font-style: 500;
-	 font-weight: 500;
+	 font-family: "Aller Regular";
+	 src: url("/Aller_Rg.ttf") format("TrueType");
+	 font-style: normal;
+	 font-weight: normal;
 	}
 	
 /* @font-face end */
@@ -226,8 +226,11 @@ list-style: none;
 		/*text-indent: 1em;*/
 	}
 
-	div p:first-of-type {
-		text-indent: 0;
+	.content p:nth-of-type(3) {
+		font-family:"Aller Regular";
+		color:rgba(129, 124, 124, 1);
+		font-size:1.18rem;
+		line-height:29px;
 	}
 	
 	p {
