@@ -80,7 +80,11 @@ div ul li{
 }
 
 
-
+.workDisplay .content {
+	margin-left:10%;
+	margin-right:10%;
+	width: 80%;
+}
 .content {
 	margin-left:5%;
 	margin-right:5%;
@@ -118,6 +122,12 @@ div ul li{
 }
 
 div p {
+	font-size:1rem;
+	line-height:27px;
+}
+
+p cite.title {
+		font-size:1rem;	
 }
 
 footer {
