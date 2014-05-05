@@ -156,13 +156,13 @@ list-style: none;
     	}
 	}
 
-	@media (min-width:1400px) { /*Display higher resolution background image on wide or multiple screen non-retina setups */
+	/*@media (min-width:1400px) { *Display higher resolution background image on wide or multiple screen non-retina setups *
     	html {
 			background-image: url("../images/BG_wide_riot.jpg");
     	}
-	}
+	}*/
 
-	@media (max-width:1399px) { /*Display lower resolution background image */
+	@media (max-width:3000px) { /*Display lower resolution background image */
     	html {
 			background-image: url("../images/BG-kraken-narrow.jpg");
     	}
