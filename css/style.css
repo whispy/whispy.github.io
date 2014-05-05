@@ -79,18 +79,6 @@ list-style: none;
 	 font-style: italic;
 	 font-weight: normal;
 	}
-	@font-face {
-	 font-family: "Alegreya Sans";
-	 src: url("http://themes.googleusercontent.com/static/fonts/alegreyasans/v1/KYNzioYhDai7mTMnx_gDgtUFqmyT-Ih543PWa_C0ig4.woff") format("woff");
-	 font-style: normal;
-	 font-weight: normal;
-	}
-	@font-face {
-	 font-family: "Alegreya Sans";
-	 src: url("http://themes.googleusercontent.com/static/fonts/alegreyasans/v1/TKyx_-JJ6MdpQruNk-t-PM_0Gg_psQEhwRxPwkVXUB8.woff") format("woff");
-	 font-style: italic;
-	 font-weight: normal;
-	}
 	@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=31363aac-037d-4e29-b9cd-f2b0f548ca9a");
 	@font-face{
 		font-family:"Aller Typo W01 Bold";
@@ -207,10 +195,10 @@ list-style: none;
 	}
 	
 	h3 {
-		font-family:"Agenda Medium", sans-serif;
+		font-family:"Aller Light", sans-serif;
 		font-style:normal;
 		color:rgba(123, 123, 123, 1);
-		font-size:1rem;
+		font-size:.9rem;
 		line-height:1.4;
 		margin-bottom:15px;
 	}
@@ -229,10 +217,10 @@ list-style: none;
 	}
 	
 	h4 {
-		font-family:"Agenda Medium", sans-serif;
+		font-family:"Aller Light", sans-serif;
 		font-style:normal;
 		color:rgba(123, 123, 123, 1);
-		font-size:1rem;
+		font-size:.9rem;
 		line-height:1;
 	}
 
@@ -241,7 +229,7 @@ list-style: none;
 	}
 
 	blockquote {
-		font-family:"Alegreya Sans", sans-serif;
+		font-family:"Aller Light", sans-serif;
 		color: rgba(87, 87, 87, 1);
 		font-style:normal;
 		font-weight:normal;
@@ -275,30 +263,6 @@ list-style: none;
 		font-weight:normal;
 	}
 
-	.articleDiv.articleSidebar a {
-		-webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-	  	transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);  
-		color:rgba(123, 123, 123, 1);
-		font-size:1.25rem;
-		line-height:1.3;
-		margin-bottom:18px;
-	}
-
-	.articleSidebar a:hover {
-		-webkit-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
-	  	transition:         all 500ms cubic-bezier(0.645, 0.045, 0.355, 1); 
-		color:rgba(87, 87, 87, 1);;
-	}
-
-	.articleDiv.articleSidebar {
-		margin-left:10px;
-	}
-
-	.yearsSidebar {
-		color:rgba(123, 123, 123, 1);
-		margin-top:20px;
-	}
-	
 /* Text Styling End */
 
 /* Link Styling */
@@ -336,25 +300,6 @@ list-style: none;
 		cursor: hand; 
 	}
 	
-	.articleLinks {
-		-webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-	  	transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1); 
-		text-decoration: none;
-		font-family:"Alegreya Sans", sans-serif;
-		font-style:normal;
-		color:rgba(123, 123, 123, 1);
-		font-size:1.5rem;
-		line-height:36px;
-		margin-bottom:10px;
-		display:block;
-	}
-	
-	.articleLinks:hover {
-		color:#323232;
-		-webkit-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
-	  	transition:         all 500ms cubic-bezier(0.645, 0.045, 0.355, 1); 
-	}
-
 /* Link Styling End */
 
 /* Menu Styling */
@@ -512,6 +457,15 @@ list-style: none;
 		-webkit-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	  	transition:         all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
+
+	.articleDiv.articleSidebar {
+		margin-left:10px;
+	}
+
+	.yearsSidebar {
+		color:rgba(123, 123, 123, 1);
+		margin-top:20px;
+	}
 	
 	.transitionReset {
 	-webkit-transition: none !important;
@@ -617,6 +571,34 @@ list-style: none;
 	
 	.articleYears {
 		margin-left:0px;
+	}
+
+	.articleLinks {
+		-webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+	  	transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1); 
+		text-decoration: none;
+		font-family:"Agenda Medium", sans-serif;
+		font-style:normal;
+		color:rgba(123, 123, 123, 1);
+		font-size:1.5rem;
+		line-height:36px;
+		margin-bottom:10px;
+		display:block;
+	}
+	
+	.articleLinks:hover, .articleSidebar .articleLinks:hover {
+		color:rgba(87, 87, 87, 1);
+		-webkit-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+	  	transition:         all 500ms cubic-bezier(0.645, 0.045, 0.355, 1); 
+	}
+
+	.articleSidebar .articleLinks {
+		-webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+	  	transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);  
+		color:rgba(123, 123, 123, 1);
+		font-size:1.2rem;
+		line-height:1.3;
+		margin-bottom:18px;
 	}
 	
 	.date, .category {
