@@ -164,7 +164,7 @@ list-style: none;
 
 	@media (max-width:1399px) { /*Display lower resolution background image */
     	html {
-			background-image: url("../images/BG_narrow_riot.jpg");
+			background-image: url("../images/BG-kraken-narrow.jpg");
     	}
     }
 	
@@ -261,7 +261,7 @@ list-style: none;
 	
 		color:rgba(129, 124, 124, 1);
 		font-size:1.1rem;
-		line-height:29px;
+		line-height:30px;
 		margin-right:auto;
 		margin-left:auto;
 		margin-bottom:15px;
@@ -387,7 +387,7 @@ list-style: none;
 		background-repeat:no-repeat;
 		background-position: top center;
 		background-size:100% 100%;
-		background-image: url('../images/placeholder_selfie.jpg');
+		background-image: url('../images/selfie-kraken.jpg');
 		height:100%;
 		width:100%;
 		border-radius: 50%;
@@ -630,7 +630,7 @@ list-style: none;
 		margin-bottom:75px;
 		margin-left:75px;
 		width:50%;
-		max-width:600px;
+		max-width:700px;
 	}
 
 	.workDisplay .content {
