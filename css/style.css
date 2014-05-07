@@ -302,7 +302,7 @@ list-style: none;
 	nav ul li a {
 		font-family:"Agenda Medium", sans-serif;
 		text-decoration: none;
-		font-size:2.25rem;
+		font-size:2rem;
 		line-height:50px;
 		color:#DEDEDD;
 	    display:block;
@@ -312,7 +312,7 @@ list-style: none;
 
 	nav ul li a:hover {
 		line-height:70px;
-		font-size:2.5rem;
+		font-size:2.25rem;
 		margin-top:-10px;
 		transition: all 0.2s ease-out;
 	    -webkit-transition: all 0.2s ease-out;
@@ -339,11 +339,11 @@ list-style: none;
 		position:fixed;
 	}
 	
-	header {
+	header { /*move header a inside selfieDiv*/
 		position:fixed;
 		width:inherit;
 	}
-	
+
 	#logoMobile {
 		display:none;
 	}
