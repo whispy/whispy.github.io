@@ -70,6 +70,16 @@ nav ul li{
 
 nav ul li:hover {
 	border-right: 0px solid rgba(237,66,10,.9); /* 10px*/
+	animation:none;
+	-webkit-animation: none;
+}
+
+nav ul li a:hover {
+	font-size:26px;
+	line-height:40px;
+	margin-top:0px;
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
 }
 
 div ul li{
