@@ -106,7 +106,10 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
     }; //bindListeners end
 }; // fancyBlog end
 
-$(window).on('pronto.request', function(){
+$(window).on('pronto.request', function(event){ //events do get triggered by back button -> figure out how to undo the functions that were run
+	console.log('pronto.request');
+	var target = event.target || event.srcElement;
+    console.log(target);
 	navAClick();
 })
 
@@ -205,7 +208,7 @@ $(document).ready(function () {
 	}
 	
 	//Enable Ajaxify.js on the listed elements
-	jQuery('#ajaxContent , #ajaxWork , #ajaxHero, #ajaxHeroWork').ajaxify({
+	jQuery('#ajaxContent, #ajaxWork, #ajaxHero, #ajaxHeroWork').ajaxify({
 		verbosity : 2,
 	});
 
