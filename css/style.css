@@ -269,16 +269,26 @@ list-style: none;
 	
 	nav ul li{
 		border-right:0px solid rgba(65, 166, 183, 0.9);
-		transition: all .13s ease-in;
-	    -moz-transition: all .13s ease-in;
-	    -webkit-transition: all .13s ease-in;
+		transition: all .13s ease-out;
+	    -moz-transition: all .13s ease-out;
+	    -webkit-transition: all .13s ease-out;
 	    border-radius:1px 1px;
 	}
 	
 	nav ul li:hover {
 		border-right: 10px solid rgba(65, 166, 183, 0.9);
 		box-shadow: 0px 0px 5px rgba(0, 94, 101, .15);
+		transition: all .33s ease-out;
+		-moz-transition: all .33s ease-out;
+		-webkit-transition: all .33s ease-out;
+		animation: shake .5s 1; /*shakes links on hover*/
+		animation-delay: .5s;
+	}
 
+	@keyframes shake { /*shakes links*/
+  		0%, 40%, 80%   { transform: translateX(-2px);  }
+  		20%, 60%  { transform: translateX(2px); }
+  		100% { transform: translateX(0px); }
 	}
 	
 	nav ul li a {
@@ -288,6 +298,17 @@ list-style: none;
 		line-height:50px;
 		color:#DEDEDD;
 	    display:block;
+	    transition: all 0.3s ease-in;
+	    -webkit-transition: all 0.3s ease-in;
+	}
+
+	nav ul li a:hover {
+		line-height:70px;
+		font-size:2.5rem;
+		margin-top:-10px;
+		transition: all 0.2s ease-out;
+	    -webkit-transition: all 0.2s ease-out;
+	   
 	}
 
 	p a {
@@ -326,6 +347,12 @@ list-style: none;
 		width:175px;
 		margin-top:200px;
 		display:block;
+		transition: all 0.2s ease-in-out;
+	}
+
+	#selfieDiv:hover {
+		height:180px;
+		width:180px;
 	}
 
 	#selfieImage {
@@ -342,8 +369,7 @@ list-style: none;
 	}
 	
 	#selfieImage:hover {
-	    box-shadow:
-	        inset 0 0 0 10px rgba(65, 166, 183, 0.9);
+	   
 	    background-size:105% 105%;
 	}
 	
