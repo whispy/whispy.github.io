@@ -53,3 +53,11 @@ nav ul li a:hover {
 .articleDiv.articleSidebar a {
 		font-size:1rem;
 	}
+
+	#headerWrapper.headerLeft {
+		width:15%;
+	}
+
+	.panel {
+		width:85%;
+	}
