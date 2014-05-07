@@ -61,3 +61,12 @@ nav ul li a:hover {
 	.panel {
 		width:85%;
 	}
+
+	.workDisplay {
+		width:65%;
+	}
+
+	.workDisplay .content {
+		width:70%;
+		max-width:7000px;
+	}
