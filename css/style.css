@@ -282,9 +282,9 @@ list-style: none;
 		-moz-transition: all .33s ease-out;
 		-webkit-transition: all .33s ease-out;
 		animation: shake .5s 1; /*shakes links on hover*/
-		animation-delay: .5s;
+		animation-delay: .7s;
 		-webkit-animation: shake .5s 1;
-		-webkit-animation-delay: .5s;
+		-webkit-animation-delay: .7s;
 	}
 
 	@keyframes shake { /*shakes links*/
