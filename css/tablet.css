@@ -7,6 +7,11 @@
 	height:100px;
 }
 
+	#selfieDiv:hover {
+		height:105px;
+		width:105px;
+	}
+
 #selfieImage {
 		background-image: url('../images/selfie-kraken-med.jpg');
 }
@@ -26,9 +31,24 @@ nav {
 }
 
 nav ul li a {
-	font-size:26px;
-	line-height:40px;
+	font-size:1.5rem;
+	line-height:35px;
 }
+
+nav ul li a:hover {
+		line-height:45px;
+		font-size:1.7rem;
+		margin-top:-5px;
+		transition: all 0.2s ease-out;
+	    -webkit-transition: all 0.2s ease-out;
+	}
+
+	nav ul li:hover {
+		border-right: 5px solid rgba(65, 166, 183, 0.9);
+		transition: all .13s ease-out;
+		-moz-transition: all .13s ease-out;
+		-webkit-transition: all .13s ease-out;
+	}
 
 .articleDiv.articleSidebar a {
 		font-size:1rem;
