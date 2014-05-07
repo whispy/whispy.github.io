@@ -29,7 +29,9 @@ function fancyNav(selector) {
 
 	function bindListeners() {
 		//$('.navigation').on('click', 'a', function() {
-		$('#headerWrapper').addClass('headerLeft');
+		if(width >= 778){
+			$('#headerWrapper').addClass('headerLeft');
+		}
         divInit();
 	} //bindListeners end
 
@@ -109,14 +111,11 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 $(window).on('pronto.request', function(event){ //events do get triggered by back button -> figure out how to undo the functions that were run
 	var target = event.target || event.srcElement;
     console.log(target);
-
 	navAClick();
-	
 })
 
 $(window).on('popstate', function(e){ //making back/forward button work -> needs lots of cleaning, but functionality is there.
-	
-	console.log(window.location.pathname)
+	//console.log(window.location.pathname)
 	if(window.location.pathname.indexOf("pieces") != -1){
 		var URLnotIndex = window.location.pathname
 		var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
@@ -131,7 +130,7 @@ $(window).on('popstate', function(e){ //making back/forward button work -> needs
 	if(window.location.pathname.indexOf("articles") != -1) {
 		var URLnotIndex = window.location.pathname
 		var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-		showDivs();
+
 		fancyBlog(blogArticles);
 	}
 	if(window.location.href.indexOf("index") !== -1 || window.location.pathname === '/') {
@@ -201,7 +200,7 @@ $(document).ready(function () {
 		fancyNav(navSelector);
 	}
 
-	//Enables users to come in on a piece and still have fancyNav execute when they click on a navigation link
+	//Enables users to come in on a piece or article and still have fancyNav execute when they click on a navigation link
 	navAClick();
 
 	//run imgDivClick on page load if URL includes 'work'
@@ -245,6 +244,11 @@ $(document).ready(function () {
 function checkSize() {
 	var width = $(window).width();
 	var container = jQuery(".container");
+
+	//add headerLeft if browser is resized to be >778 px AND page is not 'index' or '/'
+	if((width >= 778 && !window.location.pathname.indexOf('index')) || (width >= 778 && window.location.pathname.indexOf('/'))) {
+		$('#headerWrapper').addClass('headerLeft');
+	}
 
 	/*if(width <= 777){
 		panel.removeClass("panelSidebar");
