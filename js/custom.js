@@ -107,11 +107,38 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 }; // fancyBlog end
 
 $(window).on('pronto.request', function(event){ //events do get triggered by back button -> figure out how to undo the functions that were run
-	console.log('pronto.request');
 	var target = event.target || event.srcElement;
     console.log(target);
+
 	navAClick();
+	
 })
+
+$(window).on('popstate', function(e){ //making back/forward button work -> needs lots of cleaning, but functionality is there.
+	
+	console.log(window.location.pathname)
+	if(window.location.pathname.indexOf("pieces") != -1){
+		var URLnotIndex = window.location.pathname
+		var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		fancyWork(workThumbs);
+		$('.content .imgDiv').addClass("sidebarThumbs");
+	}
+	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
+		var URLnotIndex = window.location.pathname
+		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		fancyNav(navSelector);
+	}
+	if(window.location.pathname.indexOf("articles") != -1) {
+		var URLnotIndex = window.location.pathname
+		var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		showDivs();
+		fancyBlog(blogArticles);
+	}
+	if(window.location.href.indexOf("index") !== -1 || window.location.pathname === '/') {
+		resetDivs();
+		$('#headerWrapper').removeClass('headerLeft');
+	}
+});
 
 $(window).on('pronto.load', function(){
 
