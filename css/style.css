@@ -294,9 +294,9 @@ list-style: none;
 	}
 
 	@-webkit-keyframes shake { /*shakes links*/
-  		0%, 40%, 80%   { transform: translateX(-2px);  }
-  		20%, 60%  { transform: translateX(2px); }
-  		100% { transform: translateX(0px); }
+  		0%, 40%, 80%   { -webkit-transform: translateX(-2px);  }
+  		20%, 60%  { -webkit-transform: translateX(2px); }
+  		100% { -webkit-transform: translateX(0px); }
 	}
 	
 	nav ul li a {
