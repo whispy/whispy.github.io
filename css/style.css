@@ -169,6 +169,8 @@ list-style: none;
 	}
 	
 	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 		width:100%;
 		height:100%;
 
@@ -310,7 +312,7 @@ list-style: none;
 	    -webkit-transition: all 0.3s ease-in;
 	}
 
-	nav ul li a:hover {
+	nav ul li a:hover { /*too web-2.0-jquery-menu-plugin-y*/
 		line-height:70px;
 		font-size:2.25rem;
 		margin-top:-10px;
