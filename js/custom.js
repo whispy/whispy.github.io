@@ -177,6 +177,7 @@ function blogClick() { //run fancyBlog on click of .articleDiv anchors
 $(document).ready(function () {
 
 	//Defining global variables
+	window = $(window);
 	width = $(window).width();
 	panel = $('.panel');
 	indexPanel = $('#indexPanel');
@@ -241,11 +242,13 @@ $(document).ready(function () {
 
 //Get window size
 function checkSize() {
-	var width = $(window).width();
+	var width = window.width();
 	var container = jQuery(".container");
 
+	console.log(window.location.pathname.indexOf('/'))
+
 	//add headerLeft if browser is resized to be >778 px AND page is not 'index' or '/'
-	if((width >= 778 && !window.location.pathname.indexOf('index')) || (width >= 778 && window.location.pathname.indexOf('/'))) {
+	if (width >= 778 && (! window.location.pathname.match(/^(index|\/)$/) ) ) {
 		$('#headerWrapper').addClass('headerLeft');
 	}
 

@@ -30,25 +30,26 @@ nav {
 	margin-top:10px;
 }
 
+nav ul li {
+	width:100px;
+}
+
+nav ul li::before {
+		height:35px;
+		margin-left:50px;
+	}
+
+	nav ul li:hover::before {
+		width:100px;
+		border-radius:2px;
+		margin-left:0px;
+	}
+
 nav ul li a {
 	font-size:1.5rem;
 	line-height:35px;
 }
 
-nav ul li a:hover {
-		line-height:45px;
-		font-size:1.7rem;
-		margin-top:-5px;
-		transition: all 0.2s ease-out;
-	    -webkit-transition: all 0.2s ease-out;
-	}
-
-	nav ul li:hover {
-		border-right: 5px solid rgba(65, 166, 183, 0.9);
-		transition: all .13s ease-out;
-		-moz-transition: all .13s ease-out;
-		-webkit-transition: all .13s ease-out;
-	}
 
 .articleDiv.articleSidebar a {
 		font-size:1rem;

@@ -270,24 +270,39 @@ list-style: none;
 /* Link Styling */
 	
 	nav ul li{
-		border-right:0px solid rgba(65, 166, 183, 0.9);
+		width:155px;
 		transition: all .13s ease-out;
 	    -moz-transition: all .13s ease-out;
 	    -webkit-transition: all .13s ease-out;
-	    border-radius:1px 1px;
 	}
-	
-	nav ul li:hover {
-		border-right: 10px solid rgba(65, 166, 183, 0.9);
-		box-shadow: 0px 0px 5px rgba(0, 94, 101, .05);
-		transition: all .33s ease-out;
-		-moz-transition: all .33s ease-out;
-		-webkit-transition: all .33s ease-out;
+
+	nav ul li::before {
+		z-index:-100;
+		background-color: rgba(65, 166, 183, 0.0);
+		height:50px;
+		width:0%;
+		margin-left:77px;
+    	content: "";
+    	position: absolute;
+    	 transition: all 0.23s ease-in;
+	    -webkit-transition: all 0.23s ease-in;
+	}
+
+	nav ul li:hover::before {
+		background-color: rgba(65, 166, 183, 0.16);
+		width:155px;
+		border-radius:2px;
+		margin-left:0px;
+		transition: all .23s ease-out;
+		-moz-transition: all .23s ease-out;
+		-webkit-transition: all .23s ease-out;
 		animation: shake .5s 1; /*shakes links on hover*/
 		animation-delay: .7s;
 		-webkit-animation: shake .5s 1;
 		-webkit-animation-delay: .7s;
 	}
+	
+
 
 	@keyframes shake { /*shakes links*/
   		0%, 40%, 80%   { transform: translateX(-2px);  }
@@ -302,6 +317,7 @@ list-style: none;
 	}
 	
 	nav ul li a {
+		text-align:center;
 		font-family:"Agenda Medium", sans-serif;
 		text-decoration: none;
 		font-size:2rem;
@@ -312,12 +328,11 @@ list-style: none;
 	    -webkit-transition: all 0.3s ease-in;
 	}
 
-	nav ul li a:hover { /*too web-2.0-jquery-menu-plugin-y*/
-		line-height:70px;
-		font-size:2.25rem;
-		margin-top:-10px;
-		transition: all 0.2s ease-out;
-	    -webkit-transition: all 0.2s ease-out;
+	nav ul li a:hover {
+		animation: shake .5s 1; /*shakes links on hover*/
+		animation-delay: .7s;
+		-webkit-animation: shake .5s 1;
+		-webkit-animation-delay: .7s;
 	}
 
 	p a {
@@ -325,7 +340,7 @@ list-style: none;
 	}
 	
 	a:hover {
-		color:#CCCCCB;
+		color:#ECECEC;
 		cursor: pointer;
 		cursor: hand; 
 	}
@@ -351,6 +366,7 @@ list-style: none;
 	}
 	
 	#selfieDiv {
+		border-radius:50%;
 		position:relative;
 		height:155px;
 		width:155px;
