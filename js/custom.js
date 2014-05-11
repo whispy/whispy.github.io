@@ -111,8 +111,6 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 $(window).on('pronto.request', function(event, eventInfo){ //events do get triggered by back button -> figure out how to undo the functions that were run
 	console.log(eventInfo);
-	var varName = currentTarget
-	console.log(varName)
 	navAClick();
 })
 
