@@ -145,10 +145,10 @@ $(window).on('pronto.load', function(){
 $(window).on('pronto.render', function(){
 	$('html, body').scrollTop(0); // scroll to top whenever changing page
 	imgDivClick();
+	blogClick();
 	if(window.location.pathname.indexOf("pieces") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
-	blogClick();
 })
 
 function navAClick() { //run fancyNav on click of .navigation anchors
@@ -167,6 +167,7 @@ function imgDivClick() { //run fancyWork on click of .imgDiv anchors
 }
 
 function blogClick() { //run fancyBlog on click of .articleDiv anchors
+	//this is not running on first click of a new article from sidebar...
 	$('.articleDiv').on('click', 'a', function() {
 		var blogArticles = '.articleDiv a'
 		fancyBlog(blogArticles);
