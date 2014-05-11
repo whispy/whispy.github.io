@@ -108,9 +108,11 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
     }; //bindListeners end
 }; // fancyBlog end
 
-$(window).on('pronto.request', function(event){ //events do get triggered by back button -> figure out how to undo the functions that were run
-	var target = event.target || event.srcElement;
-    console.log(target);
+
+$(window).on('pronto.request', function(event, eventInfo){ //events do get triggered by back button -> figure out how to undo the functions that were run
+	console.log(eventInfo);
+	var varName = currentTarget
+	console.log(varName)
 	navAClick();
 })
 
@@ -242,10 +244,8 @@ $(document).ready(function () {
 
 //Get window size
 function checkSize() {
-	var width = window.width();
+	var width = $(window).width();
 	var container = jQuery(".container");
-
-	console.log(window.location.pathname.indexOf('/'))
 
 	//add headerLeft if browser is resized to be >778 px AND page is not 'index' or '/'
 	if (width >= 778 && (! window.location.pathname.match(/^(index|\/)$/) ) ) {
