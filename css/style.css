@@ -81,37 +81,20 @@ list-style: none;
 	 font-style: italic;
 	 font-weight: normal;
 	}
-	@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=31363aac-037d-4e29-b9cd-f2b0f548ca9a");
 	@font-face{
-		font-family:"Aller Typo W01 Bold";
-		src:url("/fonts/4789119c-098a-4d9a-8c50-fe25c624ba23.eot?#iefix");
-		src:url("/fonts/4789119c-098a-4d9a-8c50-fe25c624ba23.eot?#iefix") format("eot"),url("/fonts/49bfe520-9304-4e57-afef-0a2bd6103cb3.woff") format("woff"),url("/fonts/e64334cb-354d-4163-95a0-b6ab9a7280fb.ttf") format("truetype"),url("/fonts/6a5f6a67-1f8d-4478-98ec-0e12dd8aba6b.svg#6a5f6a67-1f8d-4478-98ec-0e12dd8aba6b") format("svg");
+		font-family:"Source Sans Pro Light";
+		src:url("/fonts/SourceSansPro-Light.otf.woff") format("woff");
+		font-style:normal;
 	}
 	@font-face{
-		font-family:"AllerTypoW01-LightItali";
-		src:url("/fonts/bbd23039-c434-4cbf-bf57-2ce7aa8e3160.eot?#iefix");
-		src:url("/fonts/bbd23039-c434-4cbf-bf57-2ce7aa8e3160.eot?#iefix") format("eot"),url("/fonts/ad8b9e83-9821-44b5-852a-3681da2246ab.woff") format("woff"),url("/fonts/913d58b0-ed89-4e86-8803-e6e19f823474.ttf") format("truetype"),url("/fonts/2ed5ae62-3383-45a2-8bfc-081b1d64d683.svg#2ed5ae62-3383-45a2-8bfc-081b1d64d683") format("svg");
-	}
-	@font-face{
-		font-family:"Aller Light";
-		src:url("/fonts/3172950c-b88e-44bb-ad88-1eb5de225e7e.eot?#iefix");
-		src:url("/fonts/3172950c-b88e-44bb-ad88-1eb5de225e7e.eot?#iefix") format("eot"),url("/fonts/a281549b-4ccc-4402-adb3-447861030a9b.woff") format("woff"),url("/fonts/4876aecc-945f-48b4-aa63-1f870bea2c8f.ttf") format("truetype"),url("/fonts/f996a2aa-1be9-4012-a929-b26788d088e1.svg#f996a2aa-1be9-4012-a929-b26788d088e1") format("svg");
-	}
-	@font-face{
-		font-family:"Aller Regular";
+		font-family:"Source Sans Pro";
 		src:url("/fonts/SourceSansPro-Regular.otf.woff") format('woff');
 		font-style:normal;
 		font-weight:normal;
 	}
 	@font-face{
-		font-family:"AllerTypoW01-BoldItalic";
-		src:url("/fonts/26d813e8-34fa-46b7-8f39-87dcf14d1d82.eot?#iefix");
-		src:url("/fonts/26d813e8-34fa-46b7-8f39-87dcf14d1d82.eot?#iefix") format("eot"),url("/fonts/2efcf961-dd02-4632-8bc0-ae4876fde740.woff") format("woff"),url("/fonts/313f4d8f-5263-41ad-8adc-3dfd6c25528c.ttf") format("truetype"),url("/fonts/4ea83b32-a15a-4e78-b467-f48d6b42961e.svg#4ea83b32-a15a-4e78-b467-f48d6b42961e") format("svg");
-	}
-	@font-face{
-		font-family:"Aller Regular";
-		src:url("/fonts/2cad5d72-8faa-4cdb-a007-3ac6e0803484.eot?#iefix");
-		src:url("/fonts/2cad5d72-8faa-4cdb-a007-3ac6e0803484.eot?#iefix") format("eot"),url("/fonts/3558dcd6-7e88-412e-a9d3-b424b07a89ea.woff") format("woff"),url("/fonts/fda4dc36-2c79-41df-a9e5-4c4ee2771136.ttf") format("truetype"),url("/fonts/220004de-3dda-4486-8a17-ca60687a6b72.svg#220004de-3dda-4486-8a17-ca60687a6b72") format("svg");
+		font-family:"Source Sans Pro";
+		src:url("/fonts/SourceSansPro-It.otf.woff") format('woff');
 		font-style:italic;
 		font-weight:normal;
 	}
@@ -200,7 +183,7 @@ list-style: none;
 	}
 	
 	h3 {
-		font-family:"Aller Light", sans-serif;
+		font-family:"Source Sans Pro Light", sans-serif;
 		font-style:normal;
 		color:rgba(132, 138, 149, 1);
 		font-size:.9rem;
@@ -209,7 +192,7 @@ list-style: none;
 	}
 
 	h3 .intro {
-		font-family:"Aller Light", sans-serif;
+		font-family:"Source Sans Pro Light", sans-serif;
 		font-style:normal;
 		color:rgba(132, 138, 149, 1);
 		font-size:1rem;
@@ -222,7 +205,7 @@ list-style: none;
 	}
 	
 	h4 {
-		font-family:"Aller Light", sans-serif;
+		font-family:"Source Sans Pro Light", sans-serif;
 		font-style:normal;
 		color:#888495;
 		font-size:.9rem;
@@ -234,10 +217,9 @@ list-style: none;
 	}
 
 	blockquote {
-		font-family:"Aller Light", sans-serif;
+		font-family:"Source Sans Pro Light", sans-serif;
 		color: rgba(87, 87, 87, 1);
 		font-style:normal;
-		font-weight:normal;
 		line-height:1.25rem;
 	}
 
@@ -252,7 +234,7 @@ list-style: none;
 
 	div p {
 		font-size:1.1rem;
-		line-height:30px;
+		line-height:31px;
 		margin-right:auto;
 		margin-left:auto;
 		margin-bottom:15px;
@@ -260,7 +242,7 @@ list-style: none;
 	}
 	
 	p {
-		font-family:"Aller Regular", sans-serif;
+		font-family:"Source Sans Pro", sans-serif;
 		color:rgba(103, 110, 114, 1);
 		font-style:normal;
 		font-weight:normal;
