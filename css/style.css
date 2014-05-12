@@ -225,7 +225,6 @@ list-style: none;
 
 	p cite {
 		font-size:.9rem;
-		color:rgba(123, 123, 123, 1);
 	}
 	
 	p cite.title {
@@ -264,7 +263,6 @@ list-style: none;
 		background-color: rgba(65, 166, 183, 0.0);
 		height:50px;
 		width:0%;
-		margin-left:77px;
     	content: "";
     	position: absolute;
     	 transition: all 0.23s ease-in;
@@ -275,7 +273,6 @@ list-style: none;
 		background-color: rgba(65, 166, 183, 0.16);
 		width:155px;
 		border-radius:2px;
-		margin-left:0px;
 		transition: all .23s ease-out;
 		-moz-transition: all .23s ease-out;
 		-webkit-transition: all .23s ease-out;
@@ -300,7 +297,7 @@ list-style: none;
 	}
 	
 	nav ul li a {
-		text-align:center;
+		margin-left:15px;
 		font-family:"Agenda Medium", sans-serif;
 		text-decoration: none;
 		font-size:2rem;
@@ -312,6 +309,7 @@ list-style: none;
 	}
 
 	nav ul li a:hover {
+		color:#ECECEC;
 		animation: shake .5s 1; /*shakes links on hover*/
 		animation-delay: .7s;
 		-webkit-animation: shake .5s 1;
@@ -321,11 +319,17 @@ list-style: none;
 	p a {
 		text-decoration: none;
 	}
+
+	a {
+		color:#00A9B4;
+	}
 	
 	a:hover {
-		color:#ECECEC;
-		cursor: pointer;
-		cursor: hand; 
+		color:#007D85; /* change */
+	}
+
+	p a:visited {
+		color:#007D85;
 	}
 	
 /* Link Styling End */
