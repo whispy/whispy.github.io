@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 				// Task-specific options go here.
       			},
       			files: [
-      				{src: ['*.html', 'writings/*.html', 'pieces/*.html'], dest: './', expand: true, cwd: 'grunt-templates/'}
+      				{src: ['*.html', 'writings/*.html', 'design/*.html'], dest: './', expand: true, cwd: 'grunt-templates/'}
       			]
     		}
   		}
