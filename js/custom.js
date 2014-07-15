@@ -58,7 +58,7 @@ function fancyWork(selector) {
 			}
 			else {
 
-				if (!panel.hasClass(".panelSidebar")) { //run if .panel does NOT have class .panelSidebar
+				if (!panel.hasClass("panelSidebar")) { //run if .panel does NOT have class .panelSidebar
 
 					panel.addClass("panelSidebar");
 
@@ -92,6 +92,10 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	function bindListeners() {
 
 			panel.addClass("panelSidebar");
+			
+			/*setTimeout(function(){
+				$('.articleDiv').addClass('articleSidebar');
+			}, 10);*/
 
 			setTimeout(function(){
 				$('.panel .content').addClass("contentSidebar");
@@ -102,6 +106,7 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 				$('.articleDiv').addClass('articleSidebar');
 				$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 			}, 500);
+
 
 		workDisplayFadeIn();
 
@@ -149,6 +154,7 @@ $(window).on('pronto.render', function(){
 	if(window.location.pathname.indexOf("design") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
+
 })
 
 function navAClick() { //run fancyNav on click of .navigation anchors
@@ -167,6 +173,11 @@ function imgDivClick() { //run fancyWork on click of .imgDiv anchors
 }
 
 function blogClick() { //run fancyBlog on click of .articleDiv anchors
+	if(window.location.pathname.indexOf("writings") > -1){ //add class to anchor containing selectLink
+		selectLink = window.location.pathname.replace('/writings/','');
+		//console.log(selectLink);
+		$('a[href*="'+selectLink+'"]').addClass("selectLink");
+	}
 	//this is not running on first click of a new article from sidebar...
 	$('.articleDiv').on('click', 'a', function() {
 		var blogArticles = '.articleDiv a'
