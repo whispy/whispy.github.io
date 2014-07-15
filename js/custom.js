@@ -116,7 +116,7 @@ $(window).on('pronto.request', function(event, eventInfo){ //events do get trigg
 
 $(window).on('popstate', function(e){ //making back/forward button work -> needs lots of cleaning, but functionality is there.
 	//console.log(window.location.pathname)
-		if(window.location.pathname.indexOf("pieces") != -1){
+		if(window.location.pathname.indexOf("design") != -1){
 			var URLnotIndex = window.location.pathname
 			var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 			fancyWork(workThumbs);
@@ -127,7 +127,7 @@ $(window).on('popstate', function(e){ //making back/forward button work -> needs
 			var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 			fancyNav(navSelector);
 		}
-		if(window.location.pathname.indexOf("articles") != -1) {
+		if(window.location.pathname.indexOf("writings") != -1) {
 			var URLnotIndex = window.location.pathname
 			var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 			fancyBlog(blogArticles);
@@ -146,7 +146,7 @@ $(window).on('pronto.render', function(){
 	$('html, body').scrollTop(0); // scroll to top whenever changing page
 	imgDivClick();
 	blogClick();
-	if(window.location.pathname.indexOf("pieces") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
+	if(window.location.pathname.indexOf("design") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
 })
@@ -194,8 +194,8 @@ $(document).ready(function () {
 	panel.addClass("resetDiv");
 
 
-	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include pieces AND there is a pathname
-	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
+	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include design AND there is a pathname
+	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("design") === -1 && window.location.pathname !== '/') {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 		fancyNav(navSelector);
@@ -215,7 +215,7 @@ $(document).ready(function () {
 	}
 
 	//run fancyBlog on page load if URL includes 'articles'
-	if(window.location.pathname.indexOf("articles") != -1) {
+	if(window.location.pathname.indexOf("writing") != -1) {
 		var URLnotIndex = window.location.pathname
 		var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 		showDivs();
@@ -225,7 +225,7 @@ $(document).ready(function () {
 	}
 
 	//run fancyWork on page load if URL includes 'pieces'
-	if(window.location.pathname.indexOf("pieces") != -1) {
+	if(window.location.pathname.indexOf("design") != -1) {
 		var URLnotIndex = window.location.pathname
 		var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 		showDivs();
