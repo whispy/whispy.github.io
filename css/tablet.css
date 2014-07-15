@@ -46,6 +46,7 @@ nav ul li::before {
 	}
 
 nav ul li a {
+	margin-left:7px;
 	font-size:1.5rem;
 	line-height:35px;
 }
