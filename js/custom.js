@@ -204,13 +204,13 @@ $(document).ready(function () {
 	//Enables users to come in on a piece or article and still have fancyNav execute when they click on a navigation link
 	navAClick();
 
-	//run imgDivClick on page load if URL includes 'work'
-	if(window.location.href.indexOf("work") != -1) {
+	//run imgDivClick on page load if URL includes 'design'
+	if(window.location.href.indexOf("design") != -1) {
 		imgDivClick();
 	}
 
-	//run blogClick on page load if URL includes 'blog'
-	if(window.location.href.indexOf("blog") != -1) {
+	//run blogClick on page load if URL includes 'writing'
+	if(window.location.href.indexOf("writing") != -1) {
 		blogClick();
 	}
 
