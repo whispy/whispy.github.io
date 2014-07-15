@@ -127,7 +127,7 @@ $(window).on('popstate', function(e){ //making back/forward button work -> needs
 			var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 			fancyNav(navSelector);
 		}
-		if(window.location.pathname.indexOf("writings") != -1) {
+		if(window.location.pathname.indexOf("writings") != -1) { // if it includes 'writings'
 			var URLnotIndex = window.location.pathname
 			var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 			fancyBlog(blogArticles);
@@ -210,28 +210,36 @@ $(document).ready(function () {
 	}
 
 	//run blogClick on page load if URL includes 'writing'
-	if(window.location.href.indexOf("writing") != -1) {
+	if(window.location.href.indexOf("writings") != -1) {
 		blogClick();
 	}
 
-	//run fancyBlog on page load if URL includes 'articles'
-	if(window.location.pathname.indexOf("writing") != -1) {
-		var URLnotIndex = window.location.pathname
-		var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-		showDivs();
-		fancyNav(navSelector);
-		fancyBlog(blogArticles);
-		//$('.content .imgDiv').addClass("sidebarThumbs");
+	//run fancyBlog on page load if URL includes strings in writingsList
+	var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
+	for (var i = 0; i < writingsList.length; i++) {
+        if(window.location.pathname.indexOf(writingsList[i]) > -1) {
+            //alert("your url contains the string "+writingsList[i]);
+			var URLnotIndex = window.location.pathname
+			var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+			showDivs();
+			fancyNav(navSelector);
+			fancyBlog(blogArticles);
+			//$('.content .imgDiv').addClass("sidebarThumbs");
+		}
 	}
 
-	//run fancyWork on page load if URL includes 'pieces'
-	if(window.location.pathname.indexOf("design") != -1) {
-		var URLnotIndex = window.location.pathname
-		var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-		showDivs();
-		fancyNav(navSelector);
-		fancyWork(workThumbs);
-		$('.content .imgDiv').addClass("sidebarThumbs");
+	//run fancyWork on page load if URL includes strings in designsList
+	var designsList = ["a-few-more-breaths", "bar-vivant", "bulmer-specimen", "jam-packed", "midnight-munchies", "nutrition-program", "occupy-together", "photography", "pix-patisserie"]
+	for (var i = 0; i < designsList.length; i++) {
+        if(window.location.pathname.indexOf(designsList[i]) > -1) {
+        	//alert("your url contains the string "+designsList[i]);
+			var URLnotIndex = window.location.pathname
+			var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+			showDivs();
+			fancyNav(navSelector);
+			fancyWork(workThumbs);
+			$('.content .imgDiv').addClass("sidebarThumbs");
+		}
 	}
 	
 	//Enable Ajaxify.js on the listed elements
