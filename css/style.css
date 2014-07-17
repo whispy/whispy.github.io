@@ -164,6 +164,10 @@ list-style: none;
 
 /* Text Styling */
 	
+	#indexText {
+		color:#fff;
+	}
+
 	h1 {
 		font-family:"Agenda Medium", sans-serif;
 		font-style:normal;
@@ -538,6 +542,11 @@ list-style: none;
 		left:0;
 		right:0;
 		height:100%;
+	}
+
+	#indexTextContainer {
+		width:300px;
+		float:right;
 	}
 	
 	#indexPanel {

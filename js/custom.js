@@ -92,12 +92,21 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	function bindListeners() {
 
 			panel.addClass("panelSidebar");
+			//this all needs figuring out -> why is there a delay when going between different writings while sidebar is on?
 			
-			
-				
-			
+		var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
+		for (var i = 0; i < writingsList.length; i++) {
+        	if(window.location.pathname.indexOf(writingsList[i]) > -1) {
+            	$('.panel .content').addClass("contentSidebar");
+            	$('.articleYears').addClass('yearsSidebar');
+				$('.articleDiv').addClass('articleSidebar');
+				$('.heroImage').addClass("heroSidebar");
+				console.log('butt1')
+			}
 
-			setTimeout(function(){
+			if(window.location.pathname.indexOf(writingsList[i]) < -1) {
+				console.log('butt2')
+            	setTimeout(function(){
 				$('.panel .content').addClass("contentSidebar");
 			}, 200);
 
@@ -106,7 +115,12 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 				$('.articleDiv').addClass('articleSidebar');
 				$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 			}, 500);
+			}
+		}
+			/*
 
+			
+*/
 
 		workDisplayFadeIn();
 
@@ -267,7 +281,7 @@ function checkSize() {
 	var container = jQuery(".container");
 
 	//add headerLeft if browser is resized to be >778 px AND page is not 'index' or '/'
-	if (width >= 778 && (! window.location.pathname.match(/^(index|\/)$/) ) ) {
+	if (width >= 778 && (! window.location.href.indexOf("index") ) ) {
 		$('#headerWrapper').addClass('headerLeft');
 	}
 
