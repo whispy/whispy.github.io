@@ -93,9 +93,9 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 			panel.addClass("panelSidebar");
 			
-			/*setTimeout(function(){
-				$('.articleDiv').addClass('articleSidebar');
-			}, 10);*/
+			
+				
+			
 
 			setTimeout(function(){
 				$('.panel .content').addClass("contentSidebar");
@@ -148,7 +148,8 @@ $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
-	$('html, body').scrollTop(0); // scroll to top whenever changing page
+	var body = $('html, body');
+	body.animate({scrollTop:0},'100','easeInOutBounce'); // scroll to top whenever changing page
 	imgDivClick();
 	blogClick();
 	if(window.location.pathname.indexOf("design") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
