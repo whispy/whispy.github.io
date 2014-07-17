@@ -221,7 +221,7 @@ $(document).ready(function () {
 
 
 	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include design AND there is a pathname
-	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("design") === -1 && window.location.pathname !== '/') {
+	if(window.location.href.indexOf("index") === -1 && window.location.pathname !== '/') {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 		fancyNav(navSelector);
