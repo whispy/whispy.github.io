@@ -68,7 +68,7 @@ function fancyWork(selector) {
 					}, 200);
 
 					setTimeout(function(){
-						$('.content').addClass("marginTop0");
+						//$('.content').addClass("marginTop0");
 						$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 					}, 500);
 
