@@ -131,6 +131,7 @@ $(window).on('pronto.request', function(event, eventInfo){ //events do get trigg
 	navAClick();
 })
 
+/* Back button stuff doesn't work 100%*/
 $(window).on('popstate', function(e){ //making back/forward button work -> needs lots of cleaning, but functionality is there.
 	//console.log(window.location.pathname)
 		if(window.location.pathname.indexOf("design") != -1){
