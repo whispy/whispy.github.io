@@ -97,6 +97,7 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 		var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
 		for (var i = 0; i < writingsList.length; i++) {
         	if(window.location.pathname.indexOf(writingsList[i]) > -1) {
+        		console.log('ellomate')
             	$('.panel .content').addClass("contentSidebar");
             	$('.articleYears').addClass('yearsSidebar');
 				$('.articleDiv').addClass('articleSidebar');
@@ -166,6 +167,18 @@ $(window).on('pronto.render', function(){
 	if(window.location.pathname.indexOf("design") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
 		$('.content .imgDiv').addClass("sidebarThumbs");
 	}
+	/*temporary!!!*/
+	var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
+		for (var i = 0; i < writingsList.length; i++) {
+        	if(window.location.pathname.indexOf(writingsList[i]) > -1) {
+        		console.log('ellomate')
+            	$('.panel .content').addClass("contentSidebar");
+            	$('.articleYears').addClass('yearsSidebar');
+				$('.articleDiv').addClass('articleSidebar');
+				$('.heroImage').addClass("heroSidebar");
+				console.log('fancyblog1')
+			}
+		}
 
 })
 
