@@ -101,26 +101,23 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
             	$('.articleYears').addClass('yearsSidebar');
 				$('.articleDiv').addClass('articleSidebar');
 				$('.heroImage').addClass("heroSidebar");
-				console.log('butt1')
+				console.log('fancyblog1')
 			}
 
 			if(window.location.pathname.indexOf(writingsList[i]) < -1) {
-				console.log('butt2')
+				console.log('fancyblog2')
             	setTimeout(function(){
-				$('.panel .content').addClass("contentSidebar");
-			}, 200);
+					$('.panel .content').addClass("contentSidebar");
+				}, 200);
 
-			setTimeout(function(){
-				$('.articleYears').addClass('yearsSidebar');
-				$('.articleDiv').addClass('articleSidebar');
-				$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
-			}, 500);
+				setTimeout(function(){
+					$('.articleYears').addClass('yearsSidebar');
+					$('.articleDiv').addClass('articleSidebar');
+					$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+				}, 500);
 			}
 		}
-			/*
 
-			
-*/
 
 		workDisplayFadeIn();
 
