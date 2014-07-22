@@ -161,7 +161,8 @@ $(window).on('pronto.load', function(){
 
 $(window).on('pronto.render', function(){
 	var body = $('html, body');
-	body.animate({scrollTop:0},'100','easeInOutBounce'); // scroll to top whenever changing page
+	var href = $.attr(this, 'href');
+	body.animate({scrollTop: href}, 100,'easeInOutBounce'); // scroll to top whenever changing page
 	imgDivClick();
 	blogClick();
 	if(window.location.pathname.indexOf("design") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
