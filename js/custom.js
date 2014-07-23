@@ -27,7 +27,7 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-		if(width >= 778){
+		if((width >= 778) && ((window.location.href.indexOf("index") == -1) || (!window.location.pathname === '/'))){
 			$('#headerWrapper').addClass('headerLeft');
 		}
         divInit();
@@ -211,7 +211,7 @@ function checkSize() {
 	var container = jQuery(".container");
 
 	//add headerLeft if browser is resized to be >778 px AND page is not 'index' or '/'
-	if ((width >= 778) && (window.location.href.indexOf("index") == -1) ) {
+	if((width >= 778) && ((window.location.href.indexOf("index") == -1) || (!window.location.pathname === '/'))){
 		$('#headerWrapper').addClass('headerLeft');
 	}
 
