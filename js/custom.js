@@ -22,12 +22,11 @@ function fancyNav(selector) {
 	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function divInit() {
-    		resetDivs();
-    		showDivs();
+    	resetDivs();
+    	showDivs();
 	} // loadContent end
 
 	function bindListeners() {
-		//$('.navigation').on('click', 'a', function() {
 		if(width >= 778){
 			$('#headerWrapper').addClass('headerLeft');
 		}
@@ -50,26 +49,19 @@ function fancyWork(selector) {
 	};
 
 	function bindListeners() {
-			/*if(width<=777) {
-				console.log('fancyWork <777px');
-				panel.addClass("resetDiv");
-				workDisplayFadeIn();
-			}
-			else {*/
 
-				if (!panel.hasClass("panelSidebar")) {
-					panel.addClass("panelSidebar");
-						setTimeout(function(){
-						$('.panel .content').addClass("contentSidebar");
-					}, 200);
-					setTimeout(function(){
-						$('.articleYears').addClass('yearsSidebar');
-						$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
-					}, 500);
-				}
+		if (!panel.hasClass("panelSidebar")) {
+			panel.addClass("panelSidebar");
+			setTimeout(function(){
+				$('.panel .content').addClass("contentSidebar");
+			}, 200);
+			setTimeout(function(){
+				$('.articleYears').addClass('yearsSidebar');
+				$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+			}, 500);
+		}
 
-				workDisplayFadeIn();
-			/*} */// else end
+		workDisplayFadeIn();
     }; //bindListeners end
 }; // fancyWork end
 
