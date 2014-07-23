@@ -91,7 +91,9 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	
 	function bindListeners() {
 
+		if (!panel.hasClass("panelSidebar")) {
 			panel.addClass("panelSidebar");
+		}
 			//this all needs figuring out -> why is there a delay when going between different writings while sidebar is on?
 			
 		var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
@@ -101,7 +103,7 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
             	$('.articleYears').addClass('yearsSidebar');
 				$('.articleDiv').addClass('articleSidebar');
 				$('.heroImage').addClass("heroSidebar");
-				console.log('fancyblog1')
+				//console.log('fancyblog1')
 			}
 
 			if(window.location.pathname.indexOf(writingsList[i]) < -1) {
@@ -126,63 +128,33 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 
 $(window).on('pronto.request', function(event, eventInfo){ //events do get triggered by back button -> figure out how to undo the functions that were run
-	//console.log(eventInfo);
-	var target = eventInfo.target || eventInfo.srcElement;
-    //console.log(target); /* THIS WORKS! Use it for back button stuff! */
 	navAClick();
 })
 
-/* Back button stuff doesn't work 100%*/
-$(window).on('popstate', function(e){ //making back/forward button work -> needs lots of cleaning, but functionality is there.
-	//console.log(window.location.pathname)
-		if(window.location.pathname.indexOf("design") != -1){
-			var URLnotIndex = window.location.pathname
-			var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-			fancyWork(workThumbs);
-			$('.content .imgDiv').addClass("sidebarThumbs");
-		}
-		if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
-			var URLnotIndex = window.location.pathname
-			var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-			fancyNav(navSelector);
-		}
-		if(window.location.pathname.indexOf("writings") != -1) { // if it includes 'writings'
-			var URLnotIndex = window.location.pathname
-			var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-			fancyBlog(blogArticles);
-		}
-		if(window.location.href.indexOf("index") !== -1 || window.location.pathname === '/') {
-			resetDivs();
-			$('#headerWrapper').removeClass('headerLeft');
-		}
+$(window).on('popstate', function(){
+	
+	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
+		var URLnotIndex = window.location.pathname
+		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		fancyNav(navSelector);
+	}
+	if(window.location.href.indexOf("index") !== -1 || window.location.pathname === '/') {
+		resetDivs();
+		$('#headerWrapper').removeClass('headerLeft');
+	}
+
 });
 
 $(window).on('pronto.load', function(){
-
 })
 
 $(window).on('pronto.render', function(){
 	var body = $('html, body');
 	var workDisplayOffset = workDisplay.offset().top;
 	body.animate({scrollTop: workDisplayOffset}, 250, 'easeInOutCirc'); // scroll to top whenever changing page
-	imgDivClick();
-	blogClick();
-	if(window.location.pathname.indexOf("design") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
-		$('.content .imgDiv').addClass("sidebarThumbs");
-	}
-	/*temporary!!!*/
-	var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
-		for (var i = 0; i < writingsList.length; i++) {
-        	if(window.location.pathname.indexOf(writingsList[i]) > -1) {
-        		console.log('ellomate')
-            	$('.panel .content').addClass("contentSidebar");
-            	$('.articleYears').addClass('yearsSidebar');
-				$('.articleDiv').addClass('articleSidebar');
-				$('.heroImage').addClass("heroSidebar");
-				console.log('fancyblog1')
-			}
-		}
-
+	designsInit();
+	writingsInit();
+	console.log(window.location.pathname)
 })
 
 function navAClick() { //run fancyNav on click of .navigation anchors
@@ -193,24 +165,36 @@ function navAClick() { //run fancyNav on click of .navigation anchors
 }
 
 
-function imgDivClick() { //run fancyWork on click of .imgDiv anchors
-	$('.imgDiv').on('click', 'a', function() {
-		var workThumbs = '.imgDiv a'
-		fancyWork(workThumbs);
-	})
+function designsInit() {
+	var designsList = ["a-few-more-breaths", "bar-vivant", "bulmer-specimen", "jam-packed", "midnight-munchies", "nutrition-program", "occupy-together", "photography", "pix-patisserie"]
+	var designsLocation = window.location.pathname.replace('/designs/','').replace('.html','');
+		
+	if($.inArray(designsLocation, designsList) > -1) { //if 'writingsLocation' is equal to an article listed in 'writingsList'
+		var selectLink = designsLocation;
+		$('a[href*="'+selectLink+'"]').addClass("selectLink");
+		var URLnotIndex = window.location.pathname
+		var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		fancyBlog(blogArticles);
+	}
+	if(($.inArray(designsLocation, designsList) == -1) && (window.location.pathname.indexOf("designs") > -1)) { //if 'writingsLocation' is NOT equal to an article listed in 'writingsList' AND the pathname includes 'writings'
+		console.log('hi');
+	}	
 }
 
-function blogClick() { //run fancyBlog on click of .articleDiv anchors
-	if(window.location.pathname.indexOf("writings") > -1){ //add class to anchor containing selectLink
-		selectLink = window.location.pathname.replace('/writings/','');
-		//console.log(selectLink);
+function writingsInit() {
+	var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
+	var writingsLocation = window.location.pathname.replace('/writings/','').replace('.html','');
+		
+	if($.inArray(writingsLocation, writingsList) > -1) { //if 'writingsLocation' is equal to an article listed in 'writingsList'
+		var selectLink = writingsLocation;
 		$('a[href*="'+selectLink+'"]').addClass("selectLink");
-	}
-	//this is not running on first click of a new article from sidebar...
-	$('.articleDiv').on('click', 'a', function() {
-		var blogArticles = '.articleDiv a'
+		var URLnotIndex = window.location.pathname
+		var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 		fancyBlog(blogArticles);
-	})
+	}
+	if(($.inArray(writingsLocation, writingsList) == -1) && (window.location.pathname.indexOf("writings") > -1)) { //if 'writingsLocation' is NOT equal to an article listed in 'writingsList' AND the pathname includes 'writings'
+		//console.log('hi');
+	}	
 }
 
  
@@ -225,13 +209,9 @@ $(document).ready(function () {
 	workDisplay = $('.workDisplay');
 	headerWrapper = $('#headerWrapper');
 
-	headerLeft = $('#headerWrapper').offset().left;
-	headerCenterLarge = (width / 2) + 87.5;
-	headerCenterSmall = (width / 2) + 50;
 	panelRight = $('.workDisplay').width();
 
 	panel.addClass("resetDiv");
-
 
 	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include design AND there is a pathname
 	if(window.location.href.indexOf("index") === -1 && window.location.pathname !== '/') {
@@ -243,44 +223,16 @@ $(document).ready(function () {
 	//Enables users to come in on a piece or article and still have fancyNav execute when they click on a navigation link
 	navAClick();
 
-	//run imgDivClick on page load if URL includes 'designs'
-	if(window.location.href.indexOf("designs") != -1) {
-		imgDivClick();
+	//run designsInit on pageload if pathname includes 'designs'
+	if(window.location.href.indexOf("designs") > -1) {
+		designsInit();
 	}
 
-	//run blogClick on page load if URL includes 'writing'
-	if(window.location.href.indexOf("writings") != -1) {
-		blogClick();
+	//run writingsInit on page load if pathname includes 'writings'
+	if(window.location.pathname.indexOf('writings') > -1) {
+		writingsInit();
 	}
 
-	//run fancyBlog on page load if URL includes strings in writingsList
-	var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
-	for (var i = 0; i < writingsList.length; i++) {
-        if(window.location.pathname.indexOf(writingsList[i]) > -1) {
-            //alert("your url contains the string "+writingsList[i]);
-			var URLnotIndex = window.location.pathname
-			var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-			showDivs();
-			fancyNav(navSelector);
-			fancyBlog(blogArticles);
-			//$('.content .imgDiv').addClass("sidebarThumbs");
-		}
-	}
-
-	//run fancyWork on page load if URL includes strings in designsList
-	var designsList = ["a-few-more-breaths", "bar-vivant", "bulmer-specimen", "jam-packed", "midnight-munchies", "nutrition-program", "occupy-together", "photography", "pix-patisserie"]
-	for (var i = 0; i < designsList.length; i++) {
-        if(window.location.pathname.indexOf(designsList[i]) > -1) {
-        	//alert("your url contains the string "+designsList[i]);
-			var URLnotIndex = window.location.pathname
-			var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-			showDivs();
-			fancyNav(navSelector);
-			fancyWork(workThumbs);
-			$('.content .imgDiv').addClass("sidebarThumbs");
-		}
-	}
-	
 	//Enable Ajaxify.js on the listed elements
 	jQuery('#ajaxContent, #ajaxWork, #ajaxHero, #ajaxHeroWork').ajaxify({
 	});
