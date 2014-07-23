@@ -173,8 +173,8 @@ function designsInit() {
 		var selectLink = designsLocation;
 		$('a[href*="'+selectLink+'"]').addClass("selectLink");
 		var URLnotIndex = window.location.pathname
-		var blogArticles = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-		fancyBlog(blogArticles);
+		var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+		fancyWork(workThumbs);
 	}
 	if(($.inArray(designsLocation, designsList) == -1) && (window.location.pathname.indexOf("designs") > -1)) { //if 'writingsLocation' is NOT equal to an article listed in 'writingsList' AND the pathname includes 'writings'
 		console.log('hi');
