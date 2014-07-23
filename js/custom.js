@@ -50,12 +50,12 @@ function fancyWork(selector) {
 	};
 
 	function bindListeners() {
-			if(width<=777) {
+			/*if(width<=777) {
 				console.log('fancyWork <777px');
 				panel.addClass("resetDiv");
 				workDisplayFadeIn();
 			}
-			else {
+			else {*/
 
 				if (!panel.hasClass("panelSidebar")) {
 					panel.addClass("panelSidebar");
@@ -69,7 +69,7 @@ function fancyWork(selector) {
 				}
 
 				workDisplayFadeIn();
-			} // else end
+			/*} */// else end
     }; //bindListeners end
 }; // fancyWork end
 
@@ -219,7 +219,7 @@ function checkSize() {
 	var container = jQuery(".container");
 
 	//add headerLeft if browser is resized to be >778 px AND page is not 'index' or '/'
-	if (width >= 778 && (! window.location.href.indexOf("index") ) ) {
+	if ((width >= 778) && (window.location.href.indexOf("index") == -1) ) {
 		$('#headerWrapper').addClass('headerLeft');
 	}
 
