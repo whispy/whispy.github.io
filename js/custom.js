@@ -92,32 +92,14 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 		if (!panel.hasClass("panelSidebar")) {
 			panel.addClass("panelSidebar");
+			setTimeout(function(){
+				$('.panel .content').addClass("contentSidebar");
+			}, 200);
+			setTimeout(function(){
+				$('.articleYears').addClass('yearsSidebar');
+				$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+			}, 500);
 		}
-			//this all needs figuring out -> why is there a delay when going between different writings while sidebar is on?
-			
-		var writingsList = ["distraction-and-practicality", "illusion-of-choice", "measuring-friendship", "medicating-the-paradox", "new-technoworld", "perception-as-change"]
-		for (var i = 0; i < writingsList.length; i++) {
-        	if(window.location.pathname.indexOf(writingsList[i]) > -1) {
-            	$('.panel .content').addClass("contentSidebar");
-            	$('.articleYears').addClass('yearsSidebar');
-				$('.heroImage').addClass("heroSidebar");
-				//console.log('fancyblog1')
-			}
-
-			if(window.location.pathname.indexOf(writingsList[i]) < -1) {
-				console.log('fancyblog2')
-            	setTimeout(function(){
-					$('.panel .content').addClass("contentSidebar");
-				}, 200);
-
-				setTimeout(function(){
-					$('.articleYears').addClass('yearsSidebar');
-
-					$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
-				}, 500);
-			}
-		}
-
 
 		workDisplayFadeIn();
 
