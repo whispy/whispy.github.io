@@ -57,21 +57,16 @@ function fancyWork(selector) {
 			}
 			else {
 
-				if (!panel.hasClass("panelSidebar")) { //run if .panel does NOT have class .panelSidebar
-
+				if (!panel.hasClass("panelSidebar")) {
 					panel.addClass("panelSidebar");
-
-					setTimeout(function(){
+						setTimeout(function(){
 						$('.panel .content').addClass("contentSidebar");
-						$('.panel .content').addClass("flex-container");
 					}, 200);
-
 					setTimeout(function(){
-						//$('.content').addClass("marginTop0");
+						$('.articleYears').addClass('yearsSidebar');
 						$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 					}, 500);
-
-				} // if end
+				}
 
 				workDisplayFadeIn();
 			} // else end
@@ -86,7 +81,6 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 		workDisplay.removeClass("resetDiv");
 		workDisplay.addClass("showDiv");
 	};
-
 	
 	function bindListeners() {
 
