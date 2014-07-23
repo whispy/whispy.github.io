@@ -8,7 +8,6 @@ function resetDivs() {  // resets certain divs to their default states.
 	$('.panel .content').removeClass("contentSidebar");
 	$('.heroImage').removeClass('heroSidebar');
 	$('.articleYears').removeClass('yearsSidebar');
-	$('.articleDiv').removeClass('articleSidebar');	
 }; // resetDivs end
 
 function showDivs() { // shows certain divs.
@@ -101,7 +100,6 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
         	if(window.location.pathname.indexOf(writingsList[i]) > -1) {
             	$('.panel .content').addClass("contentSidebar");
             	$('.articleYears').addClass('yearsSidebar');
-				$('.articleDiv').addClass('articleSidebar');
 				$('.heroImage').addClass("heroSidebar");
 				//console.log('fancyblog1')
 			}
