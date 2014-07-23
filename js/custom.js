@@ -126,9 +126,9 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 
 $(window).on('pronto.request', function(event, eventInfo){ //events do get triggered by back button -> figure out how to undo the functions that were run
-	console.log(eventInfo);
+	//console.log(eventInfo);
 	var target = eventInfo.target || eventInfo.srcElement;
-    console.log(target); /* THIS WORKS! Use it for back button stuff! */
+    //console.log(target); /* THIS WORKS! Use it for back button stuff! */
 	navAClick();
 })
 
@@ -163,8 +163,8 @@ $(window).on('pronto.load', function(){
 
 $(window).on('pronto.render', function(){
 	var body = $('html, body');
-	var href = $.attr(this, 'href');
-	body.animate({scrollTop: href}, 100,'easeInOutBounce'); // scroll to top whenever changing page
+	var workDisplayOffset = workDisplay.offset().top;
+	body.animate({scrollTop: workDisplayOffset}, 250, 'easeInOutCirc'); // scroll to top whenever changing page
 	imgDivClick();
 	blogClick();
 	if(window.location.pathname.indexOf("design") != -1){ // Enables thumbnail sidebar if rendered page includes pieces in the URL
