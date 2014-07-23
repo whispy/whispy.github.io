@@ -27,7 +27,7 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-		if((width >= 778) && ((window.location.href.indexOf("index") == -1) || (!window.location.pathname === '/'))){
+		if((width >= 778)){
 			$('#headerWrapper').addClass('headerLeft');
 		}
         divInit();
