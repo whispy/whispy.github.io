@@ -120,7 +120,7 @@ $(window).on('pronto.render', function(){
 	body.animate({scrollTop: workDisplayOffset}, 250, 'easeInOutCirc'); // scroll to top whenever changing page
 	designsInit();
 	writingsInit();
-	console.log(window.location.pathname)
+	//console.log(window.location.pathname)
 })
 
 function navAClick() { //run fancyNav on click of .navigation anchors
@@ -143,7 +143,7 @@ function designsInit() {
 		fancyWork(workThumbs);
 	}
 	if(($.inArray(designsLocation, designsList) == -1) && (window.location.pathname.indexOf("designs") > -1)) { //if 'writingsLocation' is NOT equal to an article listed in 'writingsList' AND the pathname includes 'writings'
-		console.log('hi');
+		//in case I want to do something differently on /designs/
 	}	
 }
 
@@ -159,7 +159,7 @@ function writingsInit() {
 		fancyBlog(blogArticles);
 	}
 	if(($.inArray(writingsLocation, writingsList) == -1) && (window.location.pathname.indexOf("writings") > -1)) { //if 'writingsLocation' is NOT equal to an article listed in 'writingsList' AND the pathname includes 'writings'
-		//console.log('hi');
+		//in case I want to do something differently on /writings/
 	}	
 }
 
