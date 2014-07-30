@@ -27,8 +27,7 @@ function fancyNav(selector) {
 	} // loadContent end
 
 	function bindListeners() {
-		if((width >= 778) && ((window.location.href.indexOf("index") == -1) || (!window.location.pathname === '/'))){
-
+		if(width >= 778){
 			$('#headerWrapper').addClass('headerLeft');
 		}
         divInit();
@@ -213,8 +212,7 @@ function checkSize() {
 
 	//add headerLeft if browser is resized to be >778 px AND page is not 'index' or '/'
 
-	/* I dunno. */
-	if((width >= 778) && ((window.location.href.indexOf("index") == false) || (!window.location.pathname === '/'))){
+	if((width >= 778) && ((!window.location.pathname === 'index.html') || (!window.location.pathname === '/'))){
 		console.log((window.location.href.indexOf("index") == -1));
 		console.log((!window.location.pathname === '/'));
 		$('#headerWrapper').addClass('headerLeft');
