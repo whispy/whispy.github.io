@@ -17,18 +17,19 @@ list-style: none;
 /* Noscripts */
 
 	noscript {
-		position:absolute;
+		position:relative;
 		width:100%;
-		top:0;
 		z-index:100;
 	}
 
 	noscript div {
 		width:100%;
+		margin-top:-16px;
 		height:auto;
 		background-color:rgb(22, 124, 141);
 		box-shadow: 0px 0px 5px 1px rgba(0, 94, 101, 0.9);
 		padding-top:20px;
+		padding-bottom:10px;
 	}
 
 	noscript div h1 {
@@ -307,7 +308,6 @@ list-style: none;
 	}
 	
 
-
 	@keyframes shake { /*shakes links*/
   		0%, 40%, 80%   { transform: translateX(-2px);   }
   		20%, 60%  { transform: translateX(2px); }
@@ -548,7 +548,7 @@ list-style: none;
 /* Content Containers */
 	.outerContainer {
 		width:100%;
-		position:absolute;
+		position:relative;
 		top:0px;
 		left:0px;
 		height:100%;
