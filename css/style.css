@@ -289,7 +289,7 @@ list-style: none;
 
 
 	@keyframes shake { /*shakes links*/
-  		0%, 40%, 80%   { transform: translateX(-2px);  }
+  		0%, 40%, 80%   { height:350px; width:350px;  }
   		20%, 60%  { transform: translateX(2px); }
   		100% { transform: translateX(0px); }
 	}
