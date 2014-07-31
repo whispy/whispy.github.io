@@ -214,10 +214,7 @@ function checkSize() {
 	var container = jQuery(".container");
 
 	//add headerLeft if browser is resized to be >778 px AND page is not 'index' or '/'
-
-	if((width >= 778) && ((!window.location.pathname === 'index.html') || (!window.location.pathname === '/'))){
-		console.log((window.location.href.indexOf("index") == -1));
-		console.log((!window.location.pathname === '/'));
+	if((width >= 778) && (window.location.href.indexOf("index") == -1)){
 		$('#headerWrapper').addClass('headerLeft');
 	}
 
