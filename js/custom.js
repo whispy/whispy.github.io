@@ -73,6 +73,7 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 		workDisplay.removeClass("resetDiv");
 		workDisplay.addClass("showDiv");
 		_paq.push(['setDocumentTitle', document.url]);
+		alert(document.url)
 		_paq.push(['trackPageView']);
 		_paq.push(['setCustomUrl', document.url]);
 	};
