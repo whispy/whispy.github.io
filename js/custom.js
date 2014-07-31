@@ -72,13 +72,7 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	function workDisplayFadeIn() {
 		workDisplay.removeClass("resetDiv");
 		workDisplay.addClass("showDiv");
-		alert(window.location.pathname)
-		_paq.push(['setDocumentTitle', window.location.pathname]);
-		alert(window.location.pathname)
-		_paq.push(['trackPageView']);
-		alert(window.location.href)
-		_paq.push(['setCustomUrl', window.location.href]);
-		alert(window.location.href)
+		
 	};
 	
 	function bindListeners() {
@@ -127,7 +121,9 @@ $(window).on('pronto.render', function(){
 	body.animate({scrollTop: workDisplayOffset}, 250, 'easeInOutCirc'); // scroll to top whenever changing page
 	designsInit();
 	writingsInit();
-	//console.log(window.location.pathname)
+	_paq.push(['setDocumentTitle', window.location.pathname]);
+	_paq.push(['setCustomUrl', window.location.href]);
+	_paq.push(['trackPageView']);
 })
 
 function navAClick() { //run fancyNav on click of .navigation anchors
