@@ -115,16 +115,16 @@ $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
-	_paq.push(['setDocumentTitle', window.location.pathname]);
-	_paq.push(['trackPageView']);
-	_paq.push(['setCustomUrl', window.location.href]);
-
 	var body = $('html, body');
 	var workDisplayOffset = workDisplay.offset().top;
 	body.animate({scrollTop: workDisplayOffset}, 250, 'easeInOutCirc'); // scroll to top whenever changing page
 	designsInit();
 	writingsInit();
 	//console.log(window.location.pathname)
+
+	_paq.push(['setDocumentTitle', window.location.pathname]);
+	_paq.push(['trackPageView']);
+	_paq.push(['setCustomUrl', window.location.href]);
 })
 
 function navAClick() { //run fancyNav on click of .navigation anchors
