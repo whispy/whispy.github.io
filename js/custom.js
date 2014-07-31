@@ -72,9 +72,9 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	function workDisplayFadeIn() {
 		workDisplay.removeClass("resetDiv");
 		workDisplay.addClass("showDiv");
-		_paq.push(['setDocumentTitle', window.location.pathname]);
+		_paq.push(['setDocumentTitle', document.url]);
 		_paq.push(['trackPageView']);
-		_paq.push(['setCustomUrl', window.location.href]);
+		_paq.push(['setCustomUrl', document.url]);
 	};
 	
 	function bindListeners() {
