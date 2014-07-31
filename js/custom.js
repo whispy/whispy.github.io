@@ -98,6 +98,9 @@ $(window).on('pronto.request', function(event, eventInfo){ //events do get trigg
 })
 
 $(window).on('popstate', function(){
+	_paq.push(['setDocumentTitle', window.location.pathname]);
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
 	
 	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
 		var URLnotIndex = window.location.pathname
