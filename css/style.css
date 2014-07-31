@@ -66,15 +66,25 @@ list-style: none;
 	}
 
 	html.no-js header {
-		width:100%;
+		width:20%;
+		position:relative;
+	}
+
+	html.no-js #headerWrapper {
+		position: relative;
 	}
 
 	html.no-js .panel {
-		width:100%;
+		width:80%;
 	}
 
 	html.no-js .workDisplay {
-		width:100%;
+		right:0;
+		width:80%;
+	}
+
+	html.no-js .workDisplay .content {
+		margin-left:75px;
 	}
 
 	body.ieOld .resetDiv {

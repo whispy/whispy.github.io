@@ -2,6 +2,23 @@ html.no-js #headerWrapper {
 		left:0px;
 }
 
+html.no-js header {
+	width:100%;
+}
+
+html.no-js .panel {
+	width:100%;
+}
+
+html.no-js .workDisplay {
+	width:100%;
+}
+
+html.no-js .workDisplay .content {
+		margin-left:auto;
+}
+
+
 #headerWrapper {
 	margin-left:auto;
 	margin-right:auto;
