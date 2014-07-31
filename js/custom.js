@@ -98,9 +98,6 @@ $(window).on('pronto.request', function(event, eventInfo){ //events do get trigg
 })
 
 $(window).on('popstate', function(){
-	_paq.push(['setDocumentTitle', window.location.pathname]);
-	_paq.push(['trackPageView']);
-	_paq.push(['enableLinkTracking']);
 	
 	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
 		var URLnotIndex = window.location.pathname
@@ -118,6 +115,9 @@ $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
+	_paq.push(['setDocumentTitle', window.location.pathname]);
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
 	var body = $('html, body');
 	var workDisplayOffset = workDisplay.offset().top;
 	body.animate({scrollTop: workDisplayOffset}, 250, 'easeInOutCirc'); // scroll to top whenever changing page
