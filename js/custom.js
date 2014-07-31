@@ -218,19 +218,6 @@ function checkSize() {
 		$('#headerWrapper').addClass('headerLeft');
 	}
 
-	/*if(width <= 777){
-		panel.removeClass("panelSidebar");
-		$('.content').removeClass("contentSidebar");
-		content.removeClass("marginTop0");
-		$('.heroImage').removeClass('heroSidebar');
-	}
-	if(width >= 777){
-		panel.addClass("panelSidebar");
-		$('.content').addClass("contentSidebar");
-		content.addClass("marginTop0");
-		$('.heroImage').addClass('heroSidebar');
-	}*/
-
 } // checksize() end
 
 $(window).resize(function() {
