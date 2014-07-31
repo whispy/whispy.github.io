@@ -28,6 +28,12 @@ list-style: none;
 		height:auto;
 		background-color:rgb(22, 124, 141);
 		box-shadow: 0px 0px 5px 1px rgba(0, 94, 101, 0.9);
+		padding-top:20px;
+	}
+
+	noscript div h1 {
+		text-align: center;
+		color:#fff;
 	}
 	
 	noscript div p {
@@ -41,7 +47,7 @@ list-style: none;
 		max-width:700px;
 		font-size:1.1rem;
 		line-height:1.4;
-		color:rgba(243, 241, 241, 1);
+		color:#fff;
 	}
 
 	noscript div p a {
@@ -303,7 +309,7 @@ list-style: none;
 
 
 	@keyframes shake { /*shakes links*/
-  		0%, 40%, 80%   { height:350px; width:350px;  }
+  		0%, 40%, 80%   { transform: translateX(-2px);   }
   		20%, 60%  { transform: translateX(2px); }
   		100% { transform: translateX(0px); }
 	}
