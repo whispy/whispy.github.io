@@ -15,9 +15,6 @@ function showDivs() { // shows certain divs.
 	panel.removeClass("resetDiv");
 	$('div#indexPanel').removeAttr('id');
    	panel.addClass("showDiv");
-   	_paq.push(['setDocumentTitle', window.location.pathname]);
-		_paq.push(['trackPageView']);
-		_paq.push(['setCustomUrl', window.location.href]);
 }; //showDivs end
 
 function fancyNav(selector) {
@@ -75,6 +72,9 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 	function workDisplayFadeIn() {
 		workDisplay.removeClass("resetDiv");
 		workDisplay.addClass("showDiv");
+		_paq.push(['setDocumentTitle', window.location.pathname]);
+		_paq.push(['trackPageView']);
+		_paq.push(['setCustomUrl', window.location.href]);
 	};
 	
 	function bindListeners() {
