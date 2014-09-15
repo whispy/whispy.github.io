@@ -47,3 +47,13 @@ p {
   width:0px;
 }
 
+@media handheld, only screen and (max-width: 777px) {
+  p {
+    margin-left:10%;
+    margin-right:10%;
+   }
+
+  #directions {
+    margin-bottom:60px;
+  }
+}
