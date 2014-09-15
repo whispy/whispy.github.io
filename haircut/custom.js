@@ -106,7 +106,7 @@ function sliderPostMove() {
     });
 };
 
-$(document).ready(function () {
+$(document).load(function () {
 
 sliderPreMove();
 sliderPostMove();
