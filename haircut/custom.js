@@ -48,11 +48,9 @@ function sliderPreMove() {
                 $("img#pre").attr('src', 'images/PreHaircut-09.jpg')
             }    
         }
-
-
     });
 
-$("div.pre").on("mousemove", (function(e) {
+    $("div.pre").on("vmousemove", (function(e) {
         if (e.pageX >= minX && e.pageX <= maxX) {
             var val = (e.pageX - minX) / tickSize;
             console.log(val)
@@ -85,8 +83,6 @@ $("div.pre").on("mousemove", (function(e) {
                 $("img#pre").attr('src', 'images/PreHaircut-09.jpg')
             }    
         }
-
-
     }));
 };
 
