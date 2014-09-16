@@ -18,7 +18,7 @@ function sliderPreMove() {
     $("div.pre").mousemove(function(e) {
         if (e.pageX >= minX && e.pageX <= maxX) {
             var val = (e.pageX - minX) / tickSize;
-            console.log(val)
+            //console.log(val)
             sliderPre.slider("value", val); 
             if(val > 0 && val < 1){
                 $("img#pre").attr('src', 'images/PreHaircut-04.jpg')
@@ -53,7 +53,7 @@ function sliderPreMove() {
     $("div.pre").on("vmousemove", (function(e) {
         if (e.pageX >= minX && e.pageX <= maxX) {
             var val = (e.pageX - minX) / tickSize;
-            console.log(val)
+            //console.log(val)
             sliderPre.slider("value", val); 
             if(val > 0 && val < 1){
                 $("img#pre").attr('src', 'images/PreHaircut-04.jpg')
@@ -106,7 +106,7 @@ function sliderPostMove() {
     $("div.post").mousemove(function(e) {
         if (e.pageX >= minX && e.pageX <= maxX) {
             var val = (e.pageX - minX) / tickSize;
-            console.log(val)
+            //console.log(val)
             sliderPost.slider("value", val); 
             if(val > 0 && val < 1){
                 $("img#post").attr('src', 'images/PostHaircut-04.jpg')
@@ -141,7 +141,7 @@ function sliderPostMove() {
  $("div.post").on("vmousemove", (function(e) {
         if (e.pageX >= minX && e.pageX <= maxX) {
             var val = (e.pageX - minX) / tickSize;
-            console.log(val)
+            //console.log(val)
             sliderPost.slider("value", val); 
             if(val > 0 && val < 1){
                 $("img#post").attr('src', 'images/PostHaircut-04.jpg')
