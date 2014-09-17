@@ -182,7 +182,11 @@ $(document).ready(function () {
 
     hasTouch = undefined;
     
-    window.addEventListener('touchstart', function setHasTouch () {
+    //The below listener detects if a touch event is made.
+    //Does not detect if touch.events are supported on page
+    //load, but detects when a touch.event is used
+    //(e.g. when the user touches the screen).
+    window.addEventListener('touchstart', function setHasTouch () { 
         hasTouch = true;
         console.log(hasTouch);
         // Remove event listener once fired, otherwise it'll kill scrolling
