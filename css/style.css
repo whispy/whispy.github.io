@@ -47,7 +47,7 @@ list-style: none;
 	noscript #closeNoscript p {
 		text-align:center;
 		line-height:43px;
-		padding:0px 0px 0px 2px;
+		padding:0px 0px 0px 1px;
 		font-size:2rem;
 		margin:0px 0px 0px 0px;
 	}
