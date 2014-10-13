@@ -22,7 +22,7 @@ list-style: none;
 		z-index:100;
 	}
 
-	noscript div {
+	noscript #noscript {
 		width:100%;
 		margin-top:-16px;
 		height:auto;
@@ -30,6 +30,15 @@ list-style: none;
 		box-shadow: 0px 0px 5px 1px rgba(0, 94, 101, 0.9);
 		padding-top:20px;
 		padding-bottom:10px;
+	}
+
+	noscript #closeNoscript {
+		width:100%;
+		margin-top:-16px;
+		height:auto;
+		padding-top:20px;
+		padding-bottom:10px;
+		font-size:2rem;
 	}
 
 	noscript div h1 {
