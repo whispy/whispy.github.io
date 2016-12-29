@@ -4,7 +4,7 @@ function resetDivs() {  // resets certain divs to their default states.
 	panel.addClass("resetDiv");
 	//workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
-	index_thumbs_container.addClass("hide-index-thumbs-container");
+	index_thumbs_container.addClass("hide");
 	index_thumbs_container.addClass("index-thumbs-container-margin-top");
 	content.removeClass("marginTop0");
 	$('.panel .content').removeClass("contentSidebar");
@@ -31,6 +31,7 @@ function fancyNav(selector) {
 	function bindListeners() {
 		if(width >= 778){
 			$('#headerWrapper').addClass('headerLeft');
+			$('.selfie-text').addClass('hide');
 			setTimeout(function() {
 				$('#selfieDiv').addClass('selfie-top');
 			}, 300);
@@ -42,8 +43,9 @@ function fancyNav(selector) {
 		resetDivs();
 		$('#headerWrapper').removeClass('headerLeft');
 		$('#selfieDiv').removeClass('selfie-top');
-		index_thumbs_container.removeClass("hide-index-thumbs-container");
+		index_thumbs_container.removeClass("hide");
 		index_thumbs_container.removeClass("index-thumbs-container-margin-top");
+		$('.selfie-text').removeClass('hide');
 	}); // click method end
 }; // fancyNav end
 
