@@ -131,6 +131,10 @@ function navAClick() { //run fancyNav on click of .navigation anchors
 		var navSelector = '#menu li';
 		fancyNav(navSelector);
 	})
+	$('.index-thumb').on('click', 'a', function() {
+		var navSelector = '#menu li';
+		fancyNav(navSelector);
+	})
 }
 
 
@@ -191,8 +195,6 @@ $(document).ready(function () {
 
 	//Enables users to come in on a piece or article and still have fancyNav execute when they click on a navigation link
 	navAClick();
-
-	designsInit();
 
 	//run designsInit on pageload if pathname includes 'designs'
 	if(window.location.href.indexOf("designs") > -1) {
