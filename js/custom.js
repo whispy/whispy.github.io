@@ -31,6 +31,9 @@ function fancyNav(selector) {
 	function bindListeners() {
 		if(width >= 778){
 			$('#headerWrapper').addClass('headerLeft');
+			setTimeout(function() {
+				$('#selfieDiv').addClass('selfie-top');
+			}, 300);
 		}
         divInit();
 	} //bindListeners end
@@ -38,6 +41,7 @@ function fancyNav(selector) {
 	$("#selfieDiv").on('click', function() {
 		resetDivs();
 		$('#headerWrapper').removeClass('headerLeft');
+		$('#selfieDiv').removeClass('selfie-top');
 		index_thumbs_container.removeClass("hide-index-thumbs-container");
 		index_thumbs_container.removeClass("index-thumbs-container-margin-top");
 	}); // click method end
