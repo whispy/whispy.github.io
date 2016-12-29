@@ -130,7 +130,12 @@ $(window).on('pronto.load', function(){
 $(window).on('pronto.render', function(){
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
-	body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc'); // scroll to top whenever changing page
+	if (window.location.href.indexOf("index") > -1) { // If clicked link is 'index'
+		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
+	}
+	else {
+		body.animate({scrollTop: bodyOffset}, 700, 'easeInOutCirc');
+	}
 	designsInit();
 	writingsInit();
 	_paq.push(['setDocumentTitle', window.location.pathname]);

@@ -690,7 +690,7 @@ list-style: none;
 	}
 	
 	#indexWorkDisplay {
-		visibility:hidden;
+		/*visibility:hidden;*/
 	}
 
 	.imgDiv {
