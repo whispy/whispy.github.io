@@ -594,9 +594,10 @@ list-style: none;
 
 	#indexContainer {
 		width:300px;
-		position:fixed;
-		margin-top:200px;
-		right:20%;
+		background-color:rgba(255,255,255,0.5);
+		width:65%;
+		margin-left:auto;
+		margin-right:auto;
 	}
 	
 	#indexPanel {
