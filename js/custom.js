@@ -192,6 +192,8 @@ $(document).ready(function () {
 	//Enables users to come in on a piece or article and still have fancyNav execute when they click on a navigation link
 	navAClick();
 
+	designsInit();
+
 	//run designsInit on pageload if pathname includes 'designs'
 	if(window.location.href.indexOf("designs") > -1) {
 		designsInit();

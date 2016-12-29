@@ -592,7 +592,7 @@ list-style: none;
 		height:100%;
 	}
 
-	#indexContainer {
+	.index-thumbs-container {
 		/*background-color:rgba(180,93,93,1);*/
 		width:65%;
 		max-width:1000px;
