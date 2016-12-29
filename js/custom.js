@@ -4,6 +4,7 @@ function resetDivs() {  // resets certain divs to their default states.
 	panel.addClass("resetDiv");
 	workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
+	index_thumbs_container.addClass("hide-index-thumbs-container");
 	content.removeClass("marginTop0");
 	$('.panel .content').removeClass("contentSidebar");
 	$('.heroImage').removeClass('heroSidebar');
@@ -36,6 +37,7 @@ function fancyNav(selector) {
 	$("#selfieDiv").on('click', function() {
 		resetDivs();
 		$('#headerWrapper').removeClass('headerLeft');
+		index_thumbs_container.removeClass("hide-index-thumbs-container");
 	}); // click method end
 }; // fancyNav end
 
@@ -181,6 +183,7 @@ $(document).ready(function () {
 	content = $('.content');
 	workDisplay = $('.workDisplay');
 	headerWrapper = $('#headerWrapper');
+	index_thumbs_container = $('.index-thumbs-container');
 
 	panelRight = $('.workDisplay').width();
 
