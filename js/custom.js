@@ -128,7 +128,6 @@ $(window).on('pronto.render', function(){
 	}
 	designsInit();
 	writingsInit();
-	console.log(navSelector);
 	_paq.push(['setDocumentTitle', window.location.pathname]);
 	_paq.push(['setCustomUrl', window.location.href]);
 	_paq.push(['trackPageView']);
