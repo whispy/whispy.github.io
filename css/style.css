@@ -598,6 +598,12 @@ list-style: none;
 		margin-left:auto;
 		margin-right:auto;
 	}
+
+	.index-thumb {
+		width:324px;
+		height:242px;
+		background-color:rgba(180,93,93,1);
+	}
 	
 	#indexPanel {
 		visibility: hidden;
