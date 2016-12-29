@@ -110,7 +110,7 @@ $(window).on('pronto.request', function(event, eventInfo){ //events do get trigg
 	navAClick();
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
-	if (window.location.pathname.indexOf("index") > -1) { // If current URL when link clicked includes 'index'
+	if (window.location.pathname.indexOf("index") > -1 || window.location.pathname === '/') { // If current URL (due to pronto.request) when link clicked includes 'index' OR is just '/'
 		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
 	}
 })
