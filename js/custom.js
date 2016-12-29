@@ -33,7 +33,7 @@ function fancyNav(selector) {
 			$('#headerWrapper').addClass('headerLeft');
 			$('.selfie-text').addClass('hide');
 			setTimeout(function() {
-				$('header').addClass('selfie-top');
+				$('#headerWrapper').addClass('selfie-top');
 			}, 300);
 		}
         divInit();
@@ -42,6 +42,7 @@ function fancyNav(selector) {
 	$("#selfieDiv").on('click', function() {
 		resetDivs();
 		$('#headerWrapper').removeClass('headerLeft');
+		$('#headerWrapper').removeClass('selfie-top');
 		setTimeout(function() {
 				$('header').removeClass('selfie-top');
 			}, 300);
@@ -111,7 +112,7 @@ $(window).on('pronto.request', function(event, eventInfo){ //events do get trigg
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
 	if (window.location.pathname.indexOf("index") > -1 || window.location.pathname === '/') { // If current URL (due to pronto.request) when link clicked includes 'index' OR is just '/'
-		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
+		body.animate({scrollTop: bodyOffset}, 50, 'easeInOutCirc');
 	}
 })
 

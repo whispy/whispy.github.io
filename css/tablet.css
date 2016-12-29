@@ -11,6 +11,7 @@
 	max-width:100px;
 }
 
+
 #selfieDiv {
 	width:100px;
 	height:100px;
@@ -62,10 +63,6 @@ nav ul li a {
 
 .contentSidebar .articleDiv a, .contentSidebar .imgDiv a {
 	font-size:1rem;
-}
-
-#headerWrapper.headerLeft {
-	width:15%;
 }
 
 .panel {
