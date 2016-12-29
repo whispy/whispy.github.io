@@ -33,7 +33,7 @@ function fancyNav(selector) {
 			$('#headerWrapper').addClass('headerLeft');
 			$('.selfie-text').addClass('hide');
 			setTimeout(function() {
-				$('#selfieDiv').addClass('selfie-top');
+				$('header').addClass('selfie-top');
 			}, 300);
 		}
         divInit();
@@ -42,7 +42,9 @@ function fancyNav(selector) {
 	$("#selfieDiv").on('click', function() {
 		resetDivs();
 		$('#headerWrapper').removeClass('headerLeft');
-		$('#selfieDiv').removeClass('selfie-top');
+		setTimeout(function() {
+				$('header').removeClass('selfie-top');
+			}, 300);
 		index_thumbs_container.removeClass("hide");
 		index_thumbs_container.removeClass("index-thumbs-container-margin-top");
 		$('.selfie-text').removeClass('hide');
@@ -127,8 +129,8 @@ $(window).on('pronto.load', function(){
 
 $(window).on('pronto.render', function(){
 	var body = $('html, body');
-	var workDisplayOffset = workDisplay.offset().top;
-	body.animate({scrollTop: workDisplayOffset}, 250, 'easeInOutCirc'); // scroll to top whenever changing page
+	var bodyOffset = $('body').offset().top;
+	body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc'); // scroll to top whenever changing page
 	designsInit();
 	writingsInit();
 	_paq.push(['setDocumentTitle', window.location.pathname]);
