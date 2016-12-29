@@ -1,8 +1,8 @@
 function resetDivs() {  // resets certain divs to their default states.
-	panel.removeClass("showDiv");
+	//panel.removeClass("showDiv");
 	panel.removeClass("panelSidebar");
 	panel.addClass("resetDiv");
-	workDisplay.removeClass("showDiv")
+	//workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
 	index_thumbs_container.addClass("hide-index-thumbs-container");
 	index_thumbs_container.addClass("index-thumbs-container-margin-top");
@@ -49,7 +49,7 @@ function fancyWork(selector) {
 
 	function workDisplayFadeIn() {
 		workDisplay.removeClass("resetDiv");
-		workDisplay.addClass("showDiv");
+		//workDisplay.addClass("showDiv");
 	};
 
 	function bindListeners() {
