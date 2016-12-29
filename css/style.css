@@ -593,16 +593,27 @@ list-style: none;
 	}
 
 	#indexContainer {
-		background-color:rgba(255,255,255,0.5);
 		width:65%;
+		max-width:1000px;
 		margin-left:auto;
 		margin-right:auto;
+		font-size:0px;
+		overflow:hidden;
 	}
 
 	.index-thumb {
-		width:33.3333%;
-		height:242px;
+		width:32.3333%;
 		background-color:rgba(180,93,93,1);
+		display:inline-block;
+		margin-right:.5%;
+		margin-left:.5%;
+		margin-bottom:1%;
+	}
+
+	.index-thumb img {
+		display:block;
+		max-width:100%;
+		height:auto;
 	}
 	
 	#indexPanel {
