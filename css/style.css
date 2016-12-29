@@ -497,8 +497,8 @@ list-style: none;
 	}
 
 	.hide-index-thumbs-container {
-		-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
-	  	transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+		-webkit-transition: right 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+	  	transition:         right 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	  	right:-555px;
 	}
 	
@@ -611,6 +611,11 @@ list-style: none;
 		margin-right:auto;
 		font-size:0px;
 		overflow:hidden;
+	}
+
+	.index-thumbs-container-margin-top
+	{
+		margin-top:380.6666px;
 	}
 
 	.index-thumb {
