@@ -108,6 +108,11 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 $(window).on('pronto.request', function(event, eventInfo){ //events do get triggered by back button -> figure out how to undo the functions that were run
 	navAClick();
+	var body = $('html, body');
+	var bodyOffset = $('body').offset().top;
+	if (window.location.pathname.indexOf("index") > -1) { // If current URL when link clicked includes 'index'
+		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
+	}
 })
 
 $(window).on('popstate', function(){
@@ -120,7 +125,7 @@ $(window).on('pronto.load', function(){
 $(window).on('pronto.render', function(){
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
-	if (window.location.href.indexOf("index") > -1) { // If clicked link is 'index'
+	if (window.location.href.indexOf("index") > -1) { // If URL of link clicked includes 'index'
 		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
 	}
 	else {
