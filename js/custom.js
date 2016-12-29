@@ -34,6 +34,7 @@ function fancyNav(selector) {
 			$('.selfie-text').addClass('hide');
 			setTimeout(function() {
 				$('#headerWrapper').addClass('selfie-top');
+				$('nav').addClass('nav-left');
 			}, 300);
 		}
         divInit();
@@ -42,6 +43,7 @@ function fancyNav(selector) {
 	$("#selfieDiv").on('click', function() {
 		resetDivs();
 		$('#headerWrapper').removeClass('headerLeft');
+		$('nav').removeClass('nav-left');
 		$('#headerWrapper').removeClass('selfie-top');
 		setTimeout(function() {
 				$('header').removeClass('selfie-top');
