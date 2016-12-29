@@ -112,15 +112,16 @@ $(window).on('pronto.request', function(event, eventInfo){ //events do get trigg
 
 $(window).on('popstate', function(){
 	
-	if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
-		var URLnotIndex = window.location.pathname
-		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-		fancyNav(navSelector);
-	}
-	if(window.location.href.indexOf("index") !== -1 || window.location.pathname === '/') {
-		resetDivs();
-		$('#headerWrapper').removeClass('headerLeft');
-	}
+	// if(window.location.href.indexOf("index") === -1 && window.location.pathname.indexOf("pieces") === -1 && window.location.pathname !== '/') {
+	// 	var URLnotIndex = window.location.pathname
+	// 	var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
+	// 	fancyNav(navSelector);
+	// }
+	// if(window.location.href.indexOf("index") !== -1 || window.location.pathname === '/') { //!== does not equal and === does equal
+	// 	resetDivs();
+	// 	$('#headerWrapper').removeClass('headerLeft');
+	// 	console.log('dfgdf');
+	// }
 
 });
 
@@ -134,7 +135,7 @@ $(window).on('pronto.render', function(){
 		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
 	}
 	else {
-		body.animate({scrollTop: bodyOffset}, 700, 'easeInOutCirc');
+		body.animate({scrollTop: bodyOffset}, 250, 'easeInOutCirc');
 	}
 	designsInit();
 	writingsInit();
