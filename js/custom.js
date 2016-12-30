@@ -1,21 +1,3 @@
-function resetDivs() {  // resets certain divs to their default states.
-	console.log('resetDivs');
-	panel.removeClass("panelSidebar");
-	panel.addClass("resetDiv");
-	//workDisplay.addClass("resetDiv");
-	content.removeClass("marginTop0");
-	$('.panel .content').removeClass("contentSidebar");
-	$('.heroImage').removeClass('heroSidebar');
-	$('.articleYears').removeClass('yearsSidebar');
-}; // resetDivs end
-
-function showDivs() { // shows certain divs.
-	headerWrapper.removeClass("headerCenter");
-	panel.removeClass("resetDiv");
-	$('div#indexPanel').removeAttr('id');
-   	panel.addClass("showDiv");
-}; //showDivs end
-
 function fancyNav(curr_url) {
 	console.log(curr_url + ' in fancyNav')
 	if (curr_url === null) {
@@ -54,10 +36,6 @@ function move_header(curr_url) {
 	}
 }
 
-function go_to_info(curr_url) {
-	console.log('go_to_info ' + curr_url);
-}
-
 function go_to_index(curr_url) {
 	console.log('go_to_index ' + curr_url);
 
@@ -72,7 +50,6 @@ function go_to_index(curr_url) {
 	panel.removeClass("panelSidebar");
 	panel.addClass("hide");
 	workDisplay.addClass("hide");
-	//resetDivs();
 }
 
 function go_to_sidebar(curr_url) {
@@ -157,31 +134,15 @@ $(window).on('pronto.render', function(){
 	var bodyOffset = $('body').offset().top;
 	if (window.location.href.indexOf("index") > -1) { // If URL of link clicked includes 'index'
 		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
-		//go_to_index();
 	}
 	else {
 		body.animate({scrollTop: bodyOffset}, 250, 'easeInOutCirc');
 	}
-	//designsInit();
-	//writingsInit();
+
 	_paq.push(['setDocumentTitle', window.location.pathname]);
 	_paq.push(['setCustomUrl', window.location.href]);
 	_paq.push(['trackPageView']);
 })
-
-/*function link_click(curr_url) { //run fancyNav on click of .navigation anchors
-	console.log('link_click ' + curr_url);
-	//fancyNav(curr_url);
-	$('.navigation').on('click', 'a', function() {
-		console.log('nav a click');
-		fancyNav(curr_url);
-	})
-	$('.index-thumb').on('click', 'a', function(curr_url) {
-		console.log('index-thumb-click');
-		fancyNav(curr_url);
-	})
-}
-*/
 
 function designsInit() {
 	var designsList = ["a-few-more-breaths", "bar-vivant", "bulmer-specimen", "jam-packed", "midnight-munchies", "nutrition-program", "occupy-together", "photography", "pix-patisserie"]
@@ -238,11 +199,6 @@ $(document).ready(function () {
 	var curr_url = null;
 	fancyNav(curr_url);
 
-	// //run writingsInit on page load if pathname includes 'writings'
-	// if(window.location.pathname.indexOf('writings') > -1) {
-	// 	writingsInit();
-	// }
-
 	//Enable Ajaxify.js on the listed elements
 	jQuery('#ajaxContent, #ajaxWork, #ajaxHero, #ajaxHeroWork').ajaxify({
 	});
@@ -262,11 +218,7 @@ function checkSize() {
 } // checksize() end
 
 $(window).resize(function() {
-	//workDisplay.addClass("transitionReset"); // removes transitions when resizing
-	//panel.addClass("transitionReset"); // removes transitions when resizing
 	checkSize();
-	//workDisplay.removeClass("transitionReset"); 
-	//panel.removeClass("transitionReset"); 
 }); 
 //Get window size end
 
