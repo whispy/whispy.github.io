@@ -561,10 +561,6 @@ list-style: none;
 	.sidebar-thumb {
 		height:calc(100vh / 9);
 	}
-	
-	#indexPanel {
-		visibility: hidden;
-	}
 
 	.panel, .workDisplay {
 		position:absolute;

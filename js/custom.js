@@ -21,40 +21,41 @@ function fancyNav(curr_url) {
 	if (curr_url === null) {
 		var curr_url = window.location.pathname.substring('/');
 	}
-	bindListeners(curr_url); // call the function 'bindListeners' with the variable 'menuItems'
 
-	function bindListeners() {
-		console.log('bindListeners ' + curr_url);
-		if (curr_url === '/about.html') {
-			console.log('about');
-			resetDivs();
-			panel.removeClass("resetDiv");
-		}
+	if (curr_url === '/about.html') {
+		console.log('about');
+		resetDivs();
+		panel.removeClass("resetDiv");
+	}
 
-		if(window.location.href.indexOf("designs") > -1) {
-			console.log('url includes designs');
-		}
+	if(window.location.href.indexOf("designs") > -1) {
+		console.log('url includes designs');
+		move_header(curr_url);
+		go_to_sidebar(curr_url);
+		go_to_work(curr_url);
+	}
 
-		else {
-			go_to_index(curr_url);
-		}	
-	} //bindListeners end
+	else {
+		go_to_index(curr_url);
+	}	
 }; // fancyNav end
 
-function go_to_index(curr_url) {
-	console.log('go_to_index');
-	index_thumbs_container.addClass("hide");
+function move_header(curr_url) {
+	console.log('move_header ' + curr_url);
 
-	if (width >= 778) {
-		console.log('headerLeft');
-		console.log('width ' + curr_url);
+	if (width >= 778 && !(curr_url === '/index.html')) {
+		console.log('header moved left ' + curr_url);
 		$('#headerWrapper').addClass('headerLeft');
 		$('.selfie-text').addClass('hide');
 		$('#headerWrapper').addClass('selfie-top');
 		$('nav').addClass('nav-left');
-		console.log('width > 778');
-		fancyWork(curr_url);
+		
 	}
+}
+
+function go_to_index(curr_url) {
+	console.log('go_to_index ' + curr_url);
+	index_thumbs_container.addClass("hide");
 
 	if (curr_url === '/' || curr_url === '/index.html') { 
 		console.log('curr_url === /');
@@ -72,36 +73,40 @@ function go_to_index(curr_url) {
 		//resetDivs();
 		showDivs();
 	}
-	//fancyWork(curr_url);
+	//go_to_work(curr_url);
 }
 
-function clear_sidebar(curr_url) {
+function go_to_sidebar(curr_url) {
+	console.log('go_to_sidebar ' + curr_url);
 
+	if (!panel.hasClass("panelSidebar")) {
+		console.log('panel doesnt have sidebar ' + curr_url);
+		panel.addClass("panelSidebar");
+		panel.removeClass("resetDiv");
+		//setTimeout(function(){
+		$('.panel .content').addClass("contentSidebar");
+		//}, 200);
+		//setTimeout(function(){
+		$('.articleYears').addClass('yearsSidebar');
+		$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
+		//}, 500);
+	}
 }
 
-function fancyWork(curr_url) {
-	console.log(curr_url + ' in fancyWork');
+function go_to_work(curr_url) {
+	console.log(curr_url + ' in go_to_work');
 	//var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(curr_url); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function bindListeners(curr_url) {
 
-		if (!panel.hasClass("panelSidebar")) {
-			panel.addClass("panelSidebar");
-			setTimeout(function(){
-				$('.panel .content').addClass("contentSidebar");
-			}, 200);
-			setTimeout(function(){
-				$('.articleYears').addClass('yearsSidebar');
-				$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
-			}, 500);
-		}
+		
 		workDisplay.removeClass("resetDiv");
 		console.log('did work display?');
     }; //bindListeners end
-}; // fancyWork end
+}; // go_to_work end
 
-function fancyBlog(selector) { // is not called. Need to set it up similar to fancyWork
+function fancyBlog(selector) { // is not called. Need to set it up similar to go_to_work
 	var blogArticles = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
 	bindListeners(blogArticles); // call the function 'bindListeners' with the variable 'menuItems'
 
@@ -192,7 +197,7 @@ function designsInit() {
 		$('a[href*="'+selectLink+'"]').addClass("selectLink");
 		var URLnotIndex = window.location.pathname
 		var workThumbs = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-		fancyWork(workThumbs);
+		//go_to_work(workThumbs);
 	}
 	if(($.inArray(designsLocation, designsList) == -1) && (window.location.pathname.indexOf("designs") > -1)) { //if 'writingsLocation' is NOT equal to an article listed in 'writingsList' AND the pathname includes 'writings'
 		//in case I want to do something differently on /designs/
@@ -232,20 +237,6 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 
-	/*//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include design AND there is a pathname
-	if(window.location.href.indexOf("index") === -1 && window.location.pathname !== '/') {
-		var URLnotIndex = window.location.pathname
-		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
-		fancyNav(navSelector);
-	}*/
-
-	//Enables users to come in on a piece or article and still have fancyNav execute when they click on a navigation link
-	//navAClick();
-
-	/*index_thumbs_container.addClass("hide");
-		index_thumbs_container.addClass("index-thumbs-container-margin-top");*/
-
-	 //run designsInit on pageload if pathname includes 'designs'
 	var curr_url = null;
 	fancyNav(curr_url);
 
