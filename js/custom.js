@@ -1,11 +1,10 @@
 function resetDivs() {  // resets certain divs to their default states.
+	console.log('resetDivs');
 	//panel.removeClass("showDiv");
 	panel.removeClass("panelSidebar");
 	panel.addClass("resetDiv");
 	//workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
-	index_thumbs_container.addClass("hide");
-	index_thumbs_container.addClass("index-thumbs-container-margin-top");
 	content.removeClass("marginTop0");
 	$('.panel .content').removeClass("contentSidebar");
 	$('.heroImage').removeClass('heroSidebar');
@@ -19,51 +18,57 @@ function showDivs() { // shows certain divs.
    	panel.addClass("showDiv");
 }; //showDivs end
 
-function fancyNav(selector) {
-	var menuItems = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
-	bindListeners(menuItems); // call the function 'bindListeners' with the variable 'menuItems'
-
-	function divInit() {
-    	resetDivs();
-    	showDivs();
-	} // loadContent end
+function fancyNav(curr_url) {
+	console.log(curr_url + ' in fancyNav')
+	bindListeners(curr_url); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function bindListeners() {
-		if(width >= 778){
-			$('#headerWrapper').addClass('headerLeft');
-			$('.selfie-text').addClass('hide');
-			setTimeout(function() {
-				$('#headerWrapper').addClass('selfie-top');
-				$('nav').addClass('nav-left');
-			}, 300);
-		}
-        divInit();
+		console.log('bindListeners ' + curr_url);
+		go_to_index(curr_url);
 	} //bindListeners end
+}; // fancyNav end
 
-	$("#selfieDiv").on('click', function() {
-		resetDivs();
+function go_to_index (curr_url) {
+	console.log('go_to_index');
+	index_thumbs_container.addClass("hide");
+	index_thumbs_container.addClass("index-thumbs-container-margin-top");
+
+	if (width >= 778) {
+		console.log('headerLeft');
+		console.log('width ' + curr_url);
+		$('#headerWrapper').addClass('headerLeft');
+		$('.selfie-text').addClass('hide');
+		$('#headerWrapper').addClass('selfie-top');
+		$('nav').addClass('nav-left');
+		console.log('width > 778');
+		fancyWork(curr_url);
+	}
+
+	if (curr_url === '/' || curr_url === '/index.html') { 
+		console.log('curr_url === /');
 		$('#headerWrapper').removeClass('headerLeft');
 		$('nav').removeClass('nav-left');
 		$('#headerWrapper').removeClass('selfie-top');
-		setTimeout(function() {
-				$('header').removeClass('selfie-top');
-			}, 300);
+		$('header').removeClass('selfie-top');
 		index_thumbs_container.removeClass("hide");
 		index_thumbs_container.removeClass("index-thumbs-container-margin-top");
 		$('.selfie-text').removeClass('hide');
-	}); // click method end
-}; // fancyNav end
+		resetDivs();
+	}
 
-function fancyWork(selector) {
-	var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
-	bindListeners(workThumbs); // call the function 'bindListeners' with the variable 'menuItems'
+	else {
+		//resetDivs();
+		showDivs();
+	}
+	//fancyWork(curr_url);
+}
 
-	function workDisplayFadeIn() {
-		workDisplay.removeClass("resetDiv");
-		//workDisplay.addClass("showDiv");
-	};
+function fancyWork(curr_url) {
+	console.log(curr_url + ' in fancyWork');
+	//var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
+	bindListeners(curr_url); // call the function 'bindListeners' with the variable 'menuItems'
 
-	function bindListeners() {
+	function bindListeners(curr_url) {
 
 		if (!panel.hasClass("panelSidebar")) {
 			panel.addClass("panelSidebar");
@@ -75,8 +80,8 @@ function fancyWork(selector) {
 				$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
 			}, 500);
 		}
-
-		workDisplayFadeIn();
+		workDisplay.removeClass("resetDiv");
+		console.log('did work display?');
     }; //bindListeners end
 }; // fancyWork end
 
@@ -110,7 +115,9 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to fa
 
 
 $(window).on('pronto.request', function(event, eventInfo){ //events do get triggered by back button -> figure out how to undo the functions that were run
-	navAClick();
+	
+	//console.log(window.location.pathname);
+	//console.log(window.location.href);
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
 	if (window.location.pathname.indexOf("index") > -1 || window.location.pathname === '/') { // If current URL (due to pronto.request) when link clicked includes 'index' OR is just '/'
@@ -119,39 +126,46 @@ $(window).on('pronto.request', function(event, eventInfo){ //events do get trigg
 })
 
 $(window).on('popstate', function(){
-	
+
 });
 
 $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
+	console.log('hi');
+	var curr_url = window.location.pathname.substring('/');
+	fancyNav(curr_url);
+
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
 	if (window.location.href.indexOf("index") > -1) { // If URL of link clicked includes 'index'
 		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
+		//go_to_index();
 	}
 	else {
 		body.animate({scrollTop: bodyOffset}, 250, 'easeInOutCirc');
 	}
-	designsInit();
-	writingsInit();
+	//designsInit();
+	//writingsInit();
 	_paq.push(['setDocumentTitle', window.location.pathname]);
 	_paq.push(['setCustomUrl', window.location.href]);
 	_paq.push(['trackPageView']);
 })
 
-function navAClick() { //run fancyNav on click of .navigation anchors
+/*function link_click(curr_url) { //run fancyNav on click of .navigation anchors
+	console.log('link_click ' + curr_url);
+	//fancyNav(curr_url);
 	$('.navigation').on('click', 'a', function() {
-		var navSelector = '#menu li';
-		fancyNav(navSelector);
+		console.log('nav a click');
+		fancyNav(curr_url);
 	})
-	$('.index-thumb').on('click', 'a', function() {
-		var navSelector = '#menu li';
-		fancyNav(navSelector);
+	$('.index-thumb').on('click', 'a', function(curr_url) {
+		console.log('index-thumb-click');
+		fancyNav(curr_url);
 	})
 }
-
+*/
 
 function designsInit() {
 	var designsList = ["a-few-more-breaths", "bar-vivant", "bulmer-specimen", "jam-packed", "midnight-munchies", "nutrition-program", "occupy-together", "photography", "pix-patisserie"]
@@ -202,25 +216,29 @@ $(document).ready(function () {
 
 	panel.addClass("resetDiv");
 
-	//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include design AND there is a pathname
+	/*//run fancyNav on direct URL load if URL does NOT include 'index' AND does NOT include design AND there is a pathname
 	if(window.location.href.indexOf("index") === -1 && window.location.pathname !== '/') {
 		var URLnotIndex = window.location.pathname
 		var navSelector = URLnotIndex.replace('.html','').substring(URLnotIndex.lastIndexOf("/") + 1);
 		fancyNav(navSelector);
-	}
+	}*/
 
 	//Enables users to come in on a piece or article and still have fancyNav execute when they click on a navigation link
-	navAClick();
+	//navAClick();
 
-	//run designsInit on pageload if pathname includes 'designs'
-	if(window.location.href.indexOf("designs") > -1) {
-		designsInit();
-	}
+	/*index_thumbs_container.addClass("hide");
+		index_thumbs_container.addClass("index-thumbs-container-margin-top");*/
 
-	//run writingsInit on page load if pathname includes 'writings'
-	if(window.location.pathname.indexOf('writings') > -1) {
-		writingsInit();
-	}
+	 //run designsInit on pageload if pathname includes 'designs'
+	 if(window.location.href.indexOf("designs") > -1) {
+	 	var curr_url = window.location.pathname.substring('/');
+	fancyNav(curr_url);
+	 }
+
+	// //run writingsInit on page load if pathname includes 'writings'
+	// if(window.location.pathname.indexOf('writings') > -1) {
+	// 	writingsInit();
+	// }
 
 	//Enable Ajaxify.js on the listed elements
 	jQuery('#ajaxContent, #ajaxWork, #ajaxHero, #ajaxHeroWork').ajaxify({
