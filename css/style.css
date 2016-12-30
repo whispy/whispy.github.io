@@ -602,10 +602,20 @@ list-style: none;
 	  	transition:         transform 600ms cubic-bezier(0.645, 0.045, 0.355, 1); 
 	}
 
-	.panel .contentSidebar {
-		margin-left:0;
+	.panel div#ajaxContent {
+		margin-top:50px;
+		margin-bottom:75px;
+		margin-left:75px;
+		width:54%;
+		max-width:700px
+	}
+
+	.panel div#ajaxContent.contentSidebar {
+		margin-top:0px;
+		margin-bottom:0px;
+		margin-left:0px;
 		width:22%;
-		margin-top:0;
+		max-width:unset;
 	}
 
 	.panel .workDisplay {
