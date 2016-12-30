@@ -46,6 +46,7 @@ function move_header(curr_url) {
 	if (width >= 778 && !(curr_url === '/index.html')) {
 		console.log('header moved left ' + curr_url);
 		$('#headerWrapper').addClass('headerLeft');
+		$('.index-content-container').addClass('hide');
 		$('.selfie-text').addClass('hide');
 		index_thumbs_container.addClass("hide");
 		$('#headerWrapper').addClass('selfie-top');
@@ -64,6 +65,7 @@ function go_to_index(curr_url) {
 	$('nav').removeClass('nav-left');
 	$('#headerWrapper').removeClass('selfie-top');
 	$('header').removeClass('selfie-top');
+	$('.index-content-container').removeClass('hide');
 	index_thumbs_container.removeClass("hide");
 	index_thumbs_container.removeClass("index-thumbs-container-margin-top");
 	$('.selfie-text').removeClass('hide');
