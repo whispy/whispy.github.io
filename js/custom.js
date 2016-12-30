@@ -132,9 +132,6 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to go
 
 
 $(window).on('pronto.request', function(event, eventInfo){ //events do get triggered by back button -> figure out how to undo the functions that were run
-	
-	//console.log(window.location.pathname);
-	//console.log(window.location.href);
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
 	if (window.location.pathname.indexOf("index") > -1 || window.location.pathname === '/') { // If current URL (due to pronto.request) when link clicked includes 'index' OR is just '/'
