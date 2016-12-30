@@ -18,6 +18,9 @@ function showDivs() { // shows certain divs.
 
 function fancyNav(curr_url) {
 	console.log(curr_url + ' in fancyNav')
+	if (curr_url === null) {
+		var curr_url = window.location.pathname.substring('/');
+	}
 	bindListeners(curr_url); // call the function 'bindListeners' with the variable 'menuItems'
 
 	function bindListeners() {
@@ -26,6 +29,10 @@ function fancyNav(curr_url) {
 			console.log('about');
 			resetDivs();
 			panel.removeClass("resetDiv");
+		}
+
+		if(window.location.href.indexOf("designs") > -1) {
+			console.log('url includes designs');
 		}
 
 		else {
@@ -142,7 +149,7 @@ $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
-	console.log('hi');
+	console.log('pronto.render start');
 	var curr_url = window.location.pathname.substring('/');
 	fancyNav(curr_url);
 
@@ -239,10 +246,8 @@ $(document).ready(function () {
 		index_thumbs_container.addClass("index-thumbs-container-margin-top");*/
 
 	 //run designsInit on pageload if pathname includes 'designs'
-	 if(window.location.href.indexOf("designs") > -1) {
-	 	var curr_url = window.location.pathname.substring('/');
-		fancyNav(curr_url);
-	 }
+	var curr_url = null;
+	fancyNav(curr_url);
 
 	// //run writingsInit on page load if pathname includes 'writings'
 	// if(window.location.pathname.indexOf('writings') > -1) {
