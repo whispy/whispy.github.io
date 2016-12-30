@@ -2,7 +2,7 @@ function resetDivs() {  // resets certain divs to their default states.
 	console.log('resetDivs');
 	panel.removeClass("panelSidebar");
 	panel.addClass("resetDiv");
-	workDisplay.addClass("resetDiv");
+	//workDisplay.addClass("resetDiv");
 	content.removeClass("marginTop0");
 	$('.panel .content').removeClass("contentSidebar");
 	$('.heroImage').removeClass('heroSidebar');
@@ -35,7 +35,7 @@ function fancyNav(curr_url) {
 		go_to_work(curr_url);
 	}
 
-	else {
+	if (curr_url === '/' || curr_url === '/index.html') {
 		go_to_index(curr_url);
 	}	
 }; // fancyNav end
@@ -56,23 +56,17 @@ function move_header(curr_url) {
 function go_to_index(curr_url) {
 	console.log('go_to_index ' + curr_url);
 
-	if (curr_url === '/' || curr_url === '/index.html') { 
-		console.log('curr_url === /');
-		$('#headerWrapper').removeClass('headerLeft');
-		$('nav').removeClass('nav-left');
-		$('#headerWrapper').removeClass('selfie-top');
-		$('header').removeClass('selfie-top');
-		index_thumbs_container.removeClass("hide");
-		index_thumbs_container.removeClass("index-thumbs-container-margin-top");
-		$('.selfie-text').removeClass('hide');
-		resetDivs();
-	}
-
-	else {
-		//resetDivs();
-		showDivs();
-	}
-	//go_to_work(curr_url);
+	$('#headerWrapper').removeClass('headerLeft');
+	$('nav').removeClass('nav-left');
+	$('#headerWrapper').removeClass('selfie-top');
+	$('header').removeClass('selfie-top');
+	index_thumbs_container.removeClass("hide");
+	index_thumbs_container.removeClass("index-thumbs-container-margin-top");
+	$('.selfie-text').removeClass('hide');
+	panel.removeClass("panelSidebar");
+	panel.addClass("resetDiv");
+	workDisplay.addClass("hide");
+	//resetDivs();
 }
 
 function go_to_sidebar(curr_url) {
@@ -95,7 +89,7 @@ function go_to_sidebar(curr_url) {
 function go_to_work(curr_url) {
 	console.log(curr_url + ' in go_to_work');
 	index_thumbs_container.addClass("hide");
-	workDisplay.removeClass("resetDiv");
+	workDisplay.removeClass('hide');
 	console.log('did work display?');
 }; // go_to_work end
 
@@ -228,7 +222,9 @@ $(document).ready(function () {
 
 	panelRight = $('.workDisplay').width();
 
-	panel.addClass("resetDiv");
+	setTimeout( function() {
+		workDisplay.removeClass('transition-zero-override');
+	}, 400);
 
 	var curr_url = null;
 	fancyNav(curr_url);
