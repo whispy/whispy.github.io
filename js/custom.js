@@ -22,7 +22,7 @@ function fancyNav(curr_url) {
 		var curr_url = window.location.pathname.substring('/');
 	}
 
-	if (curr_url === '/about.html') {
+	if (curr_url === '/about.html' || curr_url === '/contact.html') {
 		console.log('about');
 		move_header(curr_url);
 		go_to_sidebar(curr_url);
@@ -47,9 +47,9 @@ function move_header(curr_url) {
 		console.log('header moved left ' + curr_url);
 		$('#headerWrapper').addClass('headerLeft');
 		$('.selfie-text').addClass('hide');
+		index_thumbs_container.addClass("hide");
 		$('#headerWrapper').addClass('selfie-top');
 		$('nav').addClass('nav-left');
-		
 	}
 }
 
@@ -68,7 +68,7 @@ function go_to_index(curr_url) {
 	index_thumbs_container.removeClass("index-thumbs-container-margin-top");
 	$('.selfie-text').removeClass('hide');
 	panel.removeClass("panelSidebar");
-	panel.addClass("resetDiv");
+	panel.addClass("hide");
 	workDisplay.addClass("hide");
 	//resetDivs();
 }
@@ -79,7 +79,7 @@ function go_to_sidebar(curr_url) {
 	if (!panel.hasClass("panelSidebar")) {
 		console.log('panel doesnt have sidebar ' + curr_url);
 		panel.addClass("panelSidebar");
-		panel.removeClass("resetDiv");
+		panel.removeClass("hide");
 		$('.panel .content').addClass("contentSidebar");
 		$('.articleYears').addClass('yearsSidebar');
 		$('.heroImage').addClass("heroSidebar");
