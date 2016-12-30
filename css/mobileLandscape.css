@@ -71,6 +71,10 @@ header {
 	transform:none;
 }
 
+.hide {
+	transform:translateX(5555px) !important;
+}
+
 #selfieDiv {
 	margin-right:auto;
 	margin-left:auto;

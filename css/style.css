@@ -852,7 +852,7 @@ list-style: none;
 	.hide {
 		-webkit-transition: transform 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	  	transition:         transform 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
-	  	transform:translateX(5555px) !important;
+	  	transform:translateX(5555px);
 	}
 
 	.index-content-container {
