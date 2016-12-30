@@ -55,7 +55,6 @@ function move_header(curr_url) {
 
 function go_to_index(curr_url) {
 	console.log('go_to_index ' + curr_url);
-	index_thumbs_container.addClass("hide");
 
 	if (curr_url === '/' || curr_url === '/index.html') { 
 		console.log('curr_url === /');
@@ -95,15 +94,9 @@ function go_to_sidebar(curr_url) {
 
 function go_to_work(curr_url) {
 	console.log(curr_url + ' in go_to_work');
-	//var workThumbs = $(selector); // set the variable 'workThumbs' to all elements that match the contents of variable 'selector' using jQuery
-	bindListeners(curr_url); // call the function 'bindListeners' with the variable 'menuItems'
-
-	function bindListeners(curr_url) {
-
-		
-		workDisplay.removeClass("resetDiv");
-		console.log('did work display?');
-    }; //bindListeners end
+	index_thumbs_container.addClass("hide");
+	workDisplay.removeClass("resetDiv");
+	console.log('did work display?');
 }; // go_to_work end
 
 function fancyBlog(selector) { // is not called. Need to set it up similar to go_to_work
