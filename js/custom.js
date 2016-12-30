@@ -1,9 +1,7 @@
 function resetDivs() {  // resets certain divs to their default states.
 	console.log('resetDivs');
-	//panel.removeClass("showDiv");
 	panel.removeClass("panelSidebar");
 	panel.addClass("resetDiv");
-	//workDisplay.removeClass("showDiv")
 	workDisplay.addClass("resetDiv");
 	content.removeClass("marginTop0");
 	$('.panel .content').removeClass("contentSidebar");
@@ -24,14 +22,21 @@ function fancyNav(curr_url) {
 
 	function bindListeners() {
 		console.log('bindListeners ' + curr_url);
-		go_to_index(curr_url);
+		if (curr_url === '/about.html') {
+			console.log('about');
+			resetDivs();
+			panel.removeClass("resetDiv");
+		}
+
+		else {
+			go_to_index(curr_url);
+		}	
 	} //bindListeners end
 }; // fancyNav end
 
-function go_to_index (curr_url) {
+function go_to_index(curr_url) {
 	console.log('go_to_index');
 	index_thumbs_container.addClass("hide");
-	index_thumbs_container.addClass("index-thumbs-container-margin-top");
 
 	if (width >= 778) {
 		console.log('headerLeft');
@@ -61,6 +66,10 @@ function go_to_index (curr_url) {
 		showDivs();
 	}
 	//fancyWork(curr_url);
+}
+
+function clear_sidebar(curr_url) {
+
 }
 
 function fancyWork(curr_url) {
@@ -232,7 +241,7 @@ $(document).ready(function () {
 	 //run designsInit on pageload if pathname includes 'designs'
 	 if(window.location.href.indexOf("designs") > -1) {
 	 	var curr_url = window.location.pathname.substring('/');
-	fancyNav(curr_url);
+		fancyNav(curr_url);
 	 }
 
 	// //run writingsInit on page load if pathname includes 'writings'
