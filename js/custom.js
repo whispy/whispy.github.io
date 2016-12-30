@@ -24,8 +24,7 @@ function fancyNav(curr_url) {
 
 	if (curr_url === '/about.html') {
 		console.log('about');
-		resetDivs();
-		panel.removeClass("resetDiv");
+		go_to_sidebar(curr_url);
 	}
 
 	if(window.location.href.indexOf("designs") > -1) {
@@ -53,6 +52,10 @@ function move_header(curr_url) {
 	}
 }
 
+function go_to_info(curr_url) {
+	console.log('go_to_info ' + curr_url);
+}
+
 function go_to_index(curr_url) {
 	console.log('go_to_index ' + curr_url);
 
@@ -76,13 +79,17 @@ function go_to_sidebar(curr_url) {
 		console.log('panel doesnt have sidebar ' + curr_url);
 		panel.addClass("panelSidebar");
 		panel.removeClass("resetDiv");
-		//setTimeout(function(){
 		$('.panel .content').addClass("contentSidebar");
-		//}, 200);
-		//setTimeout(function(){
 		$('.articleYears').addClass('yearsSidebar');
-		$('.heroImage').addClass("heroSidebar"); //hides heroImage when thumbnails are sidebarred
-		//}, 500);
+		$('.heroImage').addClass("heroSidebar");
+	}
+
+	else {
+		workDisplay.addClass("hide");
+		panel.removeClass('panelSidebar');
+		$('.panel .content').removeClass("contentSidebar");
+		$('.articleYears').removeClass('yearsSidebar');
+		$('.heroImage').removeClass("heroSidebar");
 	}
 }
 
