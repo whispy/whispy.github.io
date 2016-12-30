@@ -224,6 +224,7 @@ $(document).ready(function () {
 
 	setTimeout( function() {
 		workDisplay.removeClass('transition-zero-override');
+		panel.removeClass('transition-zero-override');
 	}, 400);
 
 	var curr_url = null;
