@@ -24,6 +24,7 @@ function fancyNav(curr_url) {
 
 	if (curr_url === '/about.html') {
 		console.log('about');
+		move_header(curr_url);
 		go_to_sidebar(curr_url);
 	}
 
@@ -84,7 +85,8 @@ function go_to_sidebar(curr_url) {
 		$('.heroImage').addClass("heroSidebar");
 	}
 
-	else {
+	if (panel.hasClass('panelSidebar') && (curr_url.indexOf('designs') === -1 && curr_url.indexOf('writings') === -1)) {
+		console.log('panel does have sidebar ' + curr_url)
 		workDisplay.addClass("hide");
 		panel.removeClass('panelSidebar');
 		$('.panel .content').removeClass("contentSidebar");
