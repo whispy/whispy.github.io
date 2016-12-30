@@ -80,7 +80,7 @@ function go_to_sidebar(curr_url) {
 		console.log('panel doesnt have sidebar ' + curr_url);
 		panel.addClass("panelSidebar");
 		panel.removeClass("hide");
-		$('.panel .content').addClass("contentSidebar");
+		$('.panel div#ajaxContent').addClass("contentSidebar");
 		$('.articleYears').addClass('yearsSidebar');
 		$('.heroImage').addClass("heroSidebar");
 	}
@@ -89,7 +89,7 @@ function go_to_sidebar(curr_url) {
 		console.log('panel does have sidebar ' + curr_url)
 		workDisplay.addClass("hide");
 		panel.removeClass('panelSidebar');
-		$('.panel .content').removeClass("contentSidebar");
+		$('.panel div#ajaxContent').removeClass("contentSidebar");
 		$('.articleYears').removeClass('yearsSidebar');
 		$('.heroImage').removeClass("heroSidebar");
 	}
