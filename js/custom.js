@@ -192,6 +192,8 @@ function writingsInit() {
  
 $(document).ready(function () {
 
+	$('#noscriptDiv').css('display','none');
+
 	//Defining global variables
 	window = $(window);
 	width = $(window).width();
