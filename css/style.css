@@ -419,6 +419,10 @@ list-style: none;
 	#logoMobile {
 		display:none;
 	}
+
+	.mobile-nav {
+		display:none;
+	}
 	
 	#selfieDiv {
 		border-radius:50%;

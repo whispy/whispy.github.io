@@ -34,6 +34,12 @@ function move_header(curr_url) {
 		$('#headerWrapper').addClass('selfie-top');
 		$('nav').addClass('nav-left');
 	}
+
+	else {
+		$('.index-content-container').addClass('hide');
+		$('.selfie-text').addClass('hide');
+		index_thumbs_container.addClass("hide");	
+	}
 }
 
 function go_to_index(curr_url) {
@@ -222,20 +228,13 @@ function checkSize() {
 		$('#headerWrapper').addClass('headerLeft');
 	}
 
+	// else {
+	// 	$('headerWrapper').removeClass('headerLeft');
+	// }
+
 } // checksize() end
 
 $(window).resize(function() {
 	checkSize();
 }); 
 //Get window size end
-
-function fancyMobileNav(selector) {
-	var mobileMenu = $(selector); // set the variable 'menuItems' to all elements that match the contents of variable 'selector' using jQuery
-	bindListeners(mobileMenu); // call the function 'bindListeners' with the variable 'menuItems'
-
-	function bindListeners() {
-    	$('#offCanvasMenu').on('click', 'a', function() {
-    		//jQuery('.container').addClass('mobileNav');
-    	});
-	} //bindListeners end
-}; // fancyMobileNav end

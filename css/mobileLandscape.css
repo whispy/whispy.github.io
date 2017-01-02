@@ -1,5 +1,24 @@
 .selfie-text {
-	padding-top:188px;
+	padding-top:24px;
+}
+
+.selfie-text.hide, .index-content-container.hide {
+	transform:none !important;
+}
+
+.index-content-container.hide {
+	margin-top:0px;
+	height:auto;
+}
+
+h1 {
+	font-size:1.75rem;
+	line-height:30px;
+}
+
+h2 {
+	font-size:1.35rem;
+	line-height:1.35;
 }
 
 .index-thumbs-container {
@@ -11,6 +30,29 @@
 	margin-left:0%;
 	margin-right:0%;
 	margin-bottom:6%;
+}
+
+
+.mobile-nav {
+	display:block;
+	position:absolute;
+	top:25px;
+}
+
+header .mobile-nav:nth-child(1) {
+}
+
+header .mobile-nav:nth-child(3) {
+	right:0;
+}
+
+.mobile-nav a {
+	margin-left:15px;
+	font-family:"Agenda Medium", sans-serif;
+	text-decoration: none;
+	line-height:50px;
+	color:rgb(240, 242, 243);
+	font-size:3rem;
 }
 
 html.no-js #headerWrapper {
@@ -33,6 +75,12 @@ html.no-js .workDisplay .content {
 		margin-left:auto;
 }
 
+.panel div#ajaxContent {
+		margin-left:75px;
+		width:90%;
+		max-width:700px
+}
+
 
 #headerWrapper {
 	margin-left:auto;
@@ -40,12 +88,10 @@ html.no-js .workDisplay .content {
 	left:0;
 	right:0;
 	width:auto;
-	height:150px;
+	height:95px;
 	margin-top:-35px;
 	position:relative;
-	position: fixed;
 	z-index:1;
-	/*background-color:rgba(243, 240, 240, 1);*/
 
 }
 
@@ -68,7 +114,7 @@ header {
 }
 
 .workDisplay {
-	transform:none;
+	transform:none;	
 }
 
 .hide {
@@ -125,11 +171,13 @@ div ul li{
 	margin-right:10%;
 	width: 80%;
 }
-.content {
+
+.panel div#ajaxContent {
 	margin-left:5%;
 	margin-right:5%;
 	margin-top:10%;
 	width:90%;
+	bottom:0;
 }
 
 .articleLinks, .designLinks {
