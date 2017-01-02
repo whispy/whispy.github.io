@@ -78,6 +78,13 @@ function go_to_work(curr_url) {
 	console.log(curr_url + ' in go_to_work');
 	index_thumbs_container.addClass("hide");
 	workDisplay.removeClass('hide');
+	var curr_url_split = curr_url.split('/')[2];
+	console.log(curr_url_split);
+	$('.sidebar-thumb a').each(function() {
+    	if ($(this).attr('href') == curr_url_split) {
+       		$(this).parent().addClass('selected');
+    	}
+    });
 	console.log('did work display?');
 }; // go_to_work end
 
