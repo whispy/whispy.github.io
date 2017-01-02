@@ -25,5 +25,5 @@ module.exports = function(grunt) {
     }
 	})
 
-  grunt.registerTask('default', ['includereplace','imagemin']);
+  grunt.registerTask('default', ['includereplace','newer:imagemin']);
 };
