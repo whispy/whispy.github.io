@@ -16,13 +16,7 @@ list-style: none;
 
 /* Noscripts */
 
-	noscript {
-		position:relative;
-		width:100%;
-		z-index:100;
-	}
-
-	noscript #noscriptDiv {
+	#noscriptDiv {
 		width:100%;
 		margin-top:-16px;
 		height:auto;
@@ -32,19 +26,19 @@ list-style: none;
 		padding-bottom:10px;
 	}
 
-	noscript #closeNoscript {
+	#noscriptDiv #closeNoscript {
 		margin-top:-16px;
 		margin-bottom:10px;
 		width:45px;
 		height:45px;
 		line-height:43px;
-    border-radius: 50%;
-   	border:1px solid #fff;
-    margin-left:auto;
-    margin-right:auto;
+    	border-radius: 50%;
+   		border:1px solid #fff;
+    	margin-left:auto;
+    	margin-right:auto;
 	}
 
-	noscript #closeNoscript p {
+	#noscriptDiv #closeNoscript p {
 		text-align:center;
 		line-height:43px;
 		padding:0px 0px 0px 1px;
@@ -52,16 +46,16 @@ list-style: none;
 		margin:0px 0px 0px 0px;
 	}
 
-	#noscript:target {
+	#noscriptDiv:target {
 		display:none;
 	}
 
-	noscript div h1 {
+	#noscriptDiv h1 {
 		text-align: center;
 		color:#fff;
 	}
 	
-	noscript div p {
+	#noscriptDiv p {
 		margin-top:0px;
 		margin-left:auto;
 		margin-right:auto;
@@ -75,22 +69,22 @@ list-style: none;
 		color:#fff;
 	}
 
-	noscript div p a {
+	#noscriptDiv p a {
 		color:rgba(243, 241, 241, 1);
 		text-decoration: underline;
 		transition:none;
 	}
 
-	noscript div p a:hover {
+	#noscriptDiv div p a:hover {
 		color:rgba(243, 241, 241, 1);
 	}
 
-	noscript div p a:visited {
+	#noscriptDiv div p a:visited {
 		color:rgba(243, 241, 241, 1);
 	}
 
 	html.no-js header {
-		width:20%;
+		width:100%;
 		position:relative;
 	}
 
@@ -99,21 +93,31 @@ list-style: none;
 	}
 
 	html.no-js .panel {
-		width:80%;
+		width:0%;
 	}
 
 	html.no-js .workDisplay {
-		right:0;
-		width:80%;
+		position:absolute;
+		transform:none;
+		margin-top:490px;
+		width:100%;
+	}
+
+	html.no-js #indexWorkDisplay {
+		width:0%;
 	}
 
 	html.no-js .workDisplay .content {
-		margin-left:75px;
+		margin-left:auto;
 	}
 
 	body.ieOld .resetDiv {
 		visibility: visible;
 		opacity: 1;
+	}
+
+	html.no-js .heroImageWork {
+		height:0px;
 	}
 
 /* Noscripts end */
