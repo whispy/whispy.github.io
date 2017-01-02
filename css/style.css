@@ -549,6 +549,8 @@ list-style: none;
 
 	.index-thumb {
 		width:31.3333%;
+		max-height:242px;
+		overflow:hidden;
 		display:inline-block;
 		margin-right:1%;
 		margin-left:1%;
