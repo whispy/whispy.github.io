@@ -11,6 +11,14 @@
 	height:auto;
 }
 
+.index-thumbs-container.hide {
+	height:15px;
+}
+
+.index-thumbs-container.hide .index-thumb {
+	height:0px;
+}
+
 h1 {
 	font-size:1.75rem;
 	line-height:30px;
