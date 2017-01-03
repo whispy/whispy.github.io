@@ -30,3 +30,16 @@ p cite.title {
 .selfie-text h1 {
 	font-size:1.45rem;
 }
+
+header .mobile-nav:nth-child(1) {
+	margin-left:0px;
+}
+
+header .mobile-nav:nth-child(3) {
+		margin-right:0px;
+}
+
+header {
+	width: 120%;
+	margin-left:-10%;
+}
