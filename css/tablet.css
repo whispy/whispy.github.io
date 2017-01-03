@@ -15,11 +15,23 @@
 	margin-top:225px;
 }
 
+.mobile-nav a {
+	font-size:1.5rem;
+}
+
+header .mobile-nav:nth-child(1) {
+	margin-left:80px;
+}
+
+header .mobile-nav:nth-child(3) {
+		margin-right:65px;
+}
+
 
 #selfieDiv {
 	width:100px;
 	height:100px;
-	margin-left:62px;
+	margin-left:58px;
 }
 
 #selfieDiv:hover {

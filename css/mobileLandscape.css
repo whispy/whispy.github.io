@@ -55,14 +55,16 @@ h2 {
 }
 
 header .mobile-nav:nth-child(1) {
+	left:-22px;
 }
 
 header .mobile-nav:nth-child(3) {
-	right:0;
+	right:0px;
 }
 
 .mobile-nav a {
 	margin-left:15px;
+	font-size:3rem;
 }
 
 html.no-js #headerWrapper {
