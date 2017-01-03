@@ -32,11 +32,11 @@ p cite.title {
 }
 
 header .mobile-nav:nth-child(1) {
-	margin-left:-20px;
+	margin-left:-10px;
 }
 
 header .mobile-nav:nth-child(3) {
-		margin-right:-20px;
+		margin-right:-10px;
 }
 
 header {
