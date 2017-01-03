@@ -1,20 +1,22 @@
 function fancyNav(curr_url) {
-	// console.log(curr_url + ' in fancyNav')
+	console.log(curr_url + ' in fancyNav')
 	if (curr_url === null) {
 		var curr_url = window.location.pathname.substring('/');
 	}
 
 	if (curr_url === '/about.html' || curr_url === '/contact.html') {
-		// console.log('about');
+		console.log('about');
 		move_header(curr_url);
 		go_to_sidebar(curr_url);
 	}
 
 	if(window.location.href.indexOf("designs") > -1) {
-		// console.log('url includes designs');
+		console.log('url includes designs');
 		move_header(curr_url);
 		go_to_sidebar(curr_url);
 		go_to_work(curr_url);
+		jQuery('#ajaxContent, #ajaxWork, .sidebar-thumb, .index-thumbs-container .index-thumb, #selfieDiv, .navigation li').ajaxify({
+		});
 	}
 
 	if (curr_url === '/' || curr_url === '/index.html') {
@@ -23,10 +25,10 @@ function fancyNav(curr_url) {
 }; // fancyNav end
 
 function move_header(curr_url) {
-	// console.log('move_header ' + curr_url);
+	console.log('move_header ' + curr_url);
 
 	if (width >= 778 && !(curr_url === '/index.html')) {
-		// console.log('header moved left ' + curr_url);
+		console.log('header moved left ' + curr_url);
 		$('#headerWrapper').addClass('headerLeft');
 		$('.index-content-container').addClass('hide');
 		$('.selfie-text').addClass('hide');
@@ -43,7 +45,7 @@ function move_header(curr_url) {
 }
 
 function go_to_index(curr_url) {
-	// console.log('go_to_index ' + curr_url);
+	console.log('go_to_index ' + curr_url);
 
 	$('#headerWrapper').removeClass('headerLeft');
 	$('nav').removeClass('nav-left');
@@ -59,10 +61,10 @@ function go_to_index(curr_url) {
 }
 
 function go_to_sidebar(curr_url) {
-	// console.log('go_to_sidebar ' + curr_url);
+	console.log('go_to_sidebar ' + curr_url);
 
 	if (!panel.hasClass("panelSidebar")) {
-		// console.log('panel doesnt have sidebar ' + curr_url);
+		console.log('panel doesnt have sidebar ' + curr_url);
 		panel.addClass("panelSidebar");
 		panel.removeClass("hide");
 		$('.panel div#ajaxContent').addClass("contentSidebar");
@@ -71,7 +73,7 @@ function go_to_sidebar(curr_url) {
 	}
 
 	if (panel.hasClass('panelSidebar') && (curr_url.indexOf('designs') === -1 && curr_url.indexOf('writings') === -1)) {
-		// console.log('panel does have sidebar ' + curr_url)
+		console.log('panel does have sidebar ' + curr_url)
 		workDisplay.addClass("hide");
 		panel.removeClass('panelSidebar');
 		$('.panel div#ajaxContent').removeClass("contentSidebar");
@@ -81,17 +83,17 @@ function go_to_sidebar(curr_url) {
 }
 
 function go_to_work(curr_url) {
-	// console.log(curr_url + ' in go_to_work');
+	console.log(curr_url + ' in go_to_work');
 	index_thumbs_container.addClass("hide");
 	workDisplay.removeClass('hide');
 	var curr_url_split = curr_url.split('/')[2];
-	// console.log(curr_url_split);
+	console.log(curr_url_split);
 	$('.sidebar-thumb a').each(function() {
     	if ($(this).attr('href') == curr_url_split) {
        		$(this).parent().addClass('selected');
     	}
     });
-	// console.log('did work display?');
+	console.log('did work display?');
 }; // go_to_work end
 
 function fancyBlog(selector) { // is not called. Need to set it up similar to go_to_work
@@ -139,7 +141,7 @@ $(window).on('pronto.load', function(){
 })
 
 $(window).on('pronto.render', function(){
-	// console.log('pronto.render start');
+	console.log('pronto.render start');
 	var curr_url = window.location.pathname.substring('/');
 	fancyNav(curr_url);
 
@@ -207,6 +209,7 @@ $(document).ready(function () {
 	panelRight = $('.workDisplay').width();
 
 	setTimeout( function() {
+		console.log('isthisfiringtoolate');
 		workDisplay.removeClass('transition-zero-override');
 		panel.removeClass('transition-zero-override');
 	}, 400);
