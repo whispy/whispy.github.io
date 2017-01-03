@@ -1,5 +1,5 @@
 .selfie-text {
-	padding-top:24px;
+	padding-top:37px;
 }
 
 .selfie-text.hide, .index-content-container.hide {
@@ -44,11 +44,14 @@ h2 {
 	margin-bottom:6%;
 }
 
-
+.mobile-nav-container {
+	max-width:unset;
+}
 .mobile-nav {
 	display:block;
 	position:absolute;
-	top:25px;
+	top:45px;
+	margin-top:0px;
 }
 
 header .mobile-nav:nth-child(1) {
@@ -60,11 +63,6 @@ header .mobile-nav:nth-child(3) {
 
 .mobile-nav a {
 	margin-left:15px;
-	font-family:"Agenda Medium", sans-serif;
-	text-decoration: none;
-	line-height:50px;
-	color:rgb(240, 242, 243);
-	font-size:3rem;
 }
 
 html.no-js #headerWrapper {
