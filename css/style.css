@@ -593,10 +593,15 @@ list-style: none;
 
 	.sidebar-thumb img {
 		margin-bottom:0;
+		filter: grayscale(100%);
 	}
 
 	.sidebar-thumb:hover {
 		transform:translateX(-6px);
+	}
+
+	.sidebar-thumb:hover img, .sidebar-thumb.selected img {
+		filter: grayscale(0%);
 	}
 
 	.sidebar-thumb.selected {
