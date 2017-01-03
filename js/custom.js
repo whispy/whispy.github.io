@@ -1,17 +1,17 @@
 function fancyNav(curr_url) {
-	console.log(curr_url + ' in fancyNav')
+	// console.log(curr_url + ' in fancyNav')
 	if (curr_url === null) {
 		var curr_url = window.location.pathname.substring('/');
 	}
 
 	if (curr_url === '/about.html' || curr_url === '/contact.html') {
-		console.log('about');
+		// console.log('about');
 		move_header(curr_url);
 		go_to_sidebar(curr_url);
 	}
 
 	if(window.location.href.indexOf("designs") > -1) {
-		console.log('url includes designs');
+		// console.log('url includes designs');
 		move_header(curr_url);
 		go_to_sidebar(curr_url);
 		go_to_work(curr_url);
@@ -25,10 +25,10 @@ function fancyNav(curr_url) {
 }; // fancyNav end
 
 function move_header(curr_url) {
-	console.log('move_header ' + curr_url);
+	// console.log('move_header ' + curr_url);
 
 	if (width >= 778 && !(curr_url === '/index.html')) {
-		console.log('header moved left ' + curr_url);
+		// console.log('header moved left ' + curr_url);
 		$('#headerWrapper').addClass('headerLeft');
 		$('.index-content-container').addClass('hide');
 		$('.selfie-text').addClass('hide');
@@ -45,7 +45,7 @@ function move_header(curr_url) {
 }
 
 function go_to_index(curr_url) {
-	console.log('go_to_index ' + curr_url);
+	// console.log('go_to_index ' + curr_url);
 
 	$('#headerWrapper').removeClass('headerLeft');
 	$('nav').removeClass('nav-left');
@@ -61,10 +61,10 @@ function go_to_index(curr_url) {
 }
 
 function go_to_sidebar(curr_url) {
-	console.log('go_to_sidebar ' + curr_url);
+	// console.log('go_to_sidebar ' + curr_url);
 
 	if (!panel.hasClass("panelSidebar")) {
-		console.log('panel doesnt have sidebar ' + curr_url);
+		// console.log('panel doesnt have sidebar ' + curr_url);
 		panel.addClass("panelSidebar");
 		panel.removeClass("hide");
 		$('.panel div#ajaxContent').addClass("contentSidebar");
@@ -73,7 +73,7 @@ function go_to_sidebar(curr_url) {
 	}
 
 	if (panel.hasClass('panelSidebar') && (curr_url.indexOf('designs') === -1 && curr_url.indexOf('writings') === -1)) {
-		console.log('panel does have sidebar ' + curr_url)
+		// console.log('panel does have sidebar ' + curr_url)
 		workDisplay.addClass("hide");
 		panel.removeClass('panelSidebar');
 		$('.panel div#ajaxContent').removeClass("contentSidebar");
@@ -83,17 +83,17 @@ function go_to_sidebar(curr_url) {
 }
 
 function go_to_work(curr_url) {
-	console.log(curr_url + ' in go_to_work');
+	// console.log(curr_url + ' in go_to_work');
 	index_thumbs_container.addClass("hide");
 	workDisplay.removeClass('hide');
 	var curr_url_split = curr_url.split('/')[2];
-	console.log(curr_url_split);
+	// console.log(curr_url_split);
 	$('.sidebar-thumb a').each(function() {
     	if ($(this).attr('href') == curr_url_split) {
        		$(this).parent().addClass('selected');
     	}
     });
-	console.log('did work display?');
+	// console.log('did work display?');
 }; // go_to_work end
 
 function fancyBlog(selector) { // is not called. Need to set it up similar to go_to_work
@@ -125,36 +125,42 @@ function fancyBlog(selector) { // is not called. Need to set it up similar to go
 }; // fancyBlog end
 
 
-$(window).on('pronto.request', function(event, eventInfo){ //events do get triggered by back button -> figure out how to undo the functions that were run
+$(window).on('pronto.request', function(event, eventInfo){ 
+
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
-	if (window.location.pathname.indexOf("index") > -1 || window.location.pathname === '/') { // If current URL (due to pronto.request) when link clicked includes 'index' OR is just '/'
+	if (window.location.pathname.indexOf("index") > -1 || window.location.pathname === '/') { // If current URL (not clicked) (due to pronto.request) when link clicked includes 'index' OR is just '/'
 		body.animate({scrollTop: bodyOffset}, 50, 'easeInOutCirc');
 	}
+
 })
 
 $(window).on('popstate', function(){
 
 });
 
-$(window).on('pronto.load', function(){
+$(window).on('pronto.load', function(event, eventInfo){
+	// console.log(eventInfo.currentTarget);
+	var curr_target = eventInfo.currentTarget.toString(); // Define the URL of the clicked link (this is done here in order to allow the scrollTop below to fire before the page content renders [If it fired after, then the scrollTop wouldn't be visible])
+	// console.log(curr_target);
+	// console.log('pronto.load start');
 
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
-	if (window.location.href.indexOf("index") > -1) { // If URL of link clicked includes 'index'
+	if (curr_target.indexOf("index") > -1) { // If URL of link clicked includes 'index'
 		body.animate({scrollTop: bodyOffset}, 0, 'easeInOutCirc');
 	}
 	else {
 		body.animate({scrollTop: bodyOffset}, 250, 'easeInOutCirc');
 	}
+	
 })
 
 $(window).on('pronto.render', function(){
-	console.log('pronto.render start');
+	//console.log('pronto.render start');
 	var curr_url = window.location.pathname.substring('/');
+	//console.log(curr_url);
 	fancyNav(curr_url);
-
-	
 
 	_paq.push(['setDocumentTitle', window.location.pathname]);
 	_paq.push(['setCustomUrl', window.location.href]);
@@ -211,7 +217,7 @@ $(document).ready(function () {
 	panelRight = $('.workDisplay').width();
 
 	setTimeout( function() {
-		console.log('isthisfiringtoolate');
+		// console.log('isthisfiringtoolate');
 		workDisplay.removeClass('transition-zero-override');
 		panel.removeClass('transition-zero-override');
 	}, 400);
