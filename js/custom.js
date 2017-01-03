@@ -16,7 +16,7 @@ function fancyNav(curr_url) {
 		go_to_sidebar(curr_url);
 		go_to_work(curr_url);
 		jQuery('#ajaxContent, #ajaxWork, .sidebar-thumb, .index-thumbs-container .index-thumb, #selfieDiv, .navigation li').ajaxify({
-		});
+		}); // Enables sidebar-thumb prefetching to work if we come in from index.
 	}
 
 	if (curr_url === '/' || curr_url === '/index.html') {
@@ -138,12 +138,6 @@ $(window).on('popstate', function(){
 });
 
 $(window).on('pronto.load', function(){
-})
-
-$(window).on('pronto.render', function(){
-	console.log('pronto.render start');
-	var curr_url = window.location.pathname.substring('/');
-	fancyNav(curr_url);
 
 	var body = $('html, body');
 	var bodyOffset = $('body').offset().top;
@@ -153,6 +147,14 @@ $(window).on('pronto.render', function(){
 	else {
 		body.animate({scrollTop: bodyOffset}, 250, 'easeInOutCirc');
 	}
+})
+
+$(window).on('pronto.render', function(){
+	console.log('pronto.render start');
+	var curr_url = window.location.pathname.substring('/');
+	fancyNav(curr_url);
+
+	
 
 	_paq.push(['setDocumentTitle', window.location.pathname]);
 	_paq.push(['setCustomUrl', window.location.href]);
