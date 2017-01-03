@@ -215,7 +215,7 @@ $(document).ready(function () {
 	fancyNav(curr_url);
 
 	//Enable Ajaxify.js on the listed elements
-	jQuery('#ajaxContent, #ajaxWork, #ajaxContent .sidebar-thumb, .index-thumbs-container .index-thumb, #selfieDiv, .navigation li').ajaxify({
+	jQuery('#ajaxContent, #ajaxWork, #ajaxContent .sidebar-thumb a, .index-thumbs-container .index-thumb, #selfieDiv, .navigation li').ajaxify({
 	});
 
 }); // $(document).ready end
