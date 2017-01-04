@@ -4,6 +4,7 @@
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-image": "^2.2.2",
     "grunt-include-replace": "^1.2.0",
     "grunt-newer": "^1.2.0",
     "load-grunt-tasks": "^3.5.2"
