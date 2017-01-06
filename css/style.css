@@ -977,8 +977,8 @@ list-style: none;
 	.index-content-container.hide {
 		margin-top:393px;
 		height:0px;
-		-webkit-transition: height 0s 600ms;
-	  	transition:         height 0s 600ms;
+		-webkit-transition: height 0s 601ms;
+	  	transition:         height 0s 601ms;
 	  	transform:none;
 	}
 	
