@@ -126,13 +126,13 @@ list-style: none;
 	
 	@font-face {
 	 	font-family: "Agenda Medium";
-	 	src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/15028f46-0072-4465-9e17-4d4fd0022cdc") format("woff");
+	 	src: url("https://cloud.webtype.com/webtype/ff2/3/34a8ed5e-7e0c-452d-a241-6bac3ea2b96a?ec_token=8f7c4c4997246fd7fa920074c3943b56ae303980463920b94fec33abc5c0e7db3d4d6548a16649b850c8e308ba62b33096455e508834c423440a9a3120044715346a533bddefc699fc7449452e78874dea914e9741c4816e114ed93c19b626982985dd6d1239f3cd383333fcd74aab05724c5b16745d14c") format("woff");
 	 	font-style: normal;
 	 	font-weight: normal;
 	}
 	@font-face {
 	 	font-family: "Agenda Medium";
-	 	src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/1b45bb3c-9d91-447a-9372-dc762dca3e6a") format("woff");
+	 	src: url("https://cloud.webtype.com/webtype/ff2/3/1f22a3c5-9b3a-4e26-8b5b-1bd6220afdc0?ec_token=8f7c4c4997246fd7fa920074c3943b56ae303980463920b94fec33abc5c0e7db3d4d6548a16649b850c8e15ae968b767b82cbfe9983566a9c8755aa4ff1fa8457323f58b3044f865ae8f51ccd0baf81f47117469c06f33f3c7f1f2644d30c79a52742b7c2c193e9b8057fb4c6fd0fea0dd518ff985dfee") format("woff");
 	 	font-style: italic;
 	 	font-weight: normal;
 	}
