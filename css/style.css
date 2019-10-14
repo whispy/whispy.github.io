@@ -655,7 +655,7 @@ list-style: none;
 	}
 	
 	.container {
-		/*overflow-x: hidden;*/
+		overflow-x: hidden;
 		/*display:flex;
 		flex-direction:row;
 		justify-content: flex-start;
