@@ -7,7 +7,7 @@
 }
 
 .panel, .workDisplay {
-	top:250px;
+	top:138px;
 }
 
 div p {
@@ -23,13 +23,14 @@ p cite.title {
 	font-size:2.1rem;
 }
 
-.selfie-text h2 {
-	font-size: 1.2rem;
+.selfie-text {
+	width: 80%;
 }
 
-.selfie-text h1 {
-	font-size:1.45rem;
+.selfie-text h2 {
+	margin-top: 17px;
 }
+
 
 header .mobile-nav:nth-child(1) {
 	margin-left:-10px;
